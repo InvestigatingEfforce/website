@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Investigating Efforce</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-raised: #141414;
+      --bg-card: #1a1a1a;
+      --bg-hover: #222;
+      --border: #2a2a2a;
+      --border-focus: #c0392b;
+      --text: #e0e0e0;
+      --text-muted: #777;
+      --text-heading: #fff;
+      --accent: #c0392b;
+      --accent-hover: #e74c3c;
+      --green: #27ae60;
+      --green-bg: rgba(39,174,96,0.12);
+      --yellow: #f39c12;
+      --yellow-bg: rgba(243,156,18,0.12);
+      --red: #e74c3c;
+      --red-bg: rgba(231,76,60,0.12);
+      --blue: #3498db;
+      --blue-bg: rgba(52,152,219,0.12);
+      --radius: 6px;
+      --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      --shadow: 0 2px 12px rgba(0,0,0,0.4);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); min-height: 100vh; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); }
+    button { cursor: pointer; font-family: var(--font); }
+    input, select, textarea { font-family: var(--font); }
+
+    /* ---- LOGIN ---- */
+    .login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+    .login-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 48px 40px; max-width: 440px; width: 100%; text-align: center; }
+    .login-card h1 { font-size: 22px; color: var(--text-heading); margin-bottom: 6px; font-weight: 700; }
+    .login-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.5; }
+    .login-card input[type="password"] {
+      width: 100%; padding: 12px 16px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text); font-size: 14px; font-family: var(--font-mono);
+      margin-bottom: 16px; transition: border-color .2s;
+    }
+    .login-card input:focus { outline: none; border-color: var(--border-focus); }
+    .login-card .login-help { font-size: 11px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; text-align: left; background: var(--bg); padding: 12px; border-radius: var(--radius); }
+    .login-card .login-help code { background: var(--bg-card); padding: 2px 6px; border-radius: 3px; font-size: 11px; }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
+      font-size: 13px; font-weight: 600; border-radius: var(--radius); border: 1px solid transparent;
+      transition: all .15s; letter-spacing: 0.01em;
+    }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+    .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+    .btn-secondary:hover { border-color: var(--text-muted); background: var(--bg-hover); }
+    .btn-success { background: var(--green); color: #fff; }
+    .btn-success:hover { filter: brightness(1.15); }
+    .btn-danger { background: transparent; color: var(--red); border-color: var(--red); }
+    .btn-danger:hover { background: var(--red-bg); }
+    .btn-sm { padding: 6px 14px; font-size: 12px; }
+    .btn-block { width: 100%; justify-content: center; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* ---- LAYOUT ---- */
+    .app { display: none; height: 100vh; }
+    .app.active { display: flex; flex-direction: column; }
+    .app-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 24px; background: var(--bg-raised); border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .app-header__left { display: flex; align-items: center; gap: 16px; }
+    .app-header__title { font-size: 15px; font-weight: 700; color: var(--text-heading); }
+    .app-header__subtitle { font-size: 12px; color: var(--text-muted); }
+    .app-header__right { display: flex; align-items: center; gap: 10px; }
+    .app-body { display: flex; flex: 1; overflow: hidden; }
+
+    /* ---- SIDEBAR ---- */
+    .sidebar {
+      width: 300px; background: var(--bg-raised); border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden;
+    }
+    .sidebar__header { padding: 16px; border-bottom: 1px solid var(--border); }
+    .sidebar__search {
+      width: 100%; padding: 9px 12px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text); font-size: 13px;
+    }
+    .sidebar__search:focus { outline: none; border-color: var(--border-focus); }
+    .sidebar__actions { padding: 12px 16px; border-bottom: 1px solid var(--border); display: flex; gap: 8px; }
+    .sidebar__list { flex: 1; overflow-y: auto; padding: 8px; }
+    .sidebar__group-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--text-muted); padding: 12px 12px 6px; user-select: none;
+    }
+    .sidebar__item {
+      display: flex; align-items: center; gap: 10px; padding: 9px 12px;
+      border-radius: var(--radius); cursor: pointer; transition: background .1s; font-size: 13px;
+    }
+    .sidebar__item:hover { background: var(--bg-hover); }
+    .sidebar__item.active { background: var(--accent); color: #fff; }
+    .sidebar__item.active .sidebar__item-status { opacity: 0.8; }
+    .sidebar__item-name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sidebar__item-status {
+      font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.04em; flex-shrink: 0;
+    }
+    .status-published { background: var(--green-bg); color: var(--green); }
+    .status-draft { background: var(--yellow-bg); color: var(--yellow); }
+    .sidebar__count { font-size: 11px; color: var(--text-muted); padding: 12px 16px; border-top: 1px solid var(--border); text-align: center; }
+
+    /* ---- MAIN PANEL ---- */
+    .main-panel { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+    .main-panel__empty {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 12px; color: var(--text-muted);
+    }
+    .main-panel__empty svg { opacity: 0.3; }
+
+    /* ---- EDITOR TOOLBAR ---- */
+    .editor-toolbar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 20px; background: var(--bg-raised); border-bottom: 1px solid var(--border); flex-shrink: 0;
+    }
+    .editor-toolbar__left { display: flex; align-items: center; gap: 12px; }
+    .editor-toolbar__path { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+    .editor-toolbar__right { display: flex; align-items: center; gap: 8px; }
+    .editor-toolbar__modified {
+      font-size: 11px; color: var(--yellow); background: var(--yellow-bg);
+      padding: 3px 10px; border-radius: 10px; font-weight: 600; display: none;
+    }
+    .editor-toolbar__modified.show { display: inline-block; }
+
+    /* ---- EDITOR ---- */
+    .editor-container { flex: 1; overflow: hidden; position: relative; }
+    .editor-container .CodeMirror { height: 100%; font-size: 13px; line-height: 1.6; }
+
+    /* ---- PREVIEW ---- */
+    .preview-container { flex: 1; overflow: hidden; display: none; background: #fff; }
+    .preview-container iframe { width: 100%; height: 100%; border: none; }
+
+    /* ---- VIEW TOGGLE ---- */
+    .view-toggle { display: flex; background: var(--bg); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+    .view-toggle button {
+      padding: 6px 16px; font-size: 12px; font-weight: 600; background: transparent;
+      color: var(--text-muted); border: none; transition: all .15s;
+    }
+    .view-toggle button.active { background: var(--accent); color: #fff; }
+    .view-toggle button:hover:not(.active) { color: var(--text); }
+
+    /* ---- MODAL ---- */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+      z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 32px; max-width: 500px; width: 100%; box-shadow: var(--shadow);
+    }
+    .modal h2 { font-size: 18px; color: var(--text-heading); margin-bottom: 16px; }
+    .modal label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .modal input, .modal select {
+      width: 100%; padding: 10px 14px; background: var(--bg); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text); font-size: 14px; margin-bottom: 16px;
+    }
+    .modal input:focus, .modal select:focus { outline: none; border-color: var(--border-focus); }
+    .modal select { appearance: auto; }
+    .modal__actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 8px; }
+
+    /* ---- TOAST ---- */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; padding: 12px 20px;
+      border-radius: var(--radius); font-size: 13px; font-weight: 600;
+      z-index: 2000; transform: translateY(80px); opacity: 0; transition: all .3s;
+    }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast-success { background: var(--green); color: #fff; }
+    .toast-error { background: var(--red); color: #fff; }
+    .toast-info { background: var(--blue); color: #fff; }
+
+    /* ---- LOADING ---- */
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loading-overlay {
+      position: absolute; inset: 0; background: rgba(10,10,10,0.8); display: flex;
+      align-items: center; justify-content: center; z-index: 100; gap: 12px;
+      font-size: 14px; color: var(--text-muted);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 900px) {
+      .sidebar { width: 240px; }
+    }
+    @media (max-width: 600px) {
+      .app-body { flex-direction: column; }
+      .sidebar { width: 100%; height: 40%; border-right: none; border-bottom: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <h1>🔒 Admin Panel</h1>
+      <p>Investigating Efforce — Content Management</p>
+      <input type="password" id="tokenInput" placeholder="Paste your GitHub token here">
+      <div class="login-help">
+        <strong>How to get a token:</strong><br>
+        Go to <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a> →
+        <code>Generate new token (classic)</code> → Select <code>repo</code> scope → Generate → Copy the token and paste above.
+        <br><br>Your token is stored only in this browser session and never sent anywhere except GitHub's API.
+      </div>
+      <button class="btn btn-primary btn-block" id="loginBtn">Connect to GitHub</button>
+      <div id="loginError" style="color:var(--red);font-size:12px;margin-top:12px;display:none;"></div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div class="app" id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="app-header__left">
+        <div class="app-header__title">📋 Investigating Efforce</div>
+        <div class="app-header__subtitle">Content Management</div>
+      </div>
+      <div class="app-header__right">
+        <a href="https://investigatingefforce.netlify.app" target="_blank" class="btn btn-secondary btn-sm">🌐 View Live Site</a>
+        <button class="btn btn-secondary btn-sm" id="refreshBtn">↻ Refresh</button>
+        <button class="btn btn-secondary btn-sm" id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__header">
+          <input type="text" class="sidebar__search" placeholder="Filter pages…" id="searchInput">
+        </div>
+        <div class="sidebar__actions">
+          <button class="btn btn-primary btn-sm" id="newPageBtn" style="flex:1;">+ New Page</button>
+          <button class="btn btn-secondary btn-sm" id="duplicateBtn" title="Duplicate selected page">⧉ Duplicate</button>
+        </div>
+        <div class="sidebar__list" id="pageList"></div>
+        <div class="sidebar__count" id="pageCount"></div>
+      </aside>
+
+      <!-- Main Panel -->
+      <div class="main-panel" id="mainPanel">
+        <div class="main-panel__empty" id="emptyState">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Select a page to edit</span>
+        </div>
+
+        <!-- Editor Toolbar -->
+        <div class="editor-toolbar" id="editorToolbar" style="display:none;">
+          <div class="editor-toolbar__left">
+            <span class="editor-toolbar__path" id="editorPath"></span>
+            <span class="editor-toolbar__modified" id="modifiedBadge">Modified</span>
+          </div>
+          <div class="editor-toolbar__right">
+            <div class="view-toggle">
+              <button class="active" id="viewCode" data-view="code">HTML Source</button>
+              <button id="viewPreview" data-view="preview">Preview</button>
+              <button id="viewSplit" data-view="split">Split</button>
+            </div>
+            <button class="btn btn-secondary btn-sm" id="toggleDraftBtn">Set as Draft</button>
+            <button class="btn btn-danger btn-sm" id="deletePageBtn">Delete</button>
+            <button class="btn btn-success btn-sm" id="saveBtn">
+              <span id="saveBtnText">Save & Deploy</span>
+              <span id="saveBtnSpinner" style="display:none;" class="spinner"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Editor -->
+        <div class="editor-container" id="editorContainer" style="display:none;">
+          <textarea id="codeEditor"></textarea>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview-container" id="previewContainer">
+          <iframe id="previewFrame"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New/Duplicate Page Modal -->
+  <div class="modal-overlay" id="newPageModal">
+    <div class="modal">
+      <h2 id="modalTitle">Create New Page</h2>
+      <label>Page Title</label>
+      <input type="text" id="newPageTitle" placeholder="e.g. DWF Labs Investigation">
+      <label>Filename (auto-generated)</label>
+      <input type="text" id="newPageFilename" placeholder="e.g. dwf-labs-investigation.html" readonly style="opacity:0.6;">
+      <label>Section</label>
+      <select id="newPageSection">
+        <option value="pages/">Top Level (pages/)</option>
+        <option value="pages/entities/">Entities (pages/entities/)</option>
+        <option value="pages/individuals/">Individuals (pages/individuals/)</option>
+        <option value="pages/blockchain/">Blockchain (pages/blockchain/)</option>
+      </select>
+      <label>Start From</label>
+      <select id="newPageTemplate">
+        <option value="template">Blank Template</option>
+        <option value="duplicate">Duplicate Current Page</option>
+      </select>
+      <div class="modal__actions">
+        <button class="btn btn-secondary" id="cancelModal">Cancel</button>
+        <button class="btn btn-primary" id="createPageBtn">Create Page</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Confirm Modal -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal">
+      <h2>Delete Page</h2>
+      <p style="color:var(--text-muted);font-size:14px;margin-bottom:20px;">Are you sure you want to delete <strong id="deleteFileName"></strong>? This will remove it from GitHub and the live site. This cannot be undone easily.</p>
+      <div class="modal__actions">
+        <button class="btn btn-secondary" id="cancelDelete">Cancel</button>
+        <button class="btn btn-danger" id="confirmDelete">Delete Permanently</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/matchtags.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/xml-fold.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/search.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/dialog/dialog.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/fold/foldgutter.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/dialog/dialog.min.css">
+  <script>
+    // ============================================================
+    // CONFIG
+    // ============================================================
+    const REPO_OWNER = 'InvestigatingEfforce';
+    const REPO_NAME = 'website';
+    const BRANCH = 'main';
+    const SITE_URL = 'https://investigatingefforce.netlify.app';
+    const API = 'https://api.github.com';
+
+    // ============================================================
+    // STATE
+    // ============================================================
+    let token = '';
+    let files = [];
+    let drafts = [];
+    let currentFile = null;
+    let currentSha = '';
+    let originalContent = '';
+    let editor = null;
+    let currentView = 'code';
+
+    // ============================================================
+    // GITHUB API
+    // ============================================================
+    async function ghFetch(path, opts = {}) {
+      const res = await fetch(`${API}${path}`, {
+        ...opts,
+        headers: {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json',
+          'Content-Type': 'application/json',
+          ...(opts.headers || {})
+        }
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.message || `GitHub API error ${res.status}`);
+      }
+      return res.json();
+    }
+
+    async function loadRepoTree() {
+      const tree = await ghFetch(`/repos/${REPO_OWNER}/${REPO_NAME}/git/trees/${BRANCH}?recursive=1`);
+      return tree.tree.filter(f => f.type === 'blob');
+    }
+
+    async function loadFileContent(path) {
+      const data = await ghFetch(`/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}?ref=${BRANCH}`);
+      currentSha = data.sha;
+      return atob(data.content.replace(/\n/g, ''));
+    }
+
+    async function saveFileContent(path, content, message, sha = null) {
+      const body = {
+        message,
+        content: btoa(unescape(encodeURIComponent(content))),
+        branch: BRANCH
+      };
+      if (sha) body.sha = sha;
+      return ghFetch(`/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
+        method: 'PUT',
+        body: JSON.stringify(body)
+      });
+    }
+
+    async function deleteFile(path, sha, message) {
+      return ghFetch(`/repos/${REPO_OWNER}/${REPO_NAME}/contents/${path}`, {
+        method: 'DELETE',
+        body: JSON.stringify({ message, sha, branch: BRANCH })
+      });
+    }
+
+    async function loadDraftsConfig() {
+      try {
+        const data = await ghFetch(`/repos/${REPO_OWNER}/${REPO_NAME}/contents/_admin/drafts.json?ref=${BRANCH}`);
+        const content = atob(data.content.replace(/\n/g, ''));
+        drafts = JSON.parse(content);
+        return data.sha;
+      } catch {
+        drafts = [];
+        return null;
+      }
+    }
+
+    async function saveDraftsConfig(draftsSha) {
+      const content = JSON.stringify(drafts, null, 2);
+      try {
+        await saveFileContent('_admin/drafts.json', content, 'Update drafts config', draftsSha || undefined);
+      } catch {
+        await saveFileContent('_admin/drafts.json', content, 'Create drafts config');
+      }
+    }
+
+    // ============================================================
+    // UI HELPERS
+    // ============================================================
+    function toast(msg, type = 'success') {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.className = `toast toast-${type} show`;
+      setTimeout(() => el.classList.remove('show'), 3000);
+    }
+
+    function getPageTitle(path) {
+      const name = path.split('/').pop().replace('.html', '');
+      if (name === '_template') return '📄 Template';
+      return name.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    }
+
+    function getSection(path) {
+      if (path === 'index.html' || path === 'index-old-backup.html') return 'Root';
+      if (path.startsWith('pages/entities/')) return 'Entities';
+      if (path.startsWith('pages/individuals/')) return 'Individuals';
+      if (path.startsWith('pages/blockchain/')) return 'Blockchain';
+      if (path.startsWith('pages/')) return 'Pages';
+      if (path.startsWith('css/')) return 'Assets';
+      if (path.startsWith('js/')) return 'Assets';
+      return 'Other';
+    }
+
+    function isDraft(path) {
+      return drafts.includes(path);
+    }
+
+    // ============================================================
+    // RENDER FILE LIST
+    // ============================================================
+    function renderFileList(filter = '') {
+      const list = document.getElementById('pageList');
+      const htmlFiles = files.filter(f =>
+        f.path.endsWith('.html') || f.path.endsWith('.css') || f.path.endsWith('.js')
+      );
+
+      const filtered = filter
+        ? htmlFiles.filter(f => f.path.toLowerCase().includes(filter.toLowerCase()))
+        : htmlFiles;
+
+      // Group by section
+      const groups = {};
+      const sectionOrder = ['Root', 'Pages', 'Individuals', 'Entities', 'Blockchain', 'Assets', 'Other'];
+      filtered.forEach(f => {
+        const section = getSection(f.path);
+        if (!groups[section]) groups[section] = [];
+        groups[section].push(f);
+      });
+
+      list.innerHTML = '';
+      sectionOrder.forEach(section => {
+        if (!groups[section] || groups[section].length === 0) return;
+        const label = document.createElement('div');
+        label.className = 'sidebar__group-label';
+        label.textContent = `${section} (${groups[section].length})`;
+        list.appendChild(label);
+
+        groups[section].sort((a, b) => a.path.localeCompare(b.path));
+        groups[section].forEach(f => {
+          const item = document.createElement('div');
+          item.className = 'sidebar__item' + (currentFile === f.path ? ' active' : '');
+          const draft = isDraft(f.path);
+          const icon = f.path.endsWith('.css') ? '🎨' : f.path.endsWith('.js') ? '⚡' : '📄';
+          item.innerHTML = `
+            <span>${icon}</span>
+            <span class="sidebar__item-name" title="${f.path}">${getPageTitle(f.path)}</span>
+            ${f.path.endsWith('.html') ? `<span class="sidebar__item-status ${draft ? 'status-draft' : 'status-published'}">${draft ? 'Draft' : 'Live'}</span>` : ''}
+          `;
+          item.addEventListener('click', () => openFile(f.path));
+          list.appendChild(item);
+        });
+      });
+
+      document.getElementById('pageCount').textContent =
+        `${htmlFiles.filter(f => f.path.endsWith('.html')).length} pages · ${htmlFiles.filter(f => !isDraft(f.path) && f.path.endsWith('.html')).length} live`;
+    }
+
+    // ============================================================
+    // OPEN FILE
+    // ============================================================
+    async function openFile(path) {
+      if (currentFile && editor && editor.getValue() !== originalContent) {
+        if (!confirm('You have unsaved changes. Discard them?')) return;
+      }
+
+      currentFile = path;
+      renderFileList(document.getElementById('searchInput').value);
+
+      document.getElementById('emptyState').style.display = 'none';
+      document.getElementById('editorToolbar').style.display = 'flex';
+      document.getElementById('editorContainer').style.display = 'block';
+      document.getElementById('editorPath').textContent = path;
+
+      // Show loading
+      const container = document.getElementById('editorContainer');
+      const loading = document.createElement('div');
+      loading.className = 'loading-overlay';
+      loading.innerHTML = '<div class="spinner"></div> Loading…';
+      container.appendChild(loading);
+
+      try {
+        const content = await loadFileContent(path);
+        originalContent = content;
+
+        if (!editor) {
+          editor = CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+            mode: 'htmlmixed',
+            theme: 'dracula',
+            lineNumbers: true,
+            lineWrapping: true,
+            autoCloseTags: true,
+            matchTags: { bothTags: true },
+            foldGutter: true,
+            gutters: ['CodeMirror-linenumbers', 'CodeMirror-foldgutter'],
+            extraKeys: {
+              'Ctrl-S': () => saveCurrentFile(),
+              'Cmd-S': () => saveCurrentFile(),
+              'Ctrl-F': 'findPersistent',
+              'Cmd-F': 'findPersistent',
+            }
+          });
+          editor.on('change', () => {
+            const modified = editor.getValue() !== originalContent;
+            document.getElementById('modifiedBadge').classList.toggle('show', modified);
+          });
+        }
+
+        editor.setValue(content);
+        editor.clearHistory();
+        document.getElementById('modifiedBadge').classList.remove('show');
+
+        // Update draft button
+        updateDraftButton();
+
+        // Set view
+        setView(currentView);
+
+      } catch (err) {
+        toast('Failed to load file: ' + err.message, 'error');
+      } finally {
+        const lo = container.querySelector('.loading-overlay');
+        if (lo) lo.remove();
+      }
+    }
+
+    // ============================================================
+    // SAVE FILE
+    // ============================================================
+    async function saveCurrentFile() {
+      if (!currentFile || !editor) return;
+
+      const btn = document.getElementById('saveBtn');
+      const text = document.getElementById('saveBtnText');
+      const spin = document.getElementById('saveBtnSpinner');
+      btn.disabled = true;
+      text.textContent = 'Saving…';
+      spin.style.display = 'inline-block';
+
+      try {
+        const content = editor.getValue();
+        const result = await saveFileContent(
+          currentFile,
+          content,
+          `Update ${currentFile}`,
+          currentSha
+        );
+        currentSha = result.content.sha;
+        originalContent = content;
+        document.getElementById('modifiedBadge').classList.remove('show');
+        toast('Saved & deploying to Netlify ✓');
+      } catch (err) {
+        toast('Save failed: ' + err.message, 'error');
+      } finally {
+        btn.disabled = false;
+        text.textContent = 'Save & Deploy';
+        spin.style.display = 'none';
+      }
+    }
+
+    // ============================================================
+    // VIEW MODES
+    // ============================================================
+    function setView(view) {
+      currentView = view;
+      const codeEl = document.getElementById('editorContainer');
+      const previewEl = document.getElementById('previewContainer');
+
+      document.querySelectorAll('.view-toggle button').forEach(b => b.classList.remove('active'));
+      document.querySelector(`[data-view="${view}"]`).classList.add('active');
+
+      if (view === 'code') {
+        codeEl.style.display = 'block';
+        codeEl.style.flex = '1';
+        previewEl.style.display = 'none';
+        editor && editor.refresh();
+      } else if (view === 'preview') {
+        codeEl.style.display = 'none';
+        previewEl.style.display = 'block';
+        previewEl.style.flex = '1';
+        updatePreview();
+      } else if (view === 'split') {
+        codeEl.style.display = 'block';
+        codeEl.style.flex = '1';
+        previewEl.style.display = 'block';
+        previewEl.style.flex = '1';
+        editor && editor.refresh();
+        updatePreview();
+      }
+    }
+
+    function updatePreview() {
+      if (!currentFile) return;
+      // For live preview, use the Netlify URL
+      const previewUrl = `${SITE_URL}/${currentFile}`;
+      document.getElementById('previewFrame').src = previewUrl;
+    }
+
+    // ============================================================
+    // DRAFT TOGGLE
+    // ============================================================
+    function updateDraftButton() {
+      const btn = document.getElementById('toggleDraftBtn');
+      if (!currentFile) return;
+      const draft = isDraft(currentFile);
+      btn.textContent = draft ? '✓ Set as Live' : '⏸ Set as Draft';
+      btn.className = draft ? 'btn btn-success btn-sm' : 'btn btn-secondary btn-sm';
+    }
+
+    async function toggleDraft() {
+      if (!currentFile) return;
+      const draftsSha = await loadDraftsConfig();
+      if (isDraft(currentFile)) {
+        drafts = drafts.filter(d => d !== currentFile);
+        toast(`${getPageTitle(currentFile)} set to Live ✓`);
+      } else {
+        drafts.push(currentFile);
+        toast(`${getPageTitle(currentFile)} set to Draft ✓`, 'info');
+      }
+      await saveDraftsConfig(draftsSha);
+      updateDraftButton();
+      renderFileList(document.getElementById('searchInput').value);
+    }
+
+    // ============================================================
+    // NEW PAGE
+    // ============================================================
+    function showNewPageModal(duplicate = false) {
+      document.getElementById('newPageModal').classList.add('show');
+      document.getElementById('modalTitle').textContent = duplicate ? 'Duplicate Page' : 'Create New Page';
+      document.getElementById('newPageTitle').value = '';
+      document.getElementById('newPageFilename').value = '';
+      if (duplicate && currentFile) {
+        document.getElementById('newPageTemplate').value = 'duplicate';
+        const section = currentFile.substring(0, currentFile.lastIndexOf('/') + 1);
+        document.getElementById('newPageSection').value = section || 'pages/';
+      } else {
+        document.getElementById('newPageTemplate').value = 'template';
+      }
+    }
+
+    document.getElementById('newPageTitle').addEventListener('input', (e) => {
+      const slug = e.target.value.toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+      document.getElementById('newPageFilename').value = slug ? slug + '.html' : '';
+    });
+
+    async function createNewPage() {
+      const title = document.getElementById('newPageTitle').value.trim();
+      const filename = document.getElementById('newPageFilename').value.trim();
+      const section = document.getElementById('newPageSection').value;
+      const templateType = document.getElementById('newPageTemplate').value;
+
+      if (!title || !filename) {
+        toast('Please enter a page title', 'error');
+        return;
+      }
+
+      const path = section + filename;
+
+      // Check if file already exists
+      if (files.find(f => f.path === path)) {
+        toast('A file with that name already exists', 'error');
+        return;
+      }
+
+      let content;
+      if (templateType === 'duplicate' && editor) {
+        content = editor.getValue();
+        // Update title in duplicated content
+        content = content.replace(/<title>.*?<\/title>/, `<title>${title} — Investigating Efforce</title>`);
+        content = content.replace(/<h1>.*?<\/h1>/, `<h1>${title}</h1>`);
+      } else {
+        // Load template
+        try {
+          content = await loadFileContent('pages/_template.html');
+          content = content.replace(/PAGE_TITLE/g, title);
+          content = content.replace(/PAGE_DESCRIPTION/g, `Investigation page: ${title}`);
+          content = content.replace(/SECTION_LABEL/g, section.replace('pages/', '').replace('/', '').toUpperCase() || 'INVESTIGATION');
+        } catch {
+          toast('Could not load template', 'error');
+          return;
+        }
+      }
+
+      try {
+        await saveFileContent(path, content, `Create ${path}`);
+        toast(`Created ${filename} ✓`);
+        document.getElementById('newPageModal').classList.remove('show');
+
+        // Refresh file list
+        const allFiles = await loadRepoTree();
+        files = allFiles;
+        renderFileList();
+
+        // Open the new file
+        await openFile(path);
+      } catch (err) {
+        toast('Failed to create page: ' + err.message, 'error');
+      }
+    }
+
+    // ============================================================
+    // DELETE PAGE
+    // ============================================================
+    function showDeleteModal() {
+      if (!currentFile) return;
+      document.getElementById('deleteFileName').textContent = currentFile;
+      document.getElementById('deleteModal').classList.add('show');
+    }
+
+    async function confirmDeletePage() {
+      if (!currentFile) return;
+      try {
+        await deleteFile(currentFile, currentSha, `Delete ${currentFile}`);
+        toast(`Deleted ${currentFile} ✓`);
+        document.getElementById('deleteModal').classList.remove('show');
+
+        // Remove from drafts if present
+        if (isDraft(currentFile)) {
+          const draftsSha = await loadDraftsConfig();
+          drafts = drafts.filter(d => d !== currentFile);
+          await saveDraftsConfig(draftsSha);
+        }
+
+        currentFile = null;
+        document.getElementById('emptyState').style.display = 'flex';
+        document.getElementById('editorToolbar').style.display = 'none';
+        document.getElementById('editorContainer').style.display = 'none';
+        document.getElementById('previewContainer').style.display = 'none';
+
+        const allFiles = await loadRepoTree();
+        files = allFiles;
+        renderFileList();
+      } catch (err) {
+        toast('Delete failed: ' + err.message, 'error');
+      }
+    }
+
+    // ============================================================
+    // INIT
+    // ============================================================
+    async function init() {
+      try {
+        // Verify token
+        await ghFetch(`/repos/${REPO_OWNER}/${REPO_NAME}`);
+
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('app').classList.add('active');
+
+        // Load files
+        const allFiles = await loadRepoTree();
+        files = allFiles;
+
+        // Load drafts config
+        await loadDraftsConfig();
+
+        renderFileList();
+        toast('Connected to GitHub ✓');
+
+      } catch (err) {
+        document.getElementById('loginError').style.display = 'block';
+        document.getElementById('loginError').textContent = 'Connection failed: ' + err.message;
+      }
+    }
+
+    // ============================================================
+    // EVENT LISTENERS
+    // ============================================================
+    document.getElementById('loginBtn').addEventListener('click', () => {
+      token = document.getElementById('tokenInput').value.trim();
+      if (!token) {
+        document.getElementById('loginError').style.display = 'block';
+        document.getElementById('loginError').textContent = 'Please enter a token';
+        return;
+      }
+      sessionStorage.setItem('gh_token', token);
+      init();
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      sessionStorage.removeItem('gh_token');
+      token = '';
+      location.reload();
+    });
+
+    document.getElementById('refreshBtn').addEventListener('click', async () => {
+      const allFiles = await loadRepoTree();
+      files = allFiles;
+      await loadDraftsConfig();
+      renderFileList(document.getElementById('searchInput').value);
+      toast('Refreshed ✓');
+    });
+
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      renderFileList(e.target.value);
+    });
+
+    document.getElementById('saveBtn').addEventListener('click', saveCurrentFile);
+    document.getElementById('toggleDraftBtn').addEventListener('click', toggleDraft);
+    document.getElementById('deletePageBtn').addEventListener('click', showDeleteModal);
+    document.getElementById('confirmDelete').addEventListener('click', confirmDeletePage);
+    document.getElementById('cancelDelete').addEventListener('click', () => {
+      document.getElementById('deleteModal').classList.remove('show');
+    });
+
+    document.getElementById('newPageBtn').addEventListener('click', () => showNewPageModal(false));
+    document.getElementById('duplicateBtn').addEventListener('click', () => {
+      if (!currentFile) { toast('Select a page first', 'error'); return; }
+      showNewPageModal(true);
+    });
+    document.getElementById('createPageBtn').addEventListener('click', createNewPage);
+    document.getElementById('cancelModal').addEventListener('click', () => {
+      document.getElementById('newPageModal').classList.remove('show');
+    });
+
+    document.querySelectorAll('.view-toggle button').forEach(btn => {
+      btn.addEventListener('click', () => setView(btn.dataset.view));
+    });
+
+    // Keyboard shortcut
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+        e.preventDefault();
+        saveCurrentFile();
+      }
+    });
+
+    // Close modals on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) overlay.classList.remove('show');
+      });
+    });
+
+    // Auto-login if token in session
+    const savedToken = sessionStorage.getItem('gh_token');
+    if (savedToken) {
+      token = savedToken;
+      document.getElementById('tokenInput').value = savedToken;
+      init();
+    }
+  </script>
+</body>
+</html>
