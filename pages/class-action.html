@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Action — Submit Your Claim — Investigating Efforce</title>
+  <meta name="description" content="Join the Efforce/WOZX class action. U.S. filing, zero cost to you. 2-minute submission. Contingency basis — you pay nothing unless we win. Case 25CV459519, Santa Clara County.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .claim-intro{text-align:center;max-width:680px;margin:0 auto var(--space-xl);font-size:var(--text-base);line-height:1.8;color:var(--grey-700)}
+    .claim-intro strong{color:var(--black)}
+    .nav-btns{display:flex;justify-content:center;gap:var(--space-md);flex-wrap:wrap;margin-bottom:var(--space-xl)}
+    .nav-btns a{font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;padding:var(--space-sm) var(--space-lg);border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;transition:all .15s}
+    .nav-btns a:hover{border-color:var(--accent-red);color:var(--accent-red)}
+    .form-section{max-width:700px;margin:0 auto var(--space-2xl);padding:var(--space-xl);border:3px solid var(--accent-red);position:relative}
+    .form-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--accent-red)}
+    .form-section h2{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;text-align:center;margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .form-section>p{text-align:center;font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-lg)}
+    .security-notice{display:flex;align-items:flex-start;gap:var(--space-sm);background:#f0fdf4;border:1px solid #16a34a;padding:var(--space-md);margin:var(--space-lg) auto;max-width:700px}
+    .security-notice svg{flex-shrink:0;width:20px;height:20px;color:#16a34a;margin-top:2px}
+    .security-notice p{font-size:var(--text-xs);line-height:1.6;color:#166534;margin:0}
+    .security-notice strong{color:#14532d}
+    .security-notice svg{flex-shrink:0;width:20px;height:20px;color:#16a34a;margin-top:2px}
+    .security-notice p{font-size:var(--text-xs);line-height:1.6;color:#166534;margin:0}
+    .security-notice strong{color:#14532d}
+    .process-section{max-width:700px;margin:var(--space-2xl) auto;padding:var(--space-xl);background:var(--grey-50);border:1px solid var(--grey-200)}
+    .process-section h3{font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;text-align:center;margin-bottom:var(--space-xl);color:var(--black)}
+    .process-step{display:grid;grid-template-columns:48px 1fr;gap:var(--space-md);margin-bottom:var(--space-lg);align-items:start}
+    .process-step__num{width:48px;height:48px;border-radius:50%;background:var(--accent-red);color:var(--white);font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .process-step__content h4{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);margin-bottom:2px;color:var(--black)}
+    .process-step__content p{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600);margin:0}
+    .process-step__content em{font-size:10px;color:var(--grey-400)}
+    .faq-section{max-width:700px;margin:var(--space-2xl) auto}
+    .faq-section h3{font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;margin-bottom:var(--space-lg);color:var(--black)}
+    .faq-item{border:1px solid var(--grey-200);margin-bottom:-1px}
+    .faq-item summary{padding:var(--space-md);font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);cursor:pointer;list-style:none;display:flex;align-items:center;gap:var(--space-sm);transition:background .1s}
+    .faq-item summary:hover{background:var(--grey-50)}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::before{content:'+';font-family:var(--font-mono);font-size:var(--text-lg);color:var(--accent-red);font-weight:900;min-width:20px}
+    .faq-item[open] summary::before{content:'\2212'}
+    .faq-item[open] summary{background:var(--grey-50);border-bottom:1px solid var(--grey-200)}
+    .faq-item__body{padding:var(--space-md)}
+    .faq-item__body p,.faq-item__body li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .faq-item__body ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .faq-item__body strong{color:var(--black)}
+    .process-table{width:100%;border-collapse:collapse;font-size:var(--text-xs);margin:var(--space-md) 0}
+    .process-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm);text-align:left;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+    .process-table td{padding:var(--space-sm);border-bottom:1px solid var(--grey-200);vertical-align:top}
+    .process-table tr:hover{background:var(--grey-50)}
+    .costs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:var(--space-md);margin:var(--space-md) 0}
+    .costs-card{padding:var(--space-md);border:1px solid var(--grey-200);text-align:center}
+    .costs-card h5{font-family:var(--font-display);font-weight:700;font-size:10px;color:var(--grey-500);margin-bottom:var(--space-xs);text-transform:uppercase}
+    .costs-card .val{font-family:var(--font-display);font-size:var(--text-xl);font-weight:900}
+    .costs-card .val--green{color:#16a34a}
+    .costs-card .small{font-size:10px;color:var(--grey-400);margin-top:2px}
+    .disclaimer-box{background:var(--grey-50);border:1px solid var(--grey-200);padding:var(--space-lg);margin:var(--space-xl) auto;max-width:700px}
+    .disclaimer-box p{font-size:var(--text-xs);line-height:1.7;color:var(--grey-500)}
+    /* NATIVE FORM */
+    .claim-form{max-width:100%}
+    .form-row{margin-bottom:var(--space-md)}
+    .form-label{display:block;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-500);margin-bottom:4px}
+    .form-label .req{color:var(--accent-red)}
+    .form-input{width:100%;padding:10px 12px;border:1px solid var(--grey-300);font-family:var(--font-body,Arial,sans-serif);font-size:var(--text-sm);color:var(--black);background:var(--white);transition:border-color .15s;box-sizing:border-box;-webkit-appearance:none;appearance:none}
+    .form-input:focus{outline:none;border-color:var(--accent-red);box-shadow:0 0 0 2px rgba(231,76,60,.12)}
+    .form-input::placeholder{color:var(--grey-400)}
+    select.form-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23999'%3E%3Cpath d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+    textarea.form-input{resize:vertical;min-height:60px}
+    .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md)}
+    .form-checkbox{display:flex;align-items:flex-start;gap:var(--space-sm);font-size:var(--text-xs);line-height:1.5;color:var(--grey-600);cursor:pointer}
+    .form-checkbox input{margin-top:3px;flex-shrink:0;accent-color:var(--accent-red)}
+    .form-checkbox a{color:var(--accent-red)}
+    .form-submit{background:var(--accent-red);color:var(--white);border:none;padding:14px 48px;font-family:var(--font-display);font-weight:900;font-size:var(--text-base);cursor:pointer;transition:background .15s;letter-spacing:.02em}
+    .form-submit:hover{background:#b91c1c}
+    .form-success{padding:var(--space-xl);background:#f0fdf4;border:2px solid #16a34a}
+    @media(max-width:768px){.form-grid-2{grid-template-columns:1fr}}
+    @media(max-width:768px){.process-step{grid-template-columns:36px 1fr;gap:var(--space-sm)}.process-step__num{width:36px;height:36px;font-size:var(--text-sm)}.costs-grid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#eb888499998e889f82848598ab82859d8e989f828c8a9f82858c8e8d8d8499888ec5888486"><span class="__cf_email__" data-cfemail="395a564b4b5c5a4d5056574a7950574f5c4a4d505e584d50575e5c5f5f564b5a5c175a5654">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item mega-menu__item--active"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Take Action</span>
+    <h1 class="page-hero__title">Class Action</h1>
+    <p class="page-hero__sub">U.S. Filing &middot; Zero Cost to You &middot; 2-Minute Submission</p>
+  </div></section>
+
+  <section class="section"><div class="container">
+
+    <p class="claim-intro">This is a <strong>U.S. class action</strong> to recover your WOZX losses. <strong>40+ claims = class opens</strong>. You pay <strong>$0</strong>. Non-binding. The class continues even if Copley withdraws. Case 25CV459519 is already filed in Santa Clara County, California.</p>
+
+    <div class="nav-btns">
+      <a href="#form">Submit Claim</a>
+      <a href="#process">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#costs">Costs &amp; Fees</a>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-section" id="form">
+      <h2>Submit Your Interest</h2>
+      <p>Fill out the form below (about 2 minutes). This is <strong>non-binding interest collection only</strong>. A full legal affidavit will be sent later if needed.</p>
+
+      <form name="class-action-claims" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="claim-form" id="claim-form">
+        <input type="hidden" name="form-name" value="class-action-claims">
+        <p style="display:none;"><label>Don&rsquo;t fill this out: <input name="bot-field"></label></p>
+
+        <div class="form-row">
+          <label class="form-label" for="name">Full Name <span class="req">*</span></label>
+          <input class="form-input" type="text" id="name" name="name" required placeholder="Your full legal name" autocomplete="name">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="email">Email Address <span class="req">*</span></label>
+          <input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label class="form-label" for="country">Country of Residence <span class="req">*</span></label>
+            <input class="form-input" type="text" id="country" name="country" required placeholder="e.g. United Kingdom" autocomplete="country-name">
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="nationality">Nationality</label>
+            <input class="form-input" type="text" id="nationality" name="nationality" placeholder="e.g. British">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label class="form-label" for="amount">Approximate WOZX Purchase Amount (USD) <span class="req">*</span></label>
+            <input class="form-input" type="text" id="amount" name="purchase_amount_usd" required placeholder="e.g. $5,000">
+          </div>
+          <div class="form-row">
+            <label class="form-label" for="exchange">Exchange(s) Used <span class="req">*</span></label>
+            <select class="form-input" id="exchange" name="exchange" required>
+              <option value="">Select exchange&hellip;</option>
+              <option value="HBTC">HBTC (formerly BHEX)</option>
+              <option value="Bithumb">Bithumb</option>
+              <option value="Uniswap">Uniswap</option>
+              <option value="HitBTC">HitBTC</option>
+              <option value="Gate.io">Gate.io</option>
+              <option value="Other">Other</option>
+              <option value="Multiple">Multiple exchanges</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="exchange_other">If &ldquo;Other&rdquo; or &ldquo;Multiple,&rdquo; please specify</label>
+          <input class="form-input" type="text" id="exchange_other" name="exchange_other" placeholder="e.g. Bittrex, KuCoin">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="purchase_dates">Approximate Purchase Date(s)</label>
+          <input class="form-input" type="text" id="purchase_dates" name="purchase_dates" placeholder="e.g. Dec 2020 – Mar 2021">
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="still_holding">Do you still hold WOZX tokens?</label>
+          <select class="form-input" id="still_holding" name="still_holding">
+            <option value="">Select&hellip;</option>
+            <option value="Yes - all">Yes &mdash; all tokens</option>
+            <option value="Yes - some">Yes &mdash; some tokens</option>
+            <option value="No - sold at loss">No &mdash; sold at a loss</option>
+            <option value="No - sold at profit">No &mdash; sold at a profit</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label class="form-label" for="notes">Additional Information (optional)</label>
+          <textarea class="form-input" id="notes" name="notes" rows="3" placeholder="Any additional context about your purchase, communications with Efforce, or evidence you hold."></textarea>
+        </div>
+
+        <div class="form-row" style="margin-top:var(--space-md);">
+          <label class="form-checkbox">
+            <input type="checkbox" name="consent" required>
+            <span>I understand this is a <strong>non-binding expression of interest</strong>. I consent to my data being shared with appointed legal counsel for the purpose of evaluating a class action. I can withdraw at any time by emailing <a href="/cdn-cgi/l/email-protection#17747865657274637e787964577e79617264637e7076637e7970727171786574723974787a"><span class="__cf_email__" data-cfemail="d4b7bba6a6b1b7a0bdbbbaa794bdbaa2b1a7a0bdb3b5a0bdbab3b1b2b2bba6b7b1fab7bbb9">[email&#160;protected]</span></a>.</span>
+          </label>
+        </div>
+
+        <div class="form-row" style="margin-top:var(--space-md);">
+          <label class="form-checkbox">
+            <input type="checkbox" name="privacy_consent" required>
+            <span>I consent to my data being processed in accordance with GDPR. My data will not be sold or shared with third parties beyond legal counsel.</span>
+          </label>
+        </div>
+
+        <div class="form-row" style="text-align:center;margin-top:var(--space-lg);">
+          <button type="submit" class="form-submit">Submit My Claim &rarr;</button>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-top:var(--space-xs);">HTTPS encrypted &middot; GDPR compliant &middot; No financial data collected</p>
+        </div>
+      </form>
+
+      <!-- SUCCESS MESSAGE (hidden by default, shown after submit) -->
+      <div id="submitted" class="form-success" style="display:none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" style="width:48px;height:48px;margin:0 auto var(--space-md);display:block;"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3 style="color:#16a34a;font-family:var(--font-display);font-weight:900;text-align:center;margin-bottom:var(--space-sm);">Claim Submitted Successfully</h3>
+        <p style="text-align:center;font-size:var(--text-sm);color:var(--grey-600);">Thank you. Your expression of interest has been recorded. You will receive a confirmation email shortly. If you have any questions, contact <a href="/cdn-cgi/l/email-protection#5c3f332e2e393f283533322f1c35322a392f28353b3d2835323b393a3a332e3f39723f3331"><span class="__cf_email__" data-cfemail="ff9c908d8d9a9c8b9690918cbf9691899a8c8b96989e8b9691989a9999908d9c9ad19c9092">[email&#160;protected]</span></a>.</p>
+      </div>
+    </div>
+
+    <!-- SECURITY -->
+    <div class="security-notice">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <p><strong>Your data is secure.</strong> Transmitted over HTTPS with TLS 1.3 encryption. Shared only with appointed legal counsel. We do not collect bank details, card numbers, or wallet private keys. Processed under GDPR. Never sold or shared with third parties. Request deletion anytime: <a href="/cdn-cgi/l/email-protection#c0a3afb2b2a5a3b4a9afaeb380a9aeb6a5b3b4a9a7a1b4a9aea7a5a6a6afb2a3a5eea3afad" style="color:#166534;"><span class="__cf_email__" data-cfemail="65060a17170006110c0a0b16250c0b130016110c0204110c0b020003030a1706004b060a08">[email&#160;protected]</span></a>.</p>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="process-section" id="process">
+      <h3>What Happens After You Submit?</h3>
+      <div class="process-step"><div class="process-step__num">1</div><div class="process-step__content"><h4>You Sign (2 mins) &rarr; Claim Registered</h4><p>No cost. No obligation. Opt out anytime.</p><em>Now</em></div></div>
+      <div class="process-step"><div class="process-step__num">2</div><div class="process-step__content"><h4>40+ Sign &rarr; Class Opens</h4><p>Private group chat created. Contingency lawyer hired (you pay $0).</p><em>Q1&ndash;Q2 2026</em></div></div>
+      <div class="process-step"><div class="process-step__num">3</div><div class="process-step__content"><h4>Complaint Filed in U.S. Court</h4><p>Filed in SDNY or California. Efforce served. Motion to dismiss phase (~75% survive).</p><em>Q2&ndash;Q4 2026</em></div></div>
+      <div class="process-step"><div class="process-step__num">4</div><div class="process-step__content"><h4>Settlement or Lawsuit</h4><p>Efforce offers settlement or we proceed. Discovery phase. ~80% of class actions settle.</p><em>Q3 2026&ndash;Q2 2027</em></div></div>
+      <div class="process-step"><div class="process-step__num">5</div><div class="process-step__content"><h4>Recovery</h4><p>Judge approves settlement. You receive 55&ndash;70% after fees. Example: $100K loss &rarr; ~$65K back.</p><em>2027</em></div></div>
+      <p style="text-align:center;font-family:var(--font-display);font-weight:700;color:var(--black);margin-top:var(--space-lg);">Your effort: 2 minutes now. That&rsquo;s it.</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin:var(--space-xl) 0;">
+      <a href="#form" style="display:inline-block;background:var(--accent-red);color:var(--white);padding:var(--space-md) var(--space-2xl);font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);text-decoration:none;transition:background .15s;">Submit Your Claim &mdash; 2 mins, No Cost &uarr;</a>
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-top:var(--space-xs);">HTTPS encrypted &middot; GDPR compliant &middot; No financial data collected</p>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section" id="faq">
+      <h3>Frequently Asked Questions</h3>
+
+      <details class="faq-item"><summary>Why join the class action?</summary><div class="faq-item__body"><ul><li><strong>Strength in Numbers:</strong> 40+ holders = one powerful case.</li><li><strong>No Cost to You:</strong> Lawyers paid only if we win (25&ndash;35% success fee).</li><li><strong>Non-Binding:</strong> Withdraw anytime before settlement.</li><li><strong>U.S. Jurisdiction:</strong> Wozniak/Hardesty are U.S. citizens; Times Square marketing; U.S.-based investor confirmed; active California lawsuit (25CV459519).</li></ul></div></details>
+
+      <details class="faq-item"><summary>What are the benefits?</summary><div class="faq-item__body"><ul><li><strong>No Upfront Fees:</strong> $0 to join.</li><li><strong>No Time Commitment:</strong> Lawyers handle all work.</li><li><strong>No Risk:</strong> If we lose, you pay nothing.</li><li><strong>Not Guaranteed:</strong> Success depends on evidence &mdash; but the evidence base is strong (blockchain data, insider admissions, court filings).</li></ul></div></details>
+
+      <details class="faq-item"><summary>Step-by-step process</summary><div class="faq-item__body"><table class="process-table"><thead><tr><th>Step</th><th>What Happens</th><th>Your Role</th><th>When</th></tr></thead><tbody><tr><td>1. Submit</td><td>2-min form. Non-binding. Lawyer reviews.</td><td>Click button</td><td><strong>Now</strong></td></tr><tr><td>2. 40+ Claims</td><td>Class opens. Complaint drafted.</td><td>Nothing</td><td><strong>Q1&ndash;Q2 2026</strong></td></tr><tr><td>3. File</td><td>Complaint filed (SDNY/CA). Efforce served.</td><td>Nothing</td><td><strong>Q2&ndash;Q3 2026</strong></td></tr><tr><td>4. Dismiss</td><td>Motion to dismiss. Judge rules.</td><td>Nothing</td><td><strong>Q3&ndash;Q4 2026</strong></td></tr><tr><td>5. Certify</td><td>Class certified. Numerosity, commonality.</td><td>Nothing</td><td><strong>Q3&ndash;Q4 2026</strong></td></tr><tr><td>6. Settle</td><td>Demand letter. Discovery. ~80% settle.</td><td>Approve offer</td><td><strong>Q3&ndash;Q4 2026</strong></td></tr><tr><td>7. Payout</td><td>Judge approves. 55&ndash;70% after fees.</td><td>Receive funds</td><td><strong>2027</strong></td></tr></tbody></table></div></details>
+
+      <details class="faq-item" id="costs"><summary>Costs and fees</summary><div class="faq-item__body"><div class="costs-grid"><div class="costs-card"><h5>Your Cost</h5><div class="val val--green">$0</div></div><div class="costs-card"><h5>Lawyer Fee</h5><div class="val">25&ndash;35%</div><div class="small">of recovery, only if we win</div></div><div class="costs-card"><h5>Admin Fee</h5><div class="val">5&ndash;10%</div><div class="small">court-approved distribution</div></div><div class="costs-card"><h5>You Keep</h5><div class="val val--green">55&ndash;70%</div></div><div class="costs-card"><h5>If We Lose</h5><div class="val val--green">$0</div><div class="small">you pay nothing</div></div></div></div></details>
+
+      <details class="faq-item"><summary>How much time do I need?</summary><div class="faq-item__body"><p><strong>2 minutes now</strong> (submit form). <strong>0 minutes later</strong> (lawyer handles everything). <strong>1 email</strong> if a settlement offer is made.</p></div></details>
+
+      <details class="faq-item"><summary>Is my submission binding?</summary><div class="faq-item__body"><p><strong>No.</strong> You can withdraw at any time before settlement. No obligation. No cost. This is an expression of interest, not a legal commitment.</p></div></details>
+
+      <details class="faq-item"><summary>What is Michael Copley&rsquo;s role?</summary><div class="faq-item__body"><p><strong>Michael Copley currently intends to act as lead plaintiff</strong>, but makes no guarantee and may withdraw at any time. Once the class is certified (40+ members), <strong>the action continues with or without him</strong>. A new lead plaintiff may be appointed by the court if needed.</p></div></details>
+
+      <details class="faq-item"><summary>I&rsquo;m not a U.S. citizen &mdash; can I still join?</summary><div class="faq-item__body"><p><strong>Yes.</strong> U.S. class actions can include global claimants where the conduct has a U.S. nexus. The defendants include U.S. citizens (Wozniak, Hardesty), the private investor is U.S.-based, and WOZX was marketed in the U.S. Active California lawsuit. Your nationality does not prevent you from participating.</p></div></details>
+
+      <details class="faq-item"><summary>How is my data protected?</summary><div class="faq-item__body"><p>We collect only: name, email, country, approximate WOZX purchase amount, exchange used. <strong>We do not collect</strong> bank details, card numbers, wallet private keys, or identity documents at this stage. All data transmitted over <strong>HTTPS/TLS 1.3</strong>, stored securely, shared only with legal counsel under attorney-client privilege. Processed under <strong>GDPR</strong>. Request deletion anytime: <a href="/cdn-cgi/l/email-protection#781b170a0a1d1b0c1117160b3811160e1d0b0c111f190c11161f1d1e1e170a1b1d561b1715"><span class="__cf_email__" data-cfemail="27444855554244534e484954674e49514254534e4046534e4940424141485544420944484a">[email&#160;protected]</span></a>.</p></div></details>
+    </div>
+
+    <!-- FINAL CTA -->
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--black-soft);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-xl);font-weight:900;color:var(--white);font-family:var(--font-display);margin-bottom:var(--space-md);">Ready to submit your claim?</p>
+      <p style="font-size:var(--text-sm);color:var(--grey-400);margin-bottom:var(--space-lg);">2 minutes. No cost. Non-binding. Withdraw anytime.</p>
+      <a href="#form" style="display:inline-block;background:var(--accent-red);color:var(--white);padding:var(--space-md) var(--space-2xl);font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);text-decoration:none;">Submit Your Claim &uarr;</a>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer-box">
+      <p><strong>Important Disclaimer:</strong> This page collects expressions of interest for a potential class action. It does not constitute legal advice. No attorney-client relationship is formed by submitting the form. Past results are not a guarantee of future outcomes. The 55&ndash;70% recovery estimate is illustrative only. All statements on this site are alleged. Published under Defamation Act 2013 s.4 (public interest). See <a href="public-interest.html">full notice</a>.</p>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#07646875756264736e686974476e69716274736e6066736e6960626161687564622964686a">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#a1c2ced3d3c4c2d5c8cecfd2e1c8cfd7c4d2d5c8c6c0d5c8cfc6c4c7c7ced3c2c48fc2cecc"><span class="__cf_email__" data-cfemail="4f2c203d3d2a2c3b2620213c0f2621392a3c3b26282e3b2621282a2929203d2c2a612c2022">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/nav.js"></script>
+  <script>
+    // Show success message if redirected back after Netlify form submit
+    if(window.location.hash==='#submitted'||window.location.search.includes('success=true')){
+      var f=document.getElementById('claim-form');
+      var s=document.getElementById('submitted');
+      if(f)f.style.display='none';
+      if(s)s.style.display='block';
+      s&&s.scrollIntoView({behavior:'smooth',block:'center'});

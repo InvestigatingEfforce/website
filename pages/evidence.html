@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evidence &amp; Resources — Searchable Repository — Investigating Efforce</title>
+  <meta name="description" content="Complete evidence repository for the Efforce/WOZX investigation. Official documents, company accounts, searchable quote database, screenshots. For media, legal counsel, and affected investors.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block p{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .tab-nav{display:flex;gap:0;border-bottom:2px solid var(--grey-200);margin-bottom:var(--space-xl);overflow-x:auto}
+    .tab-btn{padding:var(--space-sm) var(--space-lg);font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--grey-500);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;margin-bottom:-2px;transition:all .15s}
+    .tab-btn:hover{color:var(--black)}
+    .tab-btn.active{color:var(--accent-red);border-bottom-color:var(--accent-red);font-weight:700}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    /* DOCUMENT CARDS */
+    .doc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .doc-card{border:1px solid var(--grey-200);padding:var(--space-md);transition:border-color .15s;display:flex;flex-direction:column}
+    .doc-card:hover{border-color:var(--accent-red)}
+    .doc-card__type{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--white);background:var(--black-soft);padding:2px 8px;display:inline-block;margin-bottom:var(--space-xs)}
+    .doc-card__type--pdf{background:var(--accent-red)}
+    .doc-card__type--link{background:#1d4ed8}
+    .doc-card__type--registry{background:#16a34a}
+    .doc-card__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);margin-bottom:var(--space-xs)}
+    .doc-card__desc{font-size:var(--text-xs);line-height:1.5;color:var(--grey-500);flex:1}
+    .doc-card__date{font-family:var(--font-mono);font-size:9px;color:var(--grey-400);margin-top:var(--space-sm)}
+    .doc-card__links{margin-top:var(--space-sm);display:flex;gap:var(--space-sm);flex-wrap:wrap}
+    .doc-card__link{font-family:var(--font-mono);font-size:10px;color:var(--accent-red);text-decoration:underline}
+    /* ACCOUNTS TABLE */
+    .accounts-table{width:100%;border-collapse:collapse;font-size:var(--text-xs);margin:var(--space-lg) 0}
+    .accounts-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.04em;position:sticky;top:0}
+    .accounts-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top}
+    .accounts-table tr:hover{background:var(--grey-50)}
+    .accounts-table .flag{font-size:10px;padding:1px 6px;font-family:var(--font-mono);font-weight:700}
+    .flag--red{background:#fee2e2;color:var(--accent-red)}
+    .flag--amber{background:#fff8e1;color:#b8860b}
+    .flag--green{background:#f0fdf4;color:#16a34a}
+    /* SEARCH & FILTER */
+    .search-bar{display:flex;gap:var(--space-sm);margin-bottom:var(--space-lg);flex-wrap:wrap}
+    .search-input{flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--grey-300);font-family:var(--font-body,Arial,sans-serif);font-size:var(--text-sm);transition:border-color .15s}
+    .search-input:focus{outline:none;border-color:var(--accent-red);box-shadow:0 0 0 2px rgba(231,76,60,.12)}
+    .filter-select{padding:10px 32px 10px 12px;border:1px solid var(--grey-300);font-family:var(--font-mono);font-size:var(--text-xs);background:var(--white);-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%23999'%3E%3Cpath d='M5 7L0 2h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;cursor:pointer}
+    .result-count{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-bottom:var(--space-md)}
+    /* EVIDENCE CARDS */
+    .evidence-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--space-md)}
+    .ev-card{border:1px solid var(--grey-200);overflow:hidden;transition:border-color .15s}
+    .ev-card:hover{border-color:var(--accent-red)}
+    .ev-card__img{width:100%;height:180px;object-fit:cover;display:block;background:var(--grey-100);cursor:pointer}
+    .ev-card__body{padding:var(--space-sm) var(--space-md)}
+    .ev-card__tags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:var(--space-xs)}
+    .ev-tag{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.06em;padding:1px 6px;background:var(--grey-100);color:var(--grey-500)}
+    .ev-tag--person{background:#eff6ff;color:#1d4ed8}
+    .ev-tag--topic{background:#fef3c7;color:#92400e}
+    .ev-tag--source{background:#f0fdf4;color:#166534}
+    .ev-card__quote{font-style:italic;font-size:var(--text-xs);line-height:1.5;color:var(--grey-700);margin:var(--space-xs) 0}
+    .ev-card__meta{font-family:var(--font-mono);font-size:9px;color:var(--grey-400)}
+    .ev-card__link{font-family:var(--font-mono);font-size:10px;color:var(--accent-red);text-decoration:underline;display:inline-block;margin-top:var(--space-xs)}
+    /* LIGHTBOX */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:var(--space-lg);cursor:pointer}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:95%;max-height:90vh;object-fit:contain}
+    .lightbox__close{position:absolute;top:20px;right:20px;color:var(--white);font-size:32px;cursor:pointer;font-family:var(--font-mono);z-index:10000}
+    .toc{background:var(--grey-50);padding:var(--space-lg);margin:var(--space-xl) 0;border:1px solid var(--grey-200)}
+    .toc h4{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .toc a{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;display:inline-block;margin-right:var(--space-lg);line-height:2}
+    .toc a:hover{color:var(--accent-red);text-decoration:underline}
+    .no-results{text-align:center;padding:var(--space-2xl);color:var(--grey-400);font-family:var(--font-mono);font-size:var(--text-sm)}
+    @media(max-width:768px){.doc-grid{grid-template-columns:1fr}.evidence-grid{grid-template-columns:1fr}.search-bar{flex-direction:column}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#07646875756264736e686974476e69716274736e6066736e6960626161687564622964686a"><span class="__cf_email__" data-cfemail="24474b56564147504d4b4a57644d4a524157504d4345504d4a434142424b5647410a474b49">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Repository</span>
+    <h1 class="page-hero__title">Evidence &amp; Resources</h1>
+    <p class="page-hero__sub">Searchable Repository &middot; Official Documents &middot; Company Accounts &middot; Screenshot Evidence</p>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> For media, legal counsel, and affected investors</div><div class="defamation-banner__text">All documents publicly available. Posted for transparency. No new allegations &mdash; context only. <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#c4a7abb6b6a1a7b0adabaab784adaab2a1b7b0ada3a5b0adaaa3a1a2a2abb6a7a1eaa7aba9"><span class="__cf_email__" data-cfemail="9dfef2efeff8fee9f4f2f3eeddf4f3ebf8eee9f4fafce9f4f3faf8fbfbf2effef8b3fef2f0">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <!-- TABS -->
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" onclick="showTab('docs')" role="tab">Official Documents</button>
+      <button class="tab-btn" onclick="showTab('accounts')" role="tab">Company Accounts</button>
+      <button class="tab-btn" onclick="showTab('evidence')" role="tab">Evidence Library</button>
+    </div>
+
+    <!-- TAB 1: OFFICIAL DOCUMENTS -->
+    <div class="tab-panel active" id="tab-docs">
+      <h3>Whitepapers &amp; Roadmaps</h3>
+      <p>Original Efforce publications. All hosted locally for preservation.</p>
+      <div class="doc-grid">
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--pdf">PDF</span>
+          <div class="doc-card__title">Efforce One-Pager (2019)</div>
+          <div class="doc-card__desc">Overview of token utility, market size ($241B energy efficiency), tokenomics (1B WOZX, 15% emission).</div>
+          <div class="doc-card__date">2019</div>
+          <div class="doc-card__links"><a href="../documents/EFFORCE_ONE_PAGER.pdf" class="doc-card__link" download>Download PDF</a></div>
+        </div>
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--pdf">PDF</span>
+          <div class="doc-card__title">Technical Whitepaper (2018)</div>
+          <div class="doc-card__desc">Early concept for blockchain-based energy savings marketplace. Pre-dates Wozniak involvement.</div>
+          <div class="doc-card__date">2018</div>
+          <div class="doc-card__links"><a href="../documents/Technical Whitepaper 2018.pdf" class="doc-card__link" download>Download PDF</a></div>
+        </div>
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--pdf">PDF</span>
+          <div class="doc-card__title">Efforce Whitepaper V1</div>
+          <div class="doc-card__desc">Detailed tokenomics, utility description, funds usage. Contains U.S. person prohibition (p.10) and vesting schedules.</div>
+          <div class="doc-card__date">Dec 6, 2020</div>
+          <div class="doc-card__links"><a href="../documents/Efforce Whitepaper V1.pdf" class="doc-card__link" download>Download PDF</a></div>
+        </div>
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--pdf">PDF</span>
+          <div class="doc-card__title">Efforce Roadmap 2021</div>
+          <div class="doc-card__desc">Promised Q1 2021 platform launch, staking, T1 exchange listings. None delivered on schedule.</div>
+          <div class="doc-card__date">Jan 10, 2021</div>
+          <div class="doc-card__links"><a href="../documents/EFFORCE_ROADMAP_2021_01.pdf" class="doc-card__link" download>Download PDF</a></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-2xl);">Press Releases</h3>
+      <div class="doc-grid">
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--link">LINK</span>
+          <div class="doc-card__title">Steve Wozniak Launches Efforce</div>
+          <div class="doc-card__desc">PRNewswire: &ldquo;Democratize and Finance Energy Efficiency Investments Worldwide&rdquo; &mdash; WOZX listing on HBTC announced.</div>
+          <div class="doc-card__date">Dec 4, 2020</div>
+          <div class="doc-card__links"><a href="https://www.prnewswire.com/news-releases/steve-wozniak-launches-his-next-billion-dollar-venture-to-democratize-and-finance-energy-efficiency-investments-worldwide-301186307.html" class="doc-card__link" target="_blank" rel="noopener">Read on PRNewswire &rarr;</a></div>
+        </div>
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--link">LINK</span>
+          <div class="doc-card__title">Bloomberg: Huobi Strategic Investment</div>
+          <div class="doc-card__desc">Huobi&rsquo;s &ldquo;strategic investment&rdquo; in Efforce announced. Key evidence for HTX Ventures / private investor nexus.</div>
+          <div class="doc-card__date">Dec 14, 2020</div>
+          <div class="doc-card__links"><a href="https://www.bloomberg.com" class="doc-card__link" target="_blank" rel="noopener">Bloomberg</a></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-2xl);">Exchange Documents</h3>
+      <div class="doc-grid">
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--pdf">PDF</span>
+          <div class="doc-card__title">Efforce Response to Bithumb Delisting</div>
+          <div class="doc-card__desc">Efforce&rsquo;s reply claiming &ldquo;big success&rdquo; despite unfulfilled commitments including $1.2M marketing and $50M off-take agreements.</div>
+          <div class="doc-card__date">Jun 23, 2022</div>
+          <div class="doc-card__links"><a href="../documents/Efforce_Bithumb_Response.pdf" class="doc-card__link" download>Download PDF</a></div>
+        </div>
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--pdf">PDF</span>
+          <div class="doc-card__title">Bithumb Response to Efforce</div>
+          <div class="doc-card__desc">Confirmation: no contract existed; delisting due to $1.2M marketing / $50M off-take failures. Non-official Gmail addresses used for notices.</div>
+          <div class="doc-card__date">Jun 23, 2022</div>
+          <div class="doc-card__links"><a href="../documents/Bithumb_Response_NonOfficialEmails.pdf" class="doc-card__link" download>Download PDF</a></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-2xl);">Court Filings</h3>
+      <div class="doc-grid">
+        <div class="doc-card">
+          <span class="doc-card__type doc-card__type--link">LINK</span>
+          <div class="doc-card__title">Case 25CV459519 &mdash; Public Docket</div>
+          <div class="doc-card__desc">Superior Court of California, Santa Clara County. Benner &amp; Copley v. Wozniak, Hardesty, Visetti, Vanetti, Castiglione, Carloni, Efforce, AitherCO2, MBM Holdings.</div>
+          <div class="doc-card__date">Filed Feb 27, 2025</div>
+          <div class="doc-card__links"><a href="https://portal.scscourt.org/case/NTc0NzYzOA==" class="doc-card__link" target="_blank" rel="noopener">View Public Docket &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: COMPANY ACCOUNTS -->
+    <div class="tab-panel" id="tab-accounts">
+      <h3>Company Accounts &amp; Registry Filings</h3>
+      <p>Official filings from public registries across four jurisdictions. All publicly accessible.</p>
+
+      <div style="overflow-x:auto;margin:var(--space-lg) 0;border:1px solid var(--grey-200);">
+        <table class="accounts-table">
+          <thead>
+            <tr>
+              <th>Entity</th>
+              <th>Jurisdiction</th>
+              <th>Registry</th>
+              <th>Key Data</th>
+              <th>Status</th>
+              <th>Links</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Efforce Ltd</strong></td>
+              <td>Malta (C 94737)</td>
+              <td>Malta Business Registry</td>
+              <td>&euro;25K revenue, 0 employees, &euro;342,780 cumulative losses, &euro;0 staff costs (2019&ndash;2022)</td>
+              <td><span class="flag flag--red">0 EMPLOYEES</span></td>
+              <td><a href="https://mbr.mt/search" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">MBR Search</a> &middot; <a href="../documents/Malta_Filings_Feb2025.pdf" download style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>Efforce Ltd</strong></td>
+              <td>Bahamas</td>
+              <td>SCB Registry</td>
+              <td>No filings since 2022. Nominal capital &lt;$50K. Token issuer per whitepaper.</td>
+              <td><span class="flag flag--red">NO FILINGS</span></td>
+              <td><a href="https://www.scb.gov.bs/registry-search" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">SCB Search</a> &middot; <a href="../documents/Bahamas_NoFilings_2025.pdf" download style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>AitherCO2 S.p.A.</strong></td>
+              <td>Italy</td>
+              <td>Italian Chamber of Commerce (CCIAA)</td>
+              <td>&euro;319.9M tax liability (notified Oct 2018). &euro;408M losses (Apr 2022). &euro;583K provisioned (2018).</td>
+              <td><span class="flag flag--red">&euro;319.9M TAX</span></td>
+              <td><a href="https://www.registroimprese.it" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">CCIAA</a> &middot; <a href="../documents/AitherCO2_TaxNotice.pdf" download style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>MBM Holdings AG</strong></td>
+              <td>Switzerland</td>
+              <td>ZEFIX / Commercial Register</td>
+              <td>No filings since May 2021. Acquired 42.5% Efforce for &euro;510 (Dec 15, 2020). Ownership undisclosed.</td>
+              <td><span class="flag flag--amber">NO FILINGS</span></td>
+              <td><a href="https://www.zefix.ch" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">ZEFIX</a> &middot; <a href="../documents/MBM_NoFilings_2025.pdf" download style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>Gerbsman Partners</strong></td>
+              <td>USA (California)</td>
+              <td>California SOS</td>
+              <td>Ken Hardesty: CEO in Residence. Dubai event promotion (Dec 6, 2021).</td>
+              <td><span class="flag flag--amber">LINKED</span></td>
+              <td><a href="individuals/ken-hardesty.html" style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);">Profile</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="font-family:var(--font-display);font-weight:900;margin-top:var(--space-xl);color:var(--accent-red);">Malta Filings Summary (Efforce Ltd, C 94737)</h4>
+      <div style="overflow-x:auto;margin:var(--space-md) 0;border:1px solid var(--grey-200);">
+        <table class="accounts-table">
+          <thead><tr><th>Year</th><th>Revenue</th><th>Employees</th><th>Staff Costs</th><th>Net Result</th><th>Cumulative</th></tr></thead>
+          <tbody>
+            <tr><td>2019</td><td>&euro;25,008</td><td style="color:var(--accent-red);font-weight:700;">0</td><td style="color:var(--accent-red);font-weight:700;">&euro;0</td><td>&minus;&euro;93,700</td><td>&minus;&euro;93,700</td></tr>
+            <tr><td>2020</td><td>&euro;0</td><td style="color:var(--accent-red);font-weight:700;">0</td><td style="color:var(--accent-red);font-weight:700;">&euro;0</td><td>&minus;&euro;110,233</td><td>&minus;&euro;203,933</td></tr>
+            <tr><td>2021</td><td>&euro;0</td><td style="color:var(--accent-red);font-weight:700;">0</td><td style="color:var(--accent-red);font-weight:700;">&euro;0</td><td>&minus;&euro;85,104</td><td>&minus;&euro;289,037</td></tr>
+            <tr><td>2022</td><td>&euro;0</td><td style="color:var(--accent-red);font-weight:700;">0</td><td style="color:var(--accent-red);font-weight:700;">&euro;0</td><td>&minus;&euro;53,743</td><td>&minus;&euro;342,780</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-top:var(--space-sm);">No trace of $12.5M&ndash;$36M token-sale proceeds or $68M+ treasury transfers in any filing.</p>
+    </div>
+
+    <!-- TAB 3: EVIDENCE LIBRARY -->
+    <div class="tab-panel" id="tab-evidence">
+      <h3>Searchable Evidence Library</h3>
+      <p>Screenshots, quotes, and primary evidence. Search by keyword, filter by person or topic. Click any image to enlarge. For media and legal use.</p>
+
+      <div class="search-bar">
+        <input type="text" class="search-input" id="ev-search" placeholder="Search quotes, topics, dates&hellip;" oninput="filterEvidence()">
+        <select class="filter-select" id="ev-person" onchange="filterEvidence()">
+          <option value="">All People</option>
+          <option value="castiglione">Andrea Castiglione</option>
+          <option value="visetti">Jacopo Visetti</option>
+          <option value="pastore">Paolo Pastore</option>
+          <option value="vanetti">Jacopo Vanetti</option>
+          <option value="wozniak">Steve Wozniak</option>
+          <option value="hardesty">Ken Hardesty</option>
+          <option value="carloni">Sergio Carloni</option>
+        </select>
+        <select class="filter-select" id="ev-topic" onchange="filterEvidence()">
+          <option value="">All Topics</option>
+          <option value="vesting">Vesting</option>
+          <option value="private-investor">Private Investor</option>
+          <option value="treasury">Treasury / ETW</option>
+          <option value="platform">Platform Delivery</option>
+          <option value="aither">AitherCO2</option>
+          <option value="seele">SEELE / Digital Cash</option>
+          <option value="wozniak-role">Wozniak Role</option>
+          <option value="legal-threats">Legal Threats</option>
+          <option value="exchange">Exchange Listings</option>
+        </select>
+        <select class="filter-select" id="ev-source" onchange="filterEvidence()">
+          <option value="">All Sources</option>
+          <option value="telegram">Telegram</option>
+          <option value="discord">Discord</option>
+          <option value="private">Private Communication</option>
+          <option value="filing">Official Filing</option>
+          <option value="press">Press / Media</option>
+          <option value="blockchain">Blockchain</option>
+        </select>
+      </div>
+      <div class="result-count" id="ev-count"></div>
+
+      <div class="evidence-grid" id="ev-grid">
+
+        <!-- EVIDENCE ITEMS — expandable database -->
+
+        <!-- === VESTING & TOKEN MOVEMENT === -->
+        <div class="ev-card" data-person="castiglione" data-topic="vesting" data-source="telegram" data-text="NONE OF THEM HAS THE INTENTION TO SELL private investors vesting December 2020">
+          <img class="ev-card__img" src="https://i.gyazo.com/01ba63cd4aef7cfc300799a4020bc703.png" alt="Castiglione: NONE OF THEM HAS THE INTENTION TO SELL" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo;</div>
+            <div class="ev-card__meta">Dec 2, 2020 &middot; Official Efforce Telegram &middot; Same day as 25.7M WOZX pre-listing transfer</div>
+            <a href="individuals/andrea-castiglione.html" class="ev-card__link">Full profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="castiglione" data-topic="vesting" data-source="telegram" data-text="we haven't moved a single token team tokens September 2021">
+          <img class="ev-card__img" src="https://i.gyazo.com/20b94533a5cc2c61e41834f80bafcab0.png" alt="Castiglione: haven't moved a single token" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;What are you talking about we haven&rsquo;t moved a single token&rdquo;</div>
+            <div class="ev-card__meta">Sep 13, 2021 &middot; Telegram &middot; $68M+ already transferred from treasury</div>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="castiglione" data-topic="vesting" data-source="telegram" data-text="negotiated with backers not smart contracts enforcement December 2020">
+          <img class="ev-card__img" src="https://i.gyazo.com/8cb5cea109b8eba80ec4ff78058531d5.png" alt="Castiglione: not smart contracts" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;Negotiated with backers, not smart contracts&rdquo;</div>
+            <div class="ev-card__meta">Dec 6, 2020 &middot; Telegram &middot; Zero on-chain vesting enforcement</div>
+            <a href="vesting.html" class="ev-card__link">Vesting analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="castiglione" data-topic="vesting" data-source="telegram" data-text="nothing illegal October 2021 186.6M WOZX dump">
+          <img class="ev-card__img" src="https://i.gyazo.com/fab9bf12601617e8d27d4843f8f75bfa.png" alt="Castiglione: Nothing illegal" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;Nothing illegal.&rdquo;</div>
+            <div class="ev-card__meta">Oct 29, 2021 &middot; Telegram &middot; Same day as 186.6M WOZX dump ($69.2M)</div>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="vesting" data-source="blockchain" data-text="retroactive vesting start September 2019 disclosed August 2024 four years late">
+          <img class="ev-card__img" src="https://i.gyazo.com/56ecd4ada3585f488ff654379907c31b.png" alt="Retroactive vesting disclosure" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Blockchain</span></div>
+            <div class="ev-card__quote">Aug 2024: Efforce retroactively claimed vesting started Sep 23, 2019 &mdash; 14 months before listing, never disclosed to retail investors</div>
+            <div class="ev-card__meta">Disclosed Aug 2024 &middot; 4 years after listing</div>
+            <a href="vesting.html" class="ev-card__link">Vesting analysis &rarr;</a>
+          </div>
+        </div>
+
+        <!-- === PRIVATE INVESTORS === -->
+        <div class="ev-card" data-person="castiglione" data-topic="private-investor" data-source="telegram" data-text="450M tokens were sold to Asia-based institutional investors December 2020">
+          <img class="ev-card__img" src="https://i.gyazo.com/4832a6df3f499004ebec3be2dedee25c.png" alt="Castiglione: Asia-based institutional investors" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;450M tokens were sold to Asia-based institutional investors&rdquo;</div>
+            <div class="ev-card__meta">Dec 12, 2020 &middot; Telegram &middot; Contradicted by Visetti: U.S.-based investors</div>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="castiglione" data-topic="private-investor" data-source="telegram" data-text="cornerstone investors who are strategic and long-term holding December 2020">
+          <img class="ev-card__img" src="https://i.gyazo.com/ed02a2f5d6c5b34446ae6ea535d0019f.png" alt="Castiglione: cornerstone investors" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;Cornerstone investors who are strategic and long-term holding&rdquo;</div>
+            <div class="ev-card__meta">Dec 2020 &middot; Telegram &middot; HTX Ventures, DWF Labs, Ellipti all trading firms</div>
+            <a href="private-investors.html" class="ev-card__link">Private investor analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="visetti" data-topic="private-investor" data-source="private" data-text="One from NYC Western US regulated entity Chinese descent November 2023">
+          <img class="ev-card__img" src="https://i.gyazo.com/8cb5cea109b8eba80ec4ff78058531d5.png" alt="Visetti: One from NYC, Western US" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Visetti</span><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">&ldquo;One from NYC&hellip; Western US. One of the two investors is also a regulated entity.&rdquo;</div>
+            <div class="ev-card__meta">Nov 18, 2023 &middot; Private call &middot; Contradicts Asia-based claims</div>
+            <a href="visetti-call.html" class="ev-card__link">Full call analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="pastore" data-topic="private-investor" data-source="private" data-text="pumped and dumped by private investors November 2022">
+          <img class="ev-card__img" src="https://i.gyazo.com/d0e175af2a4608825e0f56a04e89f99d.png" alt="Pastore: pumped and dumped" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Pastore</span><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">&ldquo;Pumped and dumped by private investors&rdquo;</div>
+            <div class="ev-card__meta">Nov 15, 2022 &middot; Private communication &middot; Managing Director admission</div>
+            <a href="individuals/paolo-pastore.html" class="ev-card__link">Full profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="pastore" data-topic="private-investor" data-source="private" data-text="sold to US VC 49 million alt-coins wallet 3 February 2025">
+          <img class="ev-card__img" src="https://i.gyazo.com/caac03d9432c95e31b37342608a195f7.png" alt="Pastore: sold to US VC" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Pastore</span><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--topic">Treasury</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">&ldquo;Sold to U.S. VC&rdquo; &mdash; Wallet 3 (75M WOZX): $49M in alt-coins</div>
+            <div class="ev-card__meta">Feb 2025 &middot; Private communication &middot; Confirms U.S. nexus</div>
+            <a href="treasury-wallet.html" class="ev-card__link">Treasury analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="private-investor" data-source="blockchain" data-text="HTX Ventures 45 million entire private sale icodrops 450M WOZX one round">
+          <img class="ev-card__img" src="https://i.gyazo.com/a1fca2a7c44bd05316f8aba74ffc1f2a.png" alt="ICODrops: HTX Ventures $45M" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">ICODrops</span></div>
+            <div class="ev-card__quote">ICODrops: HTX Ventures invested $45M in 1 round for entire 450M WOZX private sale</div>
+            <div class="ev-card__meta">ICODrops &middot; 0.01x paper ROI vs 291.34x HTX portfolio average</div>
+            <a href="private-investors.html" class="ev-card__link">Full HTX analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="private-investor" data-source="blockchain" data-text="DWF Labs Ellipti market makers trading firms Pitchbook not long-term investors">
+          <img class="ev-card__img" src="https://i.gyazo.com/d0d5c68ddb5b86b81fc2bc4ea49bec3c.png" alt="DWF Labs and Ellipti identification" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">Pitchbook</span></div>
+            <div class="ev-card__quote">DWF Labs (fmr DWF Options) &amp; Ellipti identified via Pitchbook &mdash; both market makers, not long-term institutional investors</div>
+            <div class="ev-card__meta">Pitchbook &middot; Contradicts &ldquo;cornerstone investor&rdquo; narrative</div>
+            <a href="private-investors.html" class="ev-card__link">Full analysis &rarr;</a>
+          </div>
+        </div>
+
+        <!-- === TREASURY / ETW === -->
+        <div class="ev-card" data-person="visetti" data-topic="treasury" data-source="private" data-text="wallet key holders Carloni Hardesty Vanetti July 2024 multi-sig">
+          <img class="ev-card__img" src="https://i.gyazo.com/ef21a3d6fa3d92fdddfbcaba8f3b63e4.png" alt="Visetti: wallet key holders" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Visetti</span><span class="ev-tag ev-tag--topic">Treasury</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">Wallet key holders: Carloni, Hardesty, Vanetti</div>
+            <div class="ev-card__meta">Jul 15, 2024 &middot; Private communication &middot; Identifies treasury controllers</div>
+            <a href="treasury-wallet.html" class="ev-card__link">Treasury analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="treasury" data-source="blockchain" data-text="550M treasury 173M transferred 160M unaccounted 68 million 92 percent">
+          <img class="ev-card__img" src="https://i.gyazo.com/e7ae171a46fd6c754f0320d52642c1e8.png" alt="Treasury wallet outflows" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Treasury</span><span class="ev-tag ev-tag--source">Blockchain</span></div>
+            <div class="ev-card__quote">550M WOZX treasury: 173.3M transferred to 15 wallets &mdash; 160.2M ($68.1M) unaccounted (92.4%)</div>
+            <div class="ev-card__meta">Etherscan &middot; On-chain data &middot; Only 7.6% has identified purpose</div>
+            <a href="treasury-wallet.html" class="ev-card__link">Full breakdown &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="treasury" data-source="blockchain" data-text="wallet 1 25M WOZX pre-listing December 2 2020 43.9 million distribution hub">
+          <img class="ev-card__img" src="https://i.gyazo.com/356af0091f8ceb05d0e4879fe09a1cd3.png" alt="Wallet 1: pre-listing breach" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Treasury</span><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Blockchain</span></div>
+            <div class="ev-card__quote">Wallet 1: 25M WOZX ($43.9M) transferred Dec 2, 2020 &mdash; pre-listing breach, primary distribution hub</div>
+            <div class="ev-card__meta">Etherscan &middot; Same day Castiglione said &ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo;</div>
+          </div>
+        </div>
+
+        <!-- === WOZNIAK === -->
+        <div class="ev-card" data-person="wozniak" data-topic="wozniak-role" data-source="press" data-text="shares of stock Yahoo Finance December 2020 Howey Test securities">
+          <img class="ev-card__img" src="https://i.gyazo.com/1c73f19486667baa5f0946e844715d0c.png" alt="Wozniak: shares of stock" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Wozniak</span><span class="ev-tag ev-tag--topic">Wozniak Role</span><span class="ev-tag ev-tag--source">Press</span></div>
+            <div class="ev-card__quote">&ldquo;I see owning WOZX as shares of stock&rdquo;</div>
+            <div class="ev-card__meta">Dec 8, 2020 &middot; Yahoo Finance &middot; Howey Test implication</div>
+            <a href="individuals/steve-wozniak.html" class="ev-card__link">Full profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="wozniak" data-topic="wozniak-role" data-source="press" data-text="Times Square billboard December 22 2020 US promotional activity marketing">
+          <img class="ev-card__img" src="https://i.gyazo.com/71d953506b4d717de982e5934f5e945a.png" alt="Times Square Efforce billboard" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Wozniak</span><span class="ev-tag ev-tag--topic">Wozniak Role</span><span class="ev-tag ev-tag--source">Press</span></div>
+            <div class="ev-card__quote">Efforce billboard in Times Square, New York City</div>
+            <div class="ev-card__meta">Dec 22, 2020 &middot; Despite whitepaper: &ldquo;not directed at&hellip; United States&rdquo;</div>
+            <a href="us-nexus.html" class="ev-card__link">U.S. nexus analysis &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="pastore" data-topic="wozniak-role" data-source="private" data-text="Woz abandoned ship August 2023">
+          <img class="ev-card__img" src="https://i.gyazo.com/b7fad3e0085477e41c8e7c59fbf4e95d.png" alt="Pastore: Woz abandoned ship" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Pastore</span><span class="ev-tag ev-tag--topic">Wozniak Role</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">&ldquo;Woz&hellip; abandoned ship&rdquo;</div>
+            <div class="ev-card__meta">Aug 24, 2023 &middot; Private communication</div>
+          </div>
+        </div>
+
+        <!-- === AITHER / PLATFORM === -->
+        <div class="ev-card" data-person="castiglione" data-topic="aither" data-source="telegram" data-text="AitherCO2 250M revenue mother company financial strength 2020">
+          <img class="ev-card__img" src="https://i.gyazo.com/867d7037b1b0174ddc73bf69a8f532b8.png" alt="Castiglione: AitherCO2 strength" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">AitherCO2</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;AitherCO2 &mdash; $250M revenue&hellip; our mother company&rdquo;</div>
+            <div class="ev-card__meta">2020 &middot; Telegram &middot; Concealed &euro;319.9M tax liability and &euro;408M losses</div>
+            <a href="entities/aitherco2.html" class="ev-card__link">Entity profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="aither" data-source="filing" data-text="319.9 million euro tax liability October 2018 583K provisioned Italy CCIAA">
+          <img class="ev-card__img" src="https://i.gyazo.com/920ac17d363bf12eb51784e7997de13f.png" alt="AitherCO2 tax liability" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">AitherCO2</span><span class="ev-tag ev-tag--source">Filing</span></div>
+            <div class="ev-card__quote">&euro;319.9M tax liability notified Oct 2018. Only &euro;583K provisioned. &euro;408M cumulative losses by Apr 2022.</div>
+            <div class="ev-card__meta">Italian Chamber of Commerce (CCIAA) &middot; Public filing</div>
+            <a href="../documents/AitherCO2_TaxNotice.pdf" class="ev-card__link" download>Download filing &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="platform" data-source="filing" data-text="Malta 0 employees zero staff costs 25K revenue 342K losses C94737">
+          <img class="ev-card__img" src="https://i.gyazo.com/fcc4fc46cd67cc281dd9bd951de61667.png" alt="Malta filings: 0 employees" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Platform</span><span class="ev-tag ev-tag--source">Filing</span></div>
+            <div class="ev-card__quote">Efforce Ltd (Malta C 94737): &euro;25K total revenue, 0 employees, &euro;0 staff costs, &euro;342,780 cumulative losses (2019&ndash;2022)</div>
+            <div class="ev-card__meta">Malta Business Registry &middot; Feb 12, 2025</div>
+            <a href="../documents/Malta_Filings_Feb2025.pdf" class="ev-card__link" download>Download filing &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="castiglione" data-topic="platform" data-source="telegram" data-text="80 million dollar valuation 12 million funding round tokenomics 2020">
+          <img class="ev-card__img" src="https://i.gyazo.com/13a21fe5067697c7e2f9ff23887217a7.png" alt="$80M valuation claim" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Castiglione</span><span class="ev-tag ev-tag--topic">Platform</span><span class="ev-tag ev-tag--source">Telegram</span></div>
+            <div class="ev-card__quote">&ldquo;$80M valuation&rdquo; claimed during token sale &mdash; Efforce Ltd share capital was &euro;12,000</div>
+            <div class="ev-card__meta">2020 &middot; Telegram &middot; Valuation fraud allegation</div>
+          </div>
+        </div>
+
+        <!-- === SEELE / CHINESE INVESTORS === -->
+        <div class="ev-card" data-person="" data-topic="seele" data-source="private" data-text="SeeleN Digital Cash Chinese investors 10 dollar price target HBTC required withdrawal">
+          <img class="ev-card__img" src="https://i.gyazo.com/315b9191475d5241b0fa195842549bcc.png" alt="SeeleN Chinese investor network" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">SEELE</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">SeeleN members required to receive WOZX within HBTC. $10 price target promoted. HBTC closure destroyed trading histories.</div>
+            <div class="ev-card__meta">Chinese whistleblower testimony</div>
+            <a href="private-investors.html" class="ev-card__link">Full analysis &rarr;</a>
+          </div>
+        </div>
+
+        <!-- === LEGAL THREATS === -->
+        <div class="ev-card" data-person="visetti" data-topic="legal-threats" data-source="private" data-text="extradition NY defamation US shareholder December 2023">
+          <img class="ev-card__img" src="https://i.gyazo.com/5963db0162e5e7e5154815ef1ddf5060.png" alt="Visetti: extradition threat" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Visetti</span><span class="ev-tag ev-tag--topic">Legal Threats</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">&ldquo;One of the US shareholders is seeking your extradition to NY for defamation&rdquo;</div>
+            <div class="ev-card__meta">Dec 16, 2023 &middot; Legally impossible remedy</div>
+            <a href="legal-threats.html" class="ev-card__link">Legal threats page &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="legal-threats" data-source="filing" data-text="Hogan Lovells Bird Bird Giambrone 34 legal letters no substantive rebuttal">
+          <img class="ev-card__img" src="https://i.gyazo.com/cdf3c46d4614727328d8a4196aacd7bb.png" alt="34 legal communications" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Legal Threats</span><span class="ev-tag ev-tag--source">Filing</span></div>
+            <div class="ev-card__quote">34 legal communications from Hogan Lovells, Bird &amp; Bird, Giambrone &amp; Partners &mdash; none contained substantive evidence-based rebuttals</div>
+            <div class="ev-card__meta">May 2024&ndash;Present &middot; Legal correspondence</div>
+            <a href="legal-threats.html" class="ev-card__link">Full log &rarr;</a>
+          </div>
+        </div>
+
+        <!-- === EXCHANGE === -->
+        <div class="ev-card" data-person="" data-topic="exchange" data-source="filing" data-text="Bithumb delisting 1.2M marketing 50M offtake failures non-official Gmail">
+          <img class="ev-card__img" src="https://i.gyazo.com/7f8ad57018b5f9ac31707bc5b5a02666.png" alt="Bithumb delisting" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Exchange</span><span class="ev-tag ev-tag--source">Filing</span></div>
+            <div class="ev-card__quote">Bithumb delisting: $1.2M marketing &amp; $50M off-take commitments unfulfilled. Notices sent to non-official Gmail addresses.</div>
+            <div class="ev-card__meta">Jun 23, 2022 &middot; Bithumb correspondence</div>
+            <a href="../documents/Bithumb_Response_NonOfficialEmails.pdf" class="ev-card__link" download>Download filing &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="exchange" data-source="blockchain" data-text="HBTC closure September 2021 October trading closed withdrawal deadline November">
+          <img class="ev-card__img" src="https://i.gyazo.com/abd5e1f867949a9903d9f83c2d11834c.png" alt="HBTC closure timeline" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Exchange</span><span class="ev-tag ev-tag--source">Blockchain</span></div>
+            <div class="ev-card__quote">HBTC closure: announced Sep 25 &rarr; trading closed Oct 16 &rarr; shutdown Oct 23 &rarr; 186.6M WOZX dump Oct 29 &rarr; withdrawal deadline Nov 23</div>
+            <div class="ev-card__meta">Oct 2021 &middot; All intra-exchange trading histories destroyed</div>
+            <a href="private-investors.html" class="ev-card__link">Full timeline &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="" data-topic="exchange" data-source="blockchain" data-text="99.2 percent market dominance listing day Efforce private investor controlled supply">
+          <img class="ev-card__img" src="https://i.gyazo.com/77744883d88fa35c49b201da736d0017.png" alt="99.2% market dominance" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">Exchange</span><span class="ev-tag ev-tag--topic">Vesting</span><span class="ev-tag ev-tag--source">Blockchain</span></div>
+            <div class="ev-card__quote">Efforce / PI controlled 99.2% of vested supply on listing day (Dec 3, 2020)</div>
+            <div class="ev-card__meta">On-chain analysis &middot; Retail had no meaningful supply access</div>
+            <a href="vesting.html" class="ev-card__link">Vesting analysis &rarr;</a>
+          </div>
+        </div>
+
+        <!-- === VISETTI CALL === -->
+        <div class="ev-card" data-person="visetti" data-topic="private-investor" data-source="private" data-text="Visetti call November 18 2023 regulatory probes US enforcement November 2023">
+          <img class="ev-card__img" src="https://i.gyazo.com/2048562cd6c29f48d7c03c4cd7f2f80b.png" alt="Visetti Nov 2023 call" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Visetti</span><span class="ev-tag ev-tag--topic">Private Investor</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">Visetti confirmed: U.S.-based PIs, regulatory probes, Hardesty as MPI selector, &ldquo;one is a regulated entity&rdquo;</div>
+            <div class="ev-card__meta">Nov 18, 2023 &middot; Recorded with consent</div>
+            <a href="visetti-call.html" class="ev-card__link">Full call transcript &rarr;</a>
+          </div>
+        </div>
+
+        <div class="ev-card" data-person="visetti" data-topic="treasury" data-source="private" data-text="Visetti call July 15 2024 wallet keys Carloni Hardesty Vanetti multi-sig">
+          <img class="ev-card__img" src="https://i.gyazo.com/de18c8b7abcd9627d24455d143376bd6.png" alt="Visetti: wallet key confirmation" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--person">Visetti</span><span class="ev-tag ev-tag--topic">Treasury</span><span class="ev-tag ev-tag--source">Private</span></div>
+            <div class="ev-card__quote">&ldquo;Carloni, Hardesty, and Vanetti hold the wallet keys&rdquo;</div>
+            <div class="ev-card__meta">Jul 15, 2024 &middot; Private communication</div>
+          </div>
+        </div>
+
+        <!-- === MBM HOLDINGS === -->
+        <div class="ev-card" data-person="" data-topic="aither" data-source="filing" data-text="MBM Holdings AG acquired 42.5 percent Efforce 510 euros December 15 2020 Switzerland">
+          <img class="ev-card__img" src="https://i.gyazo.com/c6e39ed96cd761e2107576958cbe31d4.png" alt="MBM acquired 42.5% for €510" onclick="openLightbox(this.src)" loading="lazy">
+          <div class="ev-card__body">
+            <div class="ev-card__tags"><span class="ev-tag ev-tag--topic">AitherCO2</span><span class="ev-tag ev-tag--source">Filing</span></div>
+            <div class="ev-card__quote">MBM Holdings AG acquired 42.5% of Efforce for &euro;510 on Dec 15, 2020 &mdash; 12 days after listing at $1B+ market cap</div>
+            <div class="ev-card__meta">Swiss Commercial Register &middot; Ownership undisclosed</div>
+            <a href="entities/mbm-holdings.html" class="ev-card__link">Entity profile &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-results" id="no-results" style="display:none;">No evidence items match your search. Try different keywords or reset filters.</div>
+
+      <p style="text-align:center;margin-top:var(--space-xl);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);">This is a representative sample. The full evidence database contains 200+ items. Additional screenshots will be added progressively. <br>For specific evidence requests, contact <a href="/cdn-cgi/l/email-protection#147971707d75547d7a627167607d7375607d7a737172727b6677713a777b79"><span class="__cf_email__" data-cfemail="0f626a6b666e4f6661796a7c7b66686e7b6661686a6969607d6c6a216c6062">[email&#160;protected]</span></a>.</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox__close">&times;</span>
+    <img id="lightbox-img" src="" alt="Evidence screenshot">
+  </div>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#85e6eaf7f7e0e6f1eceaebf6c5ecebf3e0f6f1ece2e4f1ecebe2e0e3e3eaf7e6e0abe6eae8">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#93f0fce1e1f6f0e7fafcfde0d3fafde5f6e0e7faf4f2e7fafdf4f6f5f5fce1f0f6bdf0fcfe"><span class="__cf_email__" data-cfemail="c2a1adb0b0a7a1b6abadacb182abacb4a7b1b6aba5a3b6abaca5a7a4a4adb0a1a7eca1adaf">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/nav.js"></script>
+  <script>
+    // TAB SWITCHING
+    function showTab(id){
+      document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+      document.getElementById('tab-'+id).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // EVIDENCE SEARCH & FILTER
+    function filterEvidence(){
+      var q=(document.getElementById('ev-search').value||'').toLowerCase();
+      var person=document.getElementById('ev-person').value;
+      var topic=document.getElementById('ev-topic').value;
+      var source=document.getElementById('ev-source').value;
+      var cards=document.querySelectorAll('.ev-card');
+      var shown=0;
+      cards.forEach(function(c){
+        var text=(c.getAttribute('data-text')||'')+(c.textContent||'');
+        text=text.toLowerCase();
+        var matchQ=!q||text.indexOf(q)!==-1;
+        var matchP=!person||c.getAttribute('data-person')===person;
+        var matchT=!topic||c.getAttribute('data-topic')===topic;
+        var ma

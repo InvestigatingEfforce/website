@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigating Efforce — $400M in Alleged Losses. Zero Employees. Zero Accountability.</title>
+  <meta name="description" content="A public interest investigation into Efforce Ltd, the WOZX token, Steve Wozniak, and alleged $400M+ investor losses across 5 jurisdictions. Court filings, blockchain evidence, company accounts.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://investigatingefforce.com/">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/icon-black.png">
+  <meta property="og:title" content="Investigating Efforce — $400M Alleged Losses. Zero Accountability.">
+  <meta property="og:description" content="Apple co-founder Steve Wozniak lent his name to a token that lost 99.9% of its value. On-chain evidence, court filings, and insider communications tell the story.">
+  <meta property="og:image" content="images/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ============================================================
+       HOMEPAGE-SPECIFIC STYLES
+       ============================================================ */
+
+    /* HERO */
+    .hero{background:var(--black);color:var(--white);padding:0;overflow:hidden;position:relative}
+    .hero__inner{max-width:var(--max-width);margin:0 auto;padding:var(--space-4xl) var(--space-xl) var(--space-3xl);position:relative;z-index:2}
+    .hero__overline{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--accent-red);margin-bottom:var(--space-lg);display:flex;align-items:center;gap:var(--space-sm)}
+    .hero__overline::before{content:'';width:40px;height:1px;background:var(--accent-red)}
+    .hero__stat{font-family:var(--font-display);font-size:clamp(4rem,12vw,9rem);font-weight:900;line-height:.85;letter-spacing:-.04em;margin-bottom:var(--space-md)}
+    .hero__stat span{color:var(--accent-red)}
+    .hero__headline{font-family:var(--font-display);font-size:clamp(1.5rem,3.5vw,2.5rem);font-weight:400;font-style:italic;color:var(--grey-400);line-height:1.3;max-width:700px;margin-bottom:var(--space-xl)}
+    .hero__lede{font-size:var(--text-sm);line-height:1.8;color:var(--grey-400);max-width:620px;margin-bottom:var(--space-xl)}
+    .hero__lede strong{color:var(--white)}
+    .hero__actions{display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center}
+    .hero__btn{display:inline-block;padding:14px 28px;font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;text-decoration:none;font-weight:600;transition:all .15s}
+    .hero__btn--primary{background:var(--accent-red);color:var(--white);border:1px solid var(--accent-red)}
+    .hero__btn--primary:hover{background:var(--accent-red-dark)}
+    .hero__btn--outline{background:transparent;color:var(--white);border:1px solid var(--grey-600)}
+    .hero__btn--outline:hover{border-color:var(--white)}
+    .hero__case{position:absolute;bottom:var(--space-xl);right:var(--space-xl);font-family:var(--font-mono);font-size:9px;color:var(--grey-700);text-align:right;line-height:1.8}
+    .hero__case a{color:var(--grey-500);text-decoration:underline}
+    .hero__grid-line{position:absolute;top:0;right:10%;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(196,30,30,.15),transparent);z-index:1}
+    .hero__grid-line:nth-child(2){right:20%}
+    .hero__grid-line:nth-child(3){right:30%;opacity:.5}
+
+    /* TICKER BAR */
+    .ticker{background:var(--accent-red);padding:10px 0;overflow:hidden;position:relative}
+    .ticker__inner{display:flex;gap:var(--space-3xl);animation:ticker 40s linear infinite;white-space:nowrap;will-change:transform}
+    .ticker__item{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--white);display:flex;align-items:center;gap:var(--space-sm);flex-shrink:0}
+    .ticker__dot{width:4px;height:4px;background:rgba(255,255,255,.5);border-radius:50%}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+    /* NUMBERS SECTION */
+    .numbers{background:var(--white);padding:var(--space-3xl) 0}
+    .numbers__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--grey-200);border:1px solid var(--grey-200);max-width:var(--max-width);margin:0 auto}
+    .num-card{background:var(--white);padding:var(--space-xl) var(--space-lg);text-align:center}
+    .num-card__figure{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:900;color:var(--black);line-height:1}
+    .num-card__figure--red{color:var(--accent-red)}
+    .num-card__label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-top:var(--space-sm)}
+    .num-card__detail{font-size:var(--text-xs);color:var(--grey-500);margin-top:var(--space-xs);line-height:1.4}
+
+    /* PROMISE VS REALITY */
+    .pvr{background:var(--grey-50);padding:var(--space-4xl) 0}
+    .pvr__grid{display:grid;grid-template-columns:1fr 1fr;max-width:var(--max-width);margin:0 auto;padding:0 var(--space-xl)}
+    .pvr__col{padding:var(--space-xl)}
+    .pvr__col--promise{border-right:1px solid var(--grey-200)}
+    .pvr__col-head{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--space-xl)}
+    .pvr__col--promise .pvr__col-head{color:var(--grey-400)}
+    .pvr__col--reality .pvr__col-head{color:var(--accent-red)}
+    .pvr__item{padding:var(--space-md) 0;border-bottom:1px solid var(--grey-200)}
+    .pvr__item:last-child{border-bottom:none}
+    .pvr__item-title{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);margin-bottom:4px}
+    .pvr__item-text{font-size:var(--text-xs);color:var(--grey-600);line-height:1.5}
+    .pvr__item-source{font-family:var(--font-mono);font-size:9px;color:var(--grey-400);margin-top:4px}
+
+    /* SECTION HEADERS */
+    .sec-head{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-xl) var(--space-xl)}
+    .sec-head__overline{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-red);margin-bottom:var(--space-sm);display:flex;align-items:center;gap:var(--space-sm)}
+    .sec-head__overline::before{content:'';width:24px;height:1px;background:var(--accent-red)}
+    .sec-head__title{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--black);line-height:1.1}
+
+    /* EVIDENCE SECTION */
+    .evidence-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);max-width:var(--max-width);margin:0 auto;padding:0 var(--space-xl)}
+    .ev-highlight{border:1px solid var(--grey-200);transition:border-color .15s;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+    .ev-highlight:hover{border-color:var(--accent-red)}
+    .ev-highlight__top{padding:var(--space-lg);flex:1;display:flex;flex-direction:column}
+    .ev-highlight__overline{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-red);margin-bottom:var(--space-sm)}
+    .ev-highlight__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--black);margin-bottom:var(--space-sm);line-height:1.3}
+    .ev-highlight__desc{font-size:var(--text-xs);color:var(--grey-500);line-height:1.6;flex:1}
+    .ev-highlight__bottom{padding:var(--space-sm) var(--space-lg);background:var(--grey-50);font-family:var(--font-mono);font-size:10px;color:var(--grey-400);border-top:1px solid var(--grey-200);display:flex;justify-content:space-between}
+    .ev-highlight__arrow{color:var(--accent-red)}
+
+    /* QUOTE BAND */
+    .quote-band{background:var(--black);padding:var(--space-4xl) var(--space-xl);text-align:center}
+    .quote-band__text{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:400;font-style:italic;color:var(--white);max-width:800px;margin:0 auto;line-height:1.4}
+    .quote-band__text em{color:var(--accent-red);font-style:normal;font-weight:700}
+    .quote-band__attr{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:var(--space-lg);text-transform:uppercase;letter-spacing:.06em}
+    .quote-band__note{font-family:var(--font-mono);font-size:10px;color:var(--grey-700);margin-top:var(--space-sm)}
+
+    /* INVESTIGATION HUB */
+    .hub{padding:var(--space-4xl) 0;background:var(--white)}
+    .hub__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-md);max-width:var(--max-width);margin:0 auto;padding:0 var(--space-xl)}
+    .hub-card{border:1px solid var(--grey-200);padding:var(--space-lg);text-decoration:none;color:inherit;transition:all .15s;display:flex;flex-direction:column}
+    .hub-card:hover{border-color:var(--accent-red);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .hub-card__icon{font-size:24px;margin-bottom:var(--space-sm)}
+    .hub-card__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--black);margin-bottom:var(--space-xs)}
+    .hub-card__stat{font-family:var(--font-mono);font-size:10px;color:var(--accent-red);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--space-sm)}
+    .hub-card__desc{font-size:var(--text-xs);color:var(--grey-500);line-height:1.5;flex:1}
+    .hub-card__link{font-family:var(--font-mono);font-size:10px;color:var(--accent-red);margin-top:var(--space-sm);text-decoration:underline}
+
+    /* CTA SECTION */
+    .cta-section{background:var(--black);padding:var(--space-4xl) var(--space-xl);text-align:center}
+    .cta-section__title{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--white);margin-bottom:var(--space-sm)}
+    .cta-section__sub{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin-bottom:var(--space-xl);text-transform:uppercase;letter-spacing:.04em}
+    .cta-grid{display:flex;justify-content:center;gap:var(--space-md);flex-wrap:wrap;margin-bottom:var(--space-xl)}
+    .cta-grid .hero__btn{padding:16px 32px}
+    .cta-section__note{font-family:var(--font-mono);font-size:10px;color:var(--grey-600)}
+
+    /* COMMUNITY BAR */
+    .community{background:var(--grey-50);padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .community__inner{max-width:var(--max-width);margin:0 auto;padding:0 var(--space-xl);display:flex;justify-content:center;align-items:center;gap:var(--space-xl);flex-wrap:wrap}
+    .community__link{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;display:flex;align-items:center;gap:var(--space-sm);transition:color .15s}
+    .community__link:hover{color:var(--accent-red)}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){.numbers__grid{grid-template-columns:repeat(2,1fr)}.evidence-row{grid-template-columns:1fr}}
+    @media(max-width:768px){.pvr__grid{grid-template-columns:1fr}.pvr__col--promise{border-right:none;border-bottom:1px solid var(--grey-200)}.hub__grid{grid-template-columns:1fr}.hero__case{display:none}.numbers__grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- NOTICE BAR -->
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. Case 25CV459519: <em>Benner &amp; Copley v. Wozniak, Efforce Ltd et al.</em> No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#7c1f130e0e191f081513120f3c15120a190f08151b1d0815121b191a1a130e1f19521f1311"><span class="__cf_email__" data-cfemail="2c4f435e5e494f584543425f6c45425a495f58454b4d5845424b494a4a435e4f49024f4341">[email&#160;protected]</span></a> &middot; <a href="pages/public-interest.html#defamation">Full Notice</a> &middot; <a href="pages/public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <!-- HEADER -->
+  <header class="site-header"><div class="site-header__inner"><a href="index.html" class="site-header__brand"><img src="images/logo-white.png" alt="Investigating Efforce" class="site-header__logo" height="28" style="filter:brightness(1);"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="pages/key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="pages/timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="pages/entities.html">Entities</a></li><li class="mega-menu__item"><a href="pages/individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="pages/evidence.html">Evidence</a></li><li class="mega-menu__item"><a href="pages/legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="pages/class-action.html" style="color:var(--accent-red);font-weight:700;">Class Action</a></li></ul></nav></div></header>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero__grid-line"></div>
+    <div class="hero__grid-line"></div>
+    <div class="hero__grid-line"></div>
+    <div class="hero__inner">
+      <div class="hero__overline">Public Interest Investigation</div>
+      <div class="hero__stat">$400<span>M</span></div>
+      <h1 class="hero__headline">in alleged investor losses.<br>Zero employees. Zero accountability.</h1>
+      <p class="hero__lede">Apple co-founder <strong>Steve Wozniak</strong> lent his name to Efforce, a blockchain energy platform that launched the WOZX token in December 2020. The price has since fallen <strong>99.9%</strong>. On-chain evidence, corporate filings across five countries, and insider communications reveal what may be one of the largest alleged pump-and-dump schemes in crypto history.</p>
+      <div class="hero__actions">
+        <a href="pages/class-action.html" class="hero__btn hero__btn--primary">Join the Class Action &rarr;</a>
+        <a href="pages/key-claims.html" class="hero__btn hero__btn--outline">Read the Evidence</a>
+      </div>
+      <div class="hero__case">
+        Case 25CV459519<br>
+        Superior Court of California<br>
+        Santa Clara County<br>
+        <a href="https://portal.scscourt.org/case/NTc0NzYzOA==" target="_blank" rel="noopener">Public Docket &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TICKER
+       ============================================================ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__inner">
+      <span class="ticker__item"><span class="ticker__dot"></span>WOZX: $0.002 (−99.9%)</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Efforce Malta: 0 employees</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>AitherCO2: €319.9M tax liability concealed</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Private investors: ~$336M realised profits</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Treasury: $68.1M unaccounted</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Legal letters received: 34 — Rebuttals: 0</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Regulatory complaints filed: 7 jurisdictions</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>WOZX: $0.002 (−99.9%)</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Efforce Malta: 0 employees</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>AitherCO2: €319.9M tax liability concealed</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Private investors: ~$336M realised profits</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Treasury: $68.1M unaccounted</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Legal letters received: 34 — Rebuttals: 0</span>
+      <span class="ticker__item"><span class="ticker__dot"></span>Regulatory complaints filed: 7 jurisdictions</span>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       THE NUMBERS
+       ============================================================ -->
+  <section class="numbers">
+    <div class="numbers__grid">
+      <div class="num-card">
+        <div class="num-card__figure num-card__figure--red">99.9%</div>
+        <div class="num-card__label">Price Decline</div>
+        <div class="num-card__detail">$3.62 peak &rarr; $0.002</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure">0</div>
+        <div class="num-card__label">Employees (Malta Filings)</div>
+        <div class="num-card__detail">&euro;0 staff costs, 2019&ndash;2022</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure num-card__figure--red">&euro;319.9M</div>
+        <div class="num-card__label">AitherCO2 Tax Liability</div>
+        <div class="num-card__detail">Concealed from investors</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure">$68.1M</div>
+        <div class="num-card__label">Unaccounted Treasury</div>
+        <div class="num-card__detail">92.4% of transfers unexplained</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure num-card__figure--red">$336M</div>
+        <div class="num-card__label">Private Investor Profits</div>
+        <div class="num-card__detail">On $45M investment (est.)</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure">99.2%</div>
+        <div class="num-card__label">Supply Controlled at Listing</div>
+        <div class="num-card__detail">Efforce + PI on day one</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure num-card__figure--red">&euro;510</div>
+        <div class="num-card__label">Price Paid for 42.5% of Efforce</div>
+        <div class="num-card__detail">12 days after $1B+ market cap</div>
+      </div>
+      <div class="num-card">
+        <div class="num-card__figure">34 / 0</div>
+        <div class="num-card__label">Legal Letters / Rebuttals</div>
+        <div class="num-card__detail">3 law firms, zero substance</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PROMISE VS REALITY
+       ============================================================ -->
+  <section class="pvr">
+    <div class="sec-head" style="padding-top:0;">
+      <div class="sec-head__overline">The Investigation</div>
+      <div class="sec-head__title">What They Said vs. What the Records Show</div>
+    </div>
+    <div class="pvr__grid">
+      <div class="pvr__col pvr__col--promise">
+        <div class="pvr__col-head">What Efforce Told Investors</div>
+
+        <div class="pvr__item">
+          <div class="pvr__item-title">&ldquo;50 people on the team&rdquo;</div>
+          <div class="pvr__item-text">Claimed a full engineering and business team working on the platform.</div>
+          <div class="pvr__item-source">Castiglione, Dec 31, 2020 &mdash; Telegram FAQ</div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">&ldquo;AitherCO2 &mdash; $250M revenue&hellip; our mother company&rdquo;</div>
+          <div class="pvr__item-text">Promoted as financially strong parent backing the project.</div>
+          <div class="pvr__item-source">Castiglione, 2020 &mdash; Telegram</div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">&ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo;</div>
+          <div class="pvr__item-text">Private investors described as long-term, strategic holders.</div>
+          <div class="pvr__item-source">Castiglione, Dec 2, 2020 &mdash; Telegram</div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">&ldquo;$80M private valuation&rdquo;</div>
+          <div class="pvr__item-text">Press release claimed significant institutional confidence.</div>
+          <div class="pvr__item-source">PRNewswire, Dec 4, 2020</div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">&ldquo;We haven&rsquo;t moved a single token&rdquo;</div>
+          <div class="pvr__item-text">Assured investors the team was holding.</div>
+          <div class="pvr__item-source">Castiglione, Sep 13, 2021 &mdash; Telegram</div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">&ldquo;Platform launch Q1 2021&rdquo;</div>
+          <div class="pvr__item-text">Roadmap promised staking, T1 listings, and full platform.</div>
+          <div class="pvr__item-source">Roadmap, Jan 10, 2021</div>
+        </div>
+      </div>
+
+      <div class="pvr__col pvr__col--reality">
+        <div class="pvr__col-head">What the Evidence Shows</div>
+
+        <div class="pvr__item">
+          <div class="pvr__item-title">0 employees across all filed years</div>
+          <div class="pvr__item-text">&euro;0 staff costs. &euro;25K total revenue. Office photos were AitherCO2&rsquo;s Milan office.</div>
+          <div class="pvr__item-source">Malta Business Registry, C 94737 &mdash; <a href="pages/entities/efforce-malta.html" style="color:var(--accent-red);">Verify &rarr;</a></div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">&euro;319.9M tax liability, &euro;408M losses</div>
+          <div class="pvr__item-text">Notified Oct 2018 &mdash; two years before WOZX launch. Never disclosed to token purchasers.</div>
+          <div class="pvr__item-source">Italian Chamber of Commerce (CCIAA) &mdash; <a href="pages/entities/aitherco2.html" style="color:var(--accent-red);">Verify &rarr;</a></div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">~$336M realised in profits</div>
+          <div class="pvr__item-text">MPI dumped 186.6M tokens in a single day (Oct 29, 2021). Anchor transferred 71.2M to HBTC-linked wallet.</div>
+          <div class="pvr__item-source">Etherscan &mdash; <a href="pages/private-investors.html" style="color:var(--accent-red);">Full analysis &rarr;</a></div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">42.5% sold for &euro;510</div>
+          <div class="pvr__item-text">AitherCO2 sold its stake to MBM Holdings AG for &euro;510 on Dec 15, 2020 &mdash; 12 days after $1B+ market cap.</div>
+          <div class="pvr__item-source">Swiss Commercial Register &mdash; <a href="pages/entities/mbm-holding-ag.html" style="color:var(--accent-red);">Verify &rarr;</a></div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">$68.1M transferred from treasury</div>
+          <div class="pvr__item-text">173.3M WOZX to 15 wallets. 92.4% unaccounted. No crypto transactions in any company filing.</div>
+          <div class="pvr__item-source">Etherscan &mdash; <a href="pages/treasury-wallet.html" style="color:var(--accent-red);">Full breakdown &rarr;</a></div>
+        </div>
+        <div class="pvr__item">
+          <div class="pvr__item-title">No platform. No staking. No listings.</div>
+          <div class="pvr__item-text">Beta had zero projects. Staking closed early at 40% loss. No T1 listing ever achieved. NFTs scrapped.</div>
+          <div class="pvr__item-source">Timeline &mdash; <a href="pages/timeline.html" style="color:var(--accent-red);">705 events tracked &rarr;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       QUOTE BAND
+       ============================================================ -->
+  <section class="quote-band">
+    <div class="quote-band__text">&ldquo;I see owning WOZX as <em>shares of stock</em>&rdquo;</div>
+    <div class="quote-band__attr">Steve Wozniak &mdash; Yahoo Finance, December 8, 2020</div>
+    <div class="quote-band__note">WOZX was not registered as a security in any jurisdiction. Wozniak holds an 11% stake in Efforce.</div>
+  </section>
+
+
+  <!-- ============================================================
+       KEY EVIDENCE
+       ============================================================ -->
+  <section style="padding:var(--space-4xl) 0;background:var(--white);">
+    <div class="sec-head">
+      <div class="sec-head__overline">Key Evidence</div>
+      <div class="sec-head__title">Three Pillars of the Investigation</div>
+    </div>
+    <div class="evidence-row">
+
+      <a href="pages/private-investors.html" class="ev-highlight">
+        <div class="ev-highlight__top">
+          <div class="ev-highlight__overline">Blockchain</div>
+          <div class="ev-highlight__title">The $336M Token Dump</div>
+          <div class="ev-highlight__desc">Private investors bought 450M WOZX at $0.10 and realised ~$336M. HTX Ventures (fmr Huobi) identified as lead buyer per ICODrops. On Oct 29, 2021, 186.6M tokens were dumped in a single day. The CEO said: &ldquo;Nothing illegal.&rdquo;</div>
+        </div>
+        <div class="ev-highlight__bottom"><span>55KB analysis &middot; 39 checks pass</span><span class="ev-highlight__arrow">&rarr;</span></div>
+      </a>
+
+      <a href="pages/treasury-wallet.html" class="ev-highlight">
+        <div class="ev-highlight__top">
+          <div class="ev-highlight__overline">Corporate</div>
+          <div class="ev-highlight__title">The Missing $68 Million</div>
+          <div class="ev-highlight__desc">Efforce&rsquo;s 550M treasury wallet transferred 173.3M WOZX to 15 recipient wallets. 92.4% is unaccounted for. No crypto transactions appear in any company filing across four jurisdictions. Wallet key holders identified: Carloni, Hardesty, Vanetti.</div>
+        </div>
+        <div class="ev-highlight__bottom"><span>35KB analysis &middot; 15 wallets traced</span><span class="ev-highlight__arrow">&rarr;</span></div>
+      </a>
+
+      <a href="pages/entities/aitherco2.html" class="ev-highlight">
+        <div class="ev-highlight__top">
+          <div class="ev-highlight__overline">Filings</div>
+          <div class="ev-highlight__title">The Hidden &euro;319.9M Tax Bomb</div>
+          <div class="ev-highlight__desc">AitherCO2 &mdash; promoted as Efforce&rsquo;s &ldquo;$250M revenue mother company&rdquo; &mdash; was notified of a &euro;319.9M tax liability in October 2018. Only &euro;583K was provisioned. Token purchasers were told the company was financially strong.</div>
+        </div>
+        <div class="ev-highlight__bottom"><span>Italian Chamber of Commerce</span><span class="ev-highlight__arrow">&rarr;</span></div>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECOND QUOTE
+       ============================================================ -->
+  <section class="quote-band" style="background:var(--grey-50);">
+    <div class="quote-band__text" style="color:var(--black);">&ldquo;Pumped and dumped by <em>private investors</em>&rdquo;</div>
+    <div class="quote-band__attr" style="color:var(--grey-500);">Paolo Pastore, Efforce Managing Director &mdash; Private Communication, November 15, 2022</div>
+    <div class="quote-band__note" style="color:var(--grey-400);">Pastore was Efforce&rsquo;s Managing Director at the time. This is an insider confirmation of the core allegation.</div>
+  </section>
+
+
+  <!-- ============================================================
+       EXPLORE THE INVESTIGATION
+       ============================================================ -->
+  <section class="hub">
+    <div class="sec-head">
+      <div class="sec-head__overline">Explore</div>
+      <div class="sec-head__title">The Full Investigation</div>
+    </div>
+    <div class="hub__grid">
+
+      <a href="pages/key-claims.html" class="hub-card">
+        <div class="hub-card__icon">&#9888;</div>
+        <div class="hub-card__title">Key Claims</div>
+        <div class="hub-card__stat">861 lines &middot; All unrebutted</div>
+        <div class="hub-card__desc">Every allegation with evidence sourcing, rebuttal status, and cross-references. The core of the investigation.</div>
+        <span class="hub-card__link">Read claims &rarr;</span>
+      </a>
+
+      <a href="pages/timeline.html" class="hub-card">
+        <div class="hub-card__icon">&#128197;</div>
+        <div class="hub-card__title">Timeline</div>
+        <div class="hub-card__stat">705 entries &middot; Sep 2017 &ndash; Present</div>
+        <div class="hub-card__desc">Every event, promise, and breach. Searchable and filterable by date, topic, person, and category.</div>
+        <span class="hub-card__link">View timeline &rarr;</span>
+      </a>
+
+      <a href="pages/individuals.html" class="hub-card">
+        <div class="hub-card__icon">&#128100;</div>
+        <div class="hub-card__title">Individuals</div>
+        <div class="hub-card__stat">10 profiles</div>
+        <div class="hub-card__desc">Wozniak, Visetti, Vanetti, Castiglione, Hardesty, Carloni, Pastore, and more. Roles, quotes, and evidence for each.</div>
+        <span class="hub-card__link">View profiles &rarr;</span>
+      </a>
+
+      <a href="pages/entities.html" class="hub-card">
+        <div class="hub-card__icon">&#127970;</div>
+        <div class="hub-card__title">Entities</div>
+        <div class="hub-card__stat">10 profiles &middot; 5 jurisdictions</div>
+        <div class="hub-card__desc">Efforce Malta, Efforce Bahamas, AitherCO2, MBM Holdings, Gerbsman Partners. Corporate structure and filings.</div>
+        <span class="hub-card__link">View entities &rarr;</span>
+      </a>
+
+      <a href="pages/private-investors.html" class="hub-card">
+        <div class="hub-card__icon">&#9939;</div>
+        <div class="hub-card__title">Blockchain Analysis</div>
+        <div class="hub-card__stat">3 deep analyses &middot; 115KB</div>
+        <div class="hub-card__desc">Vesting breaches, treasury outflows, private investor dumps. HTX Ventures identification. On-chain evidence for every claim.</div>
+        <span class="hub-card__link">View analysis &rarr;</span>
+      </a>
+
+      <a href="pages/evidence.html" class="hub-card">
+        <div class="hub-card__icon">&#128269;</div>
+        <div class="hub-card__title">Evidence Repository</div>
+        <div class="hub-card__stat">Searchable &middot; Documents + Screenshots</div>
+        <div class="hub-card__desc">Official documents, company accounts, and a searchable library of quotes with screenshots. Filter by person, topic, or source.</div>
+        <span class="hub-card__link">Search evidence &rarr;</span>
+      </a>
+
+      <a href="pages/legal-threats.html" class="hub-card">
+        <div class="hub-card__icon">&#9878;</div>
+        <div class="hub-card__title">Legal Threats</div>
+        <div class="hub-card__stat">34 letters &middot; 3 law firms</div>
+        <div class="hub-card__desc">Every legal communication received from Hogan Lovells, Bird &amp; Bird, and Giambrone. None contained a substantive rebuttal.</div>
+        <span class="hub-card__link">View letters &rarr;</span>
+      </a>
+
+      <a href="pages/us-nexus.html" class="hub-card">
+        <div class="hub-card__icon">&#127482;&#127480;</div>
+        <div class="hub-card__title">U.S. Legal Nexus</div>
+        <div class="hub-card__stat">Howey Test &middot; 4 nexus grounds</div>
+        <div class="hub-card__desc">Why U.S. regulators have jurisdiction. Wozniak (CA), Hardesty (CA), U.S.-based private investors, Times Square billboard.</div>
+        <span class="hub-card__link">Read analysis &rarr;</span>
+      </a>
+
+      <a href="pages/regulatory-complaints.html" class="hub-card">
+        <div class="hub-card__icon">&#128220;</div>
+        <div class="hub-card__title">Regulatory Complaints</div>
+        <div class="hub-card__stat">7 regulators &middot; 5 jurisdictions</div>
+        <div class="hub-card__desc">Complaints filed with SEC, FINRA, SCB, CONSOB, FINMA, MFSA, and FCA. Full transparency report.</div>
+        <span class="hub-card__link">View complaints &rarr;</span>
+      </a>
+
+      <a href="pages/press.html" class="hub-card">
+        <div class="hub-card__icon">&#128240;</div>
+        <div class="hub-card__title">Press Room</div>
+        <div class="hub-card__stat">Media enquiries &middot; Evidence access</div>
+        <div class="hub-card__desc">Story angles, key facts, tiered evidence access for verified journalists. Response within 24 hours.</div>
+        <span class="hub-card__link">Press room &rarr;</span>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RESPONSE TRACKER
+       ============================================================ -->
+  <section style="padding:var(--space-4xl) 0;background:var(--grey-50);border-top:1px solid var(--grey-200);">
+    <div class="sec-head">
+      <div class="sec-head__overline">Accountability</div>
+      <div class="sec-head__title">Response Tracker</div>
+    </div>
+    <p style="max-width:var(--max-width);margin:0 auto var(--space-lg);padding:0 var(--space-xl);font-size:var(--text-sm);color:var(--grey-600);line-height:1.7;">Every named individual and entity has been given a full opportunity to respond. All responses are published in full and unedited. The following tracker shows the current status of each party&rsquo;s engagement.</p>
+
+    <div style="max-width:var(--max-width);margin:0 auto;padding:0 var(--space-xl);overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;font-size:var(--text-xs);">
+        <thead>
+          <tr style="border-bottom:2px solid var(--black);">
+            <th style="padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey-500);">Entity / Individual</th>
+            <th style="padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey-500);">Role</th>
+            <th style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey-500);">Notified</th>
+            <th style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey-500);">Response</th>
+            <th style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey-500);">Rebuttal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--grey-200);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/individuals/steve-wozniak.html" style="color:var(--black);text-decoration:underline;">Steve Wozniak</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">Co-founder (11%)</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/individuals/ken-hardesty.html" style="color:var(--black);text-decoration:underline;">Kenneth Hardesty</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">Advisor (4%), wallet key holder</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/individuals/jacopo-visetti.html" style="color:var(--black);text-decoration:underline;">Jacopo Visetti</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">AitherCO2 (95%), Efforce</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Direct + Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fff8e1;color:#92400e;font-weight:700;">LEGAL THREATS ONLY</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/individuals/jacopo-vanetti.html" style="color:var(--black);text-decoration:underline;">Jacopo Vanetti</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">CTO (40%)</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/individuals/andrea-castiglione.html" style="color:var(--black);text-decoration:underline;">Andrea Castiglione</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">CEO (1.25%)</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/individuals/sergio-carloni.html" style="color:var(--black);text-decoration:underline;">Sergio Carloni</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">AitherCO2 founder, wallet key holder</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);background:var(--white);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;">Efforce Ltd / Hogan Lovells</td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">Legal representative</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">May 3, 2025</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fff8e1;color:#92400e;font-weight:700;">34 LETTERS</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);background:var(--white);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;"><a href="pages/aither-response.html" style="color:var(--black);text-decoration:underline;">Aither.com</a></td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">Claims no AitherCO2 continuity</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Self-initiated</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#f0fdf4;color:#16a34a;font-weight:700;">RESPONSE RECEIVED</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><a href="pages/aither-response.html" style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#eff6ff;color:#1d4ed8;font-weight:700;text-decoration:none;display:inline-block;">PUBLISHED &rarr;</a></td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--grey-200);background:var(--white);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;">HTX Ventures</td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">Private investor ($45M)</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via public interest notice</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+          <tr style="background:var(--white);">
+            <td style="padding:var(--space-sm) var(--space-md);font-weight:700;">DWF Labs / Ellipti</td>
+            <td style="padding:var(--space-sm) var(--space-md);color:var(--grey-500);">Co-investors / market makers</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;font-family:var(--font-mono);font-size:9px;color:var(--grey-400);">Via public interest notice</td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NO RESPONSE</span></td>
+            <td style="padding:var(--space-sm) var(--space-md);text-align:center;"><span style="font-family:var(--font-mono);font-size:9px;padding:2px 8px;background:#fee2e2;color:var(--accent-red);font-weight:700;">NONE</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="max-width:var(--max-width);margin:var(--space-lg) auto 0;padding:0 var(--space-xl);text-align:center;font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">All named parties retain a standing <a href="pages/public-interest.html#right-of-reply" style="color:var(--accent-red);text-decoration:underline;">right of reply</a>. All responses will be published in full and unedited. Contact: <a href="/cdn-cgi/l/email-protection#51323e2323343225383e3f2211383f2734222538363025383f363437373e2332347f323e3c" style="color:var(--accent-red);text-decoration:underline;"><span class="__cf_email__" data-cfemail="37545845455254435e585944775e59415244435e5056435e5950525151584554521954585a">[email&#160;protected]</span></a></p>
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
+  <section class="cta-section">
+    <div class="cta-section__title">Were You Affected?</div>
+    <div class="cta-section__sub">40+ claims opens the class action &middot; You pay nothing unless we win</div>
+    <div class="cta-grid">
+      <a href="pages/class-action.html" class="hero__btn hero__btn--primary">Submit Your Claim &rarr;</a>
+      <a href="pages/public-interest.html" class="hero__btn hero__btn--outline">Public Interest Notice</a>
+    </div>
+    <div class="cta-section__note">Non-binding expression of interest &middot; No legal fees &middot; 2 minutes &middot; GDPR compliant</div>
+  </section>
+
+
+  <!-- ============================================================
+       COMMUNITY
+       ============================================================ -->
+  <section class="community">
+    <div class="community__inner">
+      <a href="https://t.me/efforcewozxunofficial" target="_blank" rel="noopener" class="community__link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        Efforce Unofficial Telegram
+      </a>
+      <a href="https://x.com/efforceaction" target="_blank" rel="noopener" class="community__link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        @efforceaction
+      </a>
+      <a href="/cdn-cgi/l/email-protection#85e8e0e1ece4c5ecebf3e0f6f1ece2e4f1ecebe2e0e3e3eaf7e6e0abe6eae8" class="community__link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Media Enquiries
+      </a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="index.html"><img src="images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="pages/key-claims.html">Key Claims</a><a href="pages/timeline.html">Timeline</a><a href="pages/evidence.html">Evidence</a><a href="pages/legal-threats.html">Legal Threats</a><a href="pages/class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="pages/entities.html">Entities</a><a href="pages/individuals.html">Individuals</a><a href="pages/private-investors.html">Blockchain</a></div><div class="site-footer__col"><h6>Legal</h6><a href="pages/public-interest.html">Public Interest</a><a href="pages/public-interest.html#right-of-reply">Right of Reply</a><a href="pages/regulatory-complaints.html">Regulatory Complaints</a><a href="pages/press.html">Press Room</a><a href="/cdn-cgi/l/email-protection#47242835352224332e282934072e29312234332e2026332e2920222121283524226924282a">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519 (Benner &amp; Copley v. Wozniak, Efforce Ltd et al.).</span><span>Prior not

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AitherCO2 S.p.A (Italy) — Alleged &ldquo;Mother Company&rdquo; — Investigating Efforce</title>
+  <meta name="description" content="Entity profile: AitherCO2 S.p.A. Undisclosed €319.9M tax liability, €408M loss, €510 nominal stake transfer, conflated claims with Efforce.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="apple-touch-icon" href="../../images/icon-black.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .entity-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .entity-meta__item{text-align:center}
+    .entity-meta__num{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;line-height:1}
+    .entity-meta__num--red{color:var(--accent-red)}
+    .entity-meta__num--gold{color:var(--accent-gold)}
+    .entity-meta__label{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .reg-box{background:var(--grey-50);border-left:4px solid var(--accent-blue);padding:var(--space-lg);margin:var(--space-xl) 0}
+    .reg-box h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--accent-blue);margin-bottom:var(--space-md)}
+    .reg-box p,.reg-box li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .reg-box ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .data-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-sm)}
+    .data-table th{background:var(--grey-100);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;border-bottom:2px solid var(--grey-300);position:sticky;top:0}
+    .data-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-100);line-height:1.6;vertical-align:top}
+    .data-table tr:hover{background:var(--grey-50)}
+    .data-table td:first-child{font-family:var(--font-mono);white-space:nowrap;font-size:var(--text-xs)}
+    .data-table .loss{color:var(--accent-red);font-weight:700}
+    .data-table .warn{color:var(--accent-gold);font-weight:700}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .misrep-table{width:100%;border-collapse:collapse;font-size:var(--text-xs);margin:var(--space-lg) 0}
+    .misrep-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm);text-align:left;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:0;z-index:1}
+    .misrep-table td{padding:var(--space-sm);border-bottom:1px solid var(--grey-100);vertical-align:top;line-height:1.5}
+    .misrep-table tr:hover{background:#fff5f5}
+    .misrep-table td:nth-child(3){color:var(--accent-red)}
+    .misrep-table td:nth-child(4){color:var(--grey-600);font-style:italic}
+    .misrep-scroll{max-height:600px;overflow-y:auto;border:1px solid var(--grey-200);margin:var(--space-lg) 0}
+    .misrep-scroll::-webkit-scrollbar{width:6px}
+    .misrep-scroll::-webkit-scrollbar-thumb{background:var(--grey-300);border-radius:3px}
+    .takeaway{padding:var(--space-lg);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .takeaway p{font-size:var(--text-base);line-height:1.7}
+    .takeaway strong{color:var(--white)}
+    .letter-block{margin:var(--space-lg) 0;padding:var(--space-lg);border-left:4px solid var(--grey-300);background:var(--grey-50);font-size:var(--text-sm);line-height:1.8}
+    .letter-block--reply{border-left-color:var(--accent-blue);background:#f0f7ff}
+    .evidence-figure{margin:var(--space-lg) 0;text-align:center}
+    .evidence-img{max-width:100%;border:2px solid var(--grey-200);cursor:pointer;transition:all var(--transition-fast)}
+    .evidence-img:hover{border-color:var(--accent-red)}
+    .evidence-figure figcaption{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:95vw;max-height:95vh;object-fit:contain}
+    @media(max-width:768px){
+      .entity-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}
+      .entity-meta__num{font-size:var(--text-2xl)}
+      .misrep-scroll{max-height:400px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner">
+    <div class="notice-bar__inner">
+      <span class="notice-bar__item">
+        <span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span>
+        <strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp;
+        All statements alleged, based on verifiable evidence. No substantive rebuttal received.
+        <a href="/cdn-cgi/l/email-protection#77141805051214031e181904371e19011204031e1016031e1910121111180514125914181a"><span class="__cf_email__" data-cfemail="b1d2dec3c3d4d2c5d8dedfc2f1d8dfc7d4c2c5d8d6d0c5d8dfd6d4d7d7dec3d2d49fd2dedc">[email&#160;protected]</span></a>
+        &middot; <a href="../public-interest.html#defamation">Full Notice</a>
+        &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a>
+        <span class="notice-bar__updated">Updated 8 January 2026</span>
+      </span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="../../index.html" class="site-header__brand">
+        <img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28">
+      </a>
+      <nav class="mega-menu" role="navigation" aria-label="Main">
+        <ul class="mega-menu__list">
+          <li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li>
+          <li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li>
+          <li class="mega-menu__item"><a href="../entities.html" class="mega-menu__link--active">Entities</a></li>
+          <li class="mega-menu__item"><a href="../individuals.html">Individuals</a></li>
+          <li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li>
+          <li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;">
+    <div class="container">
+      <nav class="related-nav" aria-label="Related entities">
+        <a href="efforce-malta.html">Efforce (Malta)</a>
+        <a href="efforce-bahamas.html">Efforce (Bahamas)</a>
+        <a href="aitherco2.html" class="current">AitherCO2 S.P.A</a>
+        <a href="mbm-holding.html">MBM Holding AG</a>
+        <a href="aither-group.html">Aither Group AG</a>
+        <a href="hbtc.html">HBTC</a>
+        <a href="htx-ventures.html">HTX Ventures</a>
+        <a href="dwf-labs.html">DWF Labs</a>
+        <a href="ellipti.html">Ellipti</a>
+        <a href="seele.html">SEELE</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="overline">Entity Profile</span>
+      <h1>AitherCO2 S.p.A (Italy)</h1>
+      <p class="lead">Alleged &ldquo;Mother Company&rdquo; &mdash; &euro;319.9M Undisclosed Tax Liability</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="defamation-banner defamation-banner--compact">
+        <div class="defamation-banner__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          All allegations unrebutted
+        </div>
+        <div class="defamation-banner__text">
+          Evidence: public Italian Bilanci, Malta Registry, Etherscan, Telegram/Discord archives, legal correspondence.
+          <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#94f7fbe6e6f1f7e0fdfbfae7d4fdfae2f1e7e0fdf3f5e0fdfaf3f1f2f2fbe6f7f1baf7fbf9"><span class="__cf_email__" data-cfemail="5a393528283f392e333534291a33342c3f292e333d3b2e33343d3f3c3c3528393f74393537">[email&#160;protected]</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="entity-meta">
+        <div class="entity-meta__item">
+          <div class="entity-meta__num entity-meta__num--red">&euro;319.9M</div>
+          <div class="entity-meta__label">Tax Liability (Undisclosed)</div>
+        </div>
+        <div class="entity-meta__item">
+          <div class="entity-meta__num entity-meta__num--red">&minus;&euro;408M</div>
+          <div class="entity-meta__label">2020 Loss</div>
+        </div>
+        <div class="entity-meta__item">
+          <div class="entity-meta__num entity-meta__num--red">&euro;510</div>
+          <div class="entity-meta__label">Stake Transfer Price</div>
+        </div>
+        <div class="entity-meta__item">
+          <div class="entity-meta__num entity-meta__num--gold">&gt;&euro;600M</div>
+          <div class="entity-meta__label">Fair Market Value</div>
+        </div>
+        <div class="entity-meta__item">
+          <div class="entity-meta__num entity-meta__num--red">35+</div>
+          <div class="entity-meta__label">Conflated Claims Documented</div>
+        </div>
+        <div class="entity-meta__item">
+          <div class="entity-meta__num entity-meta__num--red">0</div>
+          <div class="entity-meta__label">Rebuttals Received</div>
+        </div>
+      </div>
+      <div class="section-block" style="border-top:none;">
+<div><strong>Related Entities:</strong><br /> <a href="/entities/efforce-malta">Efforce (Malta)</a> | <a href="/entities/efforce-bahamas">Efforce (Bahamas)</a> | <a href="/entities/aitherco2-italy">AitherCO2 S.P.A (Italy)</a> | <a href="/entities/mbm-holding-switzerland">MBM Holding AG (Switzerland)</a> | <a href="/entities/aither-group-switzerland">Aither Group AG (Switzerland)</a> | <a href="/entities/hbtc">HBTC</a> | <a href="/entities/htx-ventures">Private Investor (Alleged HTX Ventures)</a> | <a href="/entities/dwf-labs">Anchor Investors (Alleged DWF Labs)</a> | <a href="/entities/ellipti">Anchor Investor (Alleged Ellipti)</a> | <a href="/entities/gerbsman-links">Gerbsman Links</a> | <a href="/entities/seele-links">SEELE Links</a></div>
+<!-- TITLE -->
+
+<!-- Intro with New Details -->
+<p>AitherCO2 S.p.A (Italy) was presented as Efforce's "mother company" with strong financial health, €250–450 million annual revenue, 40+ employees, and thousands of clients. However, as of December 2025, public filings reveal undisclosed €319.9 million tax liability (notified 2018), €408.2 million loss in 2020, negative equity, and going-concern warnings. No legal relationship with Efforce despite claims. Nominal transfer of 42.5% Efforce stake to MBM for €510 amid tax crisis — alleged asset shielding. Renamed Servizi Ambiente e Sostenibilità S.p.A in 2023. Swiss Aither Group AG denied continuity or liabilities in Feb 2026 notice.</p>
+<p>AitherCO2's client base historically consisted of carbon credits trading. Their entry into energy efficiency business was only outlined in the 2018 accounts. Despite this, Efforce and AitherCO2 repeatedly conflated unrelated carbon credit clients and revenues as though they related to energy efficiency projects, misleading investors about the scale and relevance of AitherCO2's operations to Efforce's blockchain promises.</p>
+<p><figure class="evidence-figure"><img src="https://i.gyazo.com/05aff32692808cf1112d8cc388e83163.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></p>
+      </div>
+      <div class="reg-box">
+<!-- Regulatory Framework Box -->
+<div>
+<h4>Regulatory Framework – Italian S.p.A. Public Filings &amp; Transparency (2018–2025)</h4>
+<p><strong>Italian Civil Code (Codice Civile) Art. 2325–2451 &amp; Legislative Decree 58/1998 (TUF)</strong>: All S.p.A. must file key events (incorporation, capital changes, directors, auditors, mergers) with the Registro delle Imprese (Chamber of Commerce). Filings are public and include annual accounts (bilancio).</p>
+<p><strong>Annual Accounts &amp; Audit</strong>: Bilancio must be approved by shareholders and filed within 30 days (Art. 2435). Statutory audit is mandatory for S.p.A. exceeding thresholds (revenue &gt; €50m, assets &gt; €25m, employees &gt; 500 for two consecutive years) or if listed. Smaller S.p.A. can use a collegio sindacale or opt for external auditor. Going-concern warnings and tax provisions must be disclosed in notes.</p>
+<p><strong>Beneficial Ownership &amp; Related-Party Transparency</strong>: Since 2017 (D.Lgs 90/2017, 4AMLD) and strengthened in 2023 (D.Lgs 231/2023), companies maintain an internal register of beneficial owners (titolare effettivo). This register is **not publicly accessible** (only to authorities and obliged entities). Significant shareholdings (&gt;10%) and related-party transactions must be disclosed in the notes to the accounts (IAS 24 or Italian GAAP), but full group structures and ultimate beneficial owners remain private for unlisted S.p.A.</p>
+<p><strong>Regulatory Bodies</strong>:</p>
+<ul>
+<li>Camera di Commercio / Registro delle Imprese – public filings &amp; SHAB-equivalent publications</li>
+<li>Agenzia delle Entrate – tax returns and debt enforcement</li>
+<li>Guardia di Finanza – tax fraud and AML investigations</li>
+<li>CONSOB – if securities offered (not applicable here)</li>
+</ul>
+<p>Relevance to AitherCO2 S.p.A.: Annual bilanci are publicly available (showing revenue, losses, tax provisions, employees), but beneficial ownership register, full group relationships, and internal restructuring details are not public. No mandatory disclosure of links to Swiss entities or Efforce beyond what appears in the notes. The €319.9M tax liability is visible in 2020 accounts as a provision, but earlier notifications and appeals were internal until disclosed in filings.</p>
+<p>Note: No public record of enforcement actions beyond standard tax assessments has been identified in open sources.</p>
+</div>
+<!-- SUBMIT BUTTON -->
+<div><a href="https://www.investigatingefforce.com/classaction" target="_blank" rel="noopener noreferrer"> SUBMIT YOUR CLAIM (2 mins – No Cost) </a></div>
+<!-- Financial Table -->
+      </div>
+      <div class="section-block">
+<h3>Financial Collapse – Year-by-Year (Public Filings)</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Year</th>
+<th>Revenue</th>
+<th>Profit/Loss</th>
+<th>Employees</th>
+<th>Tax Provisions vs €319.9M Debt</th>
+<th>Audit / Filing Date</th>
+<th>Efforce PR Claim</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2017</td>
+<td>€12.8M</td>
+<td>+€483k</td>
+<td>~6</td>
+<td>None</td>
+<td>Clean – May 10, 2018</td>
+<td>"$1.2B revenue"</td>
+</tr>
+<tr>
+<td>2018</td>
+<td>€18.2M</td>
+<td>+€416k</td>
+<td>7</td>
+<td>€583k (vs €319.9M notified Oct 2018)</td>
+<td>Clean – Dec 24, 2019</td>
+<td>"2000+ clients"</td>
+</tr>
+<tr>
+<td>2019</td>
+<td>€22.1M</td>
+<td>+€526k</td>
+<td>8</td>
+<td>€378k</td>
+<td>Clean – May 14, 2021 (delayed)</td>
+<td>"Strong backing"</td>
+</tr>
+<tr>
+<td>2020</td>
+<td>€15.4M</td>
+<td>–€408.2M</td>
+<td>6</td>
+<td>€392.2M</td>
+<td>Adverse – Jan 24, 2022</td>
+<td>"$250M–$350M revenue"</td>
+</tr>
+<tr>
+<td>2021</td>
+<td>€9.1M</td>
+<td>–€36.5M</td>
+<td>5</td>
+<td>None</td>
+<td>Adverse – Jul 20, 2023</td>
+<td>Silence</td>
+</tr>
+<tr>
+<td>2022</td>
+<td>€7.8M</td>
+<td>–€362k</td>
+<td>4</td>
+<td>None</td>
+<td>Negative audit – Jul 20, 2023</td>
+<td>—</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>€0</td>
+<td>–€1.2M</td>
+<td>0</td>
+<td>None</td>
+<td>Dormant – Dec 2024</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+      </div>
+      <div class="section-block">
+<!-- €510 Transfer -->
+<h3>€510 Transfer to MBM Holdings AG (Dec 15, 2020)</h3>
+<p>AitherCO2 transferred its 42.5% stake in Efforce Ltd (Malta) to Swiss shell MBM Holding AG for €510. Fair market value exceeded €600 million (based on $80 million pre-sale valuation PR December 3, 2020 and $1.6 billion treasury peak). Transfer occurred amid AitherCO2's €319.9 million tax crisis — alleged asset shielding. No disclosure in Malta filings until May 2021; misrepresented as "corporate reorganization" despite no proven links.</p>
+<p><a href="https://gyazo.com/13a21fe5067697c7e2f9ff23887217a7">Proof of Transfer + Timeline</a></p>
+<!-- No Corporate Link -->
+<h3>No Corporate Link in Filings</h3>
+<p>Efforce Ltd (Malta) filings: No shares, revenue, or ties to AitherCO2. AitherCO2 accounts: No investment in Efforce, no dividends. Hogan Lovells (Jun 13, 2025): “We represent both” — contradicts no links. AitherCO2 ceased listing as parent after 2020 in its accounts; Efforce claimed continued support in 2023 filings (unstated parent).</p>
+<!-- Conflated Claims -->
+<h3>Conflated Claims – Efforce Stole Aither's Numbers</h3>
+<table class="data-table">
+<thead>
+<tr>
+<th>Efforce PR Claim</th>
+<th>AitherCO2 Reality</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"2000+ clients"</td>
+<td>7–8 employees; client base historically carbon credits, not energy efficiency</td>
+<td>2018–2019 Bilanci</td>
+</tr>
+<tr>
+<td>"$1.2B global revenue"</td>
+<td>€76.8M (mostly unrelated carbon credits)</td>
+<td>2018 Bilancio</td>
+</tr>
+<tr>
+<td>"40+ employees"</td>
+<td>7 employees</td>
+<td>2018 Assembly</td>
+</tr>
+<tr>
+<td>"5 continents"</td>
+<td>Italy only</td>
+<td>Filings</td>
+</tr>
+</tbody>
+</table>
+      </div>
+
+      <div class="section-block">
+        <h3>35+ Misrepresentations &amp; Conflated Claims (2018&ndash;2023)</h3>
+        <p style="font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-md);">Scrollable table &mdash; all unrebutted, contradicted by AitherCO2&rsquo;s own audited accounts.</p>
+        <div class="misrep-scroll">
+          <!-- 35+ Misrepresentations & Conflated Claims (2018–2023) -->
+<h3>35+ Misrepresentations &amp; Conflated Claims (2018–2023)</h3>
+<p>Efforce repeatedly attributed AitherCO2's claimed scale, revenue, clients, and operations to itself despite no legal or financial link in any filing. Note: Sergio Carloni served as CEO of both AitherCO2 S.P.A and Efforce Ltd (Malta), enabling potential conflicts. AitherCO2 stopped listing as parent after 2020 in its accounts; Efforce claimed continued support in 2023 filings (unstated parent). The following table lists the most prominent public statements — all unrebutted and contradicted by AitherCO2's own audited accounts.</p>
+<table class="misrep-table">
+<thead>
+<tr>
+<th>Date</th>
+<th>Who</th>
+<th>Quote / Claim (verbatim or close paraphrase)</th>
+<th>Reality from AitherCO2 Filings</th>
+<th>Source / Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jul 2, 2018</td>
+<td>Jacopo Visetti</td>
+<td>"2000+ top clients, $1.2bn global turnover, 5 continents"</td>
+<td>2017: €12.8M revenue, ~6 employees, Italy-focused</td>
+<td>Seoul Pitch Banner</td>
+</tr>
+<tr>
+<td>Jul 5, 2018</td>
+<td>Efforce Telegram</td>
+<td>"Success for Efforce at Tokensky: 2000+ top clients, $1.2bn turnover"</td>
+<td>No clients or revenue tied to Efforce</td>
+<td>Telegram announcement</td>
+</tr>
+<tr>
+<td>Dec 2, 2020</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2 is regulated financial institution under MiFID2 license and all the financials are public and audited... AitherCO2, as mother company, will transfer its Energy Efficiency operation and clients pipeline into Efforce!"</td>
+<td>No transfer recorded; no legal parent link; €319.9M tax debt hidden</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Dec 7–9, 2020</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2 S.P.A.’s 3000 clients, growing to $250M–$350M/y revenue over 10 years, and 40–45 employees as Efforce’s."</td>
+<td>2019: €22.1M revenue, 8 employees</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Dec 16, 2020</td>
+<td>Jacopo Visetti</td>
+<td>"Parent Company (Aither) has $240m revenue is transferring tens of millions of $ projects to Efforce platform."</td>
+<td>2020: €15.4M revenue, –€408.2M loss; no project transfers</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Dec 17, 2020</td>
+<td>Andrea Castiglione</td>
+<td>"Have you grown business to $250m/y without outside investors?... Is Visetti who graduated Harvard and founded company making hundreds of millions a year the issue?"</td>
+<td>No $250M; €319.9M tax debt hidden</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Dec 31, 2020</td>
+<td>Andrea Castiglione</td>
+<td>"Besides owners, Efforce is 50 people led by CEO Sergio Carloni"</td>
+<td>Efforce Malta: 0 employees; AitherCO2: 6 employees</td>
+<td>LinkedIn FAQ</td>
+</tr>
+<tr>
+<td>Feb 7, 2021</td>
+<td>Jacopo Visetti</td>
+<td>"Team haven’t moved any of the team or ecosystem tokens yet."</td>
+<td>Treasury movements already occurred; no smart contracts</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Feb 10, 2021</td>
+<td>Andrea Castiglione</td>
+<td>"Platform is going live for public use on March 20th... the week before will be for private beta test."</td>
+<td>No launch; AitherCO2 in crisis</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Feb 24, 2021</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2 has more than 2000 clients... It’s a regulated financial institution under MiFID2... a company with €200m in annual revenue."</td>
+<td>2020: €15.4M revenue, 6 employees</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Apr 29, 2021</td>
+<td>Andrea Castiglione</td>
+<td>"Our mother company (Aither) is a licensed ESCO... making hundreds of millions of dollars in annual revenue."</td>
+<td>No hundreds of millions; –€408.2M loss</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>May 5, 2021</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2 is one of the largest players in the world... Institutional are not the fastest moving targets."</td>
+<td>No world-leading scale; Italy-only with declining revenue</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Jun 8, 2021</td>
+<td>Jacopo Visetti</td>
+<td>"Our company goals for 2021 are all on track... We’ve been absolutely swamped restructuring marketing, business processes, pipeline."</td>
+<td>2021: €9.1M revenue, 5 employees</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Jun 25, 2021</td>
+<td>Jacopo Visetti</td>
+<td>"Aither is the parent company of EFForce... This year it is breaking $350m."</td>
+<td>2021: €9.1M revenue, –€36.5M loss; no parent link</td>
+<td>Community Gathering #6</td>
+</tr>
+<tr>
+<td>Aug 8, 2021</td>
+<td>Jacopo Visetti</td>
+<td>"Aither will divert all energy efficiency operations to Efforce... the two teams work as one."</td>
+<td>No operations diversion in filings</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Sep 21, 2021</td>
+<td>Jacopo Visetti</td>
+<td>"Aither is the parent company of EFForce... This year it is breaking $350m."</td>
+<td>2021: €9.1M revenue, –€36.5M loss</td>
+<td>Community Gathering #9</td>
+</tr>
+<tr>
+<td>Dec 2021</td>
+<td>Efforce PR</td>
+<td>"AitherCO2 turnover north of €450M."</td>
+<td>2021: €9.1M revenue</td>
+<td>PR release</td>
+</tr>
+<tr>
+<td>Jan 2022</td>
+<td>Jacopo Visetti</td>
+<td>"AitherCO2 remains the backbone of Efforce operations."</td>
+<td>No backbone role; no revenue transfer</td>
+<td>Discord</td>
+</tr>
+<tr>
+<td>Mar 2022</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2's expertise and infrastructure fully integrated into Efforce."</td>
+<td>No integration in filings</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Jun 2022</td>
+<td>Jacopo Visetti</td>
+<td>"Continued collaboration with AitherCO2 ensures Efforce success."</td>
+<td>No collaboration in 2022 filings</td>
+<td>Community call</td>
+</tr>
+<tr>
+<td>Sep 2022</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2's 40+ employees are now Efforce's team."</td>
+<td>Efforce Malta: 0 employees</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Dec 2022</td>
+<td>Jacopo Visetti</td>
+<td>"AitherCO2's financial strength backs Efforce's growth."</td>
+<td>2022: €7.8M revenue, –€362k loss</td>
+<td>Discord</td>
+</tr>
+<tr>
+<td>Mar 2023</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2 remains Efforce's strategic partner."</td>
+<td>No partnership in 2023 filings</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Jun 2023</td>
+<td>Jacopo Visetti</td>
+<td>"Continued collaboration with AitherCO2 ensures Efforce success."</td>
+<td>No collaboration in 2023 filings</td>
+<td>Discord</td>
+</tr>
+<tr>
+<td>Sep 2023</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2's infrastructure powers Efforce platform."</td>
+<td>No infrastructure shared</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Dec 2023</td>
+<td>Jacopo Visetti</td>
+<td>"AitherCO2's support remains key to Efforce."</td>
+<td>No support recorded</td>
+<td>Private call</td>
+</tr>
+<tr>
+<td>Feb 2024</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2's legacy lives on in Efforce."</td>
+<td>AitherCO2 renamed/dormant</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>May 2024</td>
+<td>Jacopo Visetti</td>
+<td>"Ongoing partnership with AitherCO2."</td>
+<td>No partnership evidence</td>
+<td>Discord</td>
+</tr>
+<tr>
+<td>Aug 2024</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2's resources continue to fuel Efforce."</td>
+<td>No resources transferred</td>
+<td>Telegram</td>
+</tr>
+<tr>
+<td>Nov 2024</td>
+<td>Jacopo Visetti</td>
+<td>"AitherCO2 remains strategic ally."</td>
+<td>Dormant status</td>
+<td>Private chat</td>
+</tr>
+<tr>
+<td>Feb 2025</td>
+<td>Andrea Castiglione</td>
+<td>"AitherCO2's foundation supports Efforce's future."</td>
+<td>No foundation support</td>
+<td>Telegram</td>
+</tr>
+</tbody>
+</table>
+<p><em>All quotes are from public Telegram, Discord, community calls, PR, and filings. Corrections welcome. Download full AitherCO2 accounts: <a href="/downloads/aither-2017-accounts.pdf">2017</a> | <a href="/downloads/aither-2018-accounts.pdf">2018</a> | <a href="/downloads/aither-2019-accounts.pdf">2019</a> | <a href="/downloads/aither-2020-accounts.pdf">2020</a> | <a href="/downloads/aither-2021-accounts.pdf">2021</a> | <a href="/downloads/aither-2022-accounts.pdf">2022</a> | <a href="/downloads/aither-2023-accounts.pdf">2023</a>. Other key documents: <a href="/downloads/mbm-transfer.pdf">MBM Transfer Proof</a> | <a href="/downloads/aither-group-denial-feb2026.pdf">Aither Group Denial (Feb 2026)</a> | <a href="/downloads/efforce-2023-accounts.pdf">Efforce 2023 Accounts (continued parent support claim)</a>.</em></p>
+<!-- Correction Notice -->
+        </div>
+      </div>
+      <div class="section-block">
+<h3>Correction Notices</h3>
+<p><strong>AITHER.COM (13th Feb 2026):</strong><br /> "For the avoidance of doubt, Aither.com is not the same company, not a legal successor, and not a continuation of AitherCO2 S.p.A. Aither.com is an entity with different shareholders, management, corporate governance, and legal structure."<br /><br /><strong>INVESTIGATING EFFORCE response (13th Feb 2026):</strong> sought clarity on official registered name, company and jurisdiction of Aither.com and details of acquisitions and personnel overlap - however no response provided. Aither.com does not provide official company details in contravention of EU E-commerce Directive (2000/31/EC).</p>
+<!-- Key Questions -->
+      </div>
+      <div class="section-block">
+<h3>Key Questions Raised by Public Records</h3>
+<ul>
+<li>Were assets, clients, employees, or operations transferred from the distressed Italian AitherCO2 to the Swiss Aither Group AG during or after restructuring?</li>
+<li>Why did Efforce publicly announce the Swiss Aither Group (aither.com) as its "beloved parent company" in June 2021 — six months after the Italian entity sold its Efforce stake — if no ownership existed?</li>
+<li>Were any business units, offices, clients, or personnel transferred at fair market value, and fully disclosed in the Italian Composizione Negoziata della Crisi (CNC) proceedings?</li>
+<li>Do overlapping personnel and shared branding indicate operational continuity despite the Swiss entity's denial of legal succession?</li>
+</ul>
+<!-- Reporting Authorities -->
+      </div>
+      <div class="section-block">
+<h3>Report to Authorities</h3>
+<ul>
+<li><strong>CONSOB (Italy):</strong> <a href="https://www.consob.it/web/area-pubblica/segnalazioni">consob.it</a> – market abuse</li>
+<li><strong>FINMA (Switzerland):</strong> <a href="https://www.finma.ch/en/contact/">finma.ch</a> – MBM shell</li>
+<li><strong>Agenzia delle Entrate:</strong> Tax evasion</li>
+<li><strong>Guardia di Finanza:</strong> €319.9M tax fraud</li>
+</ul>
+<!-- Aither Group Information -->
+      </div>
+
+      <div style="border-top:var(--border-heavy);padding-top:var(--space-2xl);margin-top:var(--space-2xl);">
+        <span class="overline">Related Entity</span>
+        <div class="section-block" style="border-top:none;">
+<h3>Alleged Successor: Aither Group AG (Switzerland)</h3>
+<p>Aither Group AG (Switzerland, CHE-264.271.057, incorporated October 14, 2019) was outlined to operate as aither.com and was publicly linked to Efforce as the "beloved parent company" in 2021 communications — 6 months after AitherCO2 S.p.A sold its Efforce stake. Aither.com (entity undeclared) as of Feb 13th 2026 denies any continuity or liability from AitherCO2 S.p.A, claiming different shareholders and structure, despite personnel overlap and business unit acquisitions. No reply to requests for details on acquisition terms or CNC approval. Alleged to distance from AitherCO2's €319.9M tax debt and Efforce controversies. There are no publicly available accounts or ownership structures for Aither Group AG.</p>
+<p>Aither.com emphasizes they are not the successor to AitherCO2 S.p.A, though they have bought business units from AitherCO2 S.p.A and one of the founders joined. Legal Department (Aither.com) email (Feb 13, 2026) denies link; no evidence provided. Efforce channels (2021) explicitly reference Aither Group AG / aither.com as parent. Opaque ownership — no beneficial owners disclosed in public filings.</p>
+        </div>
+        <div class="section-block">
+<h4>Correspondence with Aither.com</h4>
+<h5>Email from Aither.com Legal Department – February 13, 2026</h5>
+<pre>Dear Sirs,
+We have become aware of your statements referring to AitherCO2 S.p.A. and linking those allegations to Aither.com.
+For the avoidance of doubt, Aither.com is not the same company, not a legal successor, and not a continuation of AitherCO2 S.p.A. Aither.com is an entity with different shareholders, management, corporate governance, and legal structure.
+While Aither.com acquired certain business units from AitherCO2 S.p.A. in the past, this does not imply any assumption of liabilities, representation, or corporate continuity.
+We understand that your assumption may be based on the fact that certain former AitherCO2 personnel, including one of its founders, later joined Aither.com. However, the movement of individuals between companies does not create corporate continuity or transfer liabilities, ownership, or legal identity.
+Your public statements suggesting otherwise are factually incorrect and may mislead the public. We respectfully request that you correct or clarify this point in your publications.
+Furthermore, the use of a confusingly similar logo and branding may constitute trademark infringement and passing off, as it may mislead the public into believing there is an affiliation with Aither.com.
+For clarity, Aither.com is not affiliated with your website and does not endorse or support its content.
+We therefore request that you cease using such branding elements immediately and confirm in writing that they have been removed.
+Additionally, any suggestion that Hogan Lovells represents Aither.com is incorrect.
+Kind regards,
+Legal &amp; Compliance
+Aither.com
+</pre>
+<h5>Reply from Michael Copley – February 13, 2026</h5>
+<pre>Dear Legal &amp; Compliance (Aither.com),
+Thank you for your email and for clarifying Aither.com's position regarding AitherCO2 S.p.A.
+For accuracy in public interest reporting on historical Efforce/AitherCO2 matters (under UK Defamation Act 2013 s.4), I would appreciate the following details:
+1. The official registered name, company number, and jurisdiction of Aither.com.
+2. Details of the business unit acquisition from AitherCO2 S.p.A. (e.g., date, assets transferred, terms).
+3. Confirmation of personnel overlap (e.g., names of former AitherCO2 staff/founders now at Aither.com).
+4. The name and role of the individual signing this notice on behalf of Legal &amp; Compliance.
+Any evidence-based response will be published unedited on investigatingefforce.com and other related websites and social media, consistent with my right-of-reply policy.
+I confirm no intention to imply current affiliation—references are historical and based on public filings/Medium articles (e.g., 2021 Efforce post: "AitherCO2, the company behind EFFORCE").
+Corrections are welcome.
+Best regards,
+Michael Copley
+</pre>
+<p>No reply received to date (February 18, 2026).</p>
+        </div>
+        <div class="section-block">
+<h4>Publicly Available Filings for Aither Group AG – Summary (English Translations)</h4>
+<table class="data-table">
+<thead>
+<tr>
+<th>Date</th>
+<th>Type</th>
+<th>Key Changes / Summary</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17.10.2019</td>
+<td>New Registration</td>
+<td>AitherCO2 SA incorporated in Lugano. Capital: CHF 100,000. Purpose: OTC trading in emissions/energy/commodities, climate projects. Sole director: Roberto Patullo. No audit elected.</td>
+<td>SHAB 17.10.2019</td>
+</tr>
+<tr>
+<td>04.02.2020</td>
+<td>Changes</td>
+<td>Shares changed to nominative; transferability restricted per statutes. Shareholder communications via registered letter.</td>
+<td>SHAB 04.02.2020</td>
+</tr>
+<tr>
+<td>18.05.2020</td>
+<td>Name Change</td>
+<td>Name changed to Aither Group SA (statutes amended 11.05.2020).</td>
+<td>SHAB 18.05.2020</td>
+</tr>
+<tr>
+<td>15.03.2021</td>
+<td>Changes</td>
+<td>Seat moved to Chiasso (Via Motta 24). Patullo and Camerlingo resigned; Bianchin (President) and Lissoni appointed.</td>
+<td>SHAB 15.03.2021</td>
+</tr>
+<tr>
+<td>26.05.2021</td>
+<td>Changes</td>
+<td>Auditor appointed: Ernst &amp; Young SA (Lugano). [Radiated previous opt-out from audit.]</td>
+<td>SHAB 26.05.2021</td>
+</tr>
+<tr>
+<td>25.10.2021</td>
+<td>Capital Increase</td>
+<td>Capital increased to CHF 2,100,000 (CHF 2M debt conversion for 1,000 new nominative shares). Communications via letter or email.</td>
+<td>SHAB 25.10.2021</td>
+</tr>
+<tr>
+<td>25.04.2023</td>
+<td>Name &amp; Seat Change</td>
+<td>Name changed to Aither Group AG. Seat moved to Zürich (Badenerstrasse 47). Purpose amended to bilateral/platform trading in emissions/energy/commodities (German). Nominative shares transfer restricted.</td>
+<td>SHAB 25.04.2023</td>
+</tr>
+<tr>
+<td>22.09.2023</td>
+<td>Changes</td>
+<td>Andrea Bianchin (President) nationality updated to Swiss (from Italian), resident in Monteceneri.</td>
+<td>SHAB 22.09.2023</td>
+</tr>
+<tr>
+<td>30.01.2024</td>
+<td>Changes</td>
+<td>Stefano Lissoni (Member) residency updated to Lugano (from Gallarate, IT).</td>
+<td>SHAB 30.01.2024</td>
+</tr>
+<tr>
+<td>07.02.2025</td>
+<td>Changes</td>
+<td>Stefano Lissoni (Member) residency updated to Chiasso (from Lugano).</td>
+<td>SHAB 07.02.2025</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Filings show evolution from AitherCO2 SA (emissions/energy trading) to Aither Group AG (broader scope), multiple seat changes (Lugano → Chiasso → Zürich), capital increase, name change, and director updates. No direct mention of Efforce or AitherCO2 continuity in later entries.</p>
+<!-- Key Questions -->
+<h3>Key Questions Raised by Public Records</h3>
+        </div>
+        <div class="section-block">
+<ul>
+<li>Were assets, clients, employees, or operations transferred from the distressed Italian AitherCO2 to the Swiss Aither Group AG during or after restructuring?</li>
+<li>Why did Efforce publicly announce the Swiss Aither Group (aither.com) as its "beloved parent company" in June 2021 — six months after the Italian entity sold its Efforce stake — if no ownership existed?</li>
+<li>Were any business units, offices, clients, or personnel transferred at fair market value, and fully disclosed in the Italian Composizione Negoziata della Crisi (CNC) proceedings?</li>
+<li>Do overlapping personnel and shared branding indicate operational continuity despite the Swiss entity's denial of legal succession?</li>
+</ul>
+<!-- Reporting Authorities -->
+<h3>Report to Authorities</h3>
+        </div>
+        <div class="section-block">
+<ul>
+<li><strong>CONSOB (Italy):</strong> <a href="https://www.consob.it/web/area-pubblica/segnalazioni">consob.it</a> – market abuse</li>
+<li><strong>FINMA (Switzerland):</strong> <a href="https://www.finma.ch/en/contact/">finma.ch</a> – MBM shell</li>
+<li><strong>Agenzia delle Entrate:</strong> Tax evasion</li>
+<li><strong>Guardia di Finanza:</strong> €319.9M tax fraud</li>
+</ul>
+<!-- SUBMIT BUTTON -->
+
+<!-- Related Entities Menu at Bottom -->
+
+
+</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+        <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+        <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+        <a href="../entities.html" class="btn btn--outline">All Entities</a>
+      </div>
+
+    </div>
+  </section>
+
+  
+    <!-- Evidence Screenshot Gallery -->
+    <section class="section" style="padding: 3rem 0;">
+      <div class="container">
+        <h2 style="color: var(--red); margin-bottom: 0.5rem;">Key Evidence Screenshots</h2>
+        <p style="color: var(--grey); margin-bottom: 2rem; font-size: 0.95rem;">
+          Sourced from public records, company filings, and blockchain data. Click any image to enlarge.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/de6f695683f409e2794406ec61763f9a.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/de6f695683f409e2794406ec61763f9a.png" loading="lazy" alt="AitherCO2 S.p.A — Italian corporate registry" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">AitherCO2 S.p.A — Italian corporate registry</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/e5cd8d667a6fcc7f1543e5f09a566f2a.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/e5cd8d667a6fcc7f1543e5f09a566f2a.png" loading="lazy" alt="Jacopo Visetti — 95% owner of AitherCO2" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Jacopo Visetti — 95% owner of AitherCO2</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/920ac17d363bf12eb51784e7997de13f.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/920ac17d363bf12eb51784e7997de13f.png" loading="lazy" alt="2020 Financial report — €319.9M tax liability notification" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">2020 Financial report — €319.9M tax liability notification</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/ba8a7f5cd51384e56d8be4e2c19f7f98.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/ba8a7f5cd51384e56d8be4e2c19f7f98.png" loading="lazy" alt="€408M loss in 2020 — undisclosed during peak WOZX hype" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">€408M loss in 2020 — undisclosed during peak WOZX hype</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/922c15a4487a3812ea681b62892ca32d.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/922c15a4487a3812ea681b62892ca32d.png" loading="lazy" alt="Tax liability translation — Italian financial report detail" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Tax liability translation — Italian financial report detail</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/867d7037b1b0174ddc73bf69a8f532b8.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/867d7037b1b0174ddc73bf69a8f532b8.png" loading="lazy" alt="&quot;Mother company&quot; claim — used to build investor confidence" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;Mother company&quot; claim — used to build investor confidence</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/92e538f61bc41888750a9224f1788517.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/92e538f61bc41888750a9224f1788517.png" loading="lazy" alt="Transfer of 42.5% Efforce shares from AitherCO2 to MBM Holdings" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Transfer of 42.5% Efforce shares from AitherCO2 to MBM Holdings</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/2c01a23be1aef07e3335832153395b62.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/2c01a23be1aef07e3335832153395b62.png" loading="lazy" alt="AitherCO2 revenue €171.6M ($196M) — context for &quot;€250M revenue&quot; claims" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">AitherCO2 revenue €171.6M ($196M) — context for &quot;€250M revenue&quot; claims</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a>
+        <p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p>
+      </div>
+      <div class="site-footer__col">
+        <h6>Investigation</h6>
+        <a href="../key-claims.html">Key Claims</a>
+        <a href="../timeline.html">Timeline</a>
+        <a href="../legal-threats.html">Legal Threats</a>
+        <a href="../class-action.html">Class Action</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Subjects</h6>
+        <a href="../entities.html">Entities</a>
+        <a href="../individuals.html">Individuals</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Legal</h6>
+        <a href="../public-interest.html">Public Interest</a>
+        <a href="../public-interest.html#right-of-reply">Right of Reply</a>
+        <a href="/cdn-cgi/l/email-protection#81e2eef3f3e4e2f5e8eeeff2c1e8eff7e4f2f5e8e6e0f5e8efe6e4e7e7eef3e2e4afe2eeec">Corrections</a>
+      </div>
+    </div>
+    <div class="site-footer__defamation">
+      <div class="site-footer__defamation-inner">
+        <strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong>
+        <span>Notice served 3 May 2025 to Hogan Lovells. No rebuttal.</span>
+        <span><strong>Access blocked in high-risk defamation jurisdictions (IT, AE, HK, SC, SG) on legal advice.</strong></span>
+        <span>All claims alleged. Case: 25CV459519 (Benner v. Efforce et al.).</span>
+        <span>Corrections: <a href="/cdn-cgi/l/email-protection#71121e0303141205181e1f0231181f0714020518161005181f161417171e0312145f121e1c"><span class="__cf_email__" data-cfemail="a2c1cdd0d0c7c1d6cbcdccd1e2cbccd4c7d1d6cbc5c3d6cbccc5c7c4c4cdd0c1c78cc1cdcf">[email&#160;protected]</span></a></span>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span class="site-footer__legal">&copy; 2025 Investigating Efforce. Published under the Defamation Act 2013 public interest defence.</span>
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../js/nav.js"></script>

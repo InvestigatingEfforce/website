@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entities — Key Entities Behind Efforce &amp; WOZX — Investigating Efforce</title>
+  <meta name="description" content="Overview of 10 key corporate entities involved in the Efforce and WOZX investigation, from Malta and Bahamas companies to Swiss shells and alleged investors.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/icon-black.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .entity-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-lg);margin:var(--space-xl) 0}
+    .entity-card{border:1px solid var(--grey-200);background:var(--white);display:flex;flex-direction:column;transition:all var(--transition-fast)}
+    .entity-card:hover{border-color:var(--black);box-shadow:0 4px 16px rgba(0,0,0,.08);transform:translateY(-2px)}
+    .entity-card__header{padding:var(--space-lg);border-bottom:1px solid var(--grey-100);display:flex;justify-content:space-between;align-items:flex-start;gap:var(--space-sm)}
+    .entity-card__name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:900;color:var(--black);line-height:1.2}
+    .entity-card__jurisdiction{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);display:block;margin-top:4px}
+    .entity-card__status{font-family:var(--font-mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 8px;white-space:nowrap;flex-shrink:0}
+    .entity-card__status--dormant{background:#fde8e8;color:var(--accent-red)}
+    .entity-card__status--active{background:#e8f5e9;color:#2e7d32}
+    .entity-card__status--opaque{background:#fff3cd;color:#856404}
+    .entity-card__status--investigation{background:#fde8e8;color:var(--accent-red);border:1px solid var(--accent-red)}
+    .entity-card__body{padding:var(--space-lg);flex:1}
+    .entity-card__allegations{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .entity-card__footer{padding:var(--space-md) var(--space-lg);border-top:1px solid var(--grey-100);display:flex;justify-content:space-between;align-items:center}
+    .entity-card__notes{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .entity-card__link{font-family:var(--font-mono);font-size:var(--text-xs);font-weight:700;color:var(--black);text-decoration:none;text-transform:uppercase;letter-spacing:.08em}
+    .entity-card__link:hover{color:var(--accent-red);text-decoration:none}
+
+    /* Category dividers */
+    .entity-category{margin-top:var(--space-2xl);margin-bottom:var(--space-md)}
+    .entity-category__label{font-family:var(--font-mono);font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--grey-400);padding-bottom:var(--space-sm);border-bottom:1px solid var(--grey-200)}
+
+    /* Summary stats bar */
+    .entity-stats{display:flex;flex-wrap:wrap;gap:var(--space-lg);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .entity-stats__item{text-align:center;flex:1;min-width:120px}
+    .entity-stats__num{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1}
+    .entity-stats__num--red{color:var(--accent-red)}
+    .entity-stats__label{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+
+    @media(max-width:768px){
+      .entity-grid{grid-template-columns:1fr}
+      .entity-stats{flex-direction:column;align-items:center}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner">
+    <div class="notice-bar__inner">
+      <span class="notice-bar__item">
+        <span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span>
+        <strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp;
+        All statements alleged, based on verifiable evidence. No substantive rebuttal received.
+        <a href="/cdn-cgi/l/email-protection#74171b06061117001d1b1a07341d1a021107001d1315001d1a131112121b0617115a171b19"><span class="__cf_email__" data-cfemail="0b686479796e687f626465784b62657d6e787f626c6a7f62656c6e6d6d6479686e25686466">[email&#160;protected]</span></a>
+        &middot; <a href="public-interest.html#defamation">Full Notice</a>
+        &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a>
+        <span class="notice-bar__updated">Updated 8 January 2026</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- NAV placeholder — will inherit from template -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="../index.html" class="site-header__brand">
+        <img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28">
+      </a>
+      <nav class="mega-menu" role="navigation" aria-label="Main">
+        <ul class="mega-menu__list">
+          <li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li>
+          <li class="mega-menu__item"><a href="timeline.html">Timeline</a></li>
+          <li class="mega-menu__item"><a href="entities.html" class="mega-menu__link--active">Entities</a></li>
+          <li class="mega-menu__item"><a href="individuals.html">Individuals</a></li>
+          <li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li>
+          <li class="mega-menu__item"><a href="class-action.html">Class Action</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="overline">Entities</span>
+      <h1>Key Entities Behind Efforce &amp; WOZX</h1>
+      <p class="lead">From the Maltese operating company and Bahamian issuance SPV to the Italian &ldquo;mother company,&rdquo; Swiss shells, and alleged anchor investors &mdash; the corporate web allegedly used to raise funds while concealing $68M+ in treasury movements and shielding liabilities.</p>
+      <p class="lead" style="margin-top:var(--space-sm);font-size:var(--text-sm);color:var(--grey-400);">
+        No verifiable legal ties between Malta &amp; Bahamas entities. Zero public trace of the $45M private placement proceeds. Near-zero revenue in Malta filings despite public claims of hundreds of millions.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="defamation-banner defamation-banner--compact">
+        <div class="defamation-banner__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          All allegations unrebutted
+        </div>
+        <div class="defamation-banner__text">
+          Evidence includes public filings, blockchain records, private communications, and archived materials. Claims raised with all entities and legal representatives. No evidence-based rebuttal received.
+          <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#eb888499998e889f82848598ab82859d8e989f828c8a9f82858c8e8d8d8499888ec5888486"><span class="__cf_email__" data-cfemail="91f2fee3e3f4f2e5f8feffe2d1f8ffe7f4e2e5f8f6f0e5f8fff6f4f7f7fee3f2f4bff2fefc">[email&#160;protected]</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="entity-stats">
+        <div class="entity-stats__item">
+          <div class="entity-stats__num entity-stats__num--red">10</div>
+          <div class="entity-stats__label">Entities Identified</div>
+        </div>
+        <div class="entity-stats__item">
+          <div class="entity-stats__num entity-stats__num--red">6</div>
+          <div class="entity-stats__label">Jurisdictions</div>
+        </div>
+        <div class="entity-stats__item">
+          <div class="entity-stats__num entity-stats__num--red">$68M+</div>
+          <div class="entity-stats__label">Treasury Unaccounted</div>
+        </div>
+        <div class="entity-stats__item">
+          <div class="entity-stats__num entity-stats__num--red">€319.9M</div>
+          <div class="entity-stats__label">Undisclosed Tax Liability</div>
+        </div>
+        <div class="entity-stats__item">
+          <div class="entity-stats__num entity-stats__num--red">0</div>
+          <div class="entity-stats__label">Rebuttals Received</div>
+        </div>
+      </div>
+
+      <!-- ── CORE ENTITIES ──────────────────────────── -->
+      <div class="entity-category">
+        <div class="entity-category__label">Core Corporate Structure</div>
+      </div>
+
+      <div class="entity-grid">
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">Efforce Ltd (Malta)</div>
+              <span class="entity-card__jurisdiction">Malta &mdash; Operating / Claimed Parent</span>
+            </div>
+            <span class="entity-card__status entity-card__status--dormant">Active but Dormant</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">Zero employees every year vs claimed 40&ndash;50; &euro;25K total revenue 2019&ndash;2024 vs $250M&ndash;$1.2B claims; no trace of $45M private placement or $68.1M treasury movements; no legal link to Bahamas SPV despite whitepaper claim.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">0 employees &bull; &euro;25K revenue</span>
+            <a href="entities/efforce-malta.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">Efforce Ltd (Bahamas)</div>
+              <span class="entity-card__jurisdiction">Bahamas &mdash; Token Issuance SPV</span>
+            </div>
+            <span class="entity-card__status entity-card__status--dormant">Dormant</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">No filings since 2022 (effectively dormant); no public trace of 1B WOZX minting or $45M raise; zero evidence of &ldquo;controlling entity&rdquo; relationship with Malta despite whitepaper claim; capital $5k&ndash;$50k with late fees.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">No good standing confirmation</span>
+            <a href="entities/efforce-bahamas.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">AitherCO2 S.P.A (Italy)</div>
+              <span class="entity-card__jurisdiction">Italy &mdash; Alleged &ldquo;Mother Company&rdquo;</span>
+            </div>
+            <span class="entity-card__status entity-card__status--dormant">Renamed &amp; Dormant</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">&euro;319.9M undisclosed tax liability; &euro;408.2M loss in 2020 (negative equity); &euro;510 nominal stake transfer to MBM amid crisis (alleged shielding); conflated carbon-credit clients/revenue with energy-efficiency claims; renamed/dormant 2023.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">Tax debt public</span>
+            <a href="entities/aitherco2.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">Aither Group AG (Switzerland)</div>
+              <span class="entity-card__jurisdiction">Switzerland &mdash; Alleged Successor</span>
+            </div>
+            <span class="entity-card__status entity-card__status--opaque">Active &bull; Restructured</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">Publicly presented as &ldquo;beloved parent&rdquo; in 2021 (6 months after stake sale); Feb 2026 denial of any continuity/liability; multiple name/seat/capital changes; opaque ownership; no disclosure of business-unit acquisitions from distressed AitherCO2.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">Multiple restructurings</span>
+            <a href="entities/aither-group.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">MBM Holding AG (Switzerland)</div>
+              <span class="entity-card__jurisdiction">Switzerland &mdash; Shell Recipient</span>
+            </div>
+            <span class="entity-card__status entity-card__status--opaque">Active Shell &bull; Opaque</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">Received 42.5% Efforce stake for &euro;510 (fair value &gt;&euro;600M) on Dec 15, 2020 &mdash; same month as TGE; alleged asset shielding from AitherCO2&rsquo;s &euro;319.9M tax crisis; no public accounts or ownership disclosure.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">No public accounts</span>
+            <a href="entities/mbm-holding.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── INVESTORS & MARKET MAKERS ───────────────── -->
+      <div class="entity-category">
+        <div class="entity-category__label">Alleged Investors &amp; Market Makers</div>
+      </div>
+
+      <div class="entity-grid">
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">HTX Ventures</div>
+              <span class="entity-card__jurisdiction">Dubai / Singapore &mdash; Alleged Lead Investor</span>
+            </div>
+            <span class="entity-card__status entity-card__status--opaque">Private &bull; No Filings</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">Alleged lead buyer of 450M WOZX ($45M); private entity with no public accounts; portfolio ROI claims (291x) contrast with WOZX 99.9% loss; co-investor network with OKX, LD Capital, Shima.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">No public filings</span>
+            <a href="entities/htx-ventures.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">DWF Labs</div>
+              <span class="entity-card__jurisdiction">Dubai &mdash; Alleged Co-Investor &amp; Market Maker</span>
+            </div>
+            <span class="entity-card__status entity-card__status--opaque">Private &bull; Active</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">PitchBook-tagged co-investor; alleged HBTC/Bithumb market making; precursor entities (Digital Wave Finance, VRM.trade); wash-trading allegations (WSJ); undisclosed $44M hack claims.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">Active market maker</span>
+            <a href="entities/dwf-labs.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">Ellipti</div>
+              <span class="entity-card__jurisdiction">Seoul &mdash; Alleged Co-Investor &amp; Bithumb Market Maker</span>
+            </div>
+            <span class="entity-card__status entity-card__status--opaque">Low-Profile &bull; Active</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">PitchBook-tagged in round; Korean focus aligns with Visetti&rsquo;s &ldquo;PI-appointed market maker on Bithumb&rdquo;; lists Efforce on website; -97.8% retail ROI across portfolio (CryptoRank).</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">Active Web3 studio</span>
+            <a href="entities/ellipti.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── EXCHANGES & PARTNERS ────────────────────── -->
+      <div class="entity-category">
+        <div class="entity-category__label">Exchanges &amp; Partner Networks</div>
+      </div>
+
+      <div class="entity-grid">
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">HBTC</div>
+              <span class="entity-card__jurisdiction">Hong Kong / HTX-affiliated &mdash; Launch Exchange</span>
+            </div>
+            <span class="entity-card__status entity-card__status--opaque">Active &bull; HTX Ties</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">WOZX launch exchange; alleged large dumps via hot wallet; Times Square billboard promotion; intra-exchange trading allegations during vesting breaches.</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">HTX ecosystem ties</span>
+            <a href="entities/hbtc.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+        <div class="entity-card">
+          <div class="entity-card__header">
+            <div>
+              <div class="entity-card__name">SEELE (YuanYi Ecology)</div>
+              <span class="entity-card__jurisdiction">China &mdash; Alleged Ponzi-Linked Partner Network</span>
+            </div>
+            <span class="entity-card__status entity-card__status--investigation">Under Police Investigation</span>
+          </div>
+          <div class="entity-card__body">
+            <p class="entity-card__allegations">Andrea Castiglione gave private speeches to SEELE members while publicly denying partnership; WOZX promoted as flagship product in alleged pyramid-selling scheme; Chinese police investigation (Dongguan Yuanyi case) naming WOZX; Pastore: &ldquo;Andrea was the one pushing the SEELE relationship.&rdquo;</p>
+          </div>
+          <div class="entity-card__footer">
+            <span class="entity-card__notes">Multiple arrests &bull; Wang Peng overseas</span>
+            <a href="entities/seele.html" class="entity-card__link">Full Profile &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── CTA ─────────────────────────────────────── -->
+      <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+        <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">10 entities. 6 jurisdictions. Zero transparency.</p>
+        <p style="font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-lg);">Explore individual profiles, or see how the people connect.</p>
+        <a href="individuals.html" class="btn btn--outline" style="margin-right:var(--space-sm);">View Individuals</a>
+        <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);">Submit Your Claim &rarr;</a>
+      </div>
+
+      <p style="font-size:var(--text-xs);color:var(--grey-500);text-align:center;">
+        Related investigations: <a href="https://investigatingaither.com" style="color:var(--grey-500);">investigatingaither.com</a> &middot; <a href="https://investigatinghtxventures.com" style="color:var(--grey-500);">investigatinghtxventures.com</a>
+      </p>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a>
+        <p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p>
+      </div>
+      <div class="site-footer__col">
+        <h6>Investigation</h6>
+        <a href="key-claims.html">Key Claims</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="legal-threats.html">Legal Threats</a>
+        <a href="class-action.html">Class Action</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Subjects</h6>
+        <a href="entities.html">Entities</a>
+        <a href="individuals.html">Individuals</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Legal</h6>
+        <a href="public-interest.html">Public Interest</a>
+        <a href="public-interest.html#right-of-reply">Right of Reply</a>
+        <a href="/cdn-cgi/l/email-protection#bcdfd3ceced9dfc8d5d3d2cffcd5d2cad9cfc8d5dbddc8d5d2dbd9dadad3cedfd992dfd3d1">Corrections</a>
+      </div>
+    </div>
+    <div class="site-footer__defamation">
+      <div class="site-footer__defamation-inner">
+        <strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong>
+        <span>Notice served 3 May 2025 to Hogan Lovells. No rebuttal.</span>
+        <span><strong>Access blocked in high-risk defamation jurisdictions (IT, AE, HK, SC, SG) on legal advice.</strong></span>
+        <span>All claims alleged. Case: 25CV459519 (Benner v. Efforce et al.).</span>
+        <span>Corre

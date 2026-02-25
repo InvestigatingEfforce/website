@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steve Wozniak — Role in Efforce's Alleged Fraudulent Scheme — Investigating Efforce</title>
+  <meta name="description" content="Steve Wozniak individual profile: 11% owner, co-founder claims, 'tokens as shares of stock' statement, $68M unaccounted treasury, 20+ ignored outreach attempts. Unrebutted allegations.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .person-hero{display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);flex-wrap:wrap}
+    .person-hero__photo{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-red);flex-shrink:0}
+    .person-hero__info{flex:1;min-width:280px}
+    .person-hero__name{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-xs)}
+    .person-hero__role{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+
+    .person-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .person-meta__item{text-align:center}
+    .person-meta__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .person-meta__num--red{color:var(--accent-red)}
+    .person-meta__num--gold{color:var(--accent-gold)}
+    .person-meta__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-heading{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .subsection-heading{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul,.section-block ol{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+
+    .data-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-xs)}
+    .data-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm);text-align:left;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;position:sticky;top:0;z-index:1}
+    .data-table td{padding:var(--space-sm);border-bottom:1px solid var(--grey-100);line-height:1.5;vertical-align:top}
+    .data-table tr:hover{background:#fff5f5}
+    .table-scroll{max-height:600px;overflow-y:auto;border:1px solid var(--grey-200);margin:var(--space-lg) 0}
+    .table-scroll::-webkit-scrollbar{width:6px}
+    .table-scroll::-webkit-scrollbar-thumb{background:var(--grey-300);border-radius:3px}
+
+    .criminal-box{background:#fff5f5;border:1px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .criminal-box h3,.criminal-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .criminal-box p,.criminal-box li{font-size:var(--text-sm);line-height:1.7}
+    .civil-box{background:#fffdf0;border:1px solid var(--accent-gold);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .civil-box h3,.civil-box h4{color:#b8860b;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .civil-box p,.civil-box li{font-size:var(--text-sm);line-height:1.7}
+
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+
+    .evidence-section{background:var(--grey-50);padding:var(--space-xl);margin:var(--space-lg) 0;border-left:4px solid var(--accent-red)}
+    .evidence-section h4{color:var(--accent-red)}
+    .evidence-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .evidence-figure{margin:0;text-align:center}
+    .evidence-img{max-width:100%;border:2px solid var(--grey-200);cursor:pointer;transition:all var(--transition-fast)}
+    .evidence-img:hover{border-color:var(--accent-red)}
+    .evidence-figure figcaption{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);padding:var(--space-xs) 0;line-height:1.4}
+
+    .toc{background:var(--grey-50);padding:var(--space-lg);margin:var(--space-xl) 0;border:1px solid var(--grey-200)}
+    .toc h4{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .toc ol{padding-left:var(--space-lg);margin:0;columns:2;column-gap:var(--space-xl)}
+    .toc li{font-family:var(--font-mono);font-size:var(--text-xs);line-height:2;break-inside:avoid}
+    .toc a{color:var(--grey-600);text-decoration:none}
+    .toc a:hover{color:var(--accent-red);text-decoration:underline}
+
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:95vw;max-height:95vh;object-fit:contain}
+
+    @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__photo{width:100px;height:100px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.toc ol{columns:1}.evidence-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#9cfff3eeeef9ffe8f5f3f2efdcf5f2eaf9efe8f5fbfde8f5f2fbf9fafaf3eefff9b2fff3f1"><span class="__cf_email__" data-cfemail="beddd1ccccdbddcad7d1d0cdfed7d0c8dbcdcad7d9dfcad7d0d9dbd8d8d1ccdddb90ddd1d3">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav" aria-label="Related individuals"><a href="steve-wozniak.html" class="current">Steve Wozniak</a><a href="jacopo-visetti.html">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html">Andrea Castiglione</a><a href="sergio-carloni.html">Sergio Carloni</a><a href="ken-hardesty.html">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html">Efforce Team</a></nav></div></section>
+
+  <section class="page-hero"><div class="container">
+    <div class="person-hero">
+      <img src="https://i.gyazo.com/8be5f095c6f471f1198903f1fcd92b78.png" alt="Steve Wozniak" class="person-hero__photo">
+      <div class="person-hero__info">
+        <span class="overline">Individual Profile</span>
+        <h1 class="person-hero__name">Steve Wozniak</h1>
+        <div class="person-hero__role">Co-Founder / Promoter / 11% Owner &mdash; Efforce Ltd</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: blockchain data, filings, private communications, whistleblower leaks, public statements. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#26454954544345524f494855664f48504355524f4147524f4841434040495445430845494b"><span class="__cf_email__" data-cfemail="d4b7bba6a6b1b7a0bdbbbaa794bdbaa2b1a7a0bdb3b5a0bdbab3b1b2b2bba6b7b1fab7bbb9">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="person-meta">
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">11%</div><div class="person-meta__label">Ownership Stake</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">~$350M</div><div class="person-meta__label">Retail Losses Amplified</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">$68M+</div><div class="person-meta__label">Treasury Unaccounted</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">20+</div><div class="person-meta__label">Outreach Attempts Ignored</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">&euro;319.9M</div><div class="person-meta__label">Concealed Tax Liability</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">-99.9%</div><div class="person-meta__label">WOZX Price ($2.88 &rarr; $0.003)</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Rebuttals Received</div></div>
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#role">Wozniak&rsquo;s Role &amp; Alleged Misrepresentations</a></li>
+        <li><a href="#criminal">Possible Criminal Charges</a></li>
+        <li><a href="#civil">Civil Charges</a></li>
+        <li><a href="#jurisdiction">Jurisdictional Considerations</a></li>
+        <li><a href="#systemic">Systemic Misconduct Context</a></li>
+        <li><a href="#summary">Summary of Allegations</a></li>
+        <li><a href="#impact">Investor Impact</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#evidence">Key Evidence (9 Sections)</a></li>
+      </ol>
+    </nav>
+    <div class="section-block" id="introduction" style="border-top:none;">
+<h3 class="section-heading">Introduction</h4>
+<p>Efforce, a blockchain-based energy efficiency platform outlined as co-founded by Steve Wozniak, promised a decentralized solution but failed to deliver, resulting in ~$350M in retail investor losses by June 2025. Blockchain evidence, insider admissions, and whistleblower allegations reveal a pattern of fraud, misrepresentation, and regulatory violations, with Wozniak’s high-profile endorsements amplifying the scheme. The WOZX token, named directly after Wozniak, and an NFT iteration launched in 2022 featuring his caricature leveraged his fame to drive perceived value and rarity, despite the project’s collapse in 2023. As an 11% shareholder, Wozniak’s actions and inactions implicate him in criminal and civil charges under U.S., Maltese, and EU jurisdictions. This article outlines his liability, supported by transaction data, misleading statements, and legal precedents.</p>
+<hr />
+    </div>
+    <div class="section-block" id="role">
+<h3 class="section-heading">Wozniak’s Role and Alleged Misrepresentations</h4>
+<p>Wozniak’s prominence as an Apple co-founder drove Efforce’s credibility, inflating WOZX token prices to $2.88 (Dec 2020, FXStreet) before crashing to $0.0033 (Jun 2025, CoinGecko). The token, named WOZX in his honor, and an NFT iteration launched in 2022 with “Steve Wozniak” caricature images, capitalized on his association to create perceived rarity and value, though the NFT “reveal” never occurred as the project was scrapped in 2023 (Section 9, Nov 18, 2023, Call Summary). His key actions include:</p>
+<ul>
+<li><strong>“Shares of Stock” Claim:</strong> On Yahoo Finance (Dec 8, 2020), Wozniak stated, <em>“I think of owning WOZX as shares of stock,”</em> misleading investors about token utility, as WOZX lacked equity rights or platform functionality (Section 2A, Exposé).</li>
+<li><strong>Decentralized Platform Hype:</strong> In a Businesswire press release (Dec 14, 2020), Wozniak claimed Efforce was a <em>“decentralized platform,”</em> despite no platform materializing by Jun 2025. Jacopo Visetti admitted decentralization was unfeasible (Nov 18, 2023, Section 2C, Exposé). In reality all WOZX tokens sold via private sale were transferred to an anonymous single US-based investor/entity who controlled the market in it's entirety on day one of Exchange listing via it's own holding and it's subsequently onboarded affiliate network.</li>
+<li><strong>U.S.-Targeted Marketing:</strong> Wozniak’s endorsements, including a Times Square billboard (Dec 2020), targeted U.S. investors, despite WOZX restrictions for U.S. persons (Whitepaper, Page 10, $68M Report), establishing SEC jurisdiction.</li>
+<li><strong>Failure to Correct Misstatements:</strong> Wozniak ignored 20+ outreach attempts by whistleblower Michael Copley (2023–2025, Section 2B, Exposé) regarding ~$68M unaccounted from Efforce wallets (Nov 2020–Mar 2023, $68M Report) and the Main Private Investor’s (MPI) ~$350M dump (Section 1, Exposé). He also failed to address Efforce’s false Bithumb claim of his platform launch (Jun 23, 2022, Section 8F, Exposé).</li>
+<li><strong>Undisclosed Internal Investigation:</strong> Wozniak allegedly participated in a private investigation into private investor misconduct, confirmed by Visetti (Nov 18, 2023, Call Summary, Section 1), which found no proof of wrongdoing despite MPI’s 55.3M WOZX vesting breaches (~$296M, 450m Report). This investigation was never disclosed to token holders, concealing potential market manipulation.</li>
+</ul>
+<p><strong>Evidence:</strong> Blockchain data shows the MPI (0x078f4ffc...) dumped ~$336.2M (450M WOZX, Section 1, Exposé), with 173.3M WOZX (~$68.1M) unaccounted from the Efforce Treasury Wallet (ETW, $68M Report). Wozniak’s statements fueled a $1.6B valuation peak (Dec 2020, Section 3B, Exposé), enabling these profits.</p>
+<hr />
+    </div>
+    <div class="criminal-box" id="criminal">
+<h3 class="section-heading">Possible Criminal Charges</h4>
+<h4 class="subsection-heading">Fraud by False Representation</h4>
+<p>Wozniak’s “shares of stock” claim and decentralized platform hype, amplified by the WOZX naming and NFT caricature, constitute fraud under 18 U.S.C. § 1343 (wire fraud). His statements misled investors expecting a functional platform, which-Visetti admitted was undelivered (Section 6A, Exposé). Blockchain evidence of 17.2M WOZX (~$30M) pre-listing transfers (Dec 1–3, 2020, tx: 0x9d04f5..., 450m Report) and Seele’s alleged Ponzi trades (Nov 16, 2023, Section 13A, Exposé) show market manipulation Wozniak’s endorsements facilitated.</p>
+<p><strong>Precedent:</strong> SEC v. Ripple Labs, Inc. (2023) established liability for misleading crypto promotions.</p>
+<h4 class="subsection-heading">Aiding and Abetting Securities Fraud</h4>
+<p>Wozniak’s failure to correct Efforce’s misrepresentations, including his co-founder status, the MPI’s ~$283M dump (Section 1A, Exposé) and ~$68M unaccounted ETW transfers (Nov 2020–Mar 2023, $68M Report), aided securities fraud under SEC Rule 10b-5 (15 U.S.C. § 78j(b)). His prominence enabled a U.S.-based PI to profit, confirmed by Pastore’s pump-and-dump admission (Nov 15, 2022, Section 11A, Exposé). The California lawsuit (25CV459519, Feb 27, 2025, Section 7A, Exposé) and U.S. probes (Visetti, Nov 18, 2023, Section 7A, Exposé) reinforce SEC jurisdiction. </p>
+<p><strong>Precedent:</strong> Matrixx Initiatives, Inc. v. Siracusano (563 U.S. 27, 2011) upheld liability for omissions of material facts.</p>
+<hr />
+    </div>
+    <div class="civil-box" id="civil">
+<h3 class="section-heading">Civil Charges</h4>
+<h4 class="subsection-heading">Negligent Misrepresentation</h4>
+<p>Wozniak’s technical expertise obligated him to verify Efforce’s claims. His silence on ~$68M unaccounted from ETW wallets, the MPI’s ~$350M dump, and Efforce’s non-delivery, despite Copley’s outreach, reflects negligence under California Civil Code § 1710. Efforce’s false Bithumb claim (Jun 23, 2022) and ZD Assurance’s resignation over wallet transparency (2022, Section 7B, Exposé) highlight his due diligence failure.</p>
+<p><strong>Evidence:</strong> ETW’s 160.2M WOZX (~$68.1M) unaccounted transfers (Nov 2020–Mar 2023, $68M Report) and 25M WOZX pre-listing breach (Dec 2, 2020, tx: 0x910179..., $68M Report) show financial opacity Wozniak ignored.</p>
+<h4 class="subsection-heading">Breach of Fiduciary Duty</h4>
+<p>As an 11% shareholder, Wozniak owed token holders a duty of care. Pastore’s admission that Wozniak <em>“abandoned ship without doing much”</em> (Aug 24, 2023, Section 12A, Exposé) and his inaction on the undisclosed internal investigation into PI misconduct (Nov 18, 2023, Call Summary) breached this duty. The lack of crypto activity in Efforce Ltd (Malta) filings (€25K revenue, Feb 12, 2025, $68M Report) further indicates oversight failures Wozniak permitted.</p>
+<p><strong>Precedent:</strong> Stone v. Ritter (911 A.2d 362, Del. 2006) established shareholder liability for oversight failures.</p>
+<h4 class="subsection-heading"> </h4>
+<hr />
+    </div>
+    <div class="section-block" id="jurisdiction">
+<h3 class="section-heading">Jurisdictional Considerations</h4>
+<ul>
+<li><strong>U.S. Jurisdiction:</strong> Wozniak’s California residency, Efforce’s Times Square billboard, and U.S. PI profits ($283M, Section 2C, Exposé) establish SEC and DOJ jurisdiction. The California lawsuit (25CV459519, Feb 27, 2025) and Visetti’s admission of U.S. probes (Nov 18, 2023) confirm scrutiny.</li>
+<li><strong>Malta and EU Jurisdiction:</strong> ZD Assurance’s resignation (2022, Section 7B, Exposé) and Visetti’s GDPR-violating intimidation of Copley (Apr 3, 2024, Section 12C, Exposé) implicate Malta’s VFA Act (Cap. 590) and EU’s MiFID II (Article 24). Eurojust coordinates investigations.</li>
+<li><strong>International Reach:</strong> Seele’s alleged Ponzi trades via HBTC (Nov 16, 2023, Section 13A, Exposé) and 0x3ad5d910...’s HBTC linkage (450m Report) expose Wozniak to AML violations (31 U.S.C. § 5318).</li>
+</ul>
+<hr />
+    </div>
+    <div class="section-block" id="systemic">
+<h3 class="section-heading">Systemic Misconduct Context</h4>
+<p>Wozniak’s liability is amplified by Efforce’s systemic issues:</p>
+<ul>
+<li><strong>Private Investor Dumping:</strong> The MPI dumped 186.6M WOZX (~$69.2M, Oct 29, 2021, tx: 0x5cef87..., 450m Report), breaching vesting schedules (16.8M WOZX excess, Section D, 450m Report). Pastore confirmed a pump-and-dump (Nov 15, 2022, 450m Report).</li>
+<li><strong>Treasury Wallet Breaches:</strong> ETW (0x9d9e8607...) transferred 173.3M WOZX (~$68.1M), with 160.2M unaccounted (Nov 2020–Mar 2023, $68M Report). A 25M WOZX pre-listing breach (Dec 2, 2020, tx: 0x910179...) diluted the market.</li>
+<li><strong>Financial Oversight Failures:</strong> Efforce Ltd (Malta) filings omit crypto activity (€25K revenue, Feb 12, 2025, $68M Report), and Efforce Ltd (Bahamas) filed no accounts, despite $12.5M–$36M private sale claims (Section 8, Call Summary).</li>
+<li><strong>Seele/HBTC Network:</strong> Seele’s WOZX promotion at GDAC 2020 (Nov 10, 2020, 450m Report) and HBTC’s lax controls (Forbes, Jul 6, 2020) enabled intra-exchange trading, obscured by 0x3ad5d910... (96.8M WOZX, $51.9M, 450m Report).</li>
+<li><strong>Intimidation Tactics:</strong> Visetti’s threats against Copley (Dec 16, 2023) and Pastore’s GDPR violation (Apr 3, 2024, Section 12C, Exposé) suppressed transparency, enabled by Wozniak’s disengagement.</li>
+</ul>
+<p><strong>Evidence:</strong> Cross-over through 0x3ad5d910... and 0x8e372e... (122.7M WOZX, ~$63M, 450m Report) shows coordinated dumping, with Efforce’s non-disclosure misleading investors.</p>
+<hr />
+    </div>
+    <div class="section-block" id="summary">
+<div class="table-scroll">
+<h3 class="section-heading">Summary of Allegations</h4>
+<table class="data-table" border="1" cellpadding="10" cellspacing="0">
+<thead>
+<tr>
+<th>Charge</th>
+<th>Wozniak’s Action</th>
+<th>Evidence</th>
+<th>Exposé Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fraud</td>
+<td>“Shares of stock” claim (Dec 8, 2020), WOZX naming, NFT caricature</td>
+<td>Yahoo Finance, $350M retail losses</td>
+<td>2A</td>
+</tr>
+<tr>
+<td>Aiding Securities Fraud</td>
+<td>Enabled $283M PI dump, undisclosed investigation</td>
+<td>Pastore’s admission (Nov 15, 2022), tx: 0x5cef87...</td>
+<td>11A</td>
+</tr>
+<tr>
+<td>Negligent Misrepresentation</td>
+<td>Ignored ~$68M unaccounted, $350M PI dump</td>
+<td>Copley’s outreach (2023–2025), $68M Report</td>
+<td>2B</td>
+</tr>
+<tr>
+<td>Fiduciary Breach</td>
+<td>Disengaged as 11% shareholder, no financial oversight</td>
+<td>Pastore’s “abandoned ship” (Aug 24, 2023), Malta filings</td>
+<td>12A</td>
+</tr>
+<tr>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+    </div>
+    <div class="section-block" id="impact">
+<h3 class="section-heading">Investor Impact</h4>
+<p>Wozniak’s endorsements, WOZX naming, and NFT caricature drove WOZX to $2.88 (Dec 2020, FXStreet), misleading retail investors who suffered ~$350M in losses by Jun 2025 (CoinGecko, $0.0033). The MPI’s 186.6M WOZX dump (~$69.2M, Oct 29, 2021, 450m Report) and ETW’s 160.2M WOZX unaccounted transfers (~$68.1M, $68M Report) fueled this harm, amplified by Wozniak’s failure to address financial opacity or PI misconduct, despite his involvement in the internal investigation.</p>
+<hr />
+    </div>
+    <div class="conclusion-box" id="conclusion">
+<h3 class="section-heading">Conclusion</h4>
+<p>Steve Wozniak’s endorsements, including his “shares of stock” claim (Dec 8, 2020), co-founder marketing (Dec 4, 2020), and the WOZX token and NFT caricature leveraging his fame, fueled Efforce’s fraudulent scheme, contributing to ~$350M in retail losses. His failure to address ~$68M unaccounted from Efforce wallets, the MPI’s ~$350M dump, and the undisclosed internal investigation into PI misconduct reflects negligence and breaches of fiduciary duty, actionable under U.S. (SEC Rule 10b-5), Maltese (VFA Act), and EU (MiFID II) laws. Despite claims of limited involvement, Wozniak’s prominence enabled Seele’s Ponzi trades and Visetti’s intimidation, per Pastore’s admissions (Nov 15, 2022). Immediate investigation into his communications, financial benefits, and awareness is essential to ensure accountability for token holders harmed by Efforce’s systemic misconduct. Regulatory action, including SEC complaints and potential DOJ wire fraud charges, is warranted.</p>
+<hr />
+
+<div>
+    </div>
+    <div class="section-block" id="evidence">
+      <h3 class="section-heading" style="font-size:var(--text-3xl);">Key Evidence: Steve Wozniak</h3>
+      <div class="evidence-section">
+<h4 class="subsection-heading">1. "I think of our tokens as shares of stock"</h4>
+<p>Steve Wozniak stated on <strong>Yahoo Finance (Dec 8, 2020)</strong>: “I think of our tokens as shares of stock,” implying equity-like returns. Efforce amplified this via Telegram without correction.</p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/4625e6b5b0edb74a11904f1bd3992f38.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/de1da72c44e8e7515abc7dbe8d820a34.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/534abe9778d17114a4fec93c9905cc7e.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/48ed8e57d6c799bcc6313a84224bacad.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/e0963399e940afdaf4b0738f7081d56b.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/f78b634bd90262ba8b21cdedcd1e0236.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/bf85c9643ab4a46cd0e52d5b458c6a1c.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></div>
+<p><a href="https://finance.yahoo.com/news/apple-cofounder-steve-wozniak-on-wozx-crypto-listing-i-think-of-our-tokens-as-shares-of-stock-193142748.html" target="_blank" rel="noopener noreferrer">Visit Article</a></p>
+<!-- 2. Co-Founder Claim -->
+      </div>
+      <div class="evidence-section">
+<h4 class="subsection-heading">2. “Co-founder” Claim Despite Joining 14 Months After Formation</h4>
+<p>Efforce Ltd (Malta) formed <strong>June 20, 2018</strong> with two founders (50/50). Wozniak’s shareholding registered <strong>August 12, 2019</strong> (14 months later). Marketed as “co-founder” in PR and media.</p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/f0f9547f7daa378dcf62fbe39343d8f3.jpg" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/e537c299b4c9e6c3d3d3c5b64276565c.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/f4db82bf8c1b6399835f415a5b4e3a1e.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/df7051f353f2f0e6186f4f23529bf989.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/213ba6de01178cdb078519e2b248e9b6.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/4a837358e2589223927c31687f7ddcc1.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/665016f95d67b9f4ae5d94f9e4164b86.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></div>
+      </div>
+      <div class="evidence-section">
+<!-- 3. AitherCO2 Financial Health -->
+<h4 class="subsection-heading">3. AitherCO2 Financial Health &amp; €319.9M Tax Liability</h4>
+<p>Efforce promoted AitherCO2 as “mother company” with $250M–$1.2B revenue. <strong>2020 filings:</strong> €15.4M revenue, <strong>€408.2M loss</strong>, <strong>€319.9M tax liability</strong> (notified Oct 2018). No disclosure to token holders until Apr 2022.</p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>Date/Event</th>
+<th>Financials</th>
+<th>Tax Liability</th>
+<th>Employees</th>
+<th>Revenues</th>
+<th>Filing Date</th>
+<th>Efforce Context</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2011–2014</td>
+<td>N/A</td>
+<td>Basis for audit</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Core trading era</td>
+</tr>
+<tr>
+<td>Sep 2016</td>
+<td>N/A</td>
+<td>Audit initiated</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Dec 31, 2017</td>
+<td>+€483k</td>
+<td>€102.65M observations</td>
+<td>~6</td>
+<td>€12.8M</td>
+<td>May 10, 2018</td>
+<td>Clean audit</td>
+</tr>
+<tr>
+<td>Aug 2018</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td><strong>Efforce ICO launch</strong></td>
+</tr>
+<tr>
+<td>Dec 31, 2018</td>
+<td>+€416k</td>
+<td>€319.1M notices</td>
+<td>7</td>
+<td>€18.2M</td>
+<td>Dec 24, 2019</td>
+<td>SIM bid</td>
+</tr>
+<tr>
+<td>Early 2019</td>
+<td>+€526k</td>
+<td>Appeals</td>
+<td>8</td>
+<td>€22.1M</td>
+<td>May 14, 2021</td>
+<td>Peak year</td>
+</tr>
+<tr>
+<td>Jan 27, 2020</td>
+<td>N/A</td>
+<td>€6.2M VAT</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Apr 30, 2020</td>
+<td>N/A</td>
+<td>€179.9M enrolled</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Dec 3–4, 2020</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td><strong>WOZX lists</strong>; $950M cap</td>
+</tr>
+<tr>
+<td>Dec 15, 2020</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td><strong>€510 transfer to MBM</strong></td>
+</tr>
+<tr>
+<td>Dec 31, 2020</td>
+<td>–€408.2M</td>
+<td>€400.7M provision</td>
+<td>6</td>
+<td>€15.4M</td>
+<td>Jan 24, 2022</td>
+<td>Going-concern warning</td>
+</tr>
+<tr>
+<td>Apr 19, 2021</td>
+<td>N/A</td>
+<td>€319.1M confirmed</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Jun 2021</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Token holders notified</td>
+</tr>
+<tr>
+<td>Post-Jul 2021</td>
+<td>N/A</td>
+<td>Cassazione appeal</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Dec 31, 2021</td>
+<td>–€36.5M</td>
+<td>No new</td>
+<td>5</td>
+<td>€9.1M</td>
+<td>Jul 20, 2023</td>
+<td>Negative audit</td>
+</tr>
+<tr>
+<td>Dec 31, 2022</td>
+<td>–€362k</td>
+<td>Going-concern unmet</td>
+<td>4</td>
+<td>€7.8M</td>
+<td>Jul 20, 2023</td>
+<td>Negative audit</td>
+</tr>
+<tr>
+<td>~2023</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>3</td>
+<td>€0</td>
+<td>N/A</td>
+<td>Name change</td>
+</tr>
+<tr>
+<td>2023–2024</td>
+<td>–€13.9M</td>
+<td>No settlement</td>
+<td>3</td>
+<td>€0</td>
+<td>N/A</td>
+<td>Trading halts</td>
+</tr>
+<tr>
+<td>May 29, 2025</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>3</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Assembly convened</td>
+</tr>
+</tbody>
+</table></div>
+      </div>
+      <div class="evidence-section">
+<!-- 4. €510 Transfer -->
+<h4 class="subsection-heading">4. €510 Transfer to MBM Holdings AG</h4>
+<p>AitherCO2 transferred 42.5% of Efforce Ltd (Malta) to MBM Holdings AG (Switzerland) for <strong>€510</strong> (Dec 15, 2020), despite:</p>
+<ul>
+<li><strong>Efforce PR (Dec 4):</strong> “$80M valuation” → 42.5% = <strong>$34M</strong></li>
+<li><strong>WOZX treasury:</strong> 550M × $2.90 = <strong>$1.6B</strong> → 42.5% = <strong>$680M</strong></li>
+</ul>
+<p><strong>Hogan Lovells (Jun 13, 2025):</strong> “We represent AitherCO2 + MBM.”</p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/6395dc7aae6e085cd415c0e1f25f16d4.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/4626ce6fd6a32d7f9dca15197747fb34.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/989431bc052f2a7e3e6ea295378ef0c0.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/ae1c9118dc9e7b9c0e0d84c753dfbfee.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></div>
+      </div>
+      <div class="evidence-section">
+<!-- 5. Outreach Attempts -->
+<h4 class="subsection-heading">5. Outreach Attempts to Wozniak (2023–2025)</h4>
+<p>20+ attempts via X, Cameo, email (Ken@[REDACTED]). One reply: “Send to Ken Hardesty.” No further response.</p>
+<h6><strong><span>EMAIL 1<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/0f87fba1d3874cdb578ac4e9cf87c077.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 2<br /><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/401c3e759e4e02adc69d9f6c191737c4.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/1dcf69176c07c80a353c9aec90c0a609.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/6f760676ec39a0f1b2332d2f5f89a2dd.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/5d0e12b372f2e3bb68c65b8cf7cb07fa.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br />EMAIL 3<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/401c3e759e4e02adc69d9f6c191737c4.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 4<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/ca1b6dd6e22a1aa3af36260df558c30e.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/dfd4cb2deb534949c6281535728788b5.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 5<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/e0d1ca16bbc3b409ee19e28ea90e8616.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/653f8d74fc4d993d9565ec177d489507.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br />EMAIL 6<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/57dfdb88b3c35edaf9ec543e0e3202ef.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/9ce77727f3dbfd419aa43da22854d96d.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br />EMAIL 7<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/ed1ef5b3e1157cd0c75b69a89f4730a9.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/55db80260be588ba6dc6175139c5103e.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/1ada2b26fa1f5fbc033e3d1013cfacf4.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br />EMAIL 8<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/a6a356bae48226e82088191945ddad6b.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/b251643b01ea3c49f31d8975253542eb.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/6e373141090aab2f1ddddf24ce689888.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/1f002c3e0727f93ab9f28b0cda500192.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/ba6be13b61e4ee0a6a0a3b1df84ff1eb.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br />EMAIL 9<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/bdf5608f53f5b405662bb0fa53310ba3.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/138b5135a9b945812592b4ef6aa8cdbc.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 10<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/80eb650e05e752bc71a0d7df9017a954.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/7d9553cf528d66ce89383897a253a351.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/191a0673e1afe87df7991068ca5f9487.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/939ad1770e55c564cc920a55eb188836.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br /><br />EMAIL 11<br /><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/6a6abd8bebaa3e621b16013a63323098.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/2b7dcca3591983c0abfb75116956a25b.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/03c397ec6de375ca825e7cbba6d43a50.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/db74c36c3dba93c935949ed06669a8e5.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/2cb474b221f4fc4355efc2c71d29f103.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/2e1079c113420b790bbdfaea92f1e42d.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/04ce7c348f4917d0058f5e7e63d9870c.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/0db15d8cc393e272b87eeeb6e8975427.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br />EMAIL 12 -</span> Mr Wozniak responded to Cameo instructing to Email Ken Hardesty (Efforce 4% owner, Board Member, CEO in Residence of Gerbsman Partners<span>). <br /><br /></span><span>Then promptly blocked me from future contact.<br /><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/c1303b01833255043b6c0bb4eac063fc.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></span><span><br /><br /><br />EMAIL 13<br /><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/7a162211717d4691d4e157693d565396.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 14 - Sent to Zampapartners (Efforce's Auditor) with Woz/Ken/Efforce cc:d in<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/3453ed41eb19eeef395ca80629f125e7.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/9f2ed1a693289a12fbcfb5658630daa0.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/1e11c85f63f9292c3f6025b3b93400d3.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/3e3e2dd8fef291713e71f80871de5117.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/c77e7e2a6b37120831bec53d9dd10e5f.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/6cee2d15fef0396aa390b67f8aabc601.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/65edc38cff837fe376eda7072fc57112.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />Email 15 was followed up with clarification:<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/67b27f396834c9c253e6d1778b65977c.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br /><br />EMAIL CHAIN 16 - Sent to Seamus (Woz.org associate) requesting to ensure Woz is aware<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/8b7f7adc2701a20e2169a92c7ebcdd8b.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/ddb233e4e917a6813e03f8769245cbe8.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/68cf2c19ca4a74a39aa1438c8bbeedad.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.1&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9paGmI_KVjliaDcesM9RmVMatE-GoQd6LNg2A0UO4UZEKoAdAaZrQBDNoeKBAHtLQjbVIJI48ZrIMQgVtQEEOJ7QLExBu-sVEOIltyDfU2Ts5gYCnExyBoXtY&amp;disp=emb&amp;realattid=ii_m70mm1rd0&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.2&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_Y8lPsHjmRgSkk762MfC8-Umn2z87nysK4_HKzPyDeCpH5XwKR245PAOjeWOvEPw5yyyzdW_d-B2oZUN8UB2_ddp_yOAE1hQwKaQUjINm_0zpw4T3LiRHWuaU&amp;disp=emb&amp;realattid=ii_m70mm7dj1&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.3&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9q-8ZsI3axL83Fjo6CKkN1UKTiua2f-bLAcb4MlNAQgB_xJr-EtUpH92ZvT0t8Db4uEre8rYdg53uJqFqdKGTk67Uyar3QaCrM7mb3iPX5dokVGlfytPyd3Qc&amp;disp=emb&amp;realattid=ii_m70mmahy2&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.4&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9WaMbJKxvsTbABdQABaYQI8DoepdejLHkslSjy39ZiOr7VQeMwMQiL-PQR6sUcUr2xzcJcqwgc7Sdgf_xG_0TXoSqP5jvfK0ubVOmW3hlDJcg4Sj0f8aavIzc&amp;disp=emb&amp;realattid=ii_m70mmdl43&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.5&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_1ZvYRmkP3p-sFNJTRcft-ZwSoLlOL6jrG64UKcibUCYeGyo1MTgavbJ6kt_u9c-VPILyvVk49ODohw-hFEBOz9SCs3QoXxpB0_VVLJEbBSs3krJVFF_jhTj8&amp;disp=emb&amp;realattid=ii_m70mmgpb4&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.6&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9uVrc0cLy3vVus-U0KhX18cRLbWY2fN1KwLo0FfWb9ORnhQ8tYlIAxCqP5onw_WXzNr2cKrb3OGZ_aod5rg4EqGUFdhqjGzQFihh2dm0xouV58HMrgEM9-0u0&amp;disp=emb&amp;realattid=ii_m70mmjz25&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.7&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_b_VU6k6WMJsQ18Y-ST00gTK6J1lLwruqD8l2ibl06uJZo61rzyIvwD1DIIH1oFc1PFpvv2_eefkIdMKxDp6zC7kUCphIuGqJlT8R7lTk41opzVmmSfn12u9Q&amp;disp=emb&amp;realattid=ii_m70mmmyf6&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.8&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ8CYgsKFPi0Hn4UIbPJYAfMgG6_Ijx1rirp83ehkP_nLyUST1Ivo5rOm759JgGFi94C4QwP1xsj0d1ANp_YtxUSM2SsaBCgn2FfvPKCxtG9iAyuc_U87IVn8t8&amp;disp=emb&amp;realattid=ii_m70mmpq77&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.9&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ_j7VTgrBbS5b7BCzQrrZhglLVnT1BJWMFd4iiIv2DIgjgjPWNYG_sPaMOinf4N6fix9TbT9rISNE1dzcTLvZtOFmip6uaK_zUL9WWF6uG9_xaL1MLG3SjwKnM&amp;disp=emb&amp;realattid=ii_m70mmsq78&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.10&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ8k42FEPLOlCkL4IMI9ZKpEIbCkPMWPemZ9V__5US9kJIcUdqiH2f8cHVBWWxfy-ulcFund7D5krNgQ53DRkQI2PXEjQO73dtajTr2Z29LcgvQPyQMRNwCViBo&amp;disp=emb&amp;realattid=ii_m70mmvx39&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.11&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ9QLxuLOZZ_8ATAZcNcY28-ce6Yazez8hypt6KBJKJNosPXYjW0WXx5yeQv2vnnitnDHsXS0Na-VOsM85JXtLfZjYwPzCFNWb2YPhHvpngHJRTzGCnn3Mst650&amp;disp=emb&amp;realattid=ii_m70mmyxz10&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.12&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ8gegIOkjt37C4le57CoqGShX0dfzhZpgOKXFc9eABhpNZS7RUlpr9D7yUEilNp-wBNTttX4jE7zCBwA3LD-hMBGSpmQpqC5JyKZuhdZGZ9EguhHNQGX9qFoUY&amp;disp=emb&amp;realattid=ii_m70mn27311&amp;zw" alt="image.png" /><br /><img src="https://mail.google.com/mail/u/0?ui=2&amp;ik=a688dc1105&amp;attid=0.13&amp;permmsgid=msg-a:r-9092963626716975092&amp;th=194f59ae6ca9d744&amp;view=fimg&amp;fur=ip&amp;permmsgid=msg-a:r-9092963626716975092&amp;sz=s0-l75-ft&amp;attbid=ANGjdJ8FtXPsHnqGXDIA7A33oV3dORK-0tUw8CiMDg9YGSw8Mv4DU0Taode20zPklwtbf8yISEZWwZQRnh5m_kvvwk8RXqRfHaO8umcdQZ2oaO4rhD4hgW-I8GUDfDA&amp;disp=emb&amp;realattid=ii_m70mn4vi12&amp;zw" alt="image.png" /><br /><br />EMAIL 17 Continued chain with Seamus<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/5b21de625de00f20e11dddd631893324.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/50fbf47e56640c8a94ef3e761a62342f.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/df1608cc971b36174f1e0cc640bbebaf.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/222d37a42cd683303b29b80a37769804.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/a32394c74cac7ce721c5ffc62a2c61cf.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/6a5ed294ca16f8b691eaea2e49cbd019.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/6b6256a03f0d986fdc403ffbe98275f3.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 18 - Demand Letter<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/b7fad3e0085477e41c8e7c59fbf4e95d.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 19<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/0a2721caf22565d999def746bd17065c.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/4d731646cf9d0d78768ff84d3bcfc4f5.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br />EMAIL 20<br /><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/3cbccf2ed099a463c56c83b525edf580.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><figure class="evidence-figure"><img src="https://i.gyazo.com/9bf95f87f55a69645f41eea42b1ae71f.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure><br /><br /></span>Mr Wozniak was notified time and time again about serious wrongdoing via these emails in addition to outreach attempts on X. Despite his 11% shareholding, co-founder title, and the WOZX token ticker being named after him, he chose to stay silent rather than addressing the concerns - allowing token holder concerns to deepen. This was not the response I expected from someone myself and so many others trusted so dearly. <span><br /><br /><br /><br /></span></strong></h6>
+<div> <!-- ... all 19 emails ... --> </div>
+<div> </div>
+<div> </div>
+      </div>
+      <div class="evidence-section">
+<!-- 6. Continued Promotion -->
+<h4 class="subsection-heading">6. Continued Promotion Despite Concerns</h4>
+<p>A) Embraced “co-founder” title.<br /> B) Attended Dubai PR event (Nov 2021) amid 83% drop.<br /> C) Allowed “WOZX” ticker and “Steve Wozniak NFTs” (Aug 2022) despite 93% drop.</p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/f0f9547f7daa378dcf62fbe39343d8f3.jpg" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/ed1579143083df1cb95e0940e2db9563.jpg" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/e9f7da4f2f9ca728c49ebd91fc3ee2ca.jpg" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/21cab3479e51fb776d2117aafa2d6fb0.jpg" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/e8ee2a8dd2c9663c184b2389f10a2c8e.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></div>
+      </div>
+      <div class="evidence-section">
+<!-- 7. U.S. Media Promotion -->
+<h4 class="subsection-heading">7. U.S. Media Promotion Without Restrictions</h4>
+<p>Promoted WOZX in Yahoo Finance despite whitepaper claim of no U.S. token holders. Efforce's first exchange listing and the highest volume exchange HBTC only enforced KYC once deposit/withdrawal thresholds were reached allowing US citizens to buy WOZX. <br /><br /><figure class="evidence-figure"><img src="https://i.gyazo.com/81defd5aa0ca039a2f97311d2a91d349.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></p>
+<p>Despite clear Whitepaper:<br /><figure class="evidence-figure"><img src="https://i.gyazo.com/665f3c06d6e1e3c719fcd298efbf1ed9.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></p>
+<p><a href="https://finance.yahoo.com/news/apple-cofounder-steve-wozniak-on-wozx-crypto-listing-i-think-of-our-tokens-as-shares-of-stock-193142748.html" target="_blank" rel="noopener noreferrer">Article<br /><br /><br /><br /><br /><br /></a></p>
+      </div>
+      <div class="evidence-section">
+<!-- 8. Whitepaper & Structure -->
+<h4 class="subsection-heading">8. Whitepaper &amp; Corporate Structure</h4>
+<p>Whitepaper promised 1% savings redistribution, blockchain-verified savings, bill payments — none delivered. No legal ties between Malta/Bahamas entities or AitherCO2 in filings. No record of $12.5M–$36M proceeds or $68M+ treasury transfers in Efforce Malta or Bahamas accounts.</p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/1bb730ec4a57d1fa0de93e3ad19f812d.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/076b444653eab990cde7d9bdf5db87d8.png" loading="lazy" alt="Evidence" class="evidence-img"><figcaption>Evidence screenshot</figcaption></figure></div>
+      </div>
+      <div class="evidence-section">
+
+      </div>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="../individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#23404c51514640574a4c4d50634a4d554650574a4442574a4d444645454c5140460d404c4e">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#89eae6fbfbeceafde0e6e7fac9e0e7ffecfafde0eee8fde0e7eeecefefe6fbeaeca7eae6e4"><span class="__cf_email__" data-cfemail="07646875756264736e686974476e69716274736e6066736e6960626161687564622964686a">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></fo

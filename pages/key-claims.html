@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Claims — Alleged Claims Against Efforce Ltd &amp; Associated Parties — Investigating Efforce</title>
+  <meta name="description" content="Comprehensive documented allegations against Efforce Ltd, WOZX token, Steve Wozniak, and associated parties. All claims tracked with rebuttal status.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/icon-black.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .claims-toc{background:var(--grey-50);border:1px solid var(--grey-200);padding:var(--space-xl);margin-bottom:var(--space-2xl)}
+    .claims-toc__title{font-family:var(--font-body);font-size:var(--text-sm);font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--grey-500);margin-bottom:var(--space-md)}
+    .claims-toc__list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:var(--space-sm)}
+    .claims-toc__list a{display:flex;align-items:center;gap:var(--space-sm);font-size:var(--text-sm);font-weight:600;color:var(--grey-800);text-decoration:none;padding:var(--space-sm) var(--space-md);border-left:3px solid var(--grey-200);transition:all var(--transition-fast)}
+    .claims-toc__list a:hover{border-left-color:var(--accent-red);background:var(--white);color:var(--black)}
+    .claims-toc__list .claim-num{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent-red);min-width:24px}
+    @media(max-width:768px){.claims-toc__list{grid-template-columns:1fr}}
+    .claim-section{padding:var(--space-2xl) 0;border-top:var(--border-heavy)}
+    .claim-section__number{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--accent-red);font-weight:700;display:block;margin-bottom:var(--space-xs)}
+    .claim-section h3{font-size:var(--text-3xl);margin-bottom:var(--space-sm)}
+    .claim-section h4{font-size:var(--text-xl);margin-top:var(--space-2xl);margin-bottom:var(--space-md);color:var(--grey-800);border-left:4px solid var(--accent-red);padding-left:var(--space-md)}
+    .claim-section h5{font-size:var(--text-lg);font-family:var(--font-body);font-weight:700;margin-top:var(--space-xl);margin-bottom:var(--space-md)}
+    .quote-block{background:var(--grey-50);border-left:4px solid var(--grey-300);padding:var(--space-lg) var(--space-xl);margin:var(--space-xl) 0}
+    .quote-block--warning{background:#fff8e1;border-left-color:var(--accent-gold)}
+    .quote-block--danger{background:#fef2f2;border-left-color:var(--accent-red)}
+    .quote-block--info{background:#eff6ff;border-left-color:var(--accent-blue)}
+    .quote-block--success{background:#f0fdf4;border-left-color:var(--accent-green)}
+    .quote-block p{font-size:var(--text-sm);line-height:1.6;margin-bottom:var(--space-md);font-style:italic;color:var(--grey-700)}
+    .quote-block p:last-child{margin-bottom:0}
+    .key-questions{background:var(--black-soft);color:var(--grey-200);padding:var(--space-xl);margin:var(--space-xl) 0}
+    .key-questions h5{color:var(--white);font-family:var(--font-body);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:var(--text-sm);margin-bottom:var(--space-md)}
+    .key-questions ol{padding-left:var(--space-lg)}
+    .key-questions li{margin-bottom:var(--space-sm);font-size:var(--text-sm);line-height:1.5;color:var(--grey-300)}
+    .legal-box{background:var(--grey-50);border:1px solid var(--grey-200);padding:var(--space-lg);margin:var(--space-lg) 0;font-size:var(--text-sm);line-height:1.6}
+    .legal-box strong:first-child{color:var(--accent-red);text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:var(--space-sm);font-size:var(--text-xs)}
+    .evidence-img{margin:var(--space-xl) 0;border:1px solid var(--grey-200);background:var(--grey-50)}
+    .evidence-img img{width:100%;display:block}
+    .evidence-img figcaption{padding:var(--space-md);font-size:var(--text-xs);color:var(--grey-500);border-top:1px solid var(--grey-200)}
+    .cta-banner{text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0}
+    .overview-list{list-style:none;padding:0}
+    .overview-list li{padding:var(--space-sm) 0 var(--space-sm) var(--space-lg);border-left:3px solid var(--grey-200);margin-bottom:var(--space-xs);font-size:var(--text-sm);line-height:1.5;transition:border-color var(--transition-fast)}
+    .overview-list li:hover{border-left-color:var(--accent-red)}
+    .note-block{background:var(--grey-50);border-left:4px solid var(--grey-400);padding:var(--space-md) var(--space-lg);margin:var(--space-lg) 0;font-size:var(--text-sm);color:var(--grey-700)}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner">
+    <div class="notice-bar__inner">
+      <span class="notice-bar__item">
+        <span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span>
+        <strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp;
+        This site discusses matters of public interest re: Efforce Ltd, WOZX token, and related parties &mdash; subjects of ongoing U.S. litigation
+        (<em>Case No. 25CV459519: Benner &amp; Copley v. Wozniak, Efforce Ltd et al.</em>).
+        All statements are alleged and based on verifiable evidence. No substantive rebuttal received to date.
+        <a href="/cdn-cgi/l/email-protection#3a595548485f594e535554497a53544c5f494e535d5b4e53545d5f5c5c5548595f14595557"><span class="__cf_email__" data-cfemail="eb888499998e889f82848598ab82859d8e989f828c8a9f82858c8e8d8d8499888ec5888486">[email&#160;protected]</span></a>
+        &nbsp;&middot;&nbsp; <a href="public-interest.html#defamation">Full Notice</a>
+        &nbsp;&middot;&nbsp; <a href="public-interest.html#right-of-reply">Right of Reply</a>
+        <span class="notice-bar__updated">Updated 8 January 2026</span>
+      </span>
+    </div>
+  </div>
+<header class="site-header">
+    <div class="masthead">
+      <div class="masthead__brand">
+        <a href="../index.html" class="masthead__logo-link">
+          <img src="../images/logo-black.png" alt="Investigating Efforce" class="masthead__logo" height="40">
+        </a>
+        <span class="masthead__subtitle">A Public Interest Investigation</span>
+      </div>
+      <div class="masthead__actions">
+        <div class="masthead__search">
+          <input type="search" placeholder="Search claims, entities, evidence…" aria-label="Search site">
+          <button type="button" aria-label="Search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MEGA MENU NAVIGATION -->
+  <nav class="main-nav" aria-label="Main navigation">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <div class="main-nav__inner">
+      <div class="nav-item" data-mega>
+        <a href="key-claims.html" class="nav-item__trigger">Key Claims <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Overview</h6><a href="key-claims.html" class="mega-menu__link">All Key Claims</a></div>
+          <div class="mega-menu__section"><h6>By Status</h6><a href="key-claims.html#unrebutted" class="mega-menu__link">Unrebutted</a><a href="key-claims.html#partial" class="mega-menu__link">Partially Rebutted</a><a href="key-claims.html#pending" class="mega-menu__link">Pending Response</a></div>
+          <div class="mega-menu__section"><h6>By Topic</h6><a href="key-claims.html?topic=missing-funds" class="mega-menu__link">Missing Funds</a><a href="key-claims.html?topic=misrepresentation" class="mega-menu__link">Misrepresentation</a><a href="key-claims.html?topic=corporate-governance" class="mega-menu__link">Corporate Governance</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="timeline.html" class="nav-item__trigger">Timeline <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Views</h6><a href="timeline.html" class="mega-menu__link">Full Timeline</a><a href="timeline-summary.html" class="mega-menu__link">Summary</a></div>
+          <div class="mega-menu__section"><h6>Filter By</h6><a href="timeline.html?filter=legal" class="mega-menu__link">Legal Events</a><a href="timeline.html?filter=blockchain" class="mega-menu__link">Blockchain Events</a><a href="timeline.html?filter=corporate" class="mega-menu__link">Corporate Actions</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="entities.html" class="nav-item__trigger">Entities <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Companies</h6><a href="entities/efforce-malta.html" class="mega-menu__link">Efforce Malta</a><a href="entities/efforce-bahamas.html" class="mega-menu__link">Efforce Bahamas</a><a href="entities/aitherco2.html" class="mega-menu__link">AitherCO2</a><a href="entities/aither-group-ag.html" class="mega-menu__link">Aither Group AG</a><a href="entities/mbm-holding-ag.html" class="mega-menu__link">MBM Holding AG</a></div>
+          <div class="mega-menu__section"><h6>Overview</h6><a href="entities.html" class="mega-menu__link">All Entities</a><a href="entities.html#structure" class="mega-menu__link">Corporate Structure Map</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="individuals.html" class="nav-item__trigger">Individuals <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Key Individuals</h6><a href="individuals/steve-wozniak.html" class="mega-menu__link">Steve Wozniak</a><a href="individuals/jacopo-visetti.html" class="mega-menu__link">Jacopo Visetti</a><a href="individuals/jacopo-vanetti.html" class="mega-menu__link">Jacopo Vanetti</a></div>
+          <div class="mega-menu__section"><h6>Overview</h6><a href="individuals.html" class="mega-menu__link">All Individuals</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="blockchain.html" class="nav-item__trigger">Blockchain <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Analysis</h6><a href="blockchain/missing-68m.html" class="mega-menu__link">Efforce Missing $68M</a><a href="blockchain/private-investor.html" class="mega-menu__link">Private Investor Analysis</a></div>
+          <div class="mega-menu__section"><h6>Data</h6><a href="blockchain.html" class="mega-menu__link">All Blockchain Data</a><a href="blockchain.html#wallets" class="mega-menu__link">Wallet Addresses</a><a href="blockchain.html#transactions" class="mega-menu__link">Key Transactions</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="evidence.html" class="nav-item__trigger">Evidence <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>By Type</h6><a href="evidence.html?type=document" class="mega-menu__link">Documents</a><a href="evidence.html?type=screenshot" class="mega-menu__link">Screenshots</a><a href="evidence.html?type=video" class="mega-menu__link">Videos</a><a href="evidence.html?type=chat" class="mega-menu__link">Chat Logs</a><a href="evidence.html?type=accounts" class="mega-menu__link">Company Accounts</a></div>
+          <div class="mega-menu__section"><h6>Overview</h6><a href="evidence.html" class="mega-menu__link">Full Evidence Index</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="legal.html" class="nav-item__trigger">Legal <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Legal</h6><a href="legal.html" class="mega-menu__link">Current Legal Situation</a><a href="legal.html#threats" class="mega-menu__link">Legal Threats</a><a href="legal.html#filings" class="mega-menu__link">Court Filings</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="public-interest.html" class="nav-item__trigger">Public Interest <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Legal Framework</h6><a href="public-interest.html#defamation" class="mega-menu__link">Defamation Act Defence</a><a href="public-interest.html#right-of-reply" class="mega-menu__link">Right of Response</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item">
+        <a href="class-action.html" class="nav-item__trigger nav-item__trigger--no-dropdown">Class Action</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="overline">Key Claims</span>
+      <h1>Alleged Claims Against Efforce Ltd &amp; Associated Parties</h1>
+      <p class="lead">All claims below are <strong>allegations</strong> based on blockchain data, court filings, private communications, and whistleblower leaks. All named parties have been invited to respond. No substantive rebuttal has been received to date.</p>
+      <p class="lead" style="margin-top:var(--space-sm);">
+        <em>Case: Superior Court of California, Santa Clara County, Case No. 25CV459519: Benner &amp; Copley v. Wozniak, Efforce Ltd et al.</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="defamation-banner defamation-banner--compact">
+        <div class="defamation-banner__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          UK Defamation Act 2013 s.4 &ndash; Public Interest Publication
+        </div>
+        <div class="defamation-banner__text">
+          All claims on this page are alleged, made in good faith, supported by verifiable evidence (public blockchain data, filings, Telegram, Nov 18, 2023 call), and published in the public interest. Claims raised with all entities/legal reps. <strong>No evidence-based rebuttal received.</strong>
+          <a href="public-interest.html#defamation">Full notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#34575b46465157405d5b5a47745d5a425147405d5355405d5a535152525b4657511a575b59"><span class="__cf_email__" data-cfemail="5a393528283f392e333534291a33342c3f292e333d3b2e33343d3f3c3c3528393f74393537">[email&#160;protected]</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="padding-top:var(--space-xl);">
+    <div class="cta-banner">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-md);">Were you affected by Efforce or WOZX?</p>
+      <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);">Submit Your Claim (2 mins &ndash; No Cost) &rarr;</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="claims-toc">
+        <div class="claims-toc__title">Table of Contents &mdash; Detailed Allegations</div>
+        <ul class="claims-toc__list">
+          <li><a href="#section-overview"><span class="claim-num">&bull;</span> Overview of Allegations</a></li>
+          <li><a href="#section-personnel"><span class="claim-num">&bull;</span> Key Personnel &amp; Roles</a></li>
+          <li><a href="#section-entities"><span class="claim-num">&bull;</span> Involved Entities</a></li>
+          <li><a href="#section-financial"><span class="claim-num">&bull;</span> Financial Claims Summary</a></li>
+          <li><a href="#section-1"><span class="claim-num">1</span> Private Investor &amp; Blockchain Profits</a></li>
+          <li><a href="#section-2"><span class="claim-num">2</span> Misrepresentation of WOZX as a Security</a></li>
+          <li><a href="#section-3"><span class="claim-num">3</span> Financial Obfuscation &amp; Money Laundering</a></li>
+          <li><a href="#section-4"><span class="claim-num">4</span> AitherCO2 Misrepresentation &amp; Tax Evasion</a></li>
+          <li><a href="#section-5"><span class="claim-num">5</span> Vesting &amp; Supply Misrepresentation</a></li>
+          <li><a href="#section-6"><span class="claim-num">6</span> Non-Delivery of Platform &amp; Utility</a></li>
+          <li><a href="#section-misrep"><span class="claim-num">&bull;</span> Additional Misrepresentations</a></li>
+          <li><a href="#section-questions"><span class="claim-num">&bull;</span> Key Questions for Efforce</a></li>
+          <li><a href="#section-evidence"><span class="claim-num">&bull;</span> Evidence Sources</a></li>
+        </ul>
+      </div>
+
+      <div class="filter-bar" data-target=".claim-section">
+        <div class="filter-bar__row">
+          <span class="filter-bar__label">Filter Claims:</span>
+          <select class="filter-bar__select" data-filter="topic">
+            <option value="">All Topics</option>
+            <option value="blockchain">Blockchain / Funds</option>
+            <option value="misrepresentation">Misrepresentation</option>
+            <option value="financial">Financial Obfuscation</option>
+            <option value="aitherco2">AitherCO2</option>
+            <option value="vesting">Vesting</option>
+            <option value="platform">Platform / Utility</option>
+          </select>
+          <select class="filter-bar__select" data-filter="person">
+            <option value="">All Individuals</option>
+            <option value="wozniak">Steve Wozniak</option>
+            <option value="visetti">Jacopo Visetti</option>
+            <option value="vanetti">Jacopo Vanetti</option>
+            <option value="carloni">Sergio Carloni</option>
+            <option value="castiglione">Andrea Castiglione</option>
+            <option value="pastore">Paolo Pastore</option>
+            <option value="hardesty">Ken Hardesty</option>
+          </select>
+          <select class="filter-bar__select" data-filter="entity">
+            <option value="">All Entities</option>
+            <option value="efforce-malta">Efforce Malta</option>
+            <option value="efforce-bahamas">Efforce Bahamas</option>
+            <option value="aitherco2">AitherCO2 S.p.A.</option>
+            <option value="mbm">MBM Holdings AG</option>
+          </select>
+          <input class="filter-bar__search" type="text" placeholder="Search claims&hellip;">
+          <button class="filter-bar__reset">Reset</button>
+          <span class="filter-bar__count"></span>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-overview" data-topic="misrepresentation,blockchain,financial,aitherco2,vesting,platform" data-person="wozniak,visetti,vanetti,carloni,castiglione,pastore,hardesty,scozzese" data-entity="efforce-malta,efforce-bahamas,aitherco2,mbm">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Overview</span>
+          <h3>Overview of Allegations</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p>Efforce Ltd (Malta &amp; Bahamas entities), key individuals (<strong>Steve Wozniak, Sergio Carloni, Jacopo Visetti, Jacopo Vanetti, Andrea Castiglione, Ken Hardesty, Paolo Pastore, Stefano Scozzese</strong>), and related entities (<strong>AitherCO2 S.p.A., MBM Holdings AG</strong>) are <strong>alleged</strong> to have:</p>
+
+        <ul class="overview-list">
+          <li>Misrepresented WOZX as security-like (&ldquo;shares of stock&rdquo;)</li>
+          <li>Exaggerated Wozniak&rsquo;s role (co-founder despite 2019 share transfer)</li>
+          <li>Enabled ~$336.2M in private investor profits via vesting breaches</li>
+          <li>Transferred ~$68.1M from treasury wallet (160.2M WOZX unaccounted)</li>
+          <li>Concealed AitherCO2&rsquo;s &euro;319.9M tax liability and &euro;408.2M loss</li>
+          <li>Sold 42.5% stake for &pound;510 despite $80M pre-sale valuation &amp; $1.6B treasury, potentially to avoid tax liability</li>
+          <li>Falsely claimed AitherCO2 as &ldquo;mother company&rdquo; (no legal link)</li>
+          <li>Falsely claimed Efforce Malta &amp; Bahamas as connected (no legal link)</li>
+          <li>Misrepresented $12.5M&ndash;$36M token sale proceeds (unverified)</li>
+          <li>Claimed $80M&ndash;$950M market cap valuations (actual ~$29M)</li>
+          <li>Claimed AitherCO2 revenues $250M&ndash;$1.2B (actual &euro;27.6M)</li>
+          <li>Failed to deliver platform, MWOZ, staking, governance, NFTs</li>
+          <li>Used intimidation tactics (extradition threats, GDPR breaches)</li>
+          <li>Allegedly layered transactions via HBTC to obscure ownership</li>
+          <li>Misrepresented partnerships, listings, audits, burns</li>
+          <li>Conflated AitherCO2 shareholders and employees as Efforce&rsquo;s on website</li>
+          <li>Claimed 40&ndash;50 employees despite ZERO in financials</li>
+          <li>SEELE/GDAC ties raising concerns of Ponzi involvement</li>
+          <li>Unfulfilled Bithumb commitments in delisting notice</li>
+          <li>Transferred shares to Wozniak 1 year after formation, but misrepresented him as co-founder</li>
+          <li>Potential violations: SEC Rule 10b-5, wire fraud, EU MAR, Malta VFA Act, GDPR</li>
+        </ul>
+
+        <p><strong>Estimated retail losses</strong>: ~$400M+<br>
+        <strong>Evidence</strong>: Etherscan, MBR, Italian Chamber of Commerce, private messages, whistleblower leaks.</p>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-personnel" data-topic="misrepresentation" data-person="wozniak,visetti,vanetti,carloni,castiglione,pastore,hardesty,scozzese" data-entity="efforce-malta,efforce-bahamas,aitherco2">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Personnel</span>
+          <h3>Alleged Key Personnel and Roles</h3>
+        </div>
+
+        <div class="data-table-wrapper">
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort="name">Name <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th data-sort="role">Role <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th>Alleged Issues</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Steve Wozniak</strong></td>
+                <td>Promoted as Co-Founder</td>
+                <td>Transferred shares July 2019; disengaged (shareholding: 11%); misrepresented WOZX as &ldquo;shares of stock&rdquo;; ignored outreach attempts; false claims of ongoing involvement and large shareholding.</td>
+              </tr>
+              <tr>
+                <td><strong>Sergio Carloni</strong></td>
+                <td>CEO, Efforce Ltd; CEO &amp; Board Member, AitherCO2 S.p.A.</td>
+                <td>Held conflicting positions; oversaw the transfer of AitherCO2&rsquo;s 42.5% stake in Efforce Ltd (Malta) on December 15, 2020, for a nominal &pound;510 despite a pre-listing valuation of $80M and Efforce&rsquo;s token treasury valued at over $1.6B, possibly to evade AitherCO2&rsquo;s tax obligations; Efforce Ltd (Malta) late filings reflect no income from private sales, token transactions, or substantial operations; Efforce Ltd (Bahamas) has submitted no filings, with annual reports indicating less than $50K in capital, pointing to it being an inactive shell entity.</td>
+              </tr>
+              <tr>
+                <td><strong>Ken Hardesty</strong></td>
+                <td>Board Member, Efforce Ltd (4%)</td>
+                <td>Alleged to have managed treasury wallet keys, sourced the private investors, and performed an in-depth review of private investor actions and vesting adherence, concluding no violations occurred; also serves as CEO in residence of Gerbsman Partners, a crisis turnaround company (Possible Efforce/Aither links), raising questions about independence in investor selection and review.</td>
+              </tr>
+              <tr>
+                <td><strong>Jacopo Visetti</strong></td>
+                <td>Former Majority Owner, AitherCO2; Efforce Leadership (42.5% via AitherCO2)</td>
+                <td>Hid AitherCO2 S.p.A.&rsquo;s severe financial issues, including a negative &euro;405M net equity in 2020 not reported until January 2022; falsely presented AitherCO2&rsquo;s clients, staff, and revenues as belonging to Efforce from 2018 to 2024; <strong>requested a forensic audit from Sergio Carloni regarding Efforce wallet transfers following Copley&rsquo;s evidence presentation &mdash; the auditor resigned shortly after with no explanation given</strong>; denied fraud despite unaccounted transfers; intimidated Copley with extradition threats.</td>
+              </tr>
+              <tr>
+                <td><strong>Jacopo Vanetti</strong></td>
+                <td>40% Owner; CTO, Efforce Ltd</td>
+                <td>Made excessive promises about platform development; track record of poor management (Jusp insolvency &mdash; described as funds misappropriated); Pastore noted Vanetti controlled the keys to the crypto tokens and stated &ldquo;no one steals from Efforce anymore&rdquo;, implying possible prior theft. Vanetti brought the concept to AitherCO2.</td>
+              </tr>
+              <tr>
+                <td><strong>Paolo Pastore</strong></td>
+                <td>Managing Director (Jan 2022+), Efforce Ltd (0 shares)</td>
+                <td>Admitted pump-and-dump and Vanetti&rsquo;s mismanagement privately; no public action; shared Copley&rsquo;s data without consent. Filed C&amp;Ds against Copley.</td>
+              </tr>
+              <tr>
+                <td><strong>Andrea Castiglione</strong></td>
+                <td>Head of Investor Relations (1.25%)</td>
+                <td>Primary communicator offering daily reassurances; denied connections to SEELE but later discovered to have conducted undisclosed private sessions with SEELE token holders; inaccurately described private investors as Asia-based long-term cornerstone institutions; significant wallet movements linked to Silent Unicorn venture fund.</td>
+              </tr>
+              <tr>
+                <td><strong>Stefano Scozzese</strong></td>
+                <td>Unknown Role (1.25%)</td>
+                <td>No specific allegations provided.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-entities" data-topic="financial,aitherco2" data-person="carloni,visetti" data-entity="efforce-malta,efforce-bahamas,aitherco2,mbm">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Entities</span>
+          <h3>Involved Entities</h3>
+        </div>
+
+        <div class="data-table-wrapper">
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort="entity">Entity <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th data-sort="location">Location <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th>Alleged Issues</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Efforce Ltd</strong></td>
+                <td>Malta</td>
+                <td>&euro;25,000 revenue, zero employees, no crypto financials (2021&ndash;2022); concealed treasury sales; falsely conflated AitherCO2 employees/shareholders as its own on website; claimed 40-50 employees despite zero in financials.</td>
+              </tr>
+              <tr>
+                <td><strong>Efforce Ltd</strong></td>
+                <td>Bahamas</td>
+                <td>Issued 1B WOZX; no legal ties to Malta entity despite whitepaper claims; no accounts since 2022; unverified $12.5M&ndash;$36M proceeds.</td>
+              </tr>
+              <tr>
+                <td><strong>AitherCO2 S.p.A.</strong></td>
+                <td>Italy</td>
+                <td><strong>&euro;319.9M tax liability hidden until 2022; &euro;408.2M loss; stake sold for &pound;510 despite $80M private sale valuation and WOZX Treasury value $1.6bn</strong>; transferred ~&euro;559M stake (42.5%) to MBM for nominal fee; falsely claimed as mother/parent to Efforce Ltd (Malta) despite no relationship.</td>
+              </tr>
+              <tr>
+                <td><strong>MBM Holdings AG</strong></td>
+                <td>Switzerland</td>
+                <td>Acquired AitherCO2&rsquo;s stake; opaque ownership; no filings since May 2020; relationship with AitherCO2 misrepresented as corporate reorganization despite no proven links.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note-block">
+          <p><strong>Note:</strong> Allegedly no legal parent-subsidiary relationship between Efforce Ltd (Malta) and AitherCO2 S.p.A., despite representations.</p>
+          <p><strong>Note:</strong> Allegedly no disclosed ties between Efforce Ltd entities (Malta/Bahamas).</p>
+          <p><strong>Note:</strong> Allegedly no proven links between AitherCO2 S.p.A. and MBM Holdings AG, despite claims of reorganization.</p>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-financial" data-topic="financial,misrepresentation" data-person="castiglione,visetti,pastore" data-entity="efforce-malta,efforce-bahamas,aitherco2">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Financial</span>
+          <h3>Alleged Summary of Financial Claims</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <div class="data-table-wrapper">
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort="claim">Claim <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th data-sort="claimed">Amount Claimed <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th>Source</th>
+                <th>Actual / Unverified</th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Token Sale Proceeds</td><td data-sort-value="36000000">$36M</td><td>PR Newswire, Dec 4, 2020</td><td>Unverified (&euro;25K revenue)</td><td>Malta filings, Feb 12, 2025</td></tr>
+              <tr><td>Token Sale Proceeds</td><td data-sort-value="16000000">$16M</td><td>Pastore, Dec 1, 2022</td><td>Unverified ($5K&ndash;$50K capital)</td><td>Bahamas filings, 2020&ndash;2022</td></tr>
+              <tr><td>Token Sale Proceeds</td><td data-sort-value="12500000">$12.5M</td><td>Visetti, Apr 2, 2024</td><td>Unverified (no filings)</td><td>N/A</td></tr>
+              <tr><td>Market Cap</td><td data-sort-value="950000000">$950M</td><td>PR Newswire, Dec 4, 2020</td><td data-sort-value="10000000">~$10M</td><td>CoinGecko, Dec 2020</td></tr>
+              <tr><td>Valuation</td><td data-sort-value="80000000">$80M</td><td>Castiglione, Dec 5, 2020</td><td>~$29M ($12.5M PI sale); nominal &pound;510 valuation of 42.5% on Dec 15th 2020 valuing Efforce at &pound;1200</td><td>Visetti, Apr 2, 2024</td></tr>
+              <tr><td>AitherCO2 2020 Revenue</td><td data-sort-value="250000000">$250M</td><td>Castiglione, Dec 7, 2020</td><td data-sort-value="27600000">&euro;27.6M</td><td>2020 filings, Apr 2022</td></tr>
+              <tr><td>AitherCO2 Stake Sale</td><td data-sort-value="510">Nominal (&pound;510)</td><td>MBR, Jan 15, 2021</td><td data-sort-value="559000000">~&euro;559M (42.5% of $1.6B WOZX)</td><td>CoinGecko, Dec 15, 2020</td></tr>
+              <tr><td>Marketing Spend</td><td data-sort-value="1200000">$1.2M</td><td>Bithumb response, Jun 23, 2022</td><td data-sort-value="39000">&euro;39K</td><td>Malta filings, Feb 12, 2025</td></tr>
+              <tr><td>Marketing Spend</td><td data-sort-value="1500000">$1.5M</td><td>Visetti, Apr 2, 2024</td><td data-sort-value="39000">&euro;39K</td><td>Malta filings, Feb 12, 2025</td></tr>
+              <tr><td>Market Off-Take</td><td data-sort-value="50000000">$50M</td><td>Bithumb response, Jun 23, 2022</td><td>None</td><td>No evidence</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-1" data-topic="blockchain" data-person="castiglione,visetti,vanetti,pastore,hardesty" data-entity="efforce-malta,efforce-bahamas">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Claim 1</span>
+          <h3>Alleged Private Investor and Efforce Blockchain Profits at Retail Expense</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p>Efforce&rsquo;s Main Private Investor (MPI), Anchor Investor, and treasury wallet (ETW) allegedly collectively profited over $400M through blockchain transactions, including a coordinated October 2021 dump, at the expense of retail token holders who suffered ~$400M in losses. The potential use of HBTC&rsquo;s cold wallets allegedly enabled untraceable intra-exchange trading, obscuring ownership changes and amplifying harm.</p>
+
+        <h4>1A &mdash; Alleged Main Private Investor (MPI) Blockchain Profits</h4>
+        <p>The MPI wallet (<span class="wallet-address">0x078f...</span>) received 450M WOZX on Dec 15th 2019 from the ETW (<span class="wallet-address">0x9d9e...</span>), transferring 99.999M WOZX to the Anchor Investor (<span class="wallet-address">0xd5f...</span>) on Dec 1st 2020. From Dec 2020 to Jan 2022, the MPI allegedly executed 58 outgoing transactions totaling <span class="amount-highlight">449.999M WOZX (~$283M)</span>, with 17.2M WOZX (~$30M at $1.74) pre-listing and ~432.8M WOZX (~$253M) post-listing. Key transfers included:</p>
+        <ul>
+          <li><strong>Pre-Listing Breaches:</strong> 17.2M WOZX (~$30M), violating the 0.27% daily vesting (1.215M WOZX/day) starting Dec 3rd 2020.</li>
+          <li><strong>October 2021 Dump:</strong> 186.6M WOZX (~$69.2M, Oct 29th 2021), breaching vesting by 16.8M WOZX (~$8.2M).</li>
+        </ul>
+        <p>Alleged total MPI profits (~$283M) were realized through sales to retail via HBTC, with prices dropping from $3.15 (Dec 9th 2020) to $0.37 (Oct 29th 2021, CoinGecko).</p>
+
+        <h4>1B &mdash; Alleged Anchor Investor Blockchain Profits</h4>
+        <p>The Anchor Investor wallet (<span class="wallet-address">0xd5f...</span>) allegedly received 99.999M WOZX (~$174M at $1.74) from the MPI on Dec 1st 2020. From Dec 2020 to Oct 2021, it transferred ~71.2M WOZX (~$53.2M), all compliant with the 0.27% vesting.</p>
+        <ul>
+          <li><strong>Alleged October 2021 Dump:</strong> 71.2M WOZX (~$34.8M at $0.49, Oct 6th 2021) to <span class="wallet-address">0x3ad5d910...</span>, coinciding with HBTC&rsquo;s closure.</li>
+        </ul>
+
+        <h4>1C &mdash; Alleged Efforce Treasury Wallet (ETW) Blockchain Profits</h4>
+        <p>The ETW (<span class="wallet-address">0x9d9e...</span>) held 550M WOZX (200M Team, 200M Mining, 150M Consulting) post-private sale. From Nov 29th 2020 to Mar 15th 2023, it executed 54 transactions transferring <span class="amount-highlight">173.3M WOZX (~$68.1M)</span>, with only 13.1M WOZX (~$2.6M) accounted for (staking, competitions). Unaccounted transfers: <strong>160.2M WOZX (~$68.1M)</strong>.</p>
+        <ul>
+          <li><strong>Pre-Listing Breach:</strong> 25M WOZX (~$43.9M at $1.74, Dec 2nd 2020, tx: <span class="tx-hash">0x910179...</span>) to Wallet 1 (<span class="wallet-address">0xEEbC...</span>).</li>
+          <li><strong>October 2022 Transfer:</strong> 75M WOZX (~$7.9M at $0.11, Oct 25th 2022, tx: <span class="tx-hash">0x1b71f9...</span>) to Wallet 3 (<span class="wallet-address">0x697D...</span>), labeled &ldquo;security&rdquo; but admitted privately as a U.S. VC sale.</li>
+        </ul>
+
+        <h4>1D &mdash; Alleged Verifiable Retail Losses</h4>
+        <p>Retail losses estimated at minimum <span class="amount-highlight">~$400M</span>, reflecting the combined alleged profits of MPI (~$283M), Anchor Investor (~$53.2M), and ETW (~$68.1M). WOZX dropped from $2.88 (Dec 2020) to $0.0024 (Nov 2025).</p>
+
+        <h4>1E &mdash; Alleged Hot Wallet Theory and HBTC&rsquo;s Role</h4>
+        <p>The Hot Wallet Theory posits that wallets involved in the October 2021 dump <strong>may have been</strong> cold wallets within HBTC, with intra-exchange trading allegedly obscuring ownership changes until withdrawals. HBTC&rsquo;s lax KYC/AML (Forbes, Jul 6th 2020) allegedly allowed MPI, Anchor, and ETW to trade internally.</p>
+
+        <div class="quote-block quote-block--warning">
+          <p>&ldquo;Private investors are cornerstone&hellip; NONE OF THEM HAS THE INTENTION TO SELL&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 2nd 2020, Telegram</em></p>
+          <p>&ldquo;The token was pumped and dumped by private investors&rdquo;<br><em>&mdash; Paolo Pastore, Nov 15th 2022, private to Copley</em></p>
+          <p>&ldquo;We cherry picked our investors base to build a great Ecosystem&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 2nd 2020, Telegram</em></p>
+          <p>&ldquo;Those who profited with the early pump still have bags full of tokens (I&rsquo;m talking about millions of them)&rdquo;<br><em>&mdash; Paolo Pastore, Nov 28th 2022, private to Copley</em></p>
+          <p>&ldquo;One investor is from NYC&hellip; the other from Western US&rdquo;<br><em>&mdash; Jacopo Visetti, Jul 15th 2024, Discord</em></p>
+          <p>&ldquo;450M tokens were sold to Asia-based institutional investors&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 12th 2020, Telegram</em></p>
+          <p>&ldquo;We haven&rsquo;t moved a single token&rdquo;<br><em>&mdash; Andrea Castiglione, Sep 13th 2021, Telegram</em></p>
+          <p>&ldquo;What turned out was they didn&rsquo;t pump and dump&rdquo;<br><em>&mdash; Jacopo Visetti, Jul 17th 2024, re: PI investigation</em></p>
+        </div>
+
+        <div class="legal-box">
+          <strong>Possible Legal Implications:</strong>
+          <p>Securities fraud (SEC Rule 10b-5), wire fraud (18 U.S.C. &sect; 1343), EU Market Abuse Regulation (Article 17), AML violations (FinCEN). Alleged damages: ~$400M retail losses.</p>
+        </div>
+
+        <div class="key-questions">
+          <h5>Key Questions for Efforce to Answer</h5>
+          <ol>
+            <li>Why were MPI/Anchor sales undisclosed?</li>
+            <li>What was Efforce&rsquo;s role in HBTC trading?</li>
+            <li>Where are the unaccounted ETW transfers?</li>
+            <li>What were the Seele agreements?</li>
+            <li>Were there vesting breaches?</li>
+            <li>What mitigation was undertaken for retail losses?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-2" data-topic="misrepresentation" data-person="wozniak,visetti,castiglione,pastore,hardesty" data-entity="efforce-malta,efforce-bahamas">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Claim 2</span>
+          <h3>Alleged Misrepresentation of WOZX as a Security</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p><strong>Alleged Critical.</strong> WOZX was allegedly misrepresented as security-like (Wozniak&rsquo;s &ldquo;shares of stock&rdquo; quote), Wozniak&rsquo;s role was exaggerated (falsely as co-founder despite shares transferred 1 year after formation), and U.S. nexus was established via marketing, PI, and intimidation.</p>
+
+        <h4>2A &mdash; Alleged Wozniak&rsquo;s Misleading &ldquo;Shares of Stock&rdquo; Claim</h4>
+        <p>Steve Wozniak stated on Yahoo Finance (Dec 8th 2020): <em>&ldquo;I see owning WOZX as shares of stock,&rdquo;</em> implying equity-like returns. Efforce amplified this via Telegram without correction, driving WOZX to $2.88 (FXStreet, Dec 9th 2020). The whitepaper&rsquo;s NFT model promised staking for MWOZ credits, meeting the Howey Test criteria for a security. No retraction allegedly clarified WOZX&rsquo;s utility status.</p>
+
+        <h4>2B &mdash; Alleged Exaggerated Role of Steve Wozniak</h4>
+        <p>Efforce allegedly marketed Wozniak as a &ldquo;co-founder&rdquo; and active engineer (PR Newswire, Dec 4th 2020), despite his shares allegedly being transferred on Jul 24th 2019 (MBR), 1 year after company formation. Pastore allegedly confirmed: <em>&ldquo;Woz&hellip; abandoned ship without doing much&rdquo;</em> (Aug 24th 2023, private to Copley). Wozniak ignored 20+ outreach attempts (2023&ndash;2025). Efforce claimed to Bithumb in Jun 2022 that he would personally launch a new platform.</p>
+
+        <h4>2C &mdash; Alleged U.S. Jurisdictional Links</h4>
+        <p>Despite allegedly claiming no U.S. token holders, Efforce established a U.S. nexus through:</p>
+        <ul>
+          <li><strong>U.S.-Based PI:</strong> Visetti disclosed &ldquo;One investor is from NYC&hellip; the other from Western US&rdquo; (Jul 15th 2024), contradicting Castiglione&rsquo;s &ldquo;Asia-based&rdquo; claim.</li>
+          <li><strong>U.S. Marketing:</strong> Times Square billboard (PR Newswire, Dec 2020), Yahoo Finance interview.</li>
+          <li><strong>Operational Ties:</strong> Wozniak&rsquo;s Northern California residency, Hardesty&rsquo;s wallet control.</li>
+          <li><strong>Intimidation:</strong> A U.S. shareholder allegedly threatened Copley with extradition.</li>
+          <li><strong>Legal Actions:</strong> California lawsuit (25CV459519, Feb 27th 2025) confirms jurisdiction.</li>
+        </ul>
+
+        <figure class="evidence-img">
+          <img src="https://i.gyazo.com/665f3c06d6e1e3c719fcd298efbf1ed9.png" alt="Evidence: US jurisdictional links" loading="lazy">
+          <figcaption>Evidence: Disclosure of US-based private investors, contradicting prior &ldquo;Asia-based&rdquo; claims</figcaption>
+        </figure>
+
+        <div class="quote-block quote-block--info">
+          <p>&ldquo;I see owning WOZX as shares of stock&rdquo;<br><em>&mdash; Steve Wozniak, Dec 8th 2020, Yahoo Finance</em></p>
+          <p>&ldquo;Steve Wozniak, co-founder&rdquo;<br><em>&mdash; PR Newswire, Dec 4th 2020</em></p>
+          <p>&ldquo;Woz&hellip; abandoned ship without doing much&rdquo;<br><em>&mdash; Paolo Pastore, Aug 24th 2023, private to Copley</em></p>
+          <p>&ldquo;WOZ did his due diligence, there&rsquo;s no way we could scam!&rdquo;<br><em>&mdash; Andrea Castiglione, Jan 20th 2021, Telegram</em></p>
+          <p>&ldquo;You are risking a lot with your allegations&rdquo;<br><em>&mdash; Jacopo Visetti, Dec 16th 2023, Discord</em></p>
+          <p>&ldquo;Carloni and Hardesty manage the keys&rdquo;<br><em>&mdash; Jacopo Visetti, Jul 15th 2024, Discord</em></p>
+        </div>
+
+        <div class="legal-box">
+          <strong>Possible Legal Implications:</strong>
+          <p>Securities Fraud (SEC Rule 10b-5), Howey Test (1946), EU MAR (Article 12), Malta VFA Act (Article 7), Wire Fraud (18 U.S.C. &sect; 1343). Alleged damages: ~$400M retail losses plus punitive fines.</p>
+        </div>
+
+        <div class="key-questions">
+          <h5>Key Questions for Efforce to Answer</h5>
+          <ol>
+            <li>Why was Wozniak&rsquo;s &ldquo;shares of stock&rdquo; claim amplified without retraction?</li>
+            <li>Why was Wozniak marketed as a co-founder when shares were transferred in 2019?</li>
+            <li>How did Efforce justify U.S. marketing despite claiming no U.S. token holders?</li>
+            <li>Who is the U.S. shareholder who allegedly threatened Copley with extradition?</li>
+            <li>Why were U.S. probes and the California lawsuit not disclosed to investors?</li>
+            <li>Why was Wozniak&rsquo;s role exaggerated in the Jun 2022 Bithumb response?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-3" data-topic="financial" data-person="visetti,castiglione,pastore,carloni" data-entity="efforce-malta,efforce-bahamas,aitherco2,mbm">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Claim 3</span>
+          <h3>Alleged Financial Obfuscation and Potential Money Laundering</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p>Efforce&rsquo;s alleged failure to account for $12.5&ndash;$36M in token sale proceeds, ~$68.1M in treasury wallet transfers, and undisclosed alt-coin holdings, coupled with opaque entity relationships, unfiled financials, layered transactions, and intimidation tactics, allegedly suggests fraudulent misrepresentation, misappropriation, and potential money laundering.</p>
+
+        <figure class="evidence-img">
+          <img src="https://i.gyazo.com/bf23cfa5428140d60b2e52e90a2461e1.png" alt="Evidence: Visetti disclosure on private sale proceeds" loading="lazy">
+          <figcaption>Evidence: Visetti disclosed that private sale proceeds were intended for energy efficiency projects, not as outlined in whitepaper</figcaption>
+        </figure>
+
+        <h4>3A &mdash; Unexplained Treasury Wallet Transactions</h4>
+        <p>The ETW held 550M WOZX and transferred 173.3M WOZX (~$68.1M) across 54 transactions, with <strong>160.2M unaccounted</strong>. No transactions have ever been disclosed publicly.</p>
+
+        <h4>3B &mdash; Undisclosed Entity Relationships</h4>
+        <p>No legal ties between Malta/Bahamas entities or AitherCO2 (falsely claimed as parent); AitherCO2-MBM transfer allegedly misrepresented as reorganization without proven links, at nominal fee despite $600M+ fair value, alleged to potentially avoid &euro;300M+ tax liabilities.</p>
+
+        <h4>3C &mdash; Efforce Ltd (Bahamas) Opacity</h4>
+        <p>Allegedly no accounts since 2022; ownership undisclosed.</p>
+
+        <h4>3D &mdash; Undisclosed Alt-Coin Holdings</h4>
+        <p>The secondary wallet allegedly held $51.2M alt-coins (Feb 2025). Once Copley enquired about this wallet, no response was provided but Efforce changed the label of the secondary wallet to &ldquo;Escrow wallets with locked company tokens&rdquo;.</p>
+
+        <h4>3E &mdash; Lack of Wallet Transparency</h4>
+        <p>No logs; budgets not segregated, no token holder notifications.</p>
+
+        <h4>3F &mdash; Intimidation Tactics and GDPR Violations</h4>
+        <p>Alleged threats, data sharing violated GDPR.</p>
+
+        <div class="quote-block quote-block--danger">
+          <p>&ldquo;The Bahamas entity was set up to manage the token sale, about $16M&rdquo;<br><em>&mdash; Paolo Pastore, Dec 1st 2022, private to Copley</em></p>
+          <p>&ldquo;We only got $12m, never took more&rdquo;<br><em>&mdash; Jacopo Visetti, Apr 2nd 2024, Discord</em></p>
+          <p>&ldquo;No one steals money in Efforce as of now, I&rsquo;m vigilant on that&rdquo;<br><em>&mdash; Paolo Pastore, Dec 11th 2023, private to Copley</em></p>
+          <p>&ldquo;Tokens are on a separate wallet. So not sold or anything&rdquo;<br><em>&mdash; Jacopo Visetti, Jul 4th 2024, Discord, re: 75M WOZX</em></p>
+          <p>&ldquo;We haven&rsquo;t moved a single token&rdquo;<br><em>&mdash; Andrea Castiglione, Sep 13th 2021, Telegram</em></p>
+          <p>&ldquo;We don&rsquo;t see the financials&rdquo;<br><em>&mdash; Paolo Pastore, Aug 24th 2023, private to Copley</em></p>
+          <p>&ldquo;We have about 350M tokens directly burnable, then we can have 75M more&rdquo;<br><em>&mdash; Paolo Pastore, Jun 27th 2023, private to Copley</em></p>
+          <p>&ldquo;All our filings are up to date&rdquo;<br><em>&mdash; Paolo Pastore, Jul 22nd 2023, Discord</em></p>
+        </div>
+
+        <div class="legal-box">
+          <strong>Possible Legal Implications:</strong>
+          <p>Securities Fraud (SEC Rule 10b-5), Money Laundering (31 U.S.C. &sect; 1956), AML Violations (FinCEN), Malta VFA Act (Cap. 590, Article 7), GDPR Violations, Wire Fraud (18 U.S.C. &sect; 1343). Alleged damages: Over ~$68.1M for unaccounted transfers plus punitive fines.</p>
+        </div>
+
+        <div class="key-questions">
+          <h5>Key Questions for Efforce to Answer</h5>
+          <ol>
+            <li>Where are the 160.2M unaccounted WOZX (~$68.1M), and who controls recipient wallets?</li>
+            <li>Why was the relationship between Malta and Bahamas entities not disclosed?</li>
+            <li>Why were no accounts filed for Efforce Ltd (Bahamas) since 2022?</li>
+            <li>What is the source of the $49M NuggetRush tokens, and why was the wallet re-labeled?</li>
+            <li>Why were transaction logs for 173.3M WOZX not disclosed?</li>
+            <li>Who controls wallet <span class="wallet-address">0x3ad5...</span>?</li>
+            <li>How was Copley&rsquo;s passport data obtained and shared?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-4" data-topic="aitherco2" data-person="visetti,carloni,castiglione,vanetti" data-entity="aitherco2,mbm,efforce-malta">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Claim 4</span>
+          <h3>Alleged AitherCO2 Misrepresentation and Tax Evasion</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p>Efforce allegedly misrepresented AitherCO2 S.p.A. as a financially stable &ldquo;mother company&rdquo; with $250M&ndash;$1.2B turnover, while allegedly concealing a <span class="amount-highlight">&euro;319.9M tax liability</span>, &euro;408.2M loss, and adverse audits. The nominal transfer to MBM Holdings AG for &pound;510 (despite $80M pre-listing valuation and $1.6B WOZX treasury) suggests insolvency avoidance and tax evasion.</p>
+
+        <h4>4A &mdash; Alleged Misrepresentation of Financial Stability</h4>
+        <p>AitherCO2 was presented as Efforce&rsquo;s &ldquo;mother company.&rdquo; Castiglione claimed revenues of $89M (2018), $150M (2019), and $250M (2020). The 2020 filings revealed: <strong>&euro;27.6M revenue, a &euro;408.2M loss, and &euro;402.5M negative net equity</strong>, with a &euro;391.9M tax provision including &euro;319.9M for 2011&ndash;2014 tax assessments notified in Oct 2018 &mdash; never disclosed to WOZX holders.</p>
+
+        <h4>4B &mdash; Nominal Share Transfer to MBM Holdings AG</h4>
+        <p>AitherCO2 transferred its 42.5% stake for <span class="amount-highlight">&pound;510</span> on Dec 15th 2020 (the stake was valued at ~&euro;559M). The nominal transfer suggests asset concealment to evade AitherCO2&rsquo;s &euro;319.9M tax liability. MBM&rsquo;s ownership is undisclosed.</p>
+
+        <h4>4C &mdash; Alleged Undisclosed Tax Liabilities</h4>
+        <p>AitherCO2 faced &euro;319.9M tax assessment (2011&ndash;2014, notified Oct 2018), provisioned at only &euro;583k (2018) and &euro;378k (2019). Restructuring plan initiated Jan 2021, undisclosed to investors.</p>
+
+        <h4>4D &mdash; Alleged Misrepresentation of Efforce&rsquo;s Independence</h4>
+        <p>Efforce Ltd (Malta) reported zero employees and &euro;25,000 revenues (2021&ndash;2022), relying on AitherCO2&rsquo;s personnel. Visetti claimed: &ldquo;Aither has in fact put its energy efficiency pipeline into Efforce&rdquo; (Apr 2024), unsupported by Malta filings.</p>
+
+        <h4>4E &mdash; Alleged Adverse Audit Reports</h4>
+        <p>AitherCO2 received adverse audit opinions for 2017&ndash;2020, with 2020 statements rejected. Board member Federico Lattuada abstained from approving 2019&ndash;2020 filings, signaling distrust. Undisclosed to investors.</p>
+
+        <div class="quote-block quote-block--success">
+          <p>&ldquo;AitherCO2 revenues of $89M (2018), $150M (2019), and $250M (2020)&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 7th 2020, Telegram</em></p>
+          <p>&ldquo;AitherCO2 is one of the largest players in the world, not just in Europe&rdquo;<br><em>&mdash; Andrea Castiglione, May 5th 2021, Telegram</em></p>
+          <p>&ldquo;AitherCO2 has more than 2000 clients&hellip; &euro;200m in annual revenue&rdquo;<br><em>&mdash; Andrea Castiglione, Feb 24th 2021, Telegram</em></p>
+          <p>&ldquo;AitherCO2&rsquo;s turnover was north of &euro;450M in 2021&rdquo;<br><em>&mdash; Jacopo Visetti, Dec 15th 2021, Telegram</em></p>
+          <p>&ldquo;Parent Company (Aither) has $240m revenue is transferring tens of millions of $ projects to Efforce platform&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 16th 2020, Telegram</em></p>
+        </div>
+
+        <div class="legal-box">
+          <strong>Possible Legal Implications:</strong>
+          <p>Securities Fraud (SEC Rule 10b-5), EU MAR (Articles 12, 17), Maltese Companies Act (Article 136A), Malta VFA Act, Tax Evasion (EU Fraud Directive 2017/1371), Wire Fraud. Alleged damages: ~$400M plus punitive fines.</p>
+        </div>
+
+        <div class="key-questions">
+          <h5>Key Questions for Efforce to Answer</h5>
+          <ol>
+            <li>Why was AitherCO2&rsquo;s &euro;319.9M tax liability not disclosed to WOZX holders?</li>
+            <li>Why was the 42.5% stake transferred for &pound;510, and who owns MBM?</li>
+            <li>Where is evidence for AitherCO2&rsquo;s claimed $1M+ investment in Efforce?</li>
+            <li>Why was Efforce marketed as independent despite relying on AitherCO2&rsquo;s distressed assets?</li>
+            <li>Why were adverse audit opinions (2017&ndash;2020) not disclosed?</li>
+            <li>What is MBM&rsquo;s ownership and links to AitherCO2?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-5" data-topic="vesting" data-person="visetti,castiglione,pastore" data-entity="efforce-malta,efforce-bahamas">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Claim 5</span>
+          <h3>Alleged Vesting and Supply Misrepresentation</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p>Efforce allegedly misrepresented WOZX vesting schedules by claiming a Dec 2020 start while retroactively disclosing a Sep 2019 start, using ambiguous whitepaper terms, and enabling unauthorized transfers. These actions misled investors about token supply risks, contributing to ~$400M in losses.</p>
+
+        <h4>5A &mdash; Alleged Fraudulent Vesting Schedule Claims</h4>
+        <p>Castiglione claimed Dec 3rd 2020 vesting start. Efforce retroactively disclosed in Aug 2024: &ldquo;The token unlocking process began on the inception date of the $WOZX minting contract, September 23, 2019.&rdquo; If this retrospective adjustment is accepted, then on listing day Efforce&rsquo;s ETW held <strong>170M vested WOZX vs Private Investors&rsquo; 1.215M WOZX</strong> &mdash; or 99.29% of available tokens. Vesting schedules were &ldquo;negotiated with backers&hellip; not [enforced via] smart contracts&rdquo; (Castiglione, Dec 6th 2020), enabling manual breaches.</p>
+
+        <h4>5B &mdash; Alleged Treasury Wallet Vesting Violations</h4>
+        <p>The ETW transferred 173.3M WOZX (~$68.1M), including 25M WOZX (~$43.9M, Dec 2nd 2020) exceeding the 15M/month Consulting limit. By Apr 2021, 28.1M WOZX (~$49.1M) were moved. Only 13.1M WOZX (~$2.6M) accounted for via staking. Budgets not separated.</p>
+
+        <h4>5C &mdash; Alleged Whitepaper Ambiguities</h4>
+        <p>Whitepaper ambiguously stated Team vesting at &ldquo;1% annually&rdquo; and Consulting at &ldquo;1.5% monthly&rdquo; &mdash; investors interpreted as 2M/year and 2.25M/month. Efforce clarified these as 1% and 1.5% of total 1B supply only in Aug 2024 and only in Telegram (not accessible to all holders).</p>
+
+        <div class="quote-block">
+          <p>&ldquo;Vesting is 1 year from Dec 3rd&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 5th 2020, Telegram</em></p>
+          <p>&ldquo;The token unlocking process began on the inception date of the $WOZX minting contract, September 23, 2019&rdquo;<br><em>&mdash; Efforce.io, Aug 2024</em></p>
+          <p>&ldquo;There were no breaches of vesting schedules&rdquo;<br><em>&mdash; Jacopo Visetti, Nov 18th 2023, Discord</em></p>
+          <p>&ldquo;Negotiated with backers&hellip; not smart contracts&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 6th 2020, Telegram</em></p>
+        </div>
+
+        <div class="key-questions">
+          <h5>Key Questions for Efforce to Answer</h5>
+          <ol>
+            <li>Why was the Sep 2019 vesting start not disclosed until Aug 2024?</li>
+            <li>Why were no smart contracts used to enforce vesting?</li>
+            <li>How were the 28.1M WOZX moved by Apr 2021 justified?</li>
+            <li>Why were whitepaper ambiguities not clarified?</li>
+            <li>Why were budgets not separated?</li>
+            <li>What was the $50M WOZX market off-take claimed to Bithumb?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-6" data-topic="platform" data-person="visetti,vanetti,castiglione,pastore" data-entity="efforce-malta">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Claim 6</span>
+          <h3>Non-Delivery of Platform and Utility</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <p>Efforce failed to deliver its promised blockchain platform, MWOZ credits, staking rewards, and NFT-based governance, rendering WOZX valueless. Alleged misleading promises and early closure of staking pools contributed to ~$400M in losses.</p>
+
+        <h4>6A &mdash; Alleged Failure to Deliver Blockchain Platform</h4>
+        <p>Whitepaper promised a blockchain platform for tokenizing energy savings. Castiglione claimed Q1 2021 launch. Mar 20th 2021 beta lacked projects, MWOZ, or functionality. Platform scrapped Q1 2022 for NFT iteration, also failed. Visetti admitted: &ldquo;No blockchain was needed&rdquo; (Nov 18th 2023). As of Nov 2025, efforce.io shows a pivot to environmental commodities, no blockchain or MWOZ.</p>
+
+        <h4>6B &mdash; Alleged Genesis Pool Failures</h4>
+        <p>Genesis Pool launched May 20th 2021, raised ~$600K (~$500K seeded by Efforce, $100K from contributors). No platform integration or rewards materialized. Contributors waited until Sep 2023 for refunds with nominal 10% ROI. Visetti: &ldquo;We paid $50k in cancellation fees [to 80+ ESCOs]&rdquo; (Jul 2024).</p>
+
+        <h4>6C &mdash; Alleged Misleading Staking APR</h4>
+        <p>Staking launched Mar 2022 with 13.1M WOZX, promising 2168.6% APR. Pools closed early Sep 2022, refunding 3.7M WOZX ($50,134.07, Mar 2024) at 10% ROI. 3&ndash;4M WOZX remain unaccounted.</p>
+
+        <h4>6D &mdash; Alleged Unfulfilled Governance Promises</h4>
+        <p>NFT-based voting promised 2021&ndash;2022, deemed unviable by 2023. Bithumb delisting response promised WOZX would become governance token &mdash; no mechanisms implemented. Refunds delayed until Aug 2023.</p>
+
+        <div class="quote-block">
+          <p>&ldquo;Platform is closed beta and will be released in Q1 2021&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 3rd 2020, Telegram</em></p>
+          <p>&ldquo;No blockchain was needed&rdquo;<br><em>&mdash; Jacopo Visetti, Nov 18th 2023, Discord</em></p>
+          <p>&ldquo;The platform have 3 phase&hellip; one is very secret&hellip; will change blockchain&rdquo;<br><em>&mdash; Jacopo Vanetti, Mar 21st 2021, Telegram</em></p>
+          <p>&ldquo;We&rsquo;re building a global platform&rdquo;<br><em>&mdash; Andrea Castiglione, Dec 2nd 2020, Telegram</em></p>
+          <p>&ldquo;Governance was not feasible&rdquo;<br><em>&mdash; Jacopo Visetti, Nov 18th 2023, Discord</em></p>
+        </div>
+
+        <div class="legal-box">
+          <strong>Possible Legal Implications:</strong>
+          <p>Breach of Contract (Malta Consumer Affairs Act), Securities Fraud (SEC Rule 10b-5), EU MAR (Article 12). Alleged damages: ~$400M plus restitution for $600K Genesis Pool and ~$2.6M staking contributions.</p>
+        </div>
+
+        <div class="key-questions">
+          <h5>Key Questions for Efforce to Answer</h5>
+          <ol>
+            <li>Why was the blockchain platform not delivered by Jun 2025?</li>
+            <li>Where are the $600K Genesis Pool funds?</li>
+            <li>Why was 2168.6% staking APR suggested?</li>
+            <li>Why were NFT governance promises abandoned?</li>
+            <li>How were the ~$68.1M treasury transfers used if not for development?</li>
+            <li>Why were Bithumb&rsquo;s Jun 2022 claims not fulfilled?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-misrep" data-topic="misrepresentation,platform" data-person="visetti,vanetti,castiglione,pastore" data-entity="efforce-malta,efforce-bahamas,aitherco2">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Additional</span>
+          <h3>Additional Alleged Misrepresentations</h3>
+          <span class="claim-status claim-status--unrebutted"><span class="claim-status__dot"></span>Unrebutted</span>
+        </div>
+
+        <div class="data-table-wrapper">
+          <table class="data-table" data-sortable>
+            <thead>
+              <tr>
+                <th data-sort="claim">Claim <span class="sort-indicator">&UpDownArrow;</span></th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Mobile App Falsehood</strong></td><td>Promised Q3 2021 &rarr; none delivered</td></tr>
+              <tr><td><strong>London Office Lie</strong></td><td>Claimed London office &rarr; unverified</td></tr>
+              <tr><td><strong>Tier-1 Listings</strong></td><td>Promised multiple Q1 &rarr; only Bitcoin.com (Apr 2021) &amp; Huobi Pioneer Zone (Sep 2021)</td></tr>
+              <tr><td><strong>NFT Governance Failure</strong></td><td>Promised NFT voting &rarr; deemed unviable</td></tr>
+              <tr><td><strong>DEX Marketplace Failure</strong></td><td>Promised DEX &rarr; none delivered</td></tr>
+              <tr><td><strong>Wozniak Launch Lie</strong></td><td>Promised Wozniak platform launch to Bithumb &rarr; never happened</td></tr>
+              <tr><td><strong>Market Maker Concealment</strong></td><td>Undisclosed PI-appointed market maker</td></tr>
+              <tr><td><strong>Roadmap Failure</strong></td><td>2021 roadmap 90% unmet &rarr; uncorrected</td></tr>
+              <tr><td><strong>Public Beta Lie</strong></td><td>Claimed 150-member beta &rarr; none occurred</td></tr>
+              <tr><td><strong>SEC Compliance Lie</strong></td><td>Claimed SEC clearance &rarr; no documentation</td></tr>
+              <tr><td><strong>Whitepaper Errors</strong></td><td>Typo misled vesting (1.5% &ne; 2.25M/month)</td></tr>
+              <tr><td><strong>2023 Profit Fraud</strong></td><td>Claimed $1M profit &rarr; filings show &euro;236K loss</td></tr>
+              <tr><td><strong>Token Burn Failure</strong></td><td>Claimed 350M burnable &rarr; none burned</td></tr>
+              <tr><td><strong>EY/KPMG Audit Lie</strong></td><td>Promised audit &rarr; never conducted</td></tr>
+              <tr><td><strong>Filing Delays</strong></td><td>Claimed up-to-date &rarr; 2023&ndash;2024 missing</td></tr>
+              <tr><td><strong>ZD Resignation Lie</strong></td><td>Misrepresented as routine &rarr; auditor fled</td></tr>
+              <tr><td><strong>Copley Threats</strong></td><td>Extradition threats, legal actions, Discord bans</td></tr>
+              <tr><td><strong>Passport Deception</strong></td><td>Obtained via deception, shared without consent</td></tr>
+              <tr><td><strong>AitherCO2 Clients Lie</strong></td><td>Claimed 2000+ &rarr; unverified</td></tr>
+              <tr><td><strong>Fortune 500 Lie</strong></td><td>Claimed partnerships &rarr; none verified</td></tr>
+              <tr><td><strong>Platform Scalability Lie</strong></td><td>Claimed global scale &rarr; concept undelivered</td></tr>
+              <tr><td><strong>Team Onboarding Lie</strong></td><td>Promised weekly &rarr; 0 employees</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-questions" data-topic="blockchain,financial,misrepresentation,aitherco2,vesting,platform" data-person="wozniak,visetti,vanetti,carloni,castiglione,pastore,hardesty" data-entity="efforce-malta,efforce-bahamas,aitherco2,mbm">
+        <div class="key-questions" style="margin:0;">
+          <h5>Key Questions for Efforce</h5>
+          <ol>
+            <li>Where are the <strong>160.2M unaccounted WOZX</strong> (~$68.1M)?</li>
+            <li>Why was <strong>AitherCO2&rsquo;s &euro;319.9M tax bomb</strong> allegedly hidden until 2022?</li>
+            <li>Why was the <strong>42.5% stake sold for &pound;510</strong> despite <strong>$80M valuation &amp; $1.6B treasury</strong>?</li>
+            <li>Why was <strong>Sep 2019 vesting</strong> allegedly not disclosed until 2024?</li>
+            <li>What happened to <strong>$600K Genesis Pool funds</strong>?</li>
+            <li>Why was the <strong>platform never delivered</strong>?</li>
+            <li>Who resigned from the <strong>forensic audit</strong> and why?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="claim-section filterable-item" id="section-evidence" data-topic="blockchain,financial" data-person="" data-entity="efforce-malta,efforce-bahamas,aitherco2">
+        <div class="claim-section__header">
+          <span class="claim-section__number">Appendix</span>
+          <h3>Alleged Evidence Sources</h3>
+        </div>
+        <ol>
+          <li><strong>ETW Transfers</strong>: <a href="https://etherscan.io/address/0x9d9e..." target="_blank" rel="noopener noreferrer">Etherscan</a> (173.3M moved)</li>
+          <li><strong>MPI Sales</strong>: <a href="https://etherscan.io/address/0x078f..." target="_blank" rel="noopener noreferrer">Etherscan</a> (~$283M)</li>
+          <li><strong>AitherCO2 Tax Notice</strong>: Italian Chamber of Commerce (Oct 2018)</li>
+          <li><strong>Malta Filings</strong>: MBR (12 Feb 2025) &ndash; &euro;25K revenue, 0 staff</li>
+          <li><strong>Vesting Disclosure</strong>: efforce.io (Aug 2024)</li>
+          <li><strong>Wozniak Quote</strong>: <a href="https://finance.yahoo.com" target="_blank" rel="noopener noreferrer">Yahoo Finance, 8 Dec 2020</a></li>
+          <li><strong>Stake Transfer</strong>: MBR (Jan 2021) &ndash; &pound;510</li>
+          <li><strong>Pre-Listing Tx</strong>: <a href="https://etherscan.io/tx/0x910179..." target="_blank" rel="noopener noreferrer">0x910179...</a></li>
+        </ol>
+      </div>
+
+      <div class="cta-banner">
+        <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-md);">Were you affected by Efforce or WOZX?</p>
+        <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);">Submit Your Claim (2 mins &ndash; No Cost) &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a>
+        <p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p>
+      </div>
+      <div class="site-footer__col">
+        <h6>Investigation</h6>
+        <a href="key-claims.html">Key Claims</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="blockchain.html">Blockchain</a>
+        <a href="evidence.html">Evidence</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Subjects</h6>
+        <a href="entities.html">Entities</a>
+        <a href="individuals.html">Individuals</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Legal</h6>
+        <a href="legal.html">Legal Overview</a>
+        <a href="public-interest.html">Public Interest</a>
+        <a href="public-interest.html#right-of-reply">Right of Reply</a>
+        <a href="class-action.html">Class Action</a>
+      </div>
+    </div>
+    <div class="site-footer__defamation">
+      <div class="site-footer__defamation-inner">
+        <strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong>
+        <span>Notice served 3 May 2025 to Hogan Lovells. No rebuttal.</span>
+        <span><strong>Access blocked in high-risk defamation jurisdictions (IT, AE, HK, SC, SG) on legal advice.</strong></span>
+        <span>All claims alleged. Case: 25CV459519 (Benner v. Efforce et al.).</span>
+        <span>Corrections: <a href="/cdn-cgi/l/email-protection#41222e3333242235282e2f3201282f3724323528262035282f262427272e3322246f222e2c"><span class="__cf_email__" data-cfemail="a3c0ccd1d1c6c0d7cacccdd0e3cacdd5c6d0d7cac4c2d7cacdc4c6c5c5ccd1c0c68dc0ccce">[emai

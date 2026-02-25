@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press Room — Investigating Efforce</title>
+  <meta name="description" content="Press room for the Efforce/WOZX investigation. Media enquiries, key facts, story angles, and evidence access for verified journalists.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+
+    /* CONTACT HERO */
+    .press-contact{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg);margin:var(--space-xl) 0;align-items:start}
+    .press-contact__primary{background:var(--black-soft);color:var(--white);padding:var(--space-xl)}
+    .press-contact__primary h3{font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);margin-bottom:var(--space-md)}
+    .press-contact__primary p{font-size:var(--text-xs);line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:var(--space-sm)}
+    .press-contact__primary a{color:var(--white);text-decoration:underline}
+    .press-contact__email{display:block;font-family:var(--font-mono);font-size:var(--text-base);color:var(--white);margin:var(--space-md) 0;letter-spacing:.02em}
+    .press-contact__channels{list-style:none;padding:0;margin:var(--space-md) 0}
+    .press-contact__channels li{font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,.6);padding:4px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .press-contact__channels li strong{color:var(--white)}
+    .press-contact__response{background:var(--grey-50);padding:var(--space-xl);border:1px solid var(--grey-200)}
+    .press-contact__response h3{font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);margin-bottom:var(--space-md);color:var(--black)}
+    .press-contact__response p{font-size:var(--text-xs);line-height:1.7;color:var(--grey-600)}
+    .response-time{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);margin:var(--space-sm) 0}
+
+    /* STORY SUMMARY */
+    .story-box{border:2px solid var(--black);padding:var(--space-xl);margin:var(--space-xl) 0}
+    .story-box h3{font-family:var(--font-display);font-weight:900;font-size:var(--text-xl);color:var(--black);margin-bottom:var(--space-md)}
+    .story-box__lede{font-size:var(--text-base);line-height:1.7;color:var(--grey-800);margin-bottom:var(--space-md);font-weight:500}
+    .story-box p{font-size:var(--text-sm);line-height:1.7;color:var(--grey-600)}
+
+    /* KEY FACTS */
+    .facts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--grey-200);border:1px solid var(--grey-200);margin:var(--space-xl) 0}
+    .fact{background:var(--white);padding:var(--space-md);text-align:center}
+    .fact__num{font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:var(--accent-red)}
+    .fact__label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-top:4px}
+
+    /* STORY ANGLES */
+    .angles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .angle{border:1px solid var(--grey-200);padding:var(--space-lg);transition:border-color .15s}
+    .angle:hover{border-color:var(--accent-red)}
+    .angle__num{font-family:var(--font-mono);font-size:10px;color:var(--accent-red);margin-bottom:var(--space-xs)}
+    .angle__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--black);margin-bottom:var(--space-sm)}
+    .angle__desc{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600)}
+    .angle__tags{margin-top:var(--space-sm);display:flex;gap:4px;flex-wrap:wrap}
+    .angle__tag{font-family:var(--font-mono);font-size:8px;text-transform:uppercase;letter-spacing:.06em;padding:2px 6px;background:var(--grey-100);color:var(--grey-500)}
+
+    /* ACCESS TIERS */
+    .tiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .tier{border:1px solid var(--grey-200);padding:var(--space-lg);display:flex;flex-direction:column}
+    .tier__level{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;display:inline-block;margin-bottom:var(--space-sm)}
+    .tier__level--public{background:var(--grey-100);color:var(--grey-600)}
+    .tier__level--verified{background:#eff6ff;color:#1d4ed8}
+    .tier__level--full{background:#fee2e2;color:var(--accent-red)}
+    .tier__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--black);margin-bottom:var(--space-sm)}
+    .tier__desc{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600);flex:1}
+    .tier__includes{list-style:none;padding:0;margin:var(--space-sm) 0;border-top:1px solid var(--grey-200);padding-top:var(--space-sm)}
+    .tier__includes li{font-size:var(--text-xs);color:var(--grey-600);padding:3px 0;padding-left:16px;position:relative}
+    .tier__includes li::before{content:'✓';position:absolute;left:0;color:var(--accent-red);font-weight:700}
+    .tier__req{font-family:var(--font-mono);font-size:9px;color:var(--grey-400);margin-top:var(--space-sm);padding-top:var(--space-sm);border-top:1px solid var(--grey-100)}
+
+    /* RESOURCES */
+    .resource-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .resource{display:flex;gap:var(--space-md);padding:var(--space-md);border:1px solid var(--grey-200);transition:border-color .15s;text-decoration:none;color:inherit}
+    .resource:hover{border-color:var(--accent-red)}
+    .resource__icon{width:40px;height:40px;background:var(--grey-100);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+    .resource__body h4{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);margin-bottom:2px}
+    .resource__body p{font-size:var(--text-xs);color:var(--grey-500);line-height:1.4}
+
+    .quote-block{border-left:3px solid var(--accent-red);padding:var(--space-md) var(--space-lg);margin:var(--space-lg) 0;background:var(--grey-50)}
+    .quote-block__text{font-size:var(--text-sm);font-style:italic;color:var(--grey-700);line-height:1.6}
+    .quote-block__attr{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-top:var(--space-xs)}
+
+    @media(max-width:768px){.press-contact{grid-template-columns:1fr}.angles-grid{grid-template-columns:1fr}.tiers{grid-template-columns:1fr}#guidelines .container > div:last-child > div{grid-template-columns:1fr !important}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#f99a968b8b9c9a8d9096978ab990978f9c8a8d909e988d90979e9c9f9f968b9a9cd79a9694"><span class="__cf_email__" data-cfemail="56353924243335223f393825163f38203325223f3137223f3831333030392435337835393b">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Press</span>
+    <h1 class="page-hero__title">Press Room</h1>
+    <p class="page-hero__sub">Media Enquiries &middot; <a href="#guidelines" style="color:var(--accent-red);text-decoration:none;">Reporting Guidelines</a> &middot; <a href="#toolkit" style="color:var(--accent-red);text-decoration:none;">Case Explorer</a> &middot; Evidence Access</p>
+  </div></section>
+
+  <!-- CONTACT -->
+  <section class="section"><div class="container">
+
+    <div class="press-contact">
+      <div class="press-contact__primary">
+        <h3>Media Enquiries</h3>
+        <p>For press enquiries, interview requests, fact-checking, or evidence access, contact:</p>
+        <a href="/cdn-cgi/l/email-protection#8ae7efeee3ebcae3e4fceff9fee3edebfee3e4edefecece5f8e9efa4e9e5e7" class="press-contact__email"><span class="__cf_email__" data-cfemail="98f5fdfcf1f9d8f1f6eefdebecf1fff9ecf1f6fffdfefef7eafbfdb6fbf7f5">[email&#160;protected]</span></a>
+        <ul class="press-contact__channels">
+          <li><strong>Secure:</strong> Signal available on request</li>
+          <li><strong>PGP:</strong> Public key available on request</li>
+          <li><strong>Language:</strong> English, Italian</li>
+        </ul>
+        <p style="font-size:10px;color:rgba(255,255,255,.4);margin-top:var(--space-md);">All media correspondence is confidential unless otherwise agreed.</p>
+      </div>
+      <div class="press-contact__response">
+        <h3>Response Commitment</h3>
+        <div class="response-time">&lt; 24 hours</div>
+        <p>All enquiries from verified journalists receive a response within 24 hours. We can provide on-background briefings, documentary evidence, and source introductions on request.</p>
+        <p style="margin-top:var(--space-sm);">For corrections or right of reply on behalf of named individuals, please contact <a href="/cdn-cgi/l/email-protection#690a061b1b0c0a1d0006071a2900071f0c1a1d000e081d00070e0c0f0f061b0a0c470a0604" style="color:var(--accent-red);"><span class="__cf_email__" data-cfemail="04676b76766167706d6b6a77446d6a726177706d6365706d6a636162626b7667612a676b69">[email&#160;protected]</span></a>.</p>
+      </div>
+    </div>
+
+    <!-- STORY SUMMARY -->
+    <div class="story-box">
+      <h3>The Story</h3>
+      <p class="story-box__lede">Apple co-founder Steve Wozniak lent his name and reputation to Efforce, a blockchain energy efficiency platform that launched the WOZX token in December 2020. On-chain evidence, corporate filings, and insider communications suggest the project may have been used to facilitate one of the largest alleged pump-and-dump schemes in crypto history.</p>
+      <p>Private investors acquired 450M WOZX tokens for approximately $0.10 each and realised an estimated $336M in profits. Retail investors who purchased at market prices have suffered losses exceeding $400M. The company that issued the token &mdash; Efforce Ltd (Malta) &mdash; filed accounts showing zero employees, zero staff costs, and &euro;25K total revenue across four years. Its claimed parent company, AitherCO2, carried a concealed &euro;319.9M tax liability. A California class action (25CV459519) is now pending. Formal complaints have been filed with regulators in five jurisdictions.</p>
+    </div>
+
+    <!-- KEY FACTS -->
+    <div class="facts-grid">
+      <div class="fact"><div class="fact__num">$400M+</div><div class="fact__label">Estimated Retail Losses</div></div>
+      <div class="fact"><div class="fact__num">$336M</div><div class="fact__label">Est. Private Investor Profits</div></div>
+      <div class="fact"><div class="fact__num">0</div><div class="fact__label">Employees (Malta Filings)</div></div>
+      <div class="fact"><div class="fact__num">&euro;319.9M</div><div class="fact__label">AitherCO2 Tax Liability</div></div>
+      <div class="fact"><div class="fact__num">5</div><div class="fact__label">Jurisdictions</div></div>
+      <div class="fact"><div class="fact__num">34</div><div class="fact__label">Legal Letters (0 Rebuttals)</div></div>
+      <div class="fact"><div class="fact__num">99.2%</div><div class="fact__label">Supply Control at Listing</div></div>
+      <div class="fact"><div class="fact__num">10</div><div class="fact__label">Named Individuals</div></div>
+    </div>
+
+  </div></section>
+
+  <!-- STORY ANGLES -->
+  <section class="section" style="background:var(--grey-50);"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-sm);">Story Angles</h3>
+    <p style="font-size:var(--text-sm);color:var(--grey-600);line-height:1.7;margin-bottom:var(--space-md);">The investigation spans multiple angles suited to different editorial focuses. We can provide tailored briefings for each.</p>
+
+    <div class="angles-grid">
+
+      <div class="angle">
+        <div class="angle__num">01</div>
+        <div class="angle__title">The Wozniak Question</div>
+        <div class="angle__desc">An Apple co-founder&rsquo;s name was used to sell tokens to retail investors worldwide. He told Yahoo Finance he saw WOZX as &ldquo;shares of stock.&rdquo; His own Managing Director later said he &ldquo;abandoned ship.&rdquo; What did he know, when, and what was his role?</div>
+        <div class="angle__tags"><span class="angle__tag">Celebrity</span><span class="angle__tag">Securities</span><span class="angle__tag">U.S.</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">02</div>
+        <div class="angle__title">The $336M Token Dump</div>
+        <div class="angle__desc">Private investors bought 450M tokens at $0.10, then realised ~$336M in profits. On October 29, 2021, 186.6M tokens were transferred in a single day. The same day, the CEO said &ldquo;nothing illegal.&rdquo; On-chain evidence shows the full flow.</div>
+        <div class="angle__tags"><span class="angle__tag">Blockchain</span><span class="angle__tag">Market Manipulation</span><span class="angle__tag">Data</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">03</div>
+        <div class="angle__title">The Ghost Company</div>
+        <div class="angle__desc">Efforce Ltd (Malta) reported zero employees, zero staff costs, and &euro;25K total revenue across four years. Yet it claimed to operate a technology platform, raised $12.5M&ndash;$36M in a token sale, and attracted $68M+ in treasury outflows. Where did the money go?</div>
+        <div class="angle__tags"><span class="angle__tag">Corporate</span><span class="angle__tag">Fraud</span><span class="angle__tag">Malta</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">04</div>
+        <div class="angle__title">The Hidden Tax Bomb</div>
+        <div class="angle__desc">AitherCO2, Efforce&rsquo;s &ldquo;mother company,&rdquo; was promoted to investors as a &ldquo;$250M revenue&rdquo; energy company. Italian filings reveal a &euro;319.9M tax liability notified in October 2018 &mdash; two years before WOZX launched. Investors were never told.</div>
+        <div class="angle__tags"><span class="angle__tag">Italy</span><span class="angle__tag">Tax</span><span class="angle__tag">Concealment</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">05</div>
+        <div class="angle__title">The Chinese Connection</div>
+        <div class="angle__desc">WOZX launched on HBTC (now defunct). SeeleN members in China were reportedly told to receive tokens within the exchange. A $10 price target was promoted. When HBTC closed in October 2021, all intra-exchange trading histories were destroyed.</div>
+        <div class="angle__tags"><span class="angle__tag">China</span><span class="angle__tag">HBTC</span><span class="angle__tag">SeeleN</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">06</div>
+        <div class="angle__title">Five Countries, Zero Accountability</div>
+        <div class="angle__desc">Efforce&rsquo;s corporate structure spans Malta, Bahamas, Italy, Switzerland, and the U.S. Entities are non-filing, dormant, or carry undisclosed liabilities. 34 legal letters from three law firms have been received &mdash; none with a substantive rebuttal.</div>
+        <div class="angle__tags"><span class="angle__tag">Cross-border</span><span class="angle__tag">Regulatory</span><span class="angle__tag">Legal</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">07</div>
+        <div class="angle__title">HTX Ventures &amp; the Market Makers</div>
+        <div class="angle__desc">ICODrops identifies HTX Ventures (fmr Huobi) as investing $45M in the private sale. Pitchbook shows DWF Labs and Ellipti as co-investors &mdash; both market makers, not long-term holders. The &ldquo;cornerstone investor&rdquo; narrative was a trading arrangement.</div>
+        <div class="angle__tags"><span class="angle__tag">HTX</span><span class="angle__tag">DWF Labs</span><span class="angle__tag">Market Makers</span></div>
+      </div>
+
+      <div class="angle">
+        <div class="angle__num">08</div>
+        <div class="angle__title">The Class Action</div>
+        <div class="angle__desc">Benner &amp; Copley v. Wozniak et al. (25CV459519) is pending in Santa Clara County Superior Court. Nine defendants across four countries. The case alleges securities fraud, negligent misrepresentation, and civil conspiracy.</div>
+        <div class="angle__tags"><span class="angle__tag">Legal</span><span class="angle__tag">California</span><span class="angle__tag">Class Action</span></div>
+      </div>
+
+    </div>
+
+  </div></section>
+
+  <!-- MEDIA REPORTING GUIDELINES -->
+  <section class="section" id="guidelines" style="background:var(--black-soft);color:var(--white);"><div class="container">
+
+    <div style="display:grid;grid-template-columns:60px 1fr;gap:var(--space-lg);align-items:start;margin-bottom:var(--space-xl);">
+      <div style="width:60px;height:60px;border:3px solid var(--accent-red);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;">&#9878;</div>
+      <div>
+        <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--white);margin-bottom:var(--space-xs);">Reporting Guidelines &amp; Terms of Use</h3>
+        <p style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);">For journalists, content creators, researchers &amp; legal professionals</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:var(--space-lg);">
+
+      <!-- COLUMN 1: Source Attribution -->
+      <div style="border:1px solid rgba(255,255,255,.12);padding:var(--space-lg);">
+        <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-red);margin-bottom:var(--space-sm);">Source Attribution</div>
+        <h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--white);margin-bottom:var(--space-md);">Always cite the source</h4>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:var(--space-md);">All reporting, commentary, and content derived from this investigation must include a clear attribution to:</p>
+        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);padding:var(--space-md);text-align:center;margin-bottom:var(--space-md);">
+          <span style="font-family:var(--font-mono);font-size:var(--text-base);color:var(--white);font-weight:700;">www.investigatingefforce.com</span>
+        </div>
+        <p style="font-size:var(--text-xs);line-height:1.7;color:rgba(255,255,255,.5);">Where possible, link directly to the relevant page (individual profile, entity page, evidence repository, or key claims section) so your audience can verify the underlying evidence independently.</p>
+      </div>
+
+      <!-- COLUMN 2: Editorial Standards -->
+      <div style="border:1px solid rgba(255,255,255,.12);padding:var(--space-lg);">
+        <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-red);margin-bottom:var(--space-sm);">Editorial Standards</div>
+        <h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--white);margin-bottom:var(--space-md);">Accurate &amp; responsible reporting</h4>
+        <ul style="list-style:none;padding:0;margin:0;">
+          <li style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);padding:var(--space-sm) 0;border-bottom:1px solid rgba(255,255,255,.06);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">1.</span> <strong style="color:var(--white);">Use &ldquo;alleged&rdquo;</strong> &mdash; All claims published on this site are allegations unless explicitly stated otherwise. We ask that journalists and content creators use qualifying language (&ldquo;alleged,&rdquo; &ldquo;claims,&rdquo; &ldquo;according to the investigation&rdquo;) when reporting.</li>
+          <li style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);padding:var(--space-sm) 0;border-bottom:1px solid rgba(255,255,255,.06);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">2.</span> <strong style="color:var(--white);">Not proven in court</strong> &mdash; No allegation has been adjudicated or proven in any court of law. A class action is pending (25CV459519, Santa Clara County). These are unrebutted allegations supported by documentary evidence.</li>
+          <li style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);padding:var(--space-sm) 0;border-bottom:1px solid rgba(255,255,255,.06);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">3.</span> <strong style="color:var(--white);">Unrebutted unless stated</strong> &mdash; Where a named party has responded, this is clearly indicated (e.g., the <a href="aither-response.html" style="color:var(--accent-red);">Aither.com response</a>). Where no rebuttal has been received despite notification, this is also stated. Do not report allegations as &ldquo;confirmed&rdquo; or &ldquo;proven.&rdquo;</li>
+          <li style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);padding:var(--space-sm) 0;border-bottom:1px solid rgba(255,255,255,.06);padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);font-weight:700;">4.</span> <strong style="color:var(--white);">Verify independently</strong> &mdash; We encourage all reporters to independently verify claims using the linked source materials, public registries, and blockchain data before publishing.</li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: Right of Reply -->
+      <div style="border:1px solid rgba(255,255,255,.12);padding:var(--space-lg);">
+        <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-red);margin-bottom:var(--space-sm);">Right of Reply</div>
+        <h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--white);margin-bottom:var(--space-md);">Full right of reply afforded</h4>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:var(--space-md);">Every individual and entity named in this investigation has been notified and afforded a full, standing right of reply. All responses received are published in full and unedited. This right remains permanently open.</p>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:var(--space-md);">We strongly encourage journalists to <strong style="color:var(--white);">also seek comment from named parties</strong> as part of standard editorial practice. Contact details for legal representatives are available on request.</p>
+        <div style="background:rgba(255,255,255,.06);border-left:3px solid var(--accent-red);padding:var(--space-md);margin-top:var(--space-md);">
+          <p style="font-size:var(--text-xs);line-height:1.6;color:rgba(255,255,255,.6);margin:0;">To date: <strong style="color:var(--white);">34 legal letters received</strong> from Hogan Lovells, Bird &amp; Bird, and Giambrone &amp; Partners. <strong style="color:var(--white);">Zero substantive rebuttals.</strong> One response received (Aither.com) &mdash; <a href="aither-response.html" style="color:var(--accent-red);">published in full</a>.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- What you MAY do -->
+    <div style="margin-top:var(--space-xl);border-top:1px solid rgba(255,255,255,.1);padding-top:var(--space-xl);">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-xl);">
+        <div>
+          <h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:#4ade80;margin-bottom:var(--space-md);">&#10003; You are free to:</h4>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#4ade80;">&#10003;</span>Report on any aspect of the investigation published on this website</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#4ade80;">&#10003;</span>Quote from the investigation with attribution to www.investigatingefforce.com</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#4ade80;">&#10003;</span>Use screenshots and evidence images with source credit</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#4ade80;">&#10003;</span>Request on-record interviews, background briefings, or source introductions</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#4ade80;">&#10003;</span>Link directly to any page on this site</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#4ade80;">&#10003;</span>Build independent stories, analysis, or commentary using this investigation as a source</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--accent-red);margin-bottom:var(--space-md);">&#10007; We ask that you:</h4>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#10007;</span>Do not present allegations as proven facts &mdash; use &ldquo;alleged,&rdquo; &ldquo;according to,&rdquo; &ldquo;claims&rdquo;</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#10007;</span>Do not omit the source &mdash; always credit www.investigatingefforce.com</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#10007;</span>Do not report claims as &ldquo;confirmed&rdquo; unless independently verified by your own reporting</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#10007;</span>Do not selectively quote in a way that misrepresents the scope or nature of the allegations</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#10007;</span>Do seek comment from named parties &mdash; right of reply is a core editorial standard</li>
+            <li style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.65);padding:3px 0;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:var(--accent-red);">&#10007;</span>Do not republish the site in its entirety &mdash; report from it, link to it, cite it</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suggested attribution -->
+    <div style="margin-top:var(--space-xl);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);padding:var(--space-lg);">
+      <div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-red);margin-bottom:var(--space-sm);">Suggested Attribution</div>
+      <p style="font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7);margin-bottom:var(--space-sm);">The following phrasing is recommended when referencing this investigation:</p>
+      <div style="background:rgba(0,0,0,.3);padding:var(--space-md);font-family:var(--font-mono);font-size:var(--text-sm);color:rgba(255,255,255,.85);line-height:1.8;border-left:3px solid var(--accent-red);">
+        &ldquo;According to an independent investigation published at www.investigatingefforce.com, which alleges [specific claim]. All named parties have been notified and afforded a right of reply. No substantive rebuttal has been received to date, and no allegations have been proven in court.&rdquo;
+      </div>
+      <p style="font-size:var(--text-xs);line-height:1.6;color:rgba(255,255,255,.4);margin-top:var(--space-sm);margin-bottom:0;">This is guidance, not a requirement. Journalists should apply their own editorial standards and legal review processes as appropriate for their publication and jurisdiction.</p>
+    </div>
+
+  </div></section>
+
+  <!-- MEDIA TOOLKIT — INTERACTIVE CASE EXPLORER -->
+  <section class="section" id="toolkit"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-xs);">Media Toolkit</h3>
+    <p style="font-size:var(--text-sm);color:var(--grey-600);line-height:1.7;margin-bottom:var(--space-lg);">Select a subject below to view a summary of the key allegations, supporting evidence, and links to the relevant investigation pages. Designed for journalists, researchers, and content creators building stories from this investigation.</p>
+
+    <!-- Filter Controls -->
+    <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-lg);align-items:center;">
+      <label for="toolkit-category" style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--grey-500);">Browse by:</label>
+      <select id="toolkit-category" style="font-family:var(--font-mono);font-size:var(--text-sm);padding:8px 16px;border:2px solid var(--grey-200);background:var(--white);color:var(--black);cursor:pointer;min-width:200px;" onchange="filterToolkit()">
+        <option value="all">— All Subjects —</option>
+        <optgroup label="Individuals">
+          <option value="wozniak">Steve Wozniak</option>
+          <option value="visetti">Jacopo Visetti</option>
+          <option value="vanetti">Jacopo Vanetti</option>
+          <option value="castiglione">Andrea Castiglione</option>
+          <option value="carloni">Sergio Carloni</option>
+          <option value="hardesty">Ken Hardesty</option>
+          <option value="pastore">Paolo Pastore</option>
+          <option value="catania">Corrado Catania</option>
+          <option value="scozzese">Stefano Scozzese</option>
+        </optgroup>
+        <optgroup label="Entities">
+          <option value="efforce-malta">Efforce Ltd (Malta)</option>
+          <option value="efforce-bahamas">Efforce Ltd (Bahamas)</option>
+          <option value="aitherco2">AitherCO2 S.p.A (Italy)</option>
+          <option value="mbm">MBM Holding AG (Switzerland)</option>
+          <option value="aither-group">Aither Group</option>
+          <option value="htx">HTX Ventures</option>
+          <option value="dwf">DWF Labs</option>
+          <option value="ellipti">Ellipti</option>
+          <option value="hbtc">HBTC / BHEX</option>
+          <option value="seele">SEELE / SeeleN</option>
+        </optgroup>
+        <optgroup label="Key Claims">
+          <option value="claim-tax">Concealed &euro;319.9M Tax Liability</option>
+          <option value="claim-dump">$336M Private Investor Dump</option>
+          <option value="claim-ghost">Zero Employees, Zero Revenue</option>
+          <option value="claim-mbm">&euro;510 Transfer (AitherCO2 &rarr; MBM)</option>
+          <option value="claim-woz-misrep">Wozniak Misrepresented as Co-Founder</option>
+          <option value="claim-securities">Securities-Like Marketing</option>
+          <option value="claim-hbtc">HBTC Shutdown &amp; Data Destruction</option>
+          <option value="claim-seele">SEELE / Ponzi Entanglements</option>
+        </optgroup>
+      </select>
+      <span id="toolkit-count" style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);"></span>
+    </div>
+
+    <!-- Toolkit Cards Container -->
+    <div id="toolkit-cards" style="display:grid;gap:var(--space-md);">
+
+      <!-- ========== INDIVIDUALS ========== -->
+
+      <div class="toolkit-card" data-id="wozniak" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Steve Wozniak</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">11% shareholder &middot; Named co-founder &middot; Apple co-founder</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Wozniak was marketed as co-founder and engineer of Efforce from its public launch, despite not receiving shares until August 2019 &mdash; 14 months after incorporation. He told Yahoo Finance in December 2020 that he saw WOZX tokens as &ldquo;shares of stock,&rdquo; potentially satisfying the Howey Test for securities classification. Despite whitepaper exclusions for U.S. persons, WOZX was promoted in Times Square and via major U.S. media. His own Managing Director, Paolo Pastore, later said he &ldquo;abandoned ship without any kind of direction.&rdquo; He was notified of the investigation via 20 emails (some through his associate Seamus) and via Hogan Lovells. No substantive response was received. He is a named defendant in case 25CV459519.</p>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-bottom:var(--space-sm);">KEY EVIDENCE:</div>
+        <ul style="font-size:var(--text-xs);line-height:1.8;color:var(--grey-600);padding-left:16px;margin-bottom:var(--space-md);">
+          <li>Memorandum of Association (Jun 2018) vs. share transfer (Aug 2019) &mdash; 14-month gap</li>
+          <li>Yahoo Finance &ldquo;shares of stock&rdquo; interview (Dec 8, 2020)</li>
+          <li>Times Square billboard &amp; U.S.-targeted marketing despite whitepaper exclusion</li>
+          <li>20 outreach emails (2023&ndash;2025) &mdash; no substantive response; blocked after Cameo reply</li>
+          <li>Pastore admission: &ldquo;abandoned ship&rdquo; and &ldquo;owners are to blame 100%, Woz as well&rdquo;</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/steve-wozniak.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="us-nexus.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">U.S. Legal Nexus &rarr;</a>
+          <a href="class-action.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Class Action &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="visetti" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Jacopo Visetti</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">95% owner AitherCO2 &middot; ~40% indirect Efforce &middot; Co-founder</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fef3c7;color:#92400e;">LEGAL THREATS ONLY</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Visetti is alleged to be the primary architect of Efforce. As 95% owner of AitherCO2 and indirect controller of ~40% of Efforce via MBM Holdings, he sat at the centre of the corporate structure. In a recorded call (November 2023), he admitted Efforce only raised $12M (vs. the $45M reported by ICODrops), said blockchain &ldquo;wasn&rsquo;t needed,&rdquo; confirmed the private investor was a single U.S.-based entity (&ldquo;one from NYC&rdquo;), and acknowledged that &euro;319.9M in AitherCO2 tax liabilities were never disclosed to token holders. He authorised the &euro;510 transfer of AitherCO2&rsquo;s 42.5% Efforce stake to MBM Holdings AG during AitherCO2&rsquo;s insolvency. Response to investigation: 34 legal threat letters via Hogan Lovells, Bird &amp; Bird, and Giambrone &mdash; zero substantive rebuttals.</p>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-bottom:var(--space-sm);">KEY EVIDENCE:</div>
+        <ul style="font-size:var(--text-xs);line-height:1.8;color:var(--grey-600);padding-left:16px;margin-bottom:var(--space-md);">
+          <li>Recorded Nov 2023 call transcript &mdash; &ldquo;blockchain not needed,&rdquo; &ldquo;$12M raised,&rdquo; &ldquo;one from NYC&rdquo;</li>
+          <li>AitherCO2 filings: 95% ownership, &euro;319.9M tax liability, &euro;408M loss (2020)</li>
+          <li>&euro;510 MBM transfer &mdash; Dec 15, 2020 (during AitherCO2 insolvency)</li>
+          <li>Extradition threat to investigator (Dec 16, 2023)</li>
+          <li>34 legal letters / zero rebuttals via three law firms</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/jacopo-visetti.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="entities/aitherco2.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">AitherCO2 Profile &rarr;</a>
+          <a href="legal-threats.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Legal Threats &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="vanetti" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Jacopo Vanetti</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">40% direct owner &middot; CTO &middot; Board member &middot; Treasury key holder</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Vanetti is the largest single direct shareholder at 40% and served as CTO and board member. He held treasury wallet keys, ran an unofficial price speculation group, shared Wozniak&rsquo;s &ldquo;shares of stock&rdquo; quote as marketing, provided direct investment advice to community members, and hyped exchange listings that never materialised. His personal website linked to Coinrail.io scam code. He deleted his LinkedIn in November 2025 shortly after the investigation was published. His co-founder Pastore described a plan to &ldquo;strip the 40% owner of all power.&rdquo; 78 documented misleading statements attributed. Notified via Hogan Lovells &mdash; no response.</p>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-bottom:var(--space-sm);">KEY EVIDENCE:</div>
+        <ul style="font-size:var(--text-xs);line-height:1.8;color:var(--grey-600);padding-left:16px;margin-bottom:var(--space-md);">
+          <li>78 documented misleading statements in Telegram/Discord (Dec 2020 &ndash; present)</li>
+          <li>Treasury wallet key holder &mdash; multi-sig access to WOZX reserves</li>
+          <li>Unofficial price group activity &amp; direct investment advice to retail</li>
+          <li>Personal website linked to Coinrail.io scam code</li>
+          <li>LinkedIn deleted Nov 2025 after investigation published</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/jacopo-vanetti.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="vesting.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Vesting Analysis &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="castiglione" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Andrea Castiglione</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">1.25% owner &middot; Head of Investor Relations &middot; Public face</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Castiglione served as the primary public-facing communicator and is alleged to have made over 78 misleading statements to the Efforce community. On December 2, 2020 &mdash; two days before WOZX&rsquo;s listing &mdash; he told investors &ldquo;NONE OF THEM HAS THE INTENTION TO SELL,&rdquo; while private investors subsequently dumped $283M+ within months. He repeatedly denied SEELE connections despite being photographed at GDAC 2020 with SEELE figures. He allegedly brought Wozniak and Hardesty into the project. Also operates SilentUnicorn, a personal venture. Notified via Hogan Lovells &mdash; no response.</p>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-bottom:var(--space-sm);">KEY EVIDENCE:</div>
+        <ul style="font-size:var(--text-xs);line-height:1.8;color:var(--grey-600);padding-left:16px;margin-bottom:var(--space-md);">
+          <li>&ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo; &mdash; Dec 2, 2020 (private investors dumped $283M+)</li>
+          <li>78 documented misleading statements (Telegram/Discord, timestamped screenshots)</li>
+          <li>GDAC 2020 conference attendance with SEELE while publicly denying connections (6 denial screenshots)</li>
+          <li>Unofficial price group approval &amp; Nasdaq Dubai event promotion</li>
+        </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/andrea-castiglione.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="vesting.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Vesting Analysis &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="carloni" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Sergio Carloni</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Dual CEO (Efforce &amp; AitherCO2) &middot; AitherCO2 founder &middot; Treasury key holder</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Carloni served as dual CEO of both Efforce and AitherCO2, placing him at the operational centre of both entities. He was present at GDAC 2020 alongside SEELE representatives. He oversaw the &euro;510 transfer of AitherCO2&rsquo;s 42.5% stake to MBM Holdings AG and held treasury wallet keys. He now appears as CEO of the rebranded Aither Group on LinkedIn, which claims &ldquo;15 years&rdquo; of history predating its formation. Notified via Hogan Lovells &mdash; no response.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/sergio-carloni.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="entities/aitherco2.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">AitherCO2 &rarr;</a>
+          <a href="aither-response.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Aither Response &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="hardesty" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Ken Hardesty</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">4% owner &middot; Board member &middot; CEO, Gerbsman Partners &middot; Wozniak manager</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Hardesty is a board member and 4% shareholder of Efforce, and CEO of Gerbsman Partners &mdash; a San Francisco-based &ldquo;crisis turnaround&rdquo; firm. He manages all of Steve Wozniak&rsquo;s business affairs. Visetti alleged in the Nov 2023 call that Hardesty &ldquo;sourced the main private investor&rdquo; &mdash; a U.S.-based entity. He held treasury wallet keys alongside Carloni and Vanetti. He deleted his Discord presence after the investigation was published. As a California-based individual, he establishes a key U.S. jurisdictional nexus. Notified via Hogan Lovells &mdash; no response.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/ken-hardesty.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="us-nexus.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">U.S. Legal Nexus &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="pastore" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Paolo Pastore</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Managing Director (2022&ndash;present) &middot; Key insider source</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Pastore joined as Managing Director in 2022 and became a critical insider source. In private communications, he admitted WOZX was &ldquo;pumped and dumped by private investors,&rdquo; called the project &ldquo;mostly a Ponzi scheme,&rdquo; said retail investors were &ldquo;exit liquidity,&rdquo; confirmed Wozniak &ldquo;abandoned ship,&rdquo; described the whitepaper business model as &ldquo;dead,&rdquo; and disclosed that delisting notices were shared with unknown contacts (&ldquo;Joshua&rdquo; + Chinese/Korean names) 24 hours before public announcement. He also requested the investigator&rsquo;s passport for a fake meeting &mdash; later proven by SAR to have been forwarded despite denial.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/paolo-pastore.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="catania" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Corrado Catania</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Director (2018&ndash;present) &middot; Malta Registry</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Catania has served as director of Efforce Ltd (Malta) since incorporation in June 2018 and remains on the board. He was director during the &euro;510 AitherCO2&ndash;to&ndash;MBM transfer (Dec 2020) and throughout the period when &euro;319.9M in AitherCO2 tax liabilities went undisclosed. As a board signatory, he bears directorial responsibility for the accuracy of filings showing zero employees and &euro;25K revenue.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/corrado-catania.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="entities/efforce-malta.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Efforce Malta &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="scozzese" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:var(--grey-100);color:var(--grey-500);">Individual</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Stefano Scozzese</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">1.25% owner &middot; Head of Communication &middot; Designer</p>
+          </div>
+          <span style="font-family:var(--font-mono);font-size:10px;padding:4px 10px;background:#fee2e2;color:var(--accent-red);">NO REBUTTAL RECEIVED</span>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Scozzese served as Head of Communication and was listed as co-founder on early efforce.io versions. He designed the one-pager, the AitherCO2 &ldquo;mother company&rdquo; promotional graphics, and the Times Square billboard campaign. He holds 1.25% of Efforce shares.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="individuals/stefano-scozzese.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+        </div>
+      </div>
+
+      <!-- ========== ENTITIES ========== -->
+
+      <div class="toolkit-card" data-id="efforce-malta" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:var(--space-sm);margin-bottom:var(--space-md);">
+          <div>
+            <span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span>
+            <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Efforce Ltd (Malta) — C 94737</h4>
+            <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Incorporated Jun 2018 &middot; WOZX issuing entity &middot; Token sale via Maltese protections</p>
+          </div>
+        </div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Efforce Ltd is the Maltese entity through which the WOZX token was sold. Despite raising $12.5M&ndash;$45M (disputed) and facilitating $68M+ in treasury outflows, its filings show zero employees, zero staff costs, and &euro;25K total revenue from 2019&ndash;2022. &euro;342,780 cumulative losses. No VFA licence identified with the MFSA. The token sale was conducted via this entity to access Maltese consumer protections, yet no proceeds appear in its accounts. Shareholders: MBM Holdings AG 42.5%, Vanetti 40%, Wozniak 11%, Hardesty 4%, Castiglione 1.25%, Scozzese 1.25%.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+          <a href="entities/efforce-malta.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a>
+          <a href="treasury-wallet.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Treasury Analysis &rarr;</a>
+        </div>
+      </div>
+
+      <div class="toolkit-card" data-id="efforce-bahamas" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Efforce Ltd (Bahamas)</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Token issuer per whitepaper &middot; No filings since 2022</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">The Bahamas entity is named in the whitepaper as the token issuer. Despite this, no proceeds from the $45M private placement appear in its accounts. No filings have been made since 2022. The Securities Commission of the Bahamas was notified in November 2025.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/efforce-bahamas.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="aitherco2" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">AitherCO2 S.p.A (Italy)</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Self-described &ldquo;mother company&rdquo; &middot; 95% owned by Visetti &middot; &euro;319.9M tax liability</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Promoted as the strong &ldquo;mother company&rdquo; behind Efforce with &ldquo;$250M annual revenue.&rdquo; Italian filings reveal a &euro;319.9M tax liability notified October 2018, &euro;408M loss in 2020, and &euro;402.5M negative equity &mdash; all concealed from token holders during peak hype. The company transferred its 42.5% Efforce stake to MBM Holdings AG for &euro;510 (Dec 15, 2020) during insolvency. Has since rebranded operations as Aither Group, which claims no connection to AitherCO2.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/aitherco2.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a><a href="aither-response.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Aither Response &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="mbm" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">MBM Holding AG (Switzerland)</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Received 42.5% Efforce for &euro;510 &middot; No filings since May 2021</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Swiss shell entity that received AitherCO2&rsquo;s 42.5% Efforce stake for &euro;510 on December 15, 2020. Fair market value exceeded &euro;600M at the time. No filings since May 2021. No proven operational links to AitherCO2 beyond the transfer itself. FINMA was notified in November 2025.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/mbm-holding.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="aither-group" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Aither Group</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Claims no AitherCO2 continuity &middot; Contradicted by public evidence</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Operating at aither.com, the entity responded to the investigation claiming it is &ldquo;not the same company, not a legal successor, not a continuation&rdquo; of AitherCO2. This is contradicted by: Castiglione announcing &ldquo;AitherCO2 is now Aither Group&rdquo; (Jun 2021), Aither.com claiming &ldquo;more than a decade of dedication,&rdquo; LinkedIn stating &ldquo;Founded 2010&rdquo; (AitherCO2&rsquo;s founding date), and Visetti listing &ldquo;Co-founder &mdash; 15 years.&rdquo; Declined to provide registered name, company number, or jurisdiction. No reply to follow-up questions.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/aither-group.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a><a href="aither-response.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Full Response &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="htx" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">HTX Ventures (fmr Huobi Ventures)</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Led $45M private placement &middot; ICODrops 291x avg ROI &middot; HBTC/HTX successor</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">HTX Ventures led the $45M private placement, acquiring 450M WOZX at $0.10/token. ICODrops reports a 291x average ROI for HTX portfolio investments. No proceeds from the raise appear in any Efforce entity accounts. As the VC arm of HTX (Huobi), it is the natural successor to HBTC &mdash; the exchange that shut down in Nov 2021, destroying all WOZX trade histories. Efforce is not listed in HTX Ventures&rsquo; current portfolio.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/htx-ventures.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a><a href="private-investors.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Private Investors &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="dwf" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">DWF Labs</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Co-investor &middot; Market maker &middot; Tagged as &ldquo;DWF Options&rdquo; in PitchBook</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">PitchBook records DWF Labs (tagged as &ldquo;DWF Options&rdquo;) as a co-investor in the Efforce round alongside HTX Ventures and Ellipti. DWF is a known market maker with former Huobi Russia ties. Efforce is not listed in DWF&rsquo;s public portfolio. No public statement from DWF about its Efforce involvement.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/dwf-labs.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="ellipti" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Ellipti</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Seoul-based co-investor &middot; Alleged Bithumb market maker &middot; Co-founder: John Kwak</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">PitchBook tags Ellipti as co-investor in the Efforce round. Visetti described &ldquo;PI-appointed market maker on Bithumb&rdquo; &mdash; Ellipti&rsquo;s Korean focus and Bithumb partnerships match. Co-founded by John Kwak. Portfolio: &minus;97.8% retail ROI (CryptoRank). No public statement about Efforce involvement.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/ellipti.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="hbtc" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">HBTC / BHEX</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">First WOZX listing exchange &middot; Shut down Nov 2021 &middot; Trade histories destroyed</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">HBTC was the first exchange to list WOZX and hosted the IEO in December 2020. It gave users 96 hours to withdraw (Nov 19, 2021) before permanently shutting down. Non-withdrawn assets were liquidated. All intra-exchange trade histories were destroyed, blocking GDPR-mandated access. HTX as Huobi successor has not intervened.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/hbtc.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="seele" style="border:2px solid var(--grey-200);padding:var(--space-lg);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#dbeafe;color:#1e40af;">Entity</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">SEELE / SeeleN</h4><p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Alleged Ponzi &middot; Chinese media reports &middot; GDAC 2020 conference ties</p></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">SEELE (SeeleN) is an alleged Ponzi scheme with Chinese-language coverage. Efforce representatives attended GDAC 2020 alongside SEELE figures. Chinese media reported on joint SEELE &amp; WOZX Ponzi involvement. Castiglione publicly denied SEELE connections at least six times while evidence shows conference attendance and overlapping Telegram channels.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);"><a href="entities/seele.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Full Profile &rarr;</a></div>
+      </div>
+
+      <!-- ========== KEY CLAIMS ========== -->
+
+      <div class="toolkit-card" data-id="claim-tax" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Concealed &euro;319.9M Tax Liability at AitherCO2</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">AitherCO2 S.p.A received notification of a &euro;319.9M tax assessment (2011&ndash;2014 taxes + penalties) on October 28, 2018 &mdash; two full years before WOZX launched. This was never disclosed to token holders. AitherCO2 was simultaneously promoted as Efforce&rsquo;s &ldquo;strong mother company&rdquo; with &ldquo;$250&ndash;$450M annual revenue.&rdquo; Its 2020 accounts showed &euro;408.2M loss and &euro;402.5M negative equity.</p>
+        <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);">INVOLVES: Visetti (95% AitherCO2 owner), Carloni (dual CEO), Catania (director), Castiglione (&ldquo;mother company&rdquo; promoter)</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="entities/aitherco2.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">AitherCO2 Profile &rarr;</a><a href="key-claims.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Key Claims &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-dump" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">$336M Private Investor Token Dump</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">The $45M private placement (450M WOZX at $0.10) was led by HTX Ventures with DWF Labs and Ellipti. Investors dumped holdings within 12 months for an estimated $336M profit. On Oct 29, 2021, 186.6M tokens were transferred in a single day. The same day, Castiglione said &ldquo;nothing illegal.&rdquo; Publicly described as &ldquo;long-term Asian cornerstone investors&rdquo; &mdash; Visetti privately admitted the main investor was a single U.S.-based entity.</p>
+        <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);">INVOLVES: HTX Ventures, DWF Labs, Ellipti, Hardesty (alleged PI sourcer), Castiglione (&ldquo;nothing illegal&rdquo;)</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="private-investors.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Private Investors &rarr;</a><a href="vesting.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Vesting Analysis &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-ghost" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Zero Employees, Zero Revenue</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Efforce Ltd (Malta) reported 0 employees, 0 staff costs, and &euro;25K total revenue across four years of filings (2019&ndash;2022). This entity claimed to operate a technology platform, raised millions in a token sale, and attracted $68M+ in treasury outflows. No explanation has been provided for the discrepancy.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="entities/efforce-malta.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Efforce Malta &rarr;</a><a href="treasury-wallet.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">Treasury Analysis &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-mbm" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">&euro;510 Transfer: AitherCO2 &rarr; MBM Holdings AG</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">On Dec 15, 2020, AitherCO2 transferred its 42.5% Efforce stake to Swiss shell company MBM Holding AG for &euro;510. Fair market value exceeded &euro;600M at the time. The transfer occurred during AitherCO2&rsquo;s &euro;319.9M tax crisis &mdash; an alleged asset-shielding manoeuvre. MBM has filed no accounts since May 2021.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="entities/mbm-holding.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">MBM Profile &rarr;</a><a href="entities/aitherco2.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;border:1px solid var(--grey-300);color:var(--grey-600);text-decoration:none;">AitherCO2 &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-woz-misrep" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Wozniak Misrepresented as Co-Founder</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Efforce was incorporated June 2018. Wozniak received shares August 2019 &mdash; 14 months later. Despite this, he was marketed as co-founder and engineer from day one. He was listed in the &ldquo;Engineer / Management&rdquo; role in the one-pager. The WOZX token ticker used his name.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="individuals/steve-wozniak.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">Wozniak Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-securities" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">Securities-Like Marketing (&ldquo;Shares of Stock&rdquo;)</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Wozniak told Yahoo Finance he saw WOZX as &ldquo;shares of stock.&rdquo; Vanetti shared this quote as marketing. The project was promoted via Times Square billboards and U.S. media despite the whitepaper explicitly excluding U.S. persons. HBTC, the listing exchange, only enforced KYC above deposit thresholds &mdash; allowing U.S. citizens to purchase WOZX.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="us-nexus.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">U.S. Legal Nexus &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-hbtc" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">HBTC Shutdown &amp; Data Destruction</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">HBTC gave 96 hours notice (Nov 19, 2021) before permanently closing. Non-withdrawn WOZX was liquidated. All trade histories were deleted, blocking GDPR-mandated access for thousands of users. HTX (Huobi successor) has not intervened. This destroyed potential evidence of market manipulation during the peak trading period.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="entities/hbtc.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">HBTC Profile &rarr;</a></div>
+      </div>
+
+      <div class="toolkit-card" data-id="claim-seele" style="border:2px solid var(--grey-200);padding:var(--space-lg);border-left:4px solid var(--accent-red);display:none;">
+        <div style="margin-bottom:var(--space-md);"><span style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.08em;padding:2px 8px;background:#fee2e2;color:var(--accent-red);">Key Claim</span><h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-top:var(--space-xs);">SEELE / Ponzi Entanglements</h4></div>
+        <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin-bottom:var(--space-md);">Efforce representatives attended GDAC 2020 with SEELE (alleged Ponzi) figures. Chinese media reported joint involvement. SeeleN members were reportedly told to receive WOZX tokens within HBTC, with a $10 price target promoted. Castiglione publicly denied SEELE connections six times &mdash; contradicted by photographic and conference attendance evidence.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);margin-top:var(--space-md);"><a href="entities/seele.html" style="font-family:var(--font-mono);font-size:10px;padding:4px 12px;background:var(--black);color:var(--white);text-decoration:none;">SEELE Profile &rarr;</a></div>
+      </div>
+
+    </div><!-- /toolkit-cards -->
+
+  </div></section>
+
+  <!-- REPORTING REQUIREMENTS -->
+  <section class="section" style="background:var(--black-soft);color:var(--white);" id="reporting-requirements"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--white);margin-bottom:var(--space-xs);">Reporting Requirements</h3>
+    <p style="font-size:var(--text-sm);color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:var(--space-lg);">Media, content creators, and researchers are free to report on any aspect of this investigation. We ask that all coverage adheres to the following requirements to ensure accuracy, fairness, and legal protection for all parties.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--space-lg);margin-bottom:var(--space-xl);">
+
+      <!-- MANDATORY -->
+      <div style="border:2px solid var(--accent-red);padding:var(--space-lg);">
+        <h4 style="font-family:var(--font-display);font-weight:900;color:var(--accent-red);margin-bottom:var(--space-md);font-size:var(--text-base);">&#9888; Mandatory Attribution</h4>
+        <p style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.7);">All coverage must cite this investigation&rsquo;s source as:</p>
+        <p style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--white);padding:var(--space-sm);background:rgba(255,255,255,.08);margin:var(--space-sm) 0;text-align:center;letter-spacing:.02em;">www.investigatingefforce.com</p>
+        <p style="font-size:var(--text-xs);line-height:1.8;color:rgba(255,255,255,.7);">This ensures readers can access the full evidence, verify claims independently, and exercise their own right of reply. Link directly where possible.</p>
+      </div>
+
+      <!-- LANGUAGE -->
+      <div style="border:1px solid rgba(255,255,255,.15);padding:var(--space-lg);">
+        <h4 style="font-family:var(--font-display);font-weight:900;color:var(--white);margin-bottom:var(--space-md);font-size:var(--text-base);">Language Requirements</h4>
+        <ul style="font-size:var(--text-xs);line-height:2;color:rgba(255,255,255,.7);padding-left:16px;">
+          <li>All claims must be framed as <strong style="color:var(--white);">alleged</strong> unless a court or regulator has made a determination</li>
+          <li>Note that allegations are <strong style="color:var(--white);">unrebutted</strong> where no substantive response has been received</li>
+          <li>Where responses have been received (e.g. Aither.com), note that a response was provided and direct readers to the published response</li>
+          <li>Do not present unrebutted allegations as proven facts</li>
+          <li>Reference the pending California case (25CV459519) where relevant</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT OF REPLY -->
+      <div style="border:1px solid rgba(255,255,255,.15);padding:var(--space-lg);">
+        <h4 style="font-family:var(--font-display);font-weight:900;color:var(--white);margin-bottom:var(--space-md);font-size:var(--text-base);">Right of Reply</h4>
+        <ul style="font-size:var(--text-xs);line-height:2;color:rgba(255,255,255,.7);padding-left:16px;">
+          <li>A <strong style="color:var(--white);">full right of reply</strong> has been afforded to all named individuals and entities</li>
+          <li>34 legal letters have been received &mdash; none containing a substantive rebuttal</li>
+          <li>All responses received are published <strong style="color:var(--white);">unedited and in full</strong></li>
+          <li>We ask that journalists independently contact named parties for comment before publication</li>
+          <li>The standing right of reply remains permanently open at <a href="/cdn-cgi/l/email-protection#71121e0303141205181e1f0231181f0714020518161005181f161417171e0312145f121e1c" style="color:var(--accent-red);"><span class="__cf_email__" data-cfemail="fe9d918c8c9b9d8a9791908dbe9790889b8d8a97999f8a9790999b9898918c9d9bd09d9193">[email&#160;protected]</span></a></li>
+        </ul>
+      </div>
+
+      <!-- ACCURACY -->
+      <div style="border:1px solid rgba(255,255,255,.15);padding:var(--space-lg);">
+        <h4 style="font-family:var(--font-display);font-weight:900;color:var(--white);margin-bottom:var(--space-md);font-size:var(--text-base);">Accuracy &amp; Verification</h4>
+        <ul style="font-size:var(--text-xs);line-height:2;color:rgba(255,255,255,.7);padding-left:16px;">
+          <li>All evidence is sourced and verifiable &mdash; check primary sources before reporting</li>
+          <li>Company filings are publicly available via Malta, Italian, Swiss, and Bahamas registries</li>
+          <li>Blockchain data is on-chain and independently verifiable</li>
+          <li>Where screenshots are used, verify against the original source where possible</li>
+          <li>Contact us for pre-publication fact-checking support at <a href="/cdn-cgi/l/email-protection#741911101d15341d1a021107001d1315001d1a131112121b0617115a171b19" style="color:var(--accent-red);"><span class="__cf_email__" data-cfemail="026f67666b63426b6c746771766b6563766b6c656764646d7061672c616d6f">[email&#160;protected]</span></a></li>
+        </ul>
+      </div>
+
+      <!-- WHAT YOU MAY REPORT -->
+      <div style="border:1px solid rgba(255,255,255,.15);padding:var(--space-lg);">
+        <h4 style="font-family:var(--font-display);font-weight:900;color:var(--white);margin-bottom:var(--space-md);font-size:var(--text-base);">Scope of Reporting</h4>
+        <ul style="font-size:var(--text-xs);line-height:2;color:rgba(255,255,255,.7);padding-left:16px;">
+          <li>You are free to report on <strong style="color:var(--white);">any aspect</strong> of this investigation</li>
+          <li>All content on this website is published under <strong style="color:var(--white);">UK Defamation Act 2013 s.4</strong> (public interest)</li>
+          <li>You may reproduce factual claims with attribution, subject to the language requirements above</li>
+          <li>Evidence screenshots may be used with credit to investigatingefforce.com</li>
+          <li>We welcome coverage from all formats: print, broadcast, digital, podcasts, YouTube, and independent analysis</li>
+        </ul>
+      </div>
+
+      <!-- LEGAL NOTICE -->
+      <div style="border:1px solid rgba(255,255,255,.15);padding:var(--space-lg);">
+        <h4 style="font-family:var(--font-display);font-weight:900;color:var(--white);margin-bottom:var(--space-md);font-size:var(--text-base);">Legal Notice for Publishers</h4>
+        <ul style="font-size:var(--text-xs);line-height:2;color:rgba(255,255,255,.7);padding-left:16px;">
+          <li>This investigation is conducted in the public interest and published under s.4 of the Defamation Act 2013</li>
+          <li>Publishers should conduct their own legal review before publication</li>
+          <li>We do not provide legal advice or indemnity to third-party publishers</li>
+          <li>All claims are independently verifiable via the evidence archive</li>
+          <li>For any corrections or updates, contact <a href="/cdn-cgi/l/email-protection#dcbfb3aeaeb9bfa8b5b3b2af9cb5b2aab9afa8b5bbbda8b5b2bbb9babab3aebfb9f2bfb3b1" style="color:var(--accent-red);"><span class="__cf_email__" data-cfemail="ff9c908d8d9a9c8b9690918cbf9691899a8c8b96989e8b9691989a9999908d9c9ad19c9092">[email&#160;protected]</span></a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;padding:var(--space-lg);border:1px solid rgba(255,255,255,.1);">
+      <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:rgba(255,255,255,.5);line-height:1.8;">All named individuals and entities retain a standing, permanent right of reply.<br>All responses will be published unedited and in full.<br>No allegation on this website has received a substantive rebuttal to date.</p>
+    </div>
+
+  </div></section>
+
+  <!-- EVIDENCE ACCESS -->
+  <section class="section"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-sm);">Evidence Access</h3>
+    <p style="font-size:var(--text-sm);color:var(--grey-600);line-height:1.7;margin-bottom:var(--space-md);">The investigation holds an extensive evidence archive. Access is provided on a tiered basis to protect source confidentiality and investigation integrity.</p>
+
+    <div class="tiers">
+
+      <div class="tier">
+        <span class="tier__level tier__level--public">Public</span>
+        <div class="tier__title">Open Access</div>
+        <div class="tier__desc">All content published on this website is freely available. No registration required.</div>
+        <ul class="tier__includes">
+          <li>All investigation pages and analysis</li>
+          <li>Official documents and company filings</li>
+          <li>Timeline (705 entries)</li>
+          <li>Public blockchain data</li>
+          <li>Searchable evidence library</li>
+        </ul>
+        <div class="tier__req">Requirement: None</div>
+      </div>
+
+      <div class="tier">
+        <span class="tier__level tier__level--verified">Verified Media</span>
+        <div class="tier__title">Press Access</div>
+        <div class="tier__desc">Verified journalists from established publications receive extended access and direct briefings.</div>
+        <ul class="tier__includes">
+          <li>Everything in Public tier</li>
+          <li>On-background briefings</li>
+          <li>High-resolution evidence screenshots</li>
+          <li>Detailed blockchain tracing data</li>
+          <li>Source introductions (where consented)</li>
+          <li>Pre-publication fact-check support</li>
+        </ul>
+        <div class="tier__req">Requirement: Contact from verifiable publication email address</div>
+      </div>
+
+      <div class="tier">
+        <span class="tier__level tier__level--full">Full Access</span>
+        <div class="tier__title">Legal &amp; Regulatory</div>
+        <div class="tier__desc">Law enforcement, regulatory bodies, and legal counsel acting for affected investors receive the full evidence archive.</div>
+        <ul class="tier__includes">
+          <li>Everything in Verified tier</li>
+          <li>Complete unredacted evidence archive</li>
+          <li>Private communications (with provenance)</li>
+          <li>Wallet-level blockchain analysis</li>
+          <li>Witness testimony and declarations</li>
+          <li>Expert reports</li>
+        </ul>
+        <div class="tier__req">Requirement: Official credentials / engagement letter</div>
+      </div>
+
+    </div>
+
+    <div style="background:var(--grey-50);border-left:3px solid var(--grey-300);padding:var(--space-md) var(--space-lg);margin:var(--space-lg) 0;">
+      <p style="font-size:var(--text-xs);line-height:1.7;color:var(--grey-600);margin:0;"><strong>Independent content creators and investigators:</strong> We welcome coverage from independent journalists, YouTubers, podcasters, and blockchain analysts. Access is assessed on a case-by-case basis. Please reach out at <a href="/cdn-cgi/l/email-protection#6f020a0b060e2f0601190a1c1b06080e1b0601080a0909001d0c0a410c0002" style="color:var(--accent-red);"><span class="__cf_email__" data-cfemail="305d5554595170595e4655434459575144595e575556565f4253551e535f5d">[email&#160;protected]</span></a> with details of your platform and audience.</p>
+    </div>
+
+  </div></section>
+
+  <!-- QUICK LINKS -->
+  <section class="section" style="background:var(--grey-50);"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-md);">Quick Reference</h3>
+
+    <div class="resource-list">
+      <a href="key-claims.html" class="resource"><div class="resource__icon">&#9888;</div><div class="resource__body"><h4>Key Claims</h4><p>861 lines. Core allegations with sourcing.</p></div></a>
+      <a href="timeline.html" class="resource"><div class="resource__icon">&#128197;</div><div class="resource__body"><h4>Timeline</h4><p>705 entries. Sep 2017 to present.</p></div></a>
+      <a href="individuals.html" class="resource"><div class="resource__icon">&#128100;</div><div class="resource__body"><h4>Individuals</h4><p>10 profiles. Roles, quotes, evidence.</p></div></a>
+      <a href="entities.html" class="resource"><div class="resource__icon">&#127970;</div><div class="resource__body"><h4>Entities</h4><p>10 profiles. Malta, Bahamas, Italy, Switzerland.</p></div></a>
+      <a href="evidence.html" class="resource"><div class="resource__icon">&#128269;</div><div class="resource__body"><h4>Evidence Repository</h4><p>Searchable. Documents, screenshots, quotes.</p></div></a>
+      <a href="treasury-wallet.html" class="resource"><div class="resource__icon">&#9939;</div><div class="resource__body"><h4>Treasury Analysis</h4><p>$68.1M unaccounted across 15 wallets.</p></div></a>
+      <a href="private-investors.html" class="resource"><div class="resource__icon">&#128176;</div><div class="resource__body"><h4>Private Investors</h4><p>HTX Ventures, DWF Labs, Oct 2021 dump.</p></div></a>
+      <a href="legal-threats.html" class="resource"><div class="resource__icon">&#9878;</div><div class="resource__body"><h4>Legal Threats</h4><p>34 letters. Hogan Lovells, Bird &amp; Bird, Giambrone.</p></div></a>
+      <a href="us-nexus.html" class="resource"><div class="resource__icon">&#127482;&#127480;</div><div class="resource__body"><h4>U.S. Legal Nexus</h4><p>Howey Test, SEC jurisdiction, California case.</p></div></a>
+      <a href="class-action.html" class="resource"><div class="resource__icon">&#9878;</div><div class="resource__body"><h4>Class Action</h4><p>25CV459519. Join or track progress.</p></div></a>
+    </div>
+
+  </div></section>
+
+  <!-- MEDIA BRIEFING TOOL -->
+  <section class="section" id="briefing-tool"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-xs);">Media Briefing Tool</h3>
+    <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-600);margin-bottom:var(--space-lg);">Select any individual, entity, or key claim below to generate an instant briefing &mdash; a summary of the core allegations, key evidence, and direct links to the most relevant pages for your reporting.</p>
+
+    <div style="display:flex;gap:var(--space-md);margin-bottom:var(--space-lg);flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;">
+        <label style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-500);display:block;margin-bottom:4px;">Individual</label>
+        <select id="briefing-person" style="width:100%;padding:10px 12px;font-family:var(--font-body);font-size:14px;border:2px solid var(--grey-200);background:var(--white);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23666%22><path d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 8px center;background-size:20px;">
+          <option value="">— Select individual —</option>
+          <option value="wozniak">Steve Wozniak — Co-founder (11%)</option>
+          <option value="visetti">Jacopo Visetti — Co-founder (~40% indirect)</option>
+          <option value="vanetti">Jacopo Vanetti — CTO (40% direct)</option>
+          <option value="castiglione">Andrea Castiglione — Investor Relations (1.25%)</option>
+          <option value="carloni">Sergio Carloni — Dual CEO, Efforce &amp; AitherCO2</option>
+          <option value="hardesty">Kenneth Hardesty — Board Member (4%), Gerbsman Partners</option>
+          <option value="pastore">Paolo Pastore — Managing Director (2022–present)</option>
+          <option value="catania">Corrado Catania — Director, Malta (2018–present)</option>
+          <option value="scozzese">Stefano Scozzese — Co-founder, Head of Comms (1.25%)</option>
+        </select>
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <label style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-500);display:block;margin-bottom:4px;">Entity</label>
+        <select id="briefing-entity" style="width:100%;padding:10px 12px;font-family:var(--font-body);font-size:14px;border:2px solid var(--grey-200);background:var(--white);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23666%22><path d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 8px center;background-size:20px;">
+          <option value="">— Select entity —</option>
+          <option value="efforce-malta">Efforce Ltd (Malta) — C 94737</option>
+          <option value="efforce-bahamas">Efforce Ltd (Bahamas) — Token Issuer</option>
+          <option value="aitherco2">AitherCO2 S.p.A (Italy) — &ldquo;Mother Company&rdquo;</option>
+          <option value="mbm">MBM Holding AG (Switzerland) — &euro;510 Shell</option>
+          <option value="aither-group">Aither Group AG — Successor Entity</option>
+          <option value="htx">HTX Ventures — Lead Private Investor ($45M)</option>
+          <option value="dwf">DWF Labs — Co-Investor / Market Maker</option>
+          <option value="ellipti">Ellipti — Co-Investor / Bithumb Market Maker</option>
+          <option value="hbtc">HBTC (BHEX) — First Listing Exchange</option>
+          <option value="seele">SEELE-N — Alleged Ponzi Entanglement</option>
+        </select>
+      </div>
+      <div style="flex:1;min-width:200px;">
+        <label style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-500);display:block;margin-bottom:4px;">Key Claim</label>
+        <select id="briefing-claim" style="width:100%;padding:10px 12px;font-family:var(--font-body);font-size:14px;border:2px solid var(--grey-200);background:var(--white);cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23666%22><path d=%22M7 10l5 5 5-5z%22/></svg>');background-repeat:no-repeat;background-position:right 8px center;background-size:20px;">
+          <option value="">— Select key claim —</option>
+          <option value="tax">€319.9M Concealed Tax Liability</option>
+          <option value="mbm-transfer">€510 Transfer — Asset Shielding</option>
+          <option value="private-placement">$45M Private Placement — Undisclosed Dump</option>
+          <option value="woz-misrep">Wozniak Misrepresentation</option>
+          <option value="hbtc-shutdown">HBTC Shutdown — Asset Liquidation</option>
+          <option value="tech-promises">Unfulfilled Technical Promises</option>
+          <option value="security-marketing">Security-Like Marketing</option>
+          <option value="seele-ties">SEELE / High-Risk Entity Entanglements</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Briefing Output -->
+    <div id="briefing-output" style="display:none;">
+      <div id="briefing-content" style="border:2px solid var(--black);padding:var(--space-xl);background:var(--white);margin-bottom:var(--space-lg);">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+
+    <div id="briefing-placeholder" style="text-align:center;padding:var(--space-xl);border:2px dashed var(--grey-200);color:var(--grey-400);">
+      <p style="font-family:var(--font-mono);font-size:var(--text-xs);margin:0;">Select any individual, entity, or key claim above to generate an instant briefing</p>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#d0b3bfa2a2b5b3a4b9bfbea390b9bea6b5a3a4b9b7b1a4b9beb7b5b6b6bfa2b3b5feb3bfbd">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#cdaea2bfbfa8aeb9a4a2a3be8da4a3bba8beb9a4aaacb9a4a3aaa8ababa2bfaea8e3aea2a0"><span class="__cf_email__" data-cfemail="d8bbb7aaaabdbbacb1b7b6ab98b1b6aebdabacb1bfb9acb1b6bfbdbebeb7aabbbdf6bbb7b5">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/nav.js"></script>
+  <script>
+  // === EXISTING TOOLKIT ===
+  function filterToolkit() {
+    var sel = document.getElementById('toolkit-category').value;
+    var cards = document.querySelectorAll('.toolkit-card');
+    var count = 0;
+    cards.forEach(function(card) {
+      if (sel === 'all') { card.style.display = 'block'; count++; }
+      else if (card.getAttribute('data-id') === sel) { card.style.display = 'block'; count++; }
+      else { card.style.display = 'none'; }
+    });
+    var countEl = document.getElementById('toolkit-count');
+    if (sel === 'all') { countEl.textContent = count + ' subjects'; } else { countEl.textContent = ''; }
+  }
+
+  // === NEW MEDIA BRIEFING TOOL ===
+  (function(){
+    var data = {
+      wozniak: { type:'individual', title:'Steve Wozniak', role:'Co-founder (11% equity) — Joined 14 months post-incorporation', status:'Notified via Hogan Lovells. No substantive response. No rebuttal.', summary:'Apple co-founder Steve Wozniak was marketed as co-founder and engineer of Efforce from launch, despite joining 14 months after incorporation (shares transferred August 2019 vs June 2018 founding). He publicly described WOZX tokens as \u201cshares of stock\u201d in Yahoo Finance (December 2020), potentially triggering securities law implications under the Howey Test. Despite holding 11% equity and lending his name to the project \u2014 the WOZX ticker itself references his surname \u2014 Wozniak has not publicly addressed the $400M+ in alleged investor losses.', points:['Shares transferred August 2019 \u2014 14 months after Efforce Ltd incorporated June 2018','\u201cI see owning WOZX as shares of stock\u201d \u2014 Yahoo Finance, December 8, 2020','Marketed as Co-founder and Engineer despite limited operational involvement','Times Square billboard and US-targeted marketing despite whitepaper US exclusions','20 outreach emails sent \u2014 responded once via Cameo, then blocked further contact','Notified of all allegations via legal representatives \u2014 no substantive response'], links:[{t:'Full Profile',u:'individuals/steve-wozniak.html'},{t:'U.S. Legal Nexus / Howey Test',u:'us-nexus.html'},{t:'Key Claims',u:'key-claims.html'},{t:'Evidence Repository',u:'evidence.html'}]},
+      visetti: { type:'individual', title:'Jacopo Visetti', role:'Co-founder (~40% indirect via AitherCO2/MBM). 95% owner of AitherCO2 S.p.A.', status:'Notified directly and via Hogan Lovells. Response: Legal threats only. No substantive rebuttal.', summary:'Jacopo Visetti is alleged to be the primary architect of the Efforce structure. As 95% owner of AitherCO2 (the self-described \u201cmother company\u201d), he controlled an entity carrying a \u20ac319.9M tax liability and \u20ac408M in losses \u2014 neither disclosed to token holders. In a recorded November 2023 call, Visetti allegedly admitted only $12M was accounted for (vs $45M raised), that blockchain technology \u201cwasn\u2019t needed,\u201d and that a US-based entity was the \u201cMain Private Investor.\u201d', points:['95% owner of AitherCO2 \u2014 \u20ac319.9M tax liability concealed from token holders','AitherCO2 posted \u20ac408M loss in 2020 \u2014 marketed as \u201cstrong mother company\u201d','Admitted only \u201c$12M\u201d accounted for \u2014 vs $45M publicly claimed','Admitted blockchain \u201cwasn\u2019t needed\u201d \u2014 contradicting whitepaper core promise','Directed \u20ac510 transfer of 42.5% Efforce stake to MBM Holding AG \u2014 fair value \u20ac600M+','Issued extradition threat to investigator (December 16, 2023)'], links:[{t:'Full Profile',u:'individuals/jacopo-visetti.html'},{t:'AitherCO2 Profile',u:'entities/aitherco2.html'},{t:'MBM Holding AG',u:'entities/mbm-holding.html'},{t:'Treasury Analysis',u:'treasury-wallet.html'}]},
+      vanetti: { type:'individual', title:'Jacopo Vanetti', role:'CTO & Co-founder (40% direct owner). Treasury wallet key holder.', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'Jacopo Vanetti holds 40% direct ownership of Efforce Ltd and is identified as a treasury wallet key holder. He operated an unofficial price speculation group, repeatedly used Wozniak\u2019s name to drive hype, provided direct investment advice, and promoted listings that never materialised. His personal website code was linked to Coinrail.io, a defunct exchange involved in a major hack. LinkedIn deleted November 2025 following this investigation.', points:['40% direct owner \u2014 largest individual shareholder','Treasury wallet key holder \u2014 movements during promotional periods','Operated unofficial price speculation group','Repeatedly used Wozniak\u2019s name for retail investment hype','Personal website code linked to Coinrail.io scam exchange','LinkedIn deleted November 2025 after investigation'], links:[{t:'Full Profile (79 screenshots)',u:'individuals/jacopo-vanetti.html'},{t:'Vesting Analysis',u:'vesting.html'},{t:'Treasury Analysis',u:'treasury-wallet.html'}]},
+      castiglione: { type:'individual', title:'Andrea Castiglione', role:'Head of Investor Relations, Co-founder (1.25%). SilentUnicorn founder.', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'Andrea Castiglione made at least 78 documented misleading statements to retail investors. On December 2, 2020, he stated \u201cNONE OF THEM HAS THE INTENTION TO SELL\u201d while private investors were allegedly dumping hundreds of millions. He denied SEELE connections despite attending GDAC 2020 with SEELE representatives, and endorsed unofficial price groups during insider selling periods.', points:['\u201cNONE OF THEM HAS THE INTENTION TO SELL\u201d \u2014 Dec 2, 2020, while PIs dumped $283M+','78+ documented misleading statements via Telegram','Denied SEELE involvement despite GDAC 2020 attendance','Endorsed unofficial price speculation group','Allegedly brought Wozniak and Hardesty into the project'], links:[{t:'Full Profile (20 screenshots)',u:'individuals/andrea-castiglione.html'},{t:'Private Investor Analysis',u:'private-investors.html'},{t:'SEELE Profile',u:'entities/seele.html'}]},
+      carloni: { type:'individual', title:'Sergio Carloni', role:'Dual CEO \u2014 Efforce & AitherCO2. Treasury wallet key holder.', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'Sergio Carloni held dual CEO positions at Efforce and AitherCO2, oversaw the \u20ac510 MBM transfer, attended GDAC 2020 with SEELE, and as treasury wallet key holder had direct fund access. Did not disclose \u20ac319.9M tax liability during his dual tenure. Currently CEO of Aither Global.', points:['Dual CEO: Efforce Ltd and AitherCO2 simultaneously','Treasury wallet key holder \u2014 direct fund access','Oversaw \u20ac510 MBM transfer of 42.5% Efforce stake','Present at GDAC 2020 \u2014 SEELE ties','Currently CEO of Aither Global (successor)'], links:[{t:'Full Profile',u:'individuals/sergio-carloni.html'},{t:'Aither Response Page',u:'aither-response.html'},{t:'AitherCO2 Profile',u:'entities/aitherco2.html'}]},
+      hardesty: { type:'individual', title:'Kenneth Hardesty', role:'Board Member (4%). CEO Gerbsman Partners. Treasury wallet key holder.', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'California-based board member, CEO of crisis turnaround firm Gerbsman Partners, and treasury wallet key holder. Allegedly sourced the US-based \u201cMain Private Investor\u201d (Visetti, Nov 2023). His California presence establishes direct US legal nexus. Manages all Steve Wozniak business affairs. Deleted Discord after investigation launched.', points:['California-based \u2014 establishes US legal nexus','Allegedly sourced US-based \u201cMain Private Investor\u201d','Treasury wallet key holder','CEO of Gerbsman Partners \u2014 crisis/restructuring firm','Manages all Wozniak business affairs','Deleted Discord post-investigation'], links:[{t:'Full Profile',u:'individuals/ken-hardesty.html'},{t:'U.S. Legal Nexus',u:'us-nexus.html'},{t:'Class Action',u:'class-action.html'}]},
+      pastore: { type:'individual', title:'Paolo Pastore', role:'Managing Director (2022\u2013present). Most extensive private admissions.', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'Paolo Pastore made the most extensive insider admissions: \u201cpumped and dumped by private investors,\u201d \u201cit has mostly been a Ponzi scheme,\u201d \u201cthe entire whitepaper business model is dead,\u201d and \u201cowners are to blame 100%, Woz as well since he abandoned ship.\u201d He disclosed insider delisting warnings sent to unknown contacts 24h before public announcement.', points:['\u201cPumped and dumped by private investors\u201d \u2014 Nov 15, 2022','\u201cIt has mostly been a Ponzi scheme till now\u201d','\u201cThe entire whitepaper business model is dead\u201d','\u201cOwners are to blame 100%, Woz as well\u201d','Insider delisting warnings to \u201cJoshua\u201d + unknown contacts 24h before public notice','Passport misuse \u2014 requested for fake meeting, forwarded despite denial (proven by SAR)'], links:[{t:'Full Profile (18 screenshots)',u:'individuals/paolo-pastore.html'},{t:'Key Claims',u:'key-claims.html'},{t:'Evidence Repository',u:'evidence.html'}]},
+      catania: { type:'individual', title:'Corrado Catania', role:'Director, Efforce Malta (2018\u2013present). Longest-serving director.', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'Longest-serving board member since June 2018 incorporation. Present during \u20ac510 MBM transfer and throughout \u20ac319.9M tax concealment period. Fiduciary responsibility for Malta entity disclosures \u2014 0 employees and \u20ac25K revenue throughout entire existence.', points:['Director since June 2018 \u2014 longest-serving','Present during \u20ac510 MBM transfer','\u20ac319.9M tax concealed during his directorship','0 employees, \u20ac25K revenue (2019\u20132024)'], links:[{t:'Full Profile',u:'individuals/corrado-catania.html'},{t:'Efforce Malta',u:'entities/efforce-malta.html'}]},
+      scozzese: { type:'individual', title:'Stefano Scozzese', role:'Co-founder, Head of Communications (1.25%).', status:'Notified via Hogan Lovells. No response. No rebuttal.', summary:'Designed key promotional materials including Times Square billboard, one-pager, and AitherCO2 \u201cmother company\u201d graphics. These materials were central to the narrative presented to retail investors during the peak promotional period.', points:['Designed Times Square billboard \u2014 US marketing','Created one-pager for investor presentations','Designed AitherCO2 \u201cmother company\u201d graphics','Head of Communications during peak period'], links:[{t:'Full Profile',u:'individuals/stefano-scozzese.html'},{t:'Evidence Repository',u:'evidence.html'}]},
+      'efforce-malta': { type:'entity', title:'Efforce Ltd (Malta) \u2014 C 94737', role:'Primary corporate vehicle. Registered June 20, 2018.', status:'34 letters via Hogan Lovells. Zero substantive rebuttals.', summary:'Primary entity behind WOZX. Despite $45M raise and $1.6B peak valuation, recorded just \u20ac25K total revenue (2019\u20132024), employed 0 staff throughout, and shows no record of the $45M in company accounts. 42.5% stake transferred to MBM for \u20ac510 on Dec 15, 2020.', points:['\u20ac25K total revenue 2019\u20132024','0 employees in every annual return','$45M proceeds not in any accounts','42.5% transferred to MBM for \u20ac510','\u20ac342,780 cumulative losses','No VFA licence identified from MFSA'], links:[{t:'Entity Profile',u:'entities/efforce-malta.html'},{t:'Treasury Analysis',u:'treasury-wallet.html'},{t:'Regulatory Complaints',u:'regulatory-complaints.html'}]},
+      'efforce-bahamas': { type:'entity', title:'Efforce Ltd (Bahamas)', role:'Token issuer per whitepaper. No filings since 2022.', status:'Notified via public interest notice. No response.', summary:'Designated token issuer providing offshore regulatory cover. No $45M proceeds in filings. No filings since 2022. SCB Bahamas complaint filed November 2025.', points:['Designated token issuer per whitepaper','No $45M proceeds in accounts','No filings since 2022','SCB Bahamas complaint filed'], links:[{t:'Entity Profile',u:'entities/efforce-bahamas.html'},{t:'Regulatory Complaints',u:'regulatory-complaints.html'}]},
+      aitherco2: { type:'entity', title:'AitherCO2 S.p.A (Italy)', role:'Self-described \u201cmother company.\u201d 95% owned by Visetti.', status:'CONSOB complaint filed November 2025. No response.', summary:'Promoted as \u201cstrong mother company\u201d with \u201c$250\u2013450M revenue.\u201d 2020 accounts: \u20ac319.9M tax liability, \u20ac408M loss, \u20ac402.5M negative equity \u2014 all concealed from token holders. Transferred 42.5% Efforce to MBM for \u20ac510 amid tax crisis. Now rebranded as Aither Group \u2014 claims no continuity (contradicted by evidence).', points:['\u20ac319.9M tax liability concealed','AitherCO2 posted \u20ac408M loss in 2020','\u20ac402.5M negative equity','42.5% transferred to MBM for \u20ac510 (\u20ac600M+ value)','95% owned by Visetti','Rebranded to Aither Group \u2014 denies continuity'], links:[{t:'Entity Profile',u:'entities/aitherco2.html'},{t:'Aither Response Page',u:'aither-response.html'},{t:'MBM Holding AG',u:'entities/mbm-holding.html'}]},
+      mbm: { type:'entity', title:'MBM Holding AG (Switzerland)', role:'\u20ac510 Shell. Received 42.5% Efforce from AitherCO2.', status:'FINMA complaint filed November 2025. No response.', summary:'Received 42.5% Efforce for \u20ac510 on Dec 15, 2020 \u2014 one day before IEO. Fair value \u20ac600M+. Alleged asset shielding. No filings since May 2021.', points:['42.5% Efforce for \u20ac510 \u2014 fair value \u20ac600M+','Transfer: Dec 15, 2020 \u2014 one day before IEO','Alleged asset shielding','No filings since May 2021'], links:[{t:'Entity Profile',u:'entities/mbm-holding.html'},{t:'AitherCO2',u:'entities/aitherco2.html'}]},
+      'aither-group': { type:'entity', title:'Aither Group AG', role:'Claims no AitherCO2 continuity. Contradicted by evidence.', status:'Self-initiated response Feb 13, 2026. No reply to follow-ups.', summary:'Sent unsolicited letter claiming \u201cnot the same company\u201d as AitherCO2. Contradicted by Castiglione (\u201cAitherCO2 is now Aither Group\u201d), Aither.com (\u201cmore than a decade\u201d), LinkedIn (\u201cFounded 2010,\u201d \u201c15 years\u201d), and Visetti (\u201cCo-founder \u2014 15 years\u201d). Declined to provide registered name, company number, or jurisdiction.', points:['Claims \u201cnot the same company\u201d \u2014 contradicted by 6 pieces of evidence','Castiglione: \u201cAitherCO2 is now Aither Group\u201d','LinkedIn: \u201cFounded 2010\u201d (AitherCO2 founding date)','Declined to provide company details','No reply to 4 follow-up questions'], links:[{t:'Aither Response Page (full letters)',u:'aither-response.html'},{t:'Entity Profile',u:'entities/aither-group.html'}]},
+      htx: { type:'entity', title:'HTX Ventures (formerly Huobi Ventures)', role:'Lead Private Investor \u2014 $45M. 291x avg ROI (ICODrops).', status:'Notified via public interest notice. No response.', summary:'Led $45M private placement (450M WOZX at $0.10). Identity concealed by Efforce \u2014 identified via ICODrops. Tokens dumped within 12 months for $300M+ profit. No proceeds in any Efforce accounts. HTX also operates exchange succeeding HBTC.', points:['Led $45M placement \u2014 450M WOZX at $0.10','Identity concealed \u2014 identified via ICODrops','$300M+ dump within 12 months','291x avg ROI (ICODrops)','$45M not in any Efforce accounts'], links:[{t:'Entity Profile (24 screenshots)',u:'entities/htx-ventures.html'},{t:'Private Investor Analysis',u:'private-investors.html'},{t:'HBTC',u:'entities/hbtc.html'}]},
+      dwf: { type:'entity', title:'DWF Labs', role:'Co-Investor & Market Maker. Tagged \u201cDWF Options\u201d in PitchBook.', status:'Notified. No response.', summary:'Co-invested in $45M placement. Ex-Huobi Russia ties. Efforce not in public portfolio. Alleged market-making on HBTC/Bithumb.', points:['Co-invested with HTX Ventures and Ellipti','Tagged \u201cDWF Options\u201d in PitchBook','Ex-Huobi Russia ties','Efforce undisclosed in portfolio'], links:[{t:'Entity Profile',u:'entities/dwf-labs.html'},{t:'Private Investor Analysis',u:'private-investors.html'}]},
+      ellipti: { type:'entity', title:'Ellipti', role:'Alleged Anchor Investor & Bithumb Market Maker. Seoul-based.', status:'Notified. No response.', summary:'PitchBook-tagged co-investor. Visetti: \u201cPI-appointed market maker on Bithumb.\u201d Co-founder John Kwak identified. Portfolio: -97.8% retail ROI (CryptoRank).', points:['PitchBook-tagged co-investor in $45M placement','Alleged Bithumb market maker','Co-founder John Kwak identified','-97.8% retail ROI (CryptoRank)'], links:[{t:'Entity Profile',u:'entities/ellipti.html'},{t:'Private Investor Analysis',u:'private-investors.html'}]},
+      hbtc: { type:'entity', title:'HBTC (BHEX)', role:'First listing exchange. Shut down Nov 2021. Assets liquidated.', status:'Exchange defunct. GDPR access denied.', summary:'First WOZX exchange. 96-hour withdrawal notice, assets liquidated, trade histories deleted, GDPR denied. Minimal KYC allowed US purchases despite whitepaper ban. HTX as successor has not intervened.', points:['96-hour withdrawal notice \u2014 Nov 2021','Non-withdrawn assets liquidated','Trade histories deleted','GDPR data access denied','US citizens could purchase despite ban'], links:[{t:'Entity Profile',u:'entities/hbtc.html'},{t:'HTX Ventures',u:'entities/htx-ventures.html'}]},
+      seele: { type:'entity', title:'SEELE-N / YuanYi', role:'Alleged Ponzi. GDAC 2020 entanglement.', status:'Chinese media documented connections. No Efforce response.', summary:'Alleged Ponzi scheme linked via GDAC 2020 conference. Chinese media documented SEELE/WOZX connections. Castiglione issued 6 denials contradicted by photos. Shared Telegram channels.', points:['GDAC 2020 \u2014 Castiglione and Carloni attended with SEELE','Chinese media documented connections','6 denials by Castiglione \u2014 contradicted by photos','Shared Telegram channels'], links:[{t:'Entity Profile (12 screenshots)',u:'entities/seele.html'},{t:'Castiglione Profile',u:'individuals/andrea-castiglione.html'}]},
+      tax: { type:'claim', title:'\u20ac319.9M Concealed Tax Liability', role:'AitherCO2 \u2014 notified Oct 28, 2018. Concealed from token holders.', status:'Documented in 2020 financial report. Unrebutted.', summary:'AitherCO2 received \u20ac319.9M tax assessment (2011\u20132014 taxes + penalties) on Oct 28, 2018 \u2014 two years before WOZX launch. Concealed throughout peak hype. 2020 accounts: \u20ac408M loss, \u20ac402.5M negative equity. Two board members abstained from approving accounts.', points:['\u20ac319.9M tax assessment \u2014 2011\u20132014 taxes + penalties','Notified Oct 2018 \u2014 two years before WOZX','\u20ac408M loss in 2020 \u2014 concealed','Two board members abstained','CONSOB complaint filed Nov 2025'], links:[{t:'AitherCO2 Profile',u:'entities/aitherco2.html'},{t:'Key Claims',u:'key-claims.html'},{t:'Regulatory Complaints',u:'regulatory-complaints.html'}]},
+      'mbm-transfer': { type:'claim', title:'\u20ac510 Transfer \u2014 Alleged Asset Shielding', role:'AitherCO2 \u2192 MBM Holding AG. Dec 15, 2020.', status:'Documented in Malta registry. Unrebutted.', summary:'42.5% Efforce transferred for \u20ac510 (value \u20ac600M+) one day before IEO listing, amid AitherCO2\u2019s \u20ac319.9M tax crisis. MBM has no filings since May 2021.', points:['42.5% for \u20ac510 \u2014 value \u20ac600M+','Dec 15, 2020 \u2014 one day before IEO','Amid \u20ac319.9M tax crisis','MBM: no filings since May 2021','FINMA complaint filed'], links:[{t:'MBM Profile',u:'entities/mbm-holding.html'},{t:'AitherCO2',u:'entities/aitherco2.html'},{t:'Regulatory Complaints',u:'regulatory-complaints.html'}]},
+      'private-placement': { type:'claim', title:'$45M Private Placement \u2014 Undisclosed Dump', role:'HTX Ventures, DWF Labs, Ellipti. 450M WOZX at $0.10.', status:'Documented via ICODrops, PitchBook, blockchain. Unrebutted.', summary:'450M tokens (45% supply) at $0.10 to concealed investors described as \u201clong-term Asian cornerstone\u201d \u2014 Visetti admitted US-based lead. Dumped within 12 months for $300M+. No proceeds in any accounts.', points:['450M tokens (45% supply) at $0.10','Investor identity concealed','\u201cLong-term Asian cornerstone\u201d \u2014 actually US-based','$300M+ dump within 12 months','$45M not in any accounts','HTX Ventures 291x avg ROI'], links:[{t:'Private Investor Analysis',u:'private-investors.html'},{t:'HTX Ventures',u:'entities/htx-ventures.html'},{t:'Vesting Analysis',u:'vesting.html'}]},
+      'woz-misrep': { type:'claim', title:'Wozniak Misrepresentation', role:'Marketed as co-founder/engineer. Joined 14 months post-incorporation.', status:'Documented via Malta registry, archives, Yahoo Finance. Unrebutted.', summary:'Marketed as co-founder and engineer from launch. Shares transferred Aug 2019 (14 months post-incorporation). \u201cShares of stock\u201d quote triggers Howey Test. Times Square billboard targeted US despite whitepaper exclusions.', points:['Co-founder claim \u2014 joined 14 months post-incorporation','\u201cShares of stock\u201d \u2014 Yahoo Finance Dec 2020','Listed as Engineer \u2014 limited involvement','Times Square \u2014 US marketing despite ban','WOZX ticker leveraging personal brand'], links:[{t:'Wozniak Profile',u:'individuals/steve-wozniak.html'},{t:'U.S. Legal Nexus',u:'us-nexus.html'}]},
+      'hbtc-shutdown': { type:'claim', title:'HBTC Shutdown \u2014 Asset Liquidation', role:'November 2021. 96-hour notice. Trade histories deleted.', status:'Documented via HBTC announcements. GDPR denied.', summary:'96-hour withdrawal window. Non-withdrawn assets liquidated. Trade histories deleted. GDPR denied \u2014 preventing loss documentation. HTX as successor has not intervened.', points:['96-hour withdrawal window','Assets liquidated and kept','Trade histories deleted','GDPR access denied','HTX has not intervened'], links:[{t:'HBTC Profile',u:'entities/hbtc.html'},{t:'HTX Ventures',u:'entities/htx-ventures.html'}]},
+      'tech-promises': { type:'claim', title:'Unfulfilled Technical Promises', role:'Blockchain-based savings redistribution. Admitted unnecessary.', status:'Documented via whitepapers, Visetti admissions. Unrebutted.', summary:'Whitepaper promised blockchain savings redistribution, own-chain platform, democratised energy. Visetti admitted blockchain \u201cwasn\u2019t needed.\u201d No open listings on efforce.io as of Dec 2025.', points:['Whitepaper: blockchain savings, own-chain platform','Visetti: \u201cblockchain wasn\u2019t needed\u201d','No open listings on efforce.io','\u201cEarn 1% of all energy saved forever\u201d \u2014 never implemented'], links:[{t:'Key Claims',u:'key-claims.html'},{t:'Visetti Profile',u:'individuals/jacopo-visetti.html'}]},
+      'security-marketing': { type:'claim', title:'Security-Like Marketing', role:'\u201cTokens as shares of stock\u201d while claiming utility.', status:'Documented via Yahoo Finance, whitepaper, marketing. Unrebutted.', summary:'Wozniak: \u201cshares of stock.\u201d Utility claims. Times Square US marketing despite whitepaper ban. Minimal KYC on HBTC. Forms basis of Howey Test analysis and SEC complaint.', points:['\u201cShares of stock\u201d while claiming utility','Times Square \u2014 US marketing despite ban','HBTC minimal KYC \u2014 US purchases possible','Howey Test analysis','SEC complaint filed'], links:[{t:'U.S. Legal Nexus',u:'us-nexus.html'},{t:'Wozniak Profile',u:'individuals/steve-wozniak.html'},{t:'Regulatory Complaints',u:'regulatory-complaints.html'}]},
+      'seele-ties': { type:'claim', title:'SEELE / High-Risk Entity Entanglements', role:'GDAC 2020. Shared Telegram channels. Chinese media.', status:'Documented via photos, Chinese media, Telegram. Unrebutted.', summary:'Efforce personnel at GDAC 2020 with SEELE. Chinese media documented connections. 6 Castiglione denials contradicted by photos. Decoin scam exchange ties. Repurposed Telegram channels.', points:['GDAC 2020 with SEELE representatives','Chinese media documented connections','6 Castiglione denials contradicted by photos','Decoin ties','Repurposed Telegram channels'], links:[{t:'SEELE Profile (12 screenshots)',u:'entities/seele.html'},{t:'Castiglione Profile',u:'individuals/andrea-castiglione.html'}]}
+    };
+
+    function render(d) {
+      var tl = d.type==='individual'?'Individual Briefing':d.type==='entity'?'Entity Briefing':'Key Claim Briefing';
+      var tc = d.type==='individual'?'#3b82f6':d.type==='entity'?'var(--accent-red)':'#f59e0b';
+      var h = '<div style="font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:'+tc+';margin-bottom:4px;">'+tl+'</div>';
+      h += '<h3 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-2xl);color:var(--black);margin-bottom:4px;">'+d.title+'</h3>';
+      h += '<p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin-bottom:8px;">'+d.role+'</p>';
+      h += '<div style="background:#fef2f2;border-left:3px solid var(--accent-red);padding:8px 12px;margin-bottom:16px;"><p style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);margin:0;"><strong>Response Status:</strong> '+d.status+'</p></div>';
+      h += '<p style="font-size:var(--text-sm);line-height:1.8;color:var(--grey-700);margin-bottom:20px;">'+d.summary+'</p>';
+      h += '<h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);margin-bottom:8px;">Key Points for Reporting:</h4><ul style="font-size:var(--text-xs);line-height:2;color:var(--grey-700);padding-left:16px;margin-bottom:20px;">';
+      d.points.forEach(function(p){h+='<li>'+p+'</li>';});
+      h += '</ul><h4 style="font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);margin-bottom:8px;">Deep-Dive Pages:</h4><div style="display:flex;flex-wrap:wrap;gap:6px;">';
+      d.links.forEach(function(l){h+='<a href="'+l.u+'" style="font-family:var(--font-mono);font-size:11px;padding:6px 12px;border:1px solid var(--grey-200);text-decoration:none;color:var(--black);transition:all .15s;">'+l.t+' &rarr;</a>';});
+      h += '</div><div style="margin-top:20px;padding-top:12px;border-top:1px solid var(--grey-200);"><p style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);margin:0;">All allegations unrebutted unless otherwise stated. Source: <strong>www.investigatingefforce.com</strong>. Full right 

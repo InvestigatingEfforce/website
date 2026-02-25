@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesting Breaches — 610M WOZX Dumped, $400M Retail Loss — Investigating Efforce</title>
+  <meta name="description" content="Efforce whitepaper promised strict vesting schedules. Reality: 610M WOZX transferred with 25.7M pre-listing breach. 99.2% market control on listing day. 30+ public assurances of long-term vesting — all proven false.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .stat-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .stat-bar__item{text-align:center}
+    .stat-bar__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .stat-bar__num--red{color:var(--accent-red)}
+    .stat-bar__num--gold{color:var(--accent-gold)}
+    .stat-bar__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .evidence-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-xs)}
+    .evidence-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    .evidence-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top;font-family:var(--font-mono);font-size:var(--text-xs)}
+    .evidence-table tr:hover{background:var(--grey-50)}
+    .evidence-table .breach{color:var(--accent-red);font-weight:900}
+    .evidence-table .compliant{color:#16a34a;font-weight:700}
+    .evidence-table .val-neg{color:var(--accent-red)}
+    .evidence-table .val-pos{color:#16a34a}
+    .promise-vs-reality{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--space-lg);align-items:center;padding:var(--space-xl);background:var(--grey-50);border:1px solid var(--grey-200);margin:var(--space-xl) 0;text-align:center}
+    .promise-vs-reality__panel{padding:var(--space-lg)}
+    .promise-vs-reality__panel h4{font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-sm)}
+    .promise-vs-reality__panel--promise{border:2px solid var(--accent-gold);background:var(--white)}
+    .promise-vs-reality__panel--promise h4{color:#b8860b}
+    .promise-vs-reality__panel--reality{border:2px solid var(--accent-red);background:#fff5f5}
+    .promise-vs-reality__panel--reality h4{color:var(--accent-red)}
+    .promise-vs-reality__vs{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--grey-400)}
+    .promise-vs-reality__panel p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);margin:4px 0}
+    .dominance-box{background:#fff5f5;border:2px solid var(--accent-red);padding:var(--space-xl);margin:var(--space-xl) 0;text-align:center}
+    .dominance-box h3{color:var(--accent-red);font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-md)}
+    .dominance-box .big-num{font-family:var(--font-display);font-size:72px;font-weight:900;color:var(--accent-red);line-height:1}
+    .dominance-box p{font-size:var(--text-sm);line-height:1.7;max-width:600px;margin:var(--space-md) auto}
+    .vesting-schedule{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .vesting-card{padding:var(--space-lg);border:1px solid var(--grey-200);text-align:center}
+    .vesting-card h5{font-family:var(--font-display);font-weight:900;font-size:var(--text-sm);margin-bottom:var(--space-xs)}
+    .vesting-card .rate{font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:var(--accent-red);margin:var(--space-sm) 0}
+    .vesting-card p{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin:2px 0}
+    .vesting-card--breached{border-color:var(--accent-red);background:#fff5f5}
+    .quote-card{border-left:3px solid var(--accent-red);background:var(--grey-50);padding:var(--space-sm) var(--space-md);margin:var(--space-sm) 0}
+    .quote-card__text{font-style:italic;font-size:var(--text-sm);color:var(--grey-800)}
+    .quote-card__attr{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:2px}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+    .update-notice{background:#f0f4ff;border:1px solid #3b82f6;padding:var(--space-md);margin:var(--space-lg) 0;font-family:var(--font-mono);font-size:var(--text-xs);color:#1d4ed8}
+    .scroll-wrap{overflow-x:auto;margin:var(--space-lg) 0;border:1px solid var(--grey-200)}
+    .toc{background:var(--grey-50);padding:var(--space-lg);margin:var(--space-xl) 0;border:1px solid var(--grey-200)}
+    .toc h4{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .toc ol{padding-left:var(--space-lg);margin:0}
+    .toc li{font-family:var(--font-mono);font-size:var(--text-xs);line-height:2}
+    .toc a{color:var(--grey-600);text-decoration:none}
+    .toc a:hover{color:var(--accent-red);text-decoration:underline}
+    @media(max-width:768px){.stat-bar{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.promise-vs-reality{grid-template-columns:1fr;gap:var(--space-sm)}.dominance-box .big-num{font-size:48px}.vesting-schedule{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#c2a1adb0b0a7a1b6abadacb182abacb4a7b1b6aba5a3b6abaca5a7a4a4adb0a1a7eca1adaf"><span class="__cf_email__" data-cfemail="accfc3dedec9cfd8c5c3c2dfecc5c2dac9dfd8c5cbcdd8c5c2cbc9cacac3decfc982cfc3c1">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Blockchain Analysis</span>
+    <h1 class="page-hero__title">Vesting Breaches</h1>
+    <p class="page-hero__sub">610M WOZX Transferred &middot; 25.7M Pre-Listing Breach &middot; $400M+ Retail Loss</p>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: Etherscan, Efforce whitepaper (Oct 2020), public Telegram. All on-chain data independently verifiable. <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#9efdf1ececfbfdeaf7f1f0eddef7f0e8fbedeaf7f9ffeaf7f0f9fbf8f8f1ecfdfbb0fdf1f3"><span class="__cf_email__" data-cfemail="f99a968b8b9c9a8d9096978ab990978f9c8a8d909e988d90979e9c9f9f968b9a9cd79a9694">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="stat-bar">
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">610M</div><div class="stat-bar__label">WOZX Transferred</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">25.7M</div><div class="stat-bar__label">Pre-Listing Breach</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--gold">99.2%</div><div class="stat-bar__label">Market Control Day 1</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">$400M+</div><div class="stat-bar__label">Estimated Retail Loss</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">30+</div><div class="stat-bar__label">False Vesting Assurances</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">0</div><div class="stat-bar__label">Smart Contract Enforcement</div></div>
+    </div>
+
+    <div class="update-notice">⚡ <strong>Note:</strong> This page presents initial vesting breach analysis. Comprehensive blockchain tracing with full transaction-level detail is in progress and will be published in a future update. All on-chain data is independently verifiable via Etherscan.</div>
+
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#promised">Promised Vesting Schedules</a></li>
+        <li><a href="#breaches">Vesting Compliance &mdash; Documented Breaches</a></li>
+        <li><a href="#dominance">Market Dominance &mdash; 99.2% Control on Listing Day</a></li>
+        <li><a href="#quotes">30+ Public Assurances of &ldquo;Long-Term Vesting&rdquo;</a></li>
+        <li><a href="#retroactive">The Retroactive Disclosure (Aug 2024)</a></li>
+      </ol>
+    </div>
+
+    <!-- PROMISED VS REALITY -->
+    <div class="promise-vs-reality">
+      <div class="promise-vs-reality__panel promise-vs-reality__panel--promise">
+        <h4>Whitepaper Promise</h4>
+        <p>&ldquo;Strict vesting schedules&rdquo;</p>
+        <p>Private: 0.27%/day (1.215M/day)</p>
+        <p>Ecosystem: 1.5%/month (15M)</p>
+        <p>Team: 1%/year (10M/year)</p>
+        <p>Smart contract enforcement implied</p>
+      </div>
+      <div class="promise-vs-reality__vs">vs</div>
+      <div class="promise-vs-reality__panel promise-vs-reality__panel--reality">
+        <h4>On-Chain Reality</h4>
+        <p>610M WOZX transferred total</p>
+        <p>25.7M moved PRE-listing (breach)</p>
+        <p>No smart contract enforcement</p>
+        <p>Vesting &ldquo;negotiated, not coded&rdquo;</p>
+        <p>Retroactive start date disclosed 4 years late</p>
+      </div>
+    </div>
+
+    <!-- PROMISED SCHEDULES -->
+    <div class="section-block" id="promised">
+      <h3>Promised Vesting Schedules</h3>
+      <p>The Efforce whitepaper (October 2020) outlined the following token allocation and vesting structure for the 1 billion WOZX total supply:</p>
+
+      <div class="vesting-schedule">
+        <div class="vesting-card vesting-card--breached">
+          <h5>Private Investors</h5>
+          <div class="rate">450M WOZX</div>
+          <p>45% of total supply</p>
+          <p>0.27% per day = 1,215,000/day</p>
+          <p>Vesting starts after listing</p>
+          <p style="color:var(--accent-red);font-weight:700;margin-top:4px;">BREACHED &mdash; 25.7M moved pre-listing</p>
+        </div>
+        <div class="vesting-card vesting-card--breached">
+          <h5>Ecosystem &amp; Consultants</h5>
+          <div class="rate">150M WOZX</div>
+          <p>15% of total supply</p>
+          <p>1.5% per month = 15M/month</p>
+          <p style="color:var(--accent-red);font-weight:700;margin-top:4px;">BREACHED &mdash; $68M+ unaccounted</p>
+        </div>
+        <div class="vesting-card vesting-card--breached">
+          <h5>Team Allocation</h5>
+          <div class="rate">200M WOZX</div>
+          <p>20% of total supply</p>
+          <p>1% annually = 10M/year</p>
+          <p>&ldquo;20-year vesting&rdquo; claimed</p>
+          <p style="color:var(--accent-red);font-weight:700;margin-top:4px;">BREACHED &mdash; no enforcement</p>
+        </div>
+        <div class="vesting-card">
+          <h5>Liquidity Mining</h5>
+          <div class="rate" style="color:var(--grey-500);">200M WOZX</div>
+          <p>20% of total supply</p>
+          <p>Unlocks over 10 years</p>
+          <p>Never launched as described</p>
+        </div>
+      </div>
+
+      <p style="margin-top:var(--space-lg);">Critically, Andrea Castiglione admitted on Dec 6, 2020 that vesting was <strong>&ldquo;negotiated with backers and early investors, not smart contracts &mdash; our tokens were minted before the vesting schedules were all agreed!&rdquo;</strong> This means there was <strong>zero on-chain enforcement</strong> &mdash; vesting compliance was entirely voluntary.</p>
+    </div>
+
+    <!-- BREACH TABLE -->
+    <div class="section-block" id="breaches">
+      <h3>Vesting Compliance &mdash; Documented Breaches (Nov 2020 &ndash; Mar 2023)</h3>
+      <p>Assumptions: percentages of total supply, pro-rata daily, vesting start Dec 3, 2020. Pre-listing price: $1.74. All transfers verified on Etherscan.</p>
+
+      <div class="scroll-wrap">
+        <table class="evidence-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Cumulative Vested</th>
+              <th>Cumulative Transfers</th>
+              <th>Breach Amount</th>
+              <th>Value of Breach</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>29/11/2020</td>
+              <td>0</td>
+              <td>696,000</td>
+              <td class="val-neg">&minus;696,000</td>
+              <td class="val-neg">&minus;$1,211,040</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr>
+              <td>02/12/2020</td>
+              <td>0</td>
+              <td>25,695,990</td>
+              <td class="val-neg">&minus;25,695,990</td>
+              <td class="val-neg">&minus;$44,711,023</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr>
+              <td>03/12/2020</td>
+              <td>1,215,000</td>
+              <td>135,898,164</td>
+              <td class="val-neg">&minus;134,683,164</td>
+              <td class="val-neg">&minus;$234,348,705</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr>
+              <td>04/12/2020</td>
+              <td>2,430,000</td>
+              <td>135,898,164</td>
+              <td class="val-neg">&minus;133,468,164</td>
+              <td class="val-neg">&minus;$232,234,605</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr>
+              <td>08/12/2020</td>
+              <td>7,290,000</td>
+              <td>135,898,164</td>
+              <td class="val-neg">&minus;128,608,164</td>
+              <td class="val-neg">&minus;$223,778,205</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr>
+              <td>31/12/2020</td>
+              <td>35,235,000</td>
+              <td>135,898,164</td>
+              <td class="val-neg">&minus;100,663,164</td>
+              <td class="val-neg">&minus;$175,153,905</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr>
+              <td>31/01/2021</td>
+              <td>72,900,000</td>
+              <td>135,898,164</td>
+              <td class="val-neg">&minus;62,998,164</td>
+              <td class="val-neg">&minus;$109,616,805</td>
+              <td class="breach">BREACH</td>
+            </tr>
+            <tr style="background:#f0fdf4;">
+              <td>15/03/2023</td>
+              <td>172,822,720</td>
+              <td>159,607,758</td>
+              <td class="val-pos">+13,214,962</td>
+              <td class="val-pos">+$22,994,034</td>
+              <td class="compliant">COMPLIANT</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin-top:var(--space-sm);">Note: This table shows selected dates. Full transaction-level tracing in progress. The pattern is clear: massive breaches in the first weeks, gradually approaching compliance only after most tokens were already dumped.</p>
+    </div>
+
+    <!-- MARKET DOMINANCE -->
+    <div class="dominance-box" id="dominance">
+      <h3>Market Dominance on Listing Day</h3>
+      <div class="big-num">99.2%</div>
+      <p>On December 3, 2020 &mdash; the day WOZX listed on HBTC &mdash; Efforce and its private investors controlled an estimated <strong>99.2% of the vested token supply</strong>. Retail investors were buying into a market where the sellers held virtually all the available tokens.</p>
+      <p style="margin-top:var(--space-md);"><strong>Retrospective claim (Aug 2024):</strong> Efforce disclosed that vesting actually started <strong>September 23, 2019</strong> &mdash; over a year before listing &mdash; meaning approximately 160M WOZX were already unlocked by listing day. This was never disclosed at the time. The 14-month head start gave private investors and insiders a massive, undisclosed advantage over retail buyers.</p>
+    </div>
+
+    <!-- 30+ QUOTES -->
+    <div class="section-block" id="quotes">
+      <h3>30+ Public Assurances of &ldquo;Long-Term Vesting&rdquo;</h3>
+      <p>While vesting was being breached on-chain, Efforce representatives publicly assured token holders that strict vesting was being enforced. Below is a selection of the most significant statements:</p>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Both private placement investors and our own team tokens have long vesting period&hellip; circulating supply will start vesting only after whichever exchange listing is officially announced.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Sep 24, 2020 &mdash; Telegram</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Dec 2, 2020 &mdash; Telegram (same day as 25.7M WOZX pre-listing transfer)</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Negotiated with backers and early investors, not smart contracts &mdash; Our tokens were minted before the vesting schedules were all agreed!&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Dec 6, 2020 &mdash; Telegram (admission of zero on-chain enforcement)</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Private sale price was $0.06&ndash;$0.08 per WOZX&hellip; with our strategic investors vesting for 1&ndash;3 years and backing the future of this ecosystem long-term.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Dec 8, 2020 &mdash; Telegram</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Team haven&rsquo;t moved any of the team or ecosystem tokens yet.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Feb 7, 2021 &mdash; Telegram</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Our team tokens vest over 20 years&hellip; The investor pool is the only one that&rsquo;s moving tokens.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Apr 29, 2021 &mdash; Telegram</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;We haven&rsquo;t moved any of our tokens in year 1.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; May 25, 2021 &mdash; Telegram ($68M+ already transferred from treasury)</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;What are you talking about we haven&rsquo;t moved a single token.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Sep 13, 2021 &mdash; Telegram</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Nothing illegal.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Oct 29, 2021 &mdash; Telegram (re: MPI&rsquo;s 186.6M WOZX dump)</div>
+      </div>
+
+      <div class="quote-card">
+        <div class="quote-card__text">&ldquo;Moving 80&ndash;90M WOZX tokens for security reasons.&rdquo;</div>
+        <div class="quote-card__attr">Andrea Castiglione &mdash; Oct 18, 2022 &mdash; Telegram</div>
+      </div>
+
+      <p style="margin-top:var(--space-lg);">See <a href="individuals/andrea-castiglione.html">Andrea Castiglione&rsquo;s full 78-quote database</a> for the complete set of vesting-related misrepresentations, searchable by category.</p>
+    </div>
+
+    <!-- RETROACTIVE DISCLOSURE -->
+    <div class="section-block" id="retroactive">
+      <h3>The Retroactive Disclosure (August 2024)</h3>
+      <p>In August 2024 &mdash; nearly four years after listing &mdash; Efforce disclosed for the first time that the vesting start date was <strong>September 23, 2019</strong>, not December 3, 2020 (listing day) as investors had been led to believe.</p>
+      <p>This retroactive disclosure means:</p>
+      <ul>
+        <li><strong>~160M WOZX were already unlocked</strong> by listing day &mdash; never disclosed to retail buyers.</li>
+        <li>The &ldquo;0.27% daily&rdquo; vesting rate had been running for <strong>14 months</strong> before any retail investor could participate.</li>
+        <li>The on-chain data showing &ldquo;breaches&rdquo; based on a Dec 2020 start may technically align with a Sep 2019 start &mdash; but this start date was <strong>deliberately concealed</strong> from investors who were told vesting would begin at listing.</li>
+        <li>This retroactive framing appears designed to <strong>retrospectively justify</strong> transfers that were, at the time they occurred, presented to investors as impossible under the published vesting schedule.</li>
+      </ul>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>The vesting schedule was the <strong>single most important investor protection</strong> in the WOZX token structure. It was the mechanism that was supposed to prevent exactly what happened: insiders dumping hundreds of millions of tokens on retail buyers. The whitepaper promised strict, scheduled releases. The community was told &ldquo;NONE OF THEM HAS THE INTENTION TO SELL.&rdquo; In reality, there was <strong>zero smart contract enforcement</strong>, <strong>25.7M WOZX were moved before listing even began</strong>, and the vesting start date was retroactively disclosed four years later. The result: <strong>610M WOZX dumped</strong> and an estimated <strong>$400M+ in retail losses</strong>. All allegations remain entirely unrebutted.</p>
+    </div>
+
+    <!-- CROSS-REFERENCES -->
+    <div class="section-block">
+      <h3>Related Analysis &amp; Evidence</h3>
+      <ul>
+        <li><a href="individuals/andrea-castiglione.html"><strong>Andrea Castiglione</strong></a> &mdash; 78 quotes including vesting assurances (searchable)</li>
+        <li><a href="individuals/jacopo-vanetti.html"><strong>Jacopo Vanetti</strong></a> &mdash; 40% shareholder, wallet key holder, no vesting enforcement</li>
+        <li><a href="visetti-call.html"><strong>Visetti Call (Nov 18, 2023)</strong></a> &mdash; &ldquo;No blockchain was needed&rdquo;</li>
+        <li><a href="key-claims.html"><strong>Key Claims</strong></a> &mdash; Claim #4: Vesting Schedule Violations</li>
+        <li><a href="entities/efforce-malta.html"><strong>Efforce Ltd (Malta)</strong></a> &mdash; 0 employees, shell company filings</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#33505c41415650475a5c5d40735a5d455640475a5452475a5d545655555c4150561d505c5e">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash;

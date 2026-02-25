@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Efforce &ldquo;Team&rdquo; — A Facade of Expertise With Zero Employees — Investigating Efforce</title>
+  <meta name="description" content="Efforce marketed 8 'world-class' team members to induce investment. Malta filings show 0 employees, 0 salaries, 0 staff costs in every year (2019-2022). The 'team' were AitherCO2 employees with no ties to Efforce.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .person-hero{display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);flex-wrap:wrap}
+    .person-hero__icon{width:140px;height:140px;border-radius:50%;border:4px solid var(--accent-red);flex-shrink:0;display:flex;align-items:center;justify-content:center;background:var(--grey-100);font-size:48px}
+    .person-hero__info{flex:1;min-width:280px}
+    .person-hero__name{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-xs)}
+    .person-hero__role{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .person-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .person-meta__item{text-align:center}
+    .person-meta__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .person-meta__num--red{color:var(--accent-red)}
+    .person-meta__num--gold{color:var(--accent-gold)}
+    .person-meta__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+    .evidence-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-sm)}
+    .evidence-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em}
+    .evidence-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top;font-size:var(--text-xs)}
+    .evidence-table tr:hover{background:var(--grey-50)}
+    .evidence-table .zero{color:var(--accent-red);font-weight:900}
+    .team-card{border:1px solid var(--grey-200);margin:var(--space-md) 0;transition:border-color .15s}
+    .team-card:hover{border-color:var(--accent-red)}
+    .team-card__header{display:flex;align-items:center;gap:var(--space-md);padding:var(--space-md);background:var(--grey-50);border-bottom:1px solid var(--grey-200)}
+    .team-card__avatar{width:48px;height:48px;border-radius:50%;background:var(--grey-200);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:var(--text-sm);color:var(--grey-500);flex-shrink:0}
+    .team-card__name{font-family:var(--font-display);font-weight:900;font-size:var(--text-base)}
+    .team-card__claimed{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .team-card__body{padding:var(--space-md)}
+    .team-card__row{display:grid;grid-template-columns:120px 1fr;gap:var(--space-sm);margin:var(--space-xs) 0;font-size:var(--text-xs);line-height:1.6}
+    .team-card__label{font-family:var(--font-mono);color:var(--grey-400);text-transform:uppercase;letter-spacing:.04em}
+    .team-card__value{color:var(--grey-700)}
+    .team-card__issue{background:#fff5f5;border-left:3px solid var(--accent-red);padding:var(--space-sm) var(--space-md);margin-top:var(--space-sm);font-size:var(--text-xs);line-height:1.6;color:var(--grey-700)}
+    .fake-office{background:#fff5f5;border:2px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-xl) 0;text-align:center}
+    .fake-office h4{color:var(--accent-red);font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-md)}
+    .fake-office p{font-size:var(--text-sm);line-height:1.7;text-align:left}
+    .vs-box{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--space-lg);align-items:center;padding:var(--space-xl);background:var(--grey-50);border:1px solid var(--grey-200);margin:var(--space-xl) 0;text-align:center}
+    .vs-box__panel{padding:var(--space-lg)}
+    .vs-box__panel h4{font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-sm)}
+    .vs-box__panel--claim{border:2px solid var(--accent-gold);background:var(--white)}
+    .vs-box__panel--claim h4{color:#b8860b}
+    .vs-box__panel--reality{border:2px solid var(--accent-red);background:#fff5f5}
+    .vs-box__panel--reality h4{color:var(--accent-red)}
+    .vs-box__vs{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--grey-400)}
+    .vs-box__panel p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);margin:4px 0}
+    .vs-box__panel .big{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin:var(--space-sm) 0}
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+    @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__icon{width:100px;height:100px;font-size:36px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.vs-box{grid-template-columns:1fr;gap:var(--space-sm)}.team-card__row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#66050914140305120f090815260f08100315120f0107120f0801030000091405034805090b"><span class="__cf_email__" data-cfemail="83e0ecf1f1e6e0f7eaecedf0c3eaedf5e6f0f7eae4e2f7eaede4e6e5e5ecf1e0e6ade0ecee">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav"><a href="steve-wozniak.html">Steve Wozniak</a><a href="jacopo-visetti.html">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html">Andrea Castiglione</a><a href="sergio-carloni.html">Sergio Carloni</a><a href="ken-hardesty.html">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html" class="current">Efforce Team</a></nav></div></section>
+
+  <section class="page-hero"><div class="container">
+    <div class="person-hero">
+      <div class="person-hero__icon">👥</div>
+      <div class="person-hero__info">
+        <span class="overline">Group Profile</span>
+        <h1 class="person-hero__name">The Efforce &ldquo;Team&rdquo;</h1>
+        <div class="person-hero__role">A Facade of Expertise &mdash; 8 Marketed Professionals / 0 Actual Employees</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: Efforce whitepaper (Oct 2020), Wayback Machine, Malta Business Registry (2019&ndash;2022), Italian Chamber of Commerce, AitherCO2 accounts. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#98fbf7eaeafdfbecf1f7f6ebd8f1f6eefdebecf1fff9ecf1f6fffdfefef7eafbfdb6fbf7f5"><span class="__cf_email__" data-cfemail="71121e0303141205181e1f0231181f0714020518161005181f161417171e0312145f121e1c">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="person-meta">
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">8</div><div class="person-meta__label">Marketed &ldquo;Team Members&rdquo;</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Actual Efforce Employees</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">&euro;0</div><div class="person-meta__label">Salaries / Staff Costs</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">2019&ndash;2022</div><div class="person-meta__label">Every Filing Year</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">100%</div><div class="person-meta__label">AitherCO2 Employees</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Legal Ties to Efforce</div></div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="section-block" style="border-top:none;">
+      <p>Efforce&rsquo;s whitepaper (Oct 2020) and website (2019&ndash;2023) showcased a &ldquo;world-class team&rdquo; of 8 energy experts, allegedly drawn from AitherCO2 S.p.A. &mdash; the Italian ESCO falsely presented as Efforce&rsquo;s &ldquo;mother company.&rdquo; This narrative of inherited expertise, offices, and clients was central to inducing hundreds of millions in retail investment in WOZX tokens.</p>
+      <p><strong>In truth, these individuals were AitherCO2 employees or partners, with no legal or operational ties to Efforce Ltd (Malta).</strong> Malta Business Registry filings for 2019&ndash;2022 reveal Efforce had <strong>0 employees</strong> throughout, with <strong>no salaries paid</strong> and <strong>no staff costs recorded</strong> &mdash; confirming it was a shell company that raised millions but delivered nothing.</p>
+    </div>
+
+    <!-- THE VS BOX -->
+    <div class="vs-box">
+      <div class="vs-box__panel vs-box__panel--claim">
+        <h4>What They Claimed</h4>
+        <div class="big" style="color:#b8860b;">40&ndash;50</div>
+        <p>&ldquo;Total staff&rdquo; (Telegram, gatherings)</p>
+        <p>8 named professionals on website</p>
+        <p>&ldquo;World-class energy experts&rdquo;</p>
+        <p>Milan office with branded banner</p>
+        <p>&ldquo;Thousands of clients&rdquo; inherited</p>
+      </div>
+      <div class="vs-box__vs">vs</div>
+      <div class="vs-box__panel vs-box__panel--reality">
+        <h4>What Filings Show</h4>
+        <div class="big" style="color:var(--accent-red);">0</div>
+        <p>Employees in every Malta filing</p>
+        <p>&euro;0 in salaries or staff costs</p>
+        <p>All &ldquo;team&rdquo; were AitherCO2 staff</p>
+        <p>Office was AitherCO2&rsquo;s Milan HQ</p>
+        <p>No legal parent-subsidiary link</p>
+      </div>
+    </div>
+
+    <!-- MALTA FILINGS TABLE -->
+    <div class="section-block" id="filings">
+      <h3>Malta Business Registry &mdash; Annual Filings (2019&ndash;2022)</h3>
+      <p>While Efforce paraded a large &ldquo;team&rdquo; and claimed 40&ndash;50 staff, official filings reveal zero employees, minimal revenue, and consistent losses:</p>
+      <div style="overflow-x:auto;">
+        <table class="evidence-table">
+          <thead>
+            <tr><th>Year</th><th>Employees</th><th>Revenue (&euro;)</th><th>Admin Expenses (&euro;)</th><th>Loss (&euro;)</th><th>Audit Fee (&euro;)</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2019</td><td class="zero">0</td><td class="zero">0</td><td>0</td><td class="zero">0</td><td>Unknown</td><td>Shell company setup year. No activity.</td></tr>
+            <tr><td>2020</td><td class="zero">0</td><td class="zero">0</td><td>(23,032)</td><td class="zero">(23,032)</td><td>1,900</td><td>Token launch year. No staff costs despite &ldquo;team&rdquo; marketing.</td></tr>
+            <tr><td>2021</td><td class="zero">0</td><td>25,000</td><td>(133,954)</td><td class="zero">(83,309)</td><td>1,900</td><td>Minimal revenue. Losses despite claimed operations.</td></tr>
+            <tr><td>2022</td><td class="zero">0</td><td class="zero">0</td><td>(236,109)</td><td class="zero">(236,109)</td><td>3,083</td><td>Increasing losses. No income from &ldquo;global team.&rdquo;</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin-top:var(--space-sm);">Source: Malta Business Registry (2019&ndash;2022). No staff costs or employee notes in any year. Cumulative losses: &euro;342,780. No trace of $12.5M&ndash;$36M token-sale proceeds nor the $68M unexplained treasury transfers.</p>
+    </div>
+
+    <!-- THE FAKE OFFICE -->
+    <div class="fake-office">
+      <h4>The &ldquo;Efforce Office&rdquo; &mdash; June 9, 2021</h4>
+      <p>On June 9, 2021, Efforce released a video showing token holders the &ldquo;Efforce office.&rdquo; In reality, this was <strong>AitherCO2 S.p.A.&rsquo;s Milan headquarters</strong>, with an Efforce banner placed inside, showcasing employees of AitherCO2 rather than Efforce &mdash; which had <strong>no offices, no staff, and no operations</strong> reported in annual filings.</p>
+      <p>AitherCO2, previously described as the &ldquo;mother company&rdquo; or &ldquo;parent company&rdquo; of Efforce, had <strong>no legal parental relationship</strong> with Efforce and had sold its 42.5% shareholding for a nominal &euro;510 on Dec 15, 2020 &mdash; six months before this video was filmed.</p>
+    </div>
+
+    <!-- TEAM MEMBER PROFILES -->
+    <div class="section-block" id="team">
+      <h3>The Borrowed &ldquo;Team&rdquo;: Individual Profiles</h3>
+      <p>Each person below was presented on Efforce&rsquo;s whitepaper and/or website as an Efforce team member. Cross-referenced against AitherCO2&rsquo;s 2018&ndash;2022 Italian filings. None held direct shares in Efforce.</p>
+
+      <!-- Anyu Chen -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">AC</div>
+          <div><div class="team-card__name">Anyu Chen</div><div class="team-card__claimed">Claimed: &ldquo;Responsible for Asia&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">MSc from Bocconi University. Managed energy projects in China, Dubai, Hong Kong, and Europe for AitherCO2.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value">Not listed as shareholder or signer in 2018&ndash;2022 accounts. Likely employee.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">None found in public records.</span></div>
+          <div class="team-card__issue">Her profile lent credibility to claims of Asian market dominance, despite private investors being U.S.-based and dumping $300M+. No public statements or disavowals.</div>
+        </div>
+      </div>
+
+      <!-- Federico Lattuada -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">FL</div>
+          <div><div class="team-card__name">Federico Lattuada</div><div class="team-card__claimed">Claimed: &ldquo;Responsible for EMEA&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">Energy Markets graduate, Catholic University of Milan. Partner at AitherCO2.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value"><strong>Shareholder: 190,000 shares (19% stake)</strong>, consistently 2018&ndash;2022. Attended assemblies.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">None found in public records.</span></div>
+          <div class="team-card__issue"><strong>Abstained</strong> from approving AitherCO2&rsquo;s 2019 and 2020 financial statements (May 2021, Jan 2022 assemblies) &mdash; signalling potential concerns over finances. These concerns were hidden from Efforce investors. Later approved 2021 and 2022 accounts despite massive losses.</div>
+        </div>
+      </div>
+
+      <!-- Paola Mignuolo -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">PM</div>
+          <div><div class="team-card__name">Paola Mignuolo</div><div class="team-card__claimed">Claimed: &ldquo;Corporate Clients Account Manager&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">MSc from Bocconi University. Reference person for European energy efficiency protocols at AitherCO2.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value">Not listed as shareholder or signer. Likely employee. Contact details linked to efforce.io and aitherco2.com.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">Email linked to efforce.io domain (RocketReach), but no employment records.</span></div>
+          <div class="team-card__issue">Her profile supported claims of &ldquo;thousands of clients,&rdquo; despite AitherCO2 accounts describing client contraction due to COVID and market volatility (2021&ndash;2022), with no specific client counts provided.</div>
+        </div>
+      </div>
+
+      <!-- Maurizio Castelli -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">MC</div>
+          <div><div class="team-card__name">Maurizio Castelli</div><div class="team-card__claimed">Claimed: &ldquo;Risk Manager&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">Director of AitherCO2 Ltd (UK) since 2012. Projects in California and Africa. Oversees risk management.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value"><strong>Shareholder: 190,000 shares (19% stake)</strong>, consistently 2018&ndash;2022. Approved all assemblies.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">None found in public records.</span></div>
+          <div class="team-card__issue">As the claimed &ldquo;Risk Manager,&rdquo; allegedly failed to flag or disclose the nominal &euro;510 stake transfer (worth &euro;600M+), enabling asset concealment amid AitherCO2&rsquo;s &euro;319.9M tax liability and &euro;36.5M loss in 2021.</div>
+        </div>
+      </div>
+
+      <!-- Giulio Modorati -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">GM</div>
+          <div><div class="team-card__name">Giulio Modorati</div><div class="team-card__claimed">Claimed: &ldquo;EPC Expert&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">Equity Capital Markets at RBS (numerous IPOs). Partner at AitherCO2, financial structuring.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value"><strong>Shareholder: 30,000 shares (3% stake)</strong>, consistently 2018&ndash;2022. Approved all assemblies.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">None found in public records.</span></div>
+          <div class="team-card__issue">Oversaw financial structuring during AitherCO2&rsquo;s insolvency. No corrections to Efforce&rsquo;s revenue claims ($250M+ vs. actual &euro;27.6M in 2020). Approved massive loss accounts in 2021&ndash;2022.</div>
+        </div>
+      </div>
+
+      <!-- Cristina Beggiato -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">CB</div>
+          <div><div class="team-card__name">Cristina Beggiato</div><div class="team-card__claimed">Claimed: &ldquo;Communication PM&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">Marketing and organisational management. Worked with Scozzese&rsquo;s agency on global projects.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value">Not listed as shareholder or signer. Likely employee.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">None found in public records.</span></div>
+          <div class="team-card__issue">Allegedly helped craft promotional materials that conflated AitherCO2&rsquo;s assets with Efforce&rsquo;s, despite zero shared operations.</div>
+        </div>
+      </div>
+
+      <!-- Antonella Pompigna -->
+      <div class="team-card">
+        <div class="team-card__header">
+          <div class="team-card__avatar">AP</div>
+          <div><div class="team-card__name">Antonella Pompigna</div><div class="team-card__claimed">Claimed: &ldquo;Policy Specialist&rdquo;</div></div>
+        </div>
+        <div class="team-card__body">
+          <div class="team-card__row"><span class="team-card__label">Background</span><span class="team-card__value">Energy policy and regulatory frameworks. Compliance efforts at AitherCO2.</span></div>
+          <div class="team-card__row"><span class="team-card__label">AitherCO2 Link</span><span class="team-card__value">Not listed as shareholder or signer. Likely employee.</span></div>
+          <div class="team-card__row"><span class="team-card__label">Efforce Link</span><span class="team-card__value">None found in public records.</span></div>
+          <div class="team-card__issue">Allegedly overlooked or enabled non-disclosure of AitherCO2&rsquo;s MiFID2 licence issues and &euro;319.9M tax liability in Efforce marketing materials.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>The Efforce &ldquo;team&rdquo; was a <strong>marketing illusion</strong>. Every person showcased was an AitherCO2 employee or partner with <strong>no legal or operational ties to Efforce Ltd (Malta)</strong>. Official filings confirm <strong>0 employees, &euro;0 in salaries, and &euro;0 in staff costs</strong> across every year of operation. The &ldquo;office video&rdquo; showed AitherCO2&rsquo;s Milan headquarters with an Efforce banner &mdash; filmed six months after AitherCO2 had sold its stake for &euro;510. Three AitherCO2 shareholders (Lattuada 19%, Castelli 19%, Modorati 3%) approved accounts showing massive losses while their profiles were used to sell WOZX tokens. The cumulative effect was a <strong>facade of institutional expertise</strong> designed to induce investment in what Malta filings reveal to be a <strong>shell company with cumulative losses of &euro;342,780</strong> and no trace of the $12.5M&ndash;$36M in token-sale proceeds.</p>
+    </div>
+
+    <!-- CROSS-REFERENCES -->
+    <div class="section-block">
+      <h3>Related Profiles &amp; Evidence</h3>
+      <ul>
+        <li><a href="../entities/aitherco2.html"><strong>AitherCO2 S.p.A.</strong></a> &mdash; the actual employer of every &ldquo;team member&rdquo;</li>
+        <li><a href="../entities/efforce-malta.html"><strong>Efforce Ltd (Malta)</strong></a> &mdash; 0 employees, shell company filings</li>
+        <li><a href="../entities/mbm-holding.html"><strong>MBM Holdings AG</strong></a> &mdash; &euro;510 stake transfer recipient</li>
+        <li><a href="jacopo-visetti.html"><strong>Jacopo Visetti</strong></a> &mdash; &ldquo;&euro;350M turnover&rdquo; and &ldquo;40&ndash;45 employees&rdquo; claims</li>
+        <li><a href="andrea-castiglione.html"><strong>Andrea Castiglione</strong></a> &mdash; &ldquo;2,000+ clients&rdquo; and revenue claims</li>
+        <li><a href="stefano-scozzese.html"><strong>Stefano Scozzese</strong></a> &mdash; marketing agency connection (Beggiato)</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="../individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#8ae9e5f8f8efe9fee3e5e4f9cae3e4fceff9fee3edebfee3e4edefecece5f8e9efa4e9e5e7">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PU

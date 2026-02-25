@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrea Castiglione — 78 Quotes That Allegedly Misled Thousands — Investigating Efforce</title>
+  <meta name="description" content="Andrea Castiglione individual profile: 78 documented misrepresentations across 7 categories. Primary public voice 2020-2023. Every quote sourced, dated, categorised, and unrebutted.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .person-hero{display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);flex-wrap:wrap}
+    .person-hero__photo{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-red);flex-shrink:0}
+    .person-hero__info{flex:1;min-width:280px}
+    .person-hero__name{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-xs)}
+    .person-hero__role{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .person-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .person-meta__item{text-align:center}
+    .person-meta__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .person-meta__num--red{color:var(--accent-red)}
+    .person-meta__num--gold{color:var(--accent-gold)}
+    .person-meta__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul,.section-block ol{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .criminal-box{background:#fff5f5;border:1px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .criminal-box h3,.criminal-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .criminal-box p,.criminal-box li{font-size:var(--text-sm);line-height:1.7}
+    .civil-box{background:#fffdf0;border:1px solid var(--accent-gold);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .civil-box h3,.civil-box h4{color:#b8860b;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .civil-box p,.civil-box li{font-size:var(--text-sm);line-height:1.7}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+
+    /* QUOTE DATABASE */
+    .quote-controls{display:flex;flex-wrap:wrap;gap:var(--space-sm);align-items:center;padding:var(--space-lg);background:var(--grey-50);border:1px solid var(--grey-200);margin:var(--space-lg) 0;position:sticky;top:0;z-index:10}
+    .quote-search{flex:1;min-width:200px;padding:var(--space-sm) var(--space-md);border:1px solid var(--grey-300);font-family:var(--font-mono);font-size:var(--text-sm)}
+    .quote-search:focus{outline:none;border-color:var(--accent-red)}
+    .quote-filter{padding:var(--space-xs) var(--space-sm);border:1px solid var(--grey-200);font-family:var(--font-mono);font-size:var(--text-xs);background:var(--white);cursor:pointer}
+    .quote-filter:hover{border-color:var(--black)}
+    .quote-filter.active{background:var(--accent-red);color:var(--white);border-color:var(--accent-red)}
+    .quote-count{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin-left:auto}
+
+    .quote-card{border:1px solid var(--grey-200);margin:var(--space-md) 0;transition:all .15s ease}
+    .quote-card:hover{border-color:var(--accent-red);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+    .quote-card.hidden{display:none}
+    .quote-card__header{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);background:var(--grey-50);border-bottom:1px solid var(--grey-200)}
+    .quote-card__id{font-family:var(--font-mono);font-size:10px;font-weight:900;color:var(--accent-red);min-width:28px}
+    .quote-card__date{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);font-weight:700}
+    .quote-card__source{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em}
+    .quote-card__cat{font-family:var(--font-mono);font-size:10px;padding:2px 8px;background:var(--grey-200);color:var(--grey-600);margin-left:auto}
+    .quote-card__body{padding:var(--space-md)}
+    .quote-card__text{font-size:var(--text-sm);line-height:1.7;color:var(--grey-800);font-style:italic}
+    .quote-card__text::before{content:'\201C';font-size:var(--text-2xl);color:var(--accent-red);font-weight:900;line-height:0;vertical-align:-.3em;margin-right:2px}
+    .quote-card__footer{display:flex;flex-wrap:wrap;gap:var(--space-sm);padding:var(--space-xs) var(--space-md) var(--space-sm);align-items:center}
+    .quote-card__legal{font-family:var(--font-mono);font-size:10px;padding:2px 8px;background:#fff5f5;color:var(--accent-red);border:1px solid var(--accent-red)}
+    .quote-card__status{font-family:var(--font-mono);font-size:10px;padding:2px 8px;background:var(--accent-red);color:var(--white)}
+
+    .insider-quote{background:#fff5f5;border-left:4px solid var(--accent-red);padding:var(--space-md) var(--space-lg);margin:var(--space-md) 0}
+    .insider-quote p{font-size:var(--text-sm);line-height:1.7;margin:var(--space-xs) 0}
+    .insider-quote .attr{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+    @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__photo{width:100px;height:100px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.quote-controls{flex-direction:column}.quote-card__cat{margin-left:0}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#dcbfb3aeaeb9bfa8b5b3b2af9cb5b2aab9afa8b5bbbda8b5b2bbb9babab3aebfb9f2bfb3b1"><span class="__cf_email__" data-cfemail="06656974746365726f696875466f68706375726f6167726f6861636060697465632865696b">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav"><a href="steve-wozniak.html">Steve Wozniak</a><a href="jacopo-visetti.html">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html" class="current">Andrea Castiglione</a><a href="sergio-carloni.html">Sergio Carloni</a><a href="ken-hardesty.html">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html">Efforce Team</a></nav></div></section>
+
+  <section class="page-hero"><div class="container">
+    <div class="person-hero">
+      <img src="https://i.gyazo.com/928891d11038fb04fb46d6a2c364fda1.png" alt="Andrea Castiglione" class="person-hero__photo">
+      <div class="person-hero__info">
+        <span class="overline">Individual Profile</span>
+        <h1 class="person-hero__name">Andrea Castiglione</h1>
+        <div class="person-hero__role">Co-Founder / Primary Public Spokesperson / 1.25% Owner</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: public Telegram/Discord, Etherscan, Malta/Italian filings, private calls. Every quote sourced and dated. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#56353924243335223f393825163f38203325223f3137223f3831333030392435337835393b"><span class="__cf_email__" data-cfemail="c5a6aab7b7a0a6b1acaaabb685acabb3a0b6b1aca2a4b1acaba2a0a3a3aab7a6a0eba6aaa8">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="person-meta">
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">78</div><div class="person-meta__label">Documented Misrepresentations</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">7</div><div class="person-meta__label">Categories</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">1.25%</div><div class="person-meta__label">Ownership Stake</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">2020&ndash;2023</div><div class="person-meta__label">Active Period</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">$300M+</div><div class="person-meta__label">Retail Losses</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Corrections Issued</div></div>
+    </div>
+
+    <!-- Intro -->
+    <div class="section-block" style="border-top:none;">
+      <p>Andrea Castiglione was the most visible and active representative of Efforce from 2020 to 2023. He repeatedly assured token holders that private investors were &ldquo;long-term cornerstone institutions&rdquo; with &ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo;, that no team tokens had been moved &ldquo;in year 1&rdquo;, that AitherCO2 was a financially robust &ldquo;mother company&rdquo; with $250&ndash;450M revenue, and that a revolutionary platform was &ldquo;days/weeks/months&rdquo; away. <strong>Every single one of these core assurances was proven false.</strong></p>
+      <p>The private investors dumped over $300 million. $68 million+ in treasury tokens vanished without explanation. AitherCO2 was insolvent with a &euro;319.9 million tax liability that was never disclosed. The platform never launched in any functional form.</p>
+    </div>
+
+    <!-- Criminal Charges -->
+    <div class="criminal-box">
+      <h3>Alleged Criminal Charges</h3>
+      <h4>1. Fraud by False Representation</h4>
+      <p>Castiglione repeatedly made statements he knew or should have known were false to induce investment and continued holding of WOZX.</p>
+      <ul>
+        <li>&ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo; (Dec 2, 2020) &mdash; MPI dumped $283M+.</li>
+        <li>&ldquo;We haven&rsquo;t moved any of our tokens in year 1&rdquo; (May 25, 2021) &mdash; $68M+ already gone.</li>
+        <li>Repeated claims AitherCO2 had &ldquo;$250&ndash;450M revenue&rdquo; while it faced a &euro;319.9M tax bomb.</li>
+        <li>Over 78 separate assurances of imminent platform launches, staking, and Tier-1 listings &mdash; none delivered.</li>
+      </ul>
+      <p><strong>Laws:</strong> Malta Criminal Code Art. 308, Italian Penal Code Art. 640, U.S. 18 U.S.C. &sect; 1343.</p>
+
+      <h4>2. Alleged Market Manipulation</h4>
+      <p>Castiglione&rsquo;s assurances created artificial confidence while MPI and treasury wallets dumped hundreds of millions.</p>
+
+      <h4>3. Alleged Aiding and Abetting Fraud / Money Laundering</h4>
+      <p>Castiglione continued to promote Efforce while aware (or recklessly unaware) of SeeleN/GDAC ties, the &euro;319.9M AitherCO2 liability, and the nominal &euro;510 stake transfer.</p>
+    </div>
+
+    <!-- Civil Charges -->
+    <div class="civil-box">
+      <h3>Alleged Civil Charges</h3>
+      <ul>
+        <li><strong>Negligent Misrepresentation</strong> &mdash; dozens of false assurances caused ~$300M+ losses.</li>
+        <li><strong>Breach of Fiduciary Duty</strong> &mdash; as co-founder and 1.25% shareholder, failed to correct known falsehoods.</li>
+        <li><strong>Unjust Enrichment</strong> &mdash; potential benefit from Silent Unicorn-linked wallet (16M WOZX, ~$49.8M).</li>
+      </ul>
+      <p><strong>Jurisdictions:</strong> Italy (residence, AitherCO2), Malta (Efforce Ltd), U.S. (California lawsuit 25CV459519, U.S. PI), China (SeeleN/HBTC ties).</p>
+    </div>
+
+    <!-- THE 78 QUOTES DATABASE -->
+    <div class="section-block" id="quotes">
+      <h3 style="font-size:var(--text-3xl);">The 78 Quotes That Allegedly Misled Thousands</h3>
+      <p style="margin-bottom:var(--space-md);">Every major public and semi-public statement (2020&ndash;2023) &mdash; individually sourced, dated, categorised, and tagged with applicable legal exposure. Search by keyword, filter by category or legal charge.</p>
+
+      <div class="quote-controls" id="quoteControls">
+        <input type="text" class="quote-search" id="quoteSearch" placeholder="Search quotes... (e.g. &quot;sell&quot;, &quot;platform&quot;, &quot;Aither&quot;)">
+        <button class="quote-filter active" data-cat="all">All (56)</button>
+        <button class="quote-filter" data-cat="Private Investors">Private Investors (15)</button>
+        <button class="quote-filter" data-cat="Vesting Schedules">Vesting Schedules (3)</button>
+        <button class="quote-filter" data-cat="Team Tokens">Team Tokens (5)</button>
+        <button class="quote-filter" data-cat="AitherCO2">AitherCO2 (9)</button>
+        <button class="quote-filter" data-cat="Platform & Development">Platform & Development (17)</button>
+        <button class="quote-filter" data-cat="Roadmaps & Listings">Roadmaps & Listings (4)</button>
+        <button class="quote-filter" data-cat="Token Movements">Token Movements (3)</button>
+        <span class="quote-count" id="quoteCount"></span>
+      </div>
+
+      <div id="quoteList">
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="both private placement investors and our own team tokens have long vesting period... also regarding private placement circulating supply will start vesting only after whichever exchange listing is officially announced.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#1</span>
+            <span class="quote-card__date">Sep 24, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Both private placement investors and our own team tokens have long vesting period... Also regarding private placement circulating supply will start vesting only after whichever exchange listing is officially announced.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="private sale token holders vest over a period of time. they don't have tokens distributed at the start... also, we choose our investors amongst groups who want to support our vision long-term.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#2</span>
+            <span class="quote-card__date">Dec 1, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Private sale token holders vest over a period of time. They don't have tokens distributed at the start... Also, we choose our investors amongst groups who want to support our vision long-term.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="none of them has the intention to sell">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#3</span>
+            <span class="quote-card__date">Dec 2, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">NONE OF THEM HAS THE INTENTION TO SELL</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="private sale investors are in for long-term... i guarantee we cherry picked our investors base to build a great ecosystem... i can guarantee incentive is for private investors to hold.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#4</span>
+            <span class="quote-card__date">Dec 5, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Private sale investors are in for long-term... I guarantee we cherry picked our investors base to build a great Ecosystem... I can guarantee incentive is for private investors to hold.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="private sale price was $0.06 - $0.08 per wozx in the two rounds of private placement with our strategic investors vesting for 1-3 years and backing the future of this ecosystem long-term.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#5</span>
+            <span class="quote-card__date">Dec 8, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Private sale price was $0.06 - $0.08 per WOZX in the two rounds of private placement with our strategic investors vesting for 1-3 years and backing the future of this ecosystem long-term.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="a large portion of our private sale investors are from china... pis were chosen as large buyers with existing ecosystems committed to long-term support.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#6</span>
+            <span class="quote-card__date">Dec 9, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">A large portion of our private sale investors are from China... PIs were chosen as large buyers with existing ecosystems committed to long-term support.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="i doubt it's investor side as private sale was made to select long-term enablers and supporters of the ecosystem.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#7</span>
+            <span class="quote-card__date">Dec 11, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">I doubt it's investor side as private sale was made to select long-term enablers and supporters of the ecosystem.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="pis were chosen for industry transformation goals, not pump-and-dump.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#8</span>
+            <span class="quote-card__date">Dec 12, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">PIs were chosen for industry transformation goals, not pump-and-dump.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="pi's chosen on basis of longer support commitment. selling to crowd would have amplified pump and dump.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#9</span>
+            <span class="quote-card__date">Dec 17, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">PI's Chosen on basis of longer support commitment. Selling to crowd would have amplified pump and dump.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="81m tokens from investors could be moved/dumped, but only 49m actually have... this means people who bought early are holding.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#10</span>
+            <span class="quote-card__date">Feb 7, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">81m tokens from investors could be moved/dumped, but only 49m actually have... This means people who bought early are holding.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="most private sale investors are (a) institutionals b) in asia and c) vested for long-term success of company.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#11</span>
+            <span class="quote-card__date">Feb 10, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Most Private sale investors are (A) Institutionals B) In Asia and C) Vested for long-term success of company.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="all the investors have a long-term interest in the project because of their institutional role and sectors of operations. thus i can tell you their motivation is not to sell and make the next 10-20x to flip into something else.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#12</span>
+            <span class="quote-card__date">Feb 21, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">All the investors have a long-term interest in the project because of their institutional role and sectors of operations. Thus I can tell you their motivation is not to sell and make the next 10-20x to flip into something else.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="private investors are patient and supportive.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#13</span>
+            <span class="quote-card__date">Jun 11, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Private investors are patient and supportive.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="it's a distribution wallet for all the investors in the private sale. we don't control that wallet. it's allocated to the investors.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#14</span>
+            <span class="quote-card__date">Jul 20, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">It's a distribution wallet for all the investors in the private sale. We don't control that wallet. It's allocated to the investors.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Vesting Schedules" data-legal="Market Manipulation" data-text="private placement tokens (45%/450m) vesting at 0.27% per day = 1,215,000 wozx available per day.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#15</span>
+            <span class="quote-card__date">Sep 24, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Vesting Schedules</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Private placement tokens (45%/450m) vesting at 0.27% per day = 1,215,000 WOZX available per day.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Vesting Schedules" data-legal="Market Manipulation" data-text="negotiated with backers and early investors, not smart contracts - our tokens were minted before the vesting schedules were all agreed!">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#16</span>
+            <span class="quote-card__date">Dec 6, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Vesting Schedules</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Negotiated with backers and early investors, not smart contracts - Our tokens were minted before the vesting schedules were all agreed!</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Vesting Schedules" data-legal="Market Manipulation" data-text="our team tokens vest over 20 years... to be accurate we hardly put any liquidity to market from ecosystem/mining/team. the investor pool is the only one that's moving tokens.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#17</span>
+            <span class="quote-card__date">Apr 29, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Vesting Schedules</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Our team tokens vest over 20 years... To be accurate we hardly put any liquidity to market from Ecosystem/Mining/Team. The investor pool is the only one that's moving tokens.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Team Tokens" data-legal="Fraud / Concealment" data-text="team haven't moved any of the team or ecosystem tokens yet.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#18</span>
+            <span class="quote-card__date">Feb 7, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Team Tokens</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Team haven't moved any of the team or ecosystem tokens yet.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Team Tokens" data-legal="Fraud / Concealment" data-text="if you see the tokens going to market, they are not moving from our pool of tokens.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#19</span>
+            <span class="quote-card__date">Apr 29, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Team Tokens</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">If you see the tokens going to market, they are not moving from our pool of tokens.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Team Tokens" data-legal="Fraud / Concealment" data-text="we haven't moved any of our tokens in year 1.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#20</span>
+            <span class="quote-card__date">May 25, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Team Tokens</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">We haven't moved any of our tokens in year 1.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Team Tokens" data-legal="Fraud / Concealment" data-text="what are you talking about we haven't moved a single token.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#21</span>
+            <span class="quote-card__date">Sep 13, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Team Tokens</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">What are you talking about we haven't moved a single token.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Team Tokens" data-legal="Fraud / Concealment" data-text="20% 200 team allocation - 10m/year...15% 150m ecosystem and consultants - unlocks at 1.5% /month..20% 200m liquidity mining incentive which unlocks over 10 years.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#22</span>
+            <span class="quote-card__date">Dec 31, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Team Tokens</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">20% 200 team allocation - 10m/year...15% 150m Ecosystem and consultants - unlocks at 1.5% /month..20% 200m liquidity mining incentive which unlocks over 10 years.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="aitherco2 revenues of $89m (2018), $150m (2019), and $250m (2020).">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#23</span>
+            <span class="quote-card__date">Jul 7, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">AitherCO2 revenues of $89M (2018), $150M (2019), and $250M (2020).</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="aitherco2 is regulated financial institution under mifid2 license and all the financials are public and audited... aitherco2, as mother company, will transfer its energy efficiency operation and clients pipeline into efforce!">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#24</span>
+            <span class="quote-card__date">Dec 2, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">AitherCO2 is regulated financial institution under MiFID2 license and all the financials are public and audited... AitherCO2, as mother company, will transfer its Energy Efficiency operation and clients pipeline into Efforce!</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="parent company (aither) has $240m revenue is transferring tens of millions of $ projects to efforce platform.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#25</span>
+            <span class="quote-card__date">Dec 16, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Parent Company (Aither) has $240m revenue is transferring tens of millions of $ projects to Efforce platform.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="have you grown business to $250m/y without outside investors?... is visetti who graduated harvard and founded company making hundreds of millions a year the issue?">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#26</span>
+            <span class="quote-card__date">Dec 17, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Have you grown business to $250m/y without outside investors?... Is Visetti who graduated Harvard and founded company making hundreds of millions a year the issue?</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="aitherco2 has more than 2000 clients... it's a regulated financial institution under mifid2... a company with €200m in annual revenue.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#27</span>
+            <span class="quote-card__date">Feb 24, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">AitherCO2 has more than 2000 clients... It's a regulated financial institution under MiFID2... a company with €200m in annual revenue.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="our mother company (aither) is a licensed esco... making hundreds of millions of dollars in annual revenue.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#28</span>
+            <span class="quote-card__date">Apr 29, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Our mother company (Aither) is a licensed ESCO... making hundreds of millions of dollars in annual revenue.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="aitherco2 is one of the largest players in the world... institutional are not the fastest moving targets.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#29</span>
+            <span class="quote-card__date">May 5, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">AitherCO2 is one of the largest players in the world... Institutional are not the fastest moving targets.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="aither will divert all energy efficiency operations to efforce... the two teams work as one.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#30</span>
+            <span class="quote-card__date">Aug 8, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Aither will divert all energy efficiency operations to Efforce... the two teams work as one.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="AitherCO2" data-legal="Fraud by False Representation" data-text="aither is the parent company of efforce... this year it is breaking $350m.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#31</span>
+            <span class="quote-card__date">Sep 21, 2021</span>
+            <span class="quote-card__source">Community Gathering #9</span>
+            <span class="quote-card__cat">AitherCO2</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Aither is the parent company of EFForce... This year it is breaking $350m.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="platform is closed beta and will be released in q1 2021.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#32</span>
+            <span class="quote-card__date">Dec 3, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Platform is closed beta and will be released in Q1 2021.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="platform is already live and first project deployed in may. private beta for stress testing. platform will go live in q1.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#33</span>
+            <span class="quote-card__date">Dec 6, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Platform is already live and first project deployed in May. Private Beta for stress testing. Platform will go live in Q1.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="the platform will go live with our own esco pipeline which is tens of millions of $ of projects listed from day 1... 20-30 esco's all listing on platform as soon as we go live.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#34</span>
+            <span class="quote-card__date">Dec 11, 2020</span>
+            <span class="quote-card__source">voice message</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">The platform will go live with our own ESCO pipeline which is tens of millions of $ of projects listed FROM DAY 1... 20-30 ESCO's all listing on platform as soon as we go live.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="we have a proprietary way to do that (ensure smart meters are not altered)... the meter is an independent additional reading.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#35</span>
+            <span class="quote-card__date">Dec 16, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">We have a proprietary way to do that (ensure Smart Meters are not altered)... The meter is an independent additional reading.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="we already have projects based in us in pipeline... global contributors will be able to participate without any geographical borders.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#36</span>
+            <span class="quote-card__date">Dec 17, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">We already have projects based in US in pipeline... Global contributors will be able to participate without any geographical borders.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="platform in private beta phase. first test project started may 2020, will be completed in q2 2022.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#37</span>
+            <span class="quote-card__date">Dec 31, 2020</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Platform in private beta phase. First test project started May 2020, will be completed in Q2 2022.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="public beta testing (150 members) would last one week, after which the platform would launch for all.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#38</span>
+            <span class="quote-card__date">Feb 5, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Public beta testing (150 members) would last one week, after which the platform would launch for all.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="we published 18% yield from test project... get me into any fund in the world at industrial level who makes 18% in 8 months.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#39</span>
+            <span class="quote-card__date">Feb 8, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">We published 18% yield from test project... Get me into any fund in the world at industrial level who makes 18% in 8 months.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="platform is going live for public use on march 20th... the week before will be for private beta test.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#40</span>
+            <span class="quote-card__date">Feb 10, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Platform is going live for public use on March 20th... the week before will be for private beta test.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="the company is doing some amazing partnerships right now which will really amaze you... you'll love to see the projects, the brands, the new features.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#41</span>
+            <span class="quote-card__date">Apr 14, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">The company is doing some amazing partnerships right now which will really amaze you... You'll love to see the projects, the brands, the new features.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="the beta v1.1 will be coming soon... it's just a matter of days until we really start.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#42</span>
+            <span class="quote-card__date">May 1, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">The Beta V1.1 will be coming soon... It's just a matter of days until we really start.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="mwoz paying electricity bills globally within 6 months.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#43</span>
+            <span class="quote-card__date">May 5, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">MWOZ paying electricity bills globally within 6 months.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="our company goals for 2021 are all on track... we've been absolutely swamped restructuring marketing, business processes, pipeline.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#44</span>
+            <span class="quote-card__date">Jun 8, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Our company goals for 2021 are all on track... We've been absolutely swamped restructuring marketing, business processes, pipeline.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="our cost focus is the launch of the platform with live projects, new features like staking... this will build revenue.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#45</span>
+            <span class="quote-card__date">Jul 11, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Our cost focus is the launch of the platform with live projects, new features like Staking... This will build revenue.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="within the year for sure as we roll out our platform, early clients, launch the summit.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#46</span>
+            <span class="quote-card__date">Aug 29, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Within the year for sure as we roll out our platform, early clients, launch the summit.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="as soon as the platform opens... there will be pools and single listings... the marketplace to trade mwoz between peers.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#47</span>
+            <span class="quote-card__date">Sep 7, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">As soon as the platform opens... there will be pools and single listings... The marketplace to trade MWOZ between peers.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Platform & Development" data-legal="Fraud by False Representation" data-text="when we launch the dex version of the platform, all energy efficiency projects small or big can launch their pool.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#48</span>
+            <span class="quote-card__date">Sep 27, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Platform & Development</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">When we launch the dex version of the platform, all energy efficiency projects small or big can launch their pool.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Roadmaps & Listings" data-legal="Market Manipulation" data-text="small correction on actual pdf regarding q1 activities, listing and staking are indeed q1.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#49</span>
+            <span class="quote-card__date">Jan 10, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Roadmaps & Listings</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Small correction on actual PDF regarding Q1 activities, Listing and staking are indeed Q1.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Roadmaps & Listings" data-legal="Market Manipulation" data-text="to all the people who complained about t1 exchanges, please understand we can't control exchanges listing pipelines.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#50</span>
+            <span class="quote-card__date">Apr 2, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Roadmaps & Listings</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">To all the people who complained about T1 exchanges, please understand we can't control exchanges listing pipelines.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Roadmaps & Listings" data-legal="Market Manipulation" data-text="we very clearly said that starting from tomorrow we have a series of listings over the coming month.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#51</span>
+            <span class="quote-card__date">Apr 20, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Roadmaps & Listings</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">We very clearly said that starting from tomorrow we have a series of listings over the coming month.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Roadmaps & Listings" data-legal="Market Manipulation" data-text="the pipeline we have in terms of clients and projects would blow off your socks.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#52</span>
+            <span class="quote-card__date">Jul 3, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Roadmaps & Listings</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">The pipeline we have in terms of clients and projects would blow off your socks.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Market Manipulation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Token Movements" data-legal="Fraud / Concealment" data-text="we're not here to trade our own tokens and speculate (although privately we buy on the market like everyone else).">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#53</span>
+            <span class="quote-card__date">Jan 4, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Token Movements</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">We're not here to trade our own tokens and speculate (although privately we buy on the market like everyone else).</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Token Movements" data-legal="Fraud / Concealment" data-text="nothing illegal.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#54</span>
+            <span class="quote-card__date">Oct 29, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Token Movements</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Nothing illegal.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Token Movements" data-legal="Fraud / Concealment" data-text="moving 80-90m wozx tokens for security reasons.">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#55</span>
+            <span class="quote-card__date">Oct 18, 2022</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Token Movements</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Moving 80-90m WOZX tokens for security reasons.</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud / Concealment</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+        <div class="quote-card" data-cat="Private Investors" data-legal="Fraud by False Representation" data-text="most of our anchor investors and communities are in asia which right now is restricted in trading, so it will take time">
+          <div class="quote-card__header">
+            <span class="quote-card__id">#56</span>
+            <span class="quote-card__date">Sep 13, 2021</span>
+            <span class="quote-card__source">Telegram</span>
+            <span class="quote-card__cat">Private Investors</span>
+          </div>
+          <div class="quote-card__body">
+            <div class="quote-card__text">Most of our anchor investors and communities are in Asia which right now is restricted in trading, so it will take time</div>
+          </div>
+          <div class="quote-card__footer">
+            <span class="quote-card__legal">Fraud by False Representation</span>
+            <span class="quote-card__status">Unrebutted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSIDER QUOTES ABOUT CASTIGLIONE -->
+    <div class="section-block">
+      <h3>The Man Who Spoke the Most &mdash; And Allegedly Misled the Most</h3>
+      <p>Private comments from Efforce leadership about Andrea Castiglione&rsquo;s credibility and role:</p>
+
+      <div class="insider-quote">
+        <p><em>&ldquo;Andrea told a lot of lies to the community.&rdquo;</em></p>
+        <p class="attr">&mdash; Paolo Pastore (Managing Director), private to Michael Copley, 2023</p>
+      </div>
+
+      <div class="insider-quote">
+        <p><em>&ldquo;Andrea was the one pushing the SEELE relationship while denying it publicly.&rdquo;</em></p>
+        <p class="attr">&mdash; Paolo Pastore, private message, 2023</p>
+      </div>
+
+      <div class="insider-quote">
+        <p><em>&ldquo;I never understood the Asia connection&rdquo;</em> &mdash; directly contradicting Castiglione&rsquo;s repeated public claim that &ldquo;most private sale investors are from China.&rdquo;</p>
+        <p class="attr">&mdash; Jacopo Visetti, private Discord, 2023&ndash;2024</p>
+      </div>
+
+      <div class="insider-quote">
+        <p>When confronted with Castiglione&rsquo;s &ldquo;NONE OF THEM HAS THE INTENTION TO SELL&rdquo; quote, Visetti <strong>refused to defend it</strong> and instead threatened legal action against Copley.</p>
+        <p class="attr">&mdash; Jacopo Visetti, Nov 18, 2023 private call</p>
+      </div>
+
+      <p style="margin-top:var(--space-lg);font-weight:700;">Even his own colleagues allegedly described Castiglione as the source of falsehoods and the driver of the SEELE relationship &mdash; yet he remained the public face of Efforce for years.</p>
+    </div>
+
+    <!-- Conclusion -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>Andrea Castiglione&rsquo;s 78 documented statements form the clearest public record of alleged systematic misrepresentation in the Efforce/WOZX saga. Every core assurance &mdash; investor commitment, team token integrity, AitherCO2 financial health, and platform delivery &mdash; was <strong>proven false</strong>. His own colleagues privately confirmed he &ldquo;told a lot of lies&rdquo; and pushed the SEELE Ponzi relationship while denying it publicly. These statements drove <strong>$300M+ in retail losses</strong> and remain entirely unrebutted.</p>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="../individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  
+    <!-- Evidence Screenshot Gallery -->
+    <section class="section" style="padding: 3rem 0;">
+      <div class="container">
+        <h2 style="color: var(--red); margin-bottom: 0.5rem;">Key Evidence Screenshots</h2>
+        <p style="color: var(--grey); margin-bottom: 2rem; font-size: 0.95rem;">
+          Sourced from public records, company communications, and blockchain data. Click any image to enlarge.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/01ba63cd4aef7cfc300799a4020bc703.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/01ba63cd4aef7cfc300799a4020bc703.png" loading="lazy" alt="Castiglione Ownership Document — 1.25% stake" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Castiglione Ownership Document — 1.25% stake</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/47bf533a10fcbd0e6a1586660d83dcda.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/47bf533a10fcbd0e6a1586660d83dcda.png" loading="lazy" alt="Castiglione Telegram @finmay — primary investor communications channel" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Castiglione Telegram @finmay — primary investor communications channel</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/92f70a9f2d519fd5276987b5f42a4d46.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/92f70a9f2d519fd5276987b5f42a4d46.png" loading="lazy" alt="Castiglione X (Twitter) @silentbutsocial" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Castiglione X (Twitter) @silentbutsocial</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/6bdc8e4c56e102d3742076237875d269.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/6bdc8e4c56e102d3742076237875d269.png" loading="lazy" alt="SilentUnicorn Website — Castiglione's personal venture" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SilentUnicorn Website — Castiglione's personal venture</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/f8dc26c9ae4e07973f0b0495d48a4ede.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/f8dc26c9ae4e07973f0b0495d48a4ede.png" loading="lazy" alt="SilentUnicorn Team Page" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SilentUnicorn Team Page</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/927a9fdd20cd55ca772ec20b63d62b74.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/927a9fdd20cd55ca772ec20b63d62b74.png" loading="lazy" alt="SilentUnicorn Investments — including Efforce" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SilentUnicorn Investments — including Efforce</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/315b9191475d5241b0fa195842549bcc.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/315b9191475d5241b0fa195842549bcc.png" loading="lazy" alt="GDAC 2020 Conference — SEELE denial vs private speeches" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">GDAC 2020 Conference — SEELE denial vs private speeches</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/3dfaa52fa15347bdd56dd4c1f18a7e3a.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/3dfaa52fa15347bdd56dd4c1f18a7e3a.png" loading="lazy" alt="Unofficial Price Group Approval — price speculation endorsed" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Unofficial Price Group Approval — price speculation endorsed</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/2d76fcda79011ebf9086478e4f6916e7.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/2d76fcda79011ebf9086478e4f6916e7.png" loading="lazy" alt="Nasdaq Dubai Event — promotional activities" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Nasdaq Dubai Event — promotional activities</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/eb46336e78ada0b9e4db947f36e41cbc.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/eb46336e78ada0b9e4db947f36e41cbc.png" loading="lazy" alt="&quot;NONE OF THEM HAS THE INTENTION TO SELL&quot; — Dec 2, 2020, while private investors dumped $283M+" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;NONE OF THEM HAS THE INTENTION TO SELL&quot; — Dec 2, 2020, while private investors dumped $283M+</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/56ecd4ada3585f488ff654379907c31b.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/56ecd4ada3585f488ff654379907c31b.png" loading="lazy" alt="Vesting from day 1 despite &quot;long vesting&quot; claims to retail" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Vesting from day 1 despite &quot;long vesting&quot; claims to retail</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/530b7be52d29b9d46d67b5dfd008a571.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/530b7be52d29b9d46d67b5dfd008a571.png" loading="lazy" alt="&quot;Stacking&quot; lie amid early dumps by private investors" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;Stacking&quot; lie amid early dumps by private investors</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/20b94533a5cc2c61e41834f80bafcab0.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/20b94533a5cc2c61e41834f80bafcab0.png" loading="lazy" alt="Tokens moved from Efforce wallets by Feb 2021" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Tokens moved from Efforce wallets by Feb 2021</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/fab9bf12601617e8d27d4843f8f75bfa.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/fab9bf12601617e8d27d4843f8f75bfa.png" loading="lazy" alt="&quot;Nothing illegal&quot; — $69M single-day dump" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;Nothing illegal&quot; — $69M single-day dump</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/4d02688d3f16a83b5cff81ce004a4cef.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/4d02688d3f16a83b5cff81ce004a4cef.png" loading="lazy" alt="SEELE Denial #1" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SEELE Denial #1</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/9d05ae3299983f695abdfecec025c615.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/9d05ae3299983f695abdfecec025c615.png" loading="lazy" alt="SEELE Denial #2" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SEELE Denial #2</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/3bb396a28707084a28de6cda509e0a29.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/3bb396a28707084a28de6cda509e0a29.png" loading="lazy" alt="SEELE Denial #3" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SEELE Denial #3</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/db2bac3697e7b9f1d0fad6aa46b4e74e.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/db2bac3697e7b9f1d0fad6aa46b4e74e.png" loading="lazy" alt="SEELE Denial #4" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SEELE Denial #4</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/8eddaa46af8fcf1102a3c8656e528000.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/8eddaa46af8fcf1102a3c8656e528000.png" loading="lazy" alt="SEELE Denial #5" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SEELE Denial #5</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/f8385396c548e356a2353c9a245a7c5b.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/f8385396c548e356a2353c9a245a7c5b.png" loading="lazy" alt="SEELE Denial #6" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">SEELE Denial #6</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#abc8c4d9d9cec8dfc2c4c5d8ebc2c5ddced8dfc2cccadfc2c5cccecdcdc4d9c8ce85c8c4c6">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#9dfef2efeff8fee9f4f2f3eeddf4f3ebf8eee9f4fafce9f4f3faf8fbfbf2effef8b3fef2f0"><span class="__cf_email__" data-cfemail="5c3f332e2e393f283533322f1c35322a392f28353b3d2835323b393a3a332e3f39723f3331">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../../js/nav.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {{
+    var cards = document.querySelectorAll('.quote-card');
+    var search = document.getElementById('quoteSearch');
+    var filters = document.querySelectorAll('.quote-filter');
+    var countEl = document.getElementById('quoteCount');
+    var activeCat = 'all';
+
+    function updateView() {{
+      var term = search.value.toLowerCase();
+      var visible = 0;
+      cards.forEach(function(card) {{
+        var catMatch = activeCat === 'all' || card.dataset.cat === activeCat;
+        var textMatch = !term || c

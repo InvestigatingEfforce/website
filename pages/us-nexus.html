@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U.S. Legal Nexus Memorandum — Efforce &amp; WOZX — Investigating Efforce</title>
+  <meta name="description" content="Establishing U.S. jurisdictional nexus for Efforce/WOZX legal action. U.S. citizens as shareholders and wallet key holders, U.S.-based private investors confirmed, Times Square marketing, Santa Clara lawsuit 25CV459519.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .stat-bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .stat-bar__item{text-align:center}
+    .stat-bar__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .stat-bar__num--red{color:var(--accent-red)}
+    .stat-bar__num--gold{color:var(--accent-gold)}
+    .stat-bar__num--blue{color:#3b82f6}
+    .stat-bar__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .nexus-card{border:1px solid var(--grey-200);margin:var(--space-md) 0;overflow:hidden}
+    .nexus-card__header{padding:var(--space-sm) var(--space-md);background:#eff6ff;border-bottom:1px solid #bfdbfe;display:flex;align-items:center;gap:var(--space-sm)}
+    .nexus-card__num{font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:#1d4ed8;min-width:32px}
+    .nexus-card__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:#1e3a5f}
+    .nexus-card__body{padding:var(--space-md)}
+    .nexus-card__body p,.nexus-card__body li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .nexus-card__body ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .nexus-card--strong{border-color:#1d4ed8;border-width:2px}
+    .nexus-card--strong .nexus-card__header{background:#1d4ed8;border-bottom-color:#1d4ed8}
+    .nexus-card--strong .nexus-card__num,.nexus-card--strong .nexus-card__title{color:var(--white)}
+    .allegation-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .allegation-card{border:1px solid var(--grey-200);padding:var(--space-md)}
+    .allegation-card h5{font-family:var(--font-display);font-weight:900;font-size:var(--text-sm);color:var(--accent-red);margin-bottom:var(--space-xs)}
+    .allegation-card p{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600)}
+    .allegation-card ul{padding-left:var(--space-md);margin:var(--space-xs) 0}
+    .allegation-card li{font-size:var(--text-xs);line-height:1.5;color:var(--grey-600)}
+    .whitepaper-box{background:#fff5f5;border:2px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .whitepaper-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-sm)}
+    .whitepaper-box blockquote{font-style:italic;font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);border-left:3px solid var(--accent-red);padding-left:var(--space-md);margin:var(--space-md) 0}
+    .evidence-table{width:100%;border-collapse:collapse;font-size:var(--text-xs);margin:var(--space-lg) 0}
+    .evidence-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+    .evidence-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top}
+    .evidence-table tr:hover{background:var(--grey-50)}
+    .howey-box{background:#eff6ff;border:2px solid #1d4ed8;padding:var(--space-xl);margin:var(--space-xl) 0}
+    .howey-box h4{color:#1d4ed8;font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-md)}
+    .howey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-md)}
+    .howey-item{padding:var(--space-md);background:var(--white);border:1px solid #bfdbfe}
+    .howey-item h5{font-family:var(--font-display);font-weight:700;font-size:var(--text-xs);color:#1d4ed8;margin-bottom:var(--space-xs)}
+    .howey-item p{font-size:10px;line-height:1.5;color:var(--grey-600)}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid #1d4ed8}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+    .toc{background:var(--grey-50);padding:var(--space-lg);margin:var(--space-xl) 0;border:1px solid var(--grey-200)}
+    .toc h4{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .toc ol{padding-left:var(--space-lg);margin:0}
+    .toc li{font-family:var(--font-mono);font-size:var(--text-xs);line-height:2}
+    .toc a{color:var(--grey-600);text-decoration:none}
+    .toc a:hover{color:var(--accent-red);text-decoration:underline}
+    .quote-card{border-left:3px solid #1d4ed8;background:#eff6ff;padding:var(--space-sm) var(--space-md);margin:var(--space-sm) 0}
+    .quote-card__text{font-style:italic;font-size:var(--text-sm);color:var(--grey-800)}
+    .quote-card__attr{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:2px}
+    .img-evidence{border:1px solid var(--grey-200);overflow:hidden;margin:var(--space-md) 0;max-width:600px}
+    .img-evidence img{width:100%;display:block}
+    .img-evidence__cap{padding:var(--space-sm);font-family:var(--font-mono);font-size:9px;color:var(--grey-500)}
+    @media(max-width:768px){.stat-bar{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.allegation-grid{grid-template-columns:1fr}.howey-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#781b170a0a1d1b0c1117160b3811160e1d0b0c111f190c11161f1d1e1e170a1b1d561b1715"><span class="__cf_email__" data-cfemail="f1929e8383949285989e9f82b1989f8794828598969085989f969497979e839294df929e9c">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Legal</span>
+    <h1 class="page-hero__title">U.S. Legal Nexus Memorandum</h1>
+    <p class="page-hero__sub">Efforce &amp; WOZX &mdash; Establishing U.S. Jurisdiction for Enforcement &amp; Class Action</p>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: Public Telegram, Etherscan, Malta/Bahamas/AitherCO2 filings, Nov 18 2023 call, Yahoo Finance, Bloomberg. Claims raised with all entities and legal representatives. <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#d3b0bca1a1b6b0a7babcbda093babda5b6a0a7bab4b2a7babdb4b6b5b5bca1b0b6fdb0bcbe"><span class="__cf_email__" data-cfemail="f99a968b8b9c9a8d9096978ab990978f9c8a8d909e988d90979e9c9f9f968b9a9cd79a9694">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="stat-bar">
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--blue">2</div><div class="stat-bar__label">U.S. Citizen Shareholders</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--blue">2</div><div class="stat-bar__label">U.S.-Based PI Confirmed</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">$350M+</div><div class="stat-bar__label">Alleged Retail Losses</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--blue">25CV459519</div><div class="stat-bar__label">Santa Clara Lawsuit</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">$283M</div><div class="stat-bar__label">U.S.-Based MPI Profits</div></div>
+      <div class="stat-bar__item"><div class="stat-bar__num stat-bar__num--red">0</div><div class="stat-bar__label">SEC Registrations</div></div>
+    </div>
+
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#whitepaper">The Whitepaper U.S. Ban &mdash; and Its Violation</a></li>
+        <li><a href="#nexus">U.S. Nexus &mdash; 4 Jurisdictional Grounds</a></li>
+        <li><a href="#howey">Howey Test Analysis</a></li>
+        <li><a href="#allegations">Key Allegations with U.S. Relevance</a></li>
+        <li><a href="#evidence">Key Evidence Table</a></li>
+        <li><a href="#classaction">Class Action Opportunity</a></li>
+        <li><a href="#crossref">Cross-References</a></li>
+      </ol>
+    </div>
+
+    <!-- OVERVIEW -->
+    <div class="section-block" id="overview" style="border-top:none;">
+      <h3>Overview</h3>
+      <p>Efforce Ltd (Malta) and its purported subsidiary Efforce Ltd (Bahamas) issued the WOZX cryptocurrency token in 2020, marketed as a utility token for energy efficiency investments. The project was backed by <strong>Steve Wozniak</strong> (U.S. citizen, California, 11% shareholder) and <strong>Ken Hardesty</strong> (U.S. citizen, California, 4% shareholder, CEO in Residence at Gerbsman Partners), and raised $12.5&ndash;$36 million through a private token sale of 450 million WOZX to an alleged U.S.-based Main Private Investor (MPI), with 100 million WOZX transferred to an affiliated Anchor Investor &mdash; despite the whitepaper explicitly prohibiting U.S. token holders.</p>
+      <p>The Efforce Treasury Wallet transferred <strong>173,317,834 WOZX ($68.1M)</strong> to 15 recipient wallets from November 2020 to March 2023, with <strong>160,170,843 WOZX ($68.1M) unaccounted</strong>. The MPI realised approximately <strong>$283M</strong> from 58 outgoing transactions. Collectively, these actions allegedly contributed to <strong>~$350 million in losses</strong> for retail token holders globally, including U.S. investors, due to alleged fraud, misrepresentation, market manipulation, and non-delivery of promised platform functionality.</p>
+      <p>This memorandum establishes the <strong>U.S. nexus</strong> for legal action under U.S. securities laws, incorporating blockchain transaction data, vesting breaches, whistleblower insights, and insider statements evidencing misconduct.</p>
+    </div>
+
+    <!-- WHITEPAPER BAN -->
+    <div class="whitepaper-box" id="whitepaper">
+      <h4>The Whitepaper U.S. Ban &mdash; and Its Systematic Violation</h4>
+      <blockquote>&ldquo;The sale of EFFORCE tokens is not directed at, and each purchaser of EFFORCE tokens will be required to represent, among other things, that they are not: (a) a citizen, resident (tax or otherwise) of, a person located or domiciled in, or any entity organized in or owned by certain persons in (i) the United States (including any U.S. Person pursuant to the U.S. Securities Act of 1933 (as amended))&rdquo;</blockquote>
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:var(--space-sm);">&mdash; Efforce Whitepaper, Page 10</p>
+
+      <div class="img-evidence" style="margin-top:var(--space-lg);">
+        <img src="https://i.gyazo.com/665f3c06d6e1e3c719fcd298efbf1ed9.png" alt="Efforce whitepaper page showing U.S. person prohibition" loading="lazy">
+        <div class="img-evidence__cap">Efforce whitepaper: explicit prohibition on U.S. persons purchasing WOZX tokens</div>
+      </div>
+
+      <p style="margin-top:var(--space-lg);">Despite this explicit prohibition, the following U.S. connections were established from the outset:</p>
+      <ul>
+        <li><strong>Steve Wozniak</strong> &mdash; U.S. citizen, California &mdash; 11% shareholder, promoted as co-founder</li>
+        <li><strong>Ken Hardesty</strong> &mdash; U.S. citizen, California &mdash; 4% shareholder, wallet key holder, MPI selector</li>
+        <li><strong>The MPI itself</strong> &mdash; confirmed U.S.-based by Visetti (Nov 18, 2023): &ldquo;One from NYC&hellip; Western US&rdquo;</li>
+        <li><strong>HBTC</strong> &mdash; did not enforce the U.S. ban, enabling trading <strong>without KYC</strong> for deposits/withdrawals under 1 BTC, allowing U.S. persons to buy WOZX freely</li>
+        <li><strong>Times Square billboard</strong> (Dec 22, 2020) &mdash; WOZX/HBTC marketed in New York City</li>
+      </ul>
+      <p>The whitepaper ban appears to have been a <strong>legal fig leaf</strong> &mdash; a disclaimer included to create the appearance of regulatory compliance while every substantive action contradicted it.</p>
+
+      <div class="img-evidence" style="margin-top:var(--space-lg);">
+        <img src="https://i.gyazo.com/71d953506b4d717de982e5934f5e945a.png" alt="HBTC WOZX marketing in Times Square New York" loading="lazy">
+        <div class="img-evidence__cap">HBTC/WOZX marketed in Times Square, New York (Dec 22, 2020) &mdash; directly contradicting the whitepaper U.S. ban</div>
+      </div>
+    </div>
+
+    <!-- U.S. NEXUS GROUNDS -->
+    <div class="section-block" id="nexus">
+      <h3>U.S. Nexus &mdash; 4 Jurisdictional Grounds</h3>
+
+      <div class="nexus-card nexus-card--strong">
+        <div class="nexus-card__header">
+          <span class="nexus-card__num">1</span>
+          <span class="nexus-card__title">U.S.-Based Key Individuals (Shareholders &amp; Directors)</span>
+        </div>
+        <div class="nexus-card__body">
+          <ul>
+            <li><strong><a href="individuals/steve-wozniak.html">Steve Wozniak</a> (California, 11% Shareholder):</strong> Promoted as co-founder despite joining 14 months post-formation (company formed Jun 20, 2018; Wozniak shares transferred Jul 24, 2019). Told Yahoo Finance (Dec 8, 2020): <em>&ldquo;I see owning WOZX as shares of stock.&rdquo;</em> This statement alone potentially triggers the Howey Test. Alleged disengagement confirmed by Pastore: &ldquo;Woz&hellip; abandoned ship&rdquo; (Aug 24, 2023). Alleged non-disclosure of U.S./Chinese regulatory probes (Visetti, Nov 18, 2023).</li>
+            <li><strong><a href="individuals/ken-hardesty.html">Ken Hardesty</a> (California, 4% Shareholder):</strong> Allegedly selected the U.S.-based MPI (Visetti, Nov 18, 2023: &ldquo;Ken Hardesty&hellip; found the private investor&rdquo;). Confirmed wallet key holder alongside Carloni and Vanetti (Visetti, Jul 15, 2024). Non-disclosure of vesting breaches and $68.1M ETW transfers despite board responsibilities. <strong>U.S. citizen on U.S. soil &mdash; no extradition or international cooperation required for SEC enforcement.</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="nexus-card nexus-card--strong">
+        <div class="nexus-card__header">
+          <span class="nexus-card__num">2</span>
+          <span class="nexus-card__title">U.S.-Based Professional Investors (Confirmed)</span>
+        </div>
+        <div class="nexus-card__body">
+          <div class="quote-card" style="background:#eff6ff;border-left-color:#1d4ed8;">
+            <div class="quote-card__text">&ldquo;One from NYC&hellip; Western US. One of the two investors is also a regulated entity. One of the partners of one of the two investors is of Chinese descent.&rdquo;</div>
+            <div class="quote-card__attr">Jacopo Visetti &mdash; Nov 18, 2023 &mdash; Private call with Michael Copley</div>
+          </div>
+          <p style="margin-top:var(--space-md);">Visetti&rsquo;s verbal slips during this call &mdash; &ldquo;the individual&rdquo; becoming &ldquo;entity,&rdquo; &ldquo;the investor&rdquo; becoming &ldquo;investors&rdquo; &mdash; are consistent with attempted concealment of a single-entity private sale.</p>
+          <ul>
+            <li><strong>MPI profited ~$283M</strong> from 58 outgoing transactions, including 186.6M WOZX (~$69.2M) dumped Oct 29, 2021.</li>
+            <li><strong>Anchor Investor profited ~$53.2M</strong>, including 71.2M WOZX (~$34.8M) transferred Oct 6, 2021.</li>
+            <li><strong>17.2M WOZX pre-listing breach</strong> (~$30M at $1.74/WOZX) &mdash; before any vesting was due.</li>
+            <li><strong>HTX Ventures</strong> identified as buyer of entire 450M allocation per icodrops.com (alleged to Efforce, unrebutted).</li>
+          </ul>
+          <p>This directly contradicts Castiglione&rsquo;s public claims of &ldquo;Asia-based institutional investors&rdquo; (Dec 12, 2020) and establishes clear <strong>SEC jurisdictional authority</strong> over the private investors and their profits.</p>
+        </div>
+      </div>
+
+      <div class="nexus-card">
+        <div class="nexus-card__header">
+          <span class="nexus-card__num">3</span>
+          <span class="nexus-card__title">U.S.-Based Promotional Activities</span>
+        </div>
+        <div class="nexus-card__body">
+          <ul>
+            <li><strong>Times Square billboard</strong> (Dec 22, 2020) &mdash; HBTC listing for WOZX marketed in the heart of New York City, despite whitepaper prohibiting U.S. token holders.</li>
+            <li><strong>Wozniak on Yahoo Finance</strong> (Dec 8, 2020) &mdash; &ldquo;shares of stock&rdquo; statement broadcast to U.S. financial audience.</li>
+            <li><strong>Castiglione U.S. project claims</strong> (Sep 21, 2020, Telegram) &mdash; marketing Efforce&rsquo;s capabilities with reference to U.S. energy projects.</li>
+            <li><strong>HBTC&rsquo;s failure to enforce U.S. ban</strong> &mdash; no KYC required for deposits/withdrawals below 1 BTC, enabling U.S. persons to trade WOZX freely on the primary listing exchange.</li>
+          </ul>
+          <p>These promotional activities targeted U.S. audiences and facilitated U.S. person participation in a token sale that was explicitly supposed to exclude them.</p>
+        </div>
+      </div>
+
+      <div class="nexus-card">
+        <div class="nexus-card__header">
+          <span class="nexus-card__num">4</span>
+          <span class="nexus-card__title">U.S.-Based Legal Actions (Active)</span>
+        </div>
+        <div class="nexus-card__body">
+          <ul>
+            <li><strong>Santa Clara County Superior Court &mdash; Case 25CV459519</strong> (filed Feb 27, 2025): Civil action alleging fraud, market manipulation, and breach of fiduciary duty. Filed in California &mdash; home jurisdiction of both Wozniak (11%) and Hardesty (4%).</li>
+            <li><strong>Visetti extradition threat</strong> (Dec 16, 2023): Visetti conveyed that &ldquo;one of the US shareholders is seeking your extradition to NY for defamation&rdquo; &mdash; an impossible legal remedy that itself evidences U.S. shareholder involvement in litigation strategy.</li>
+            <li><strong>U.S. regulatory probes</strong> (Visetti, Nov 18, 2023): Visetti privately disclosed the existence of both U.S. and Chinese regulatory investigations into Efforce/WOZX.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOWEY TEST -->
+    <div class="howey-box" id="howey">
+      <h4>Howey Test Analysis &mdash; WOZX as a Security</h4>
+      <p style="font-size:var(--text-sm);color:var(--grey-700);margin-bottom:var(--space-md);">Under <em>SEC v. W.J. Howey Co.</em> (1946), an &ldquo;investment contract&rdquo; exists where there is: (1) an investment of money, (2) in a common enterprise, (3) with an expectation of profits, (4) derived from the efforts of others. WOZX satisfies all four prongs:</p>
+      <div class="howey-grid">
+        <div class="howey-item">
+          <h5>1. Investment of Money</h5>
+          <p>$12.5&ndash;$36M private sale. Retail purchases on HBTC, Bithumb, and other exchanges. Wozniak: &ldquo;I see owning WOZX as shares of stock.&rdquo;</p>
+        </div>
+        <div class="howey-item">
+          <h5>2. Common Enterprise</h5>
+          <p>Horizontal commonality: all token holders&rsquo; fortunes tied to Efforce platform success. Tokens pooled via single treasury wallet. Promoters pooled proceeds.</p>
+        </div>
+        <div class="howey-item">
+          <h5>3. Expectation of Profits</h5>
+          <p>Whitepaper promised returns from energy savings. Marketing emphasised token value appreciation. SeeleN promoted $10 price target. Wozniak&rsquo;s &ldquo;shares of stock&rdquo; = investment framing.</p>
+        </div>
+        <div class="howey-item">
+          <h5>4. Efforts of Others</h5>
+          <p>Platform development solely by Efforce/AitherCO2. Token holders had no control over treasury, vesting, or platform delivery. Wallet keys held by Carloni, Hardesty, Vanetti &mdash; not token holders.</p>
+        </div>
+      </div>
+      <p style="margin-top:var(--space-md);font-size:var(--text-sm);color:var(--grey-700);">If WOZX qualifies as a security, its offer and sale without SEC registration violates <strong>Section 5 of the Securities Act of 1933</strong>. Misrepresentations in connection with its sale violate <strong>Section 10(b) and Rule 10b-5 of the Securities Exchange Act of 1934</strong>.</p>
+    </div>
+
+    <!-- KEY ALLEGATIONS -->
+    <div class="section-block" id="allegations">
+      <h3>Key Allegations with U.S. Relevance</h3>
+      <div class="allegation-grid">
+        <div class="allegation-card">
+          <h5>Securities Fraud &amp; Misrepresentation</h5>
+          <ul>
+            <li>Wozniak &ldquo;shares of stock&rdquo; &rarr; Howey Test</li>
+            <li>AitherCO2 &euro;319.9M tax liability concealed during WOZX launch</li>
+            <li>MPI vesting breaches (55.3M WOZX excess) undisclosed</li>
+            <li>$80M valuation vs $12.5M actual &mdash; valuation fraud</li>
+            <li>Retroactive vesting start date (Aug 2024): 160M WOZX pre-unlocked</li>
+            <li>&ldquo;Asia-based&rdquo; vs actual U.S.-based investors</li>
+          </ul>
+        </div>
+        <div class="allegation-card">
+          <h5>Market Manipulation</h5>
+          <ul>
+            <li>MPI $283M dump across 58 transactions</li>
+            <li>ETW 25M WOZX pre-listing breach</li>
+            <li>186.6M WOZX coordinated dump (Oct 29, 2021)</li>
+            <li>HBTC closure timed liquidation</li>
+            <li>SeeleN $10 price target promotion</li>
+            <li>99.2% market control on listing day</li>
+          </ul>
+        </div>
+        <div class="allegation-card">
+          <h5>Unregistered Securities Offering</h5>
+          <ul>
+            <li>450M WOZX private sale without SEC registration</li>
+            <li>Pre-listing transfers to U.S. persons</li>
+            <li>Public offering via HBTC without registration or exemption</li>
+            <li>No Reg D, Reg S, or Reg A filing identified</li>
+            <li>Section 5, Securities Act 1933</li>
+          </ul>
+        </div>
+        <div class="allegation-card">
+          <h5>Money Laundering Indicators</h5>
+          <ul>
+            <li>Wallet 3: $49M converted to alt-coins (Feb 2025)</li>
+            <li>Layered transactions via 0x3ad5d910 (likely HBTC)</li>
+            <li>HBTC money laundering allegations (Forbes, Jul 2020)</li>
+            <li>No KYC below 1 BTC on primary exchange</li>
+            <li>18 U.S.C. &sect; 1956, FinCEN reporting obligations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVIDENCE TABLE -->
+    <div class="section-block" id="evidence">
+      <h3>Key Evidence Table</h3>
+      <table class="evidence-table">
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Detail</th>
+            <th>U.S. Nexus Relevance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Etherscan</td>
+            <td>MPI wallet: $283M outflows, 58 txns (0x078f4ffc&hellip;)</td>
+            <td>U.S.-based investor confirmed; SEC Rule 10b-5</td>
+          </tr>
+          <tr>
+            <td>Etherscan</td>
+            <td>ETW: $68.1M unaccounted across 15 wallets</td>
+            <td>Key holders include Hardesty (U.S. citizen)</td>
+          </tr>
+          <tr>
+            <td>Visetti Call (Nov 18, 2023)</td>
+            <td>&ldquo;One from NYC&hellip; Western US&rdquo;</td>
+            <td>Confirms U.S. PI identity, SEC jurisdiction</td>
+          </tr>
+          <tr>
+            <td>Yahoo Finance (Dec 8, 2020)</td>
+            <td>Wozniak: &ldquo;I see owning WOZX as shares of stock&rdquo;</td>
+            <td>Howey Test prong 3; U.S. media promotion</td>
+          </tr>
+          <tr>
+            <td>Malta filings</td>
+            <td>AitherCO2 &euro;319.9M tax liability; 0 employees at Efforce</td>
+            <td>Material non-disclosure to U.S. investors</td>
+          </tr>
+          <tr>
+            <td>Efforce Whitepaper (p.10)</td>
+            <td>Explicit U.S. person prohibition</td>
+            <td>Violated by Wozniak, Hardesty, MPI, Times Square</td>
+          </tr>
+          <tr>
+            <td>Times Square (Dec 22, 2020)</td>
+            <td>HBTC/WOZX billboard in NYC</td>
+            <td>U.S.-directed marketing, contradicts whitepaper ban</td>
+          </tr>
+          <tr>
+            <td>Court filing (Feb 27, 2025)</td>
+            <td>Case 25CV459519, Santa Clara</td>
+            <td>Active U.S. litigation in Wozniak/Hardesty home jurisdiction</td>
+          </tr>
+          <tr>
+            <td>Visetti (Dec 16, 2023)</td>
+            <td>Extradition threat from &ldquo;US shareholder&rdquo;</td>
+            <td>U.S. shareholder involvement in legal strategy</td>
+          </tr>
+          <tr>
+            <td>Pastore (Nov 15, 2022)</td>
+            <td>&ldquo;Pumped and dumped by private investors&rdquo;</td>
+            <td>Insider confirmation; U.S.-based PI dumped $283M</td>
+          </tr>
+          <tr>
+            <td>ICODrops</td>
+            <td>HTX Ventures: $45M, 1 round</td>
+            <td>Huobi/HTX connection; HBTC subsidiary exchange</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CLASS ACTION -->
+    <div class="section-block" id="classaction">
+      <h3>Class Action Opportunity</h3>
+      <p>The established U.S. nexus enables a <strong>class action under Federal Rule of Civil Procedure 23</strong> on behalf of global WOZX token holders. The key elements are:</p>
+      <ul>
+        <li><strong>Numerosity:</strong> Thousands of retail token holders affected globally, including U.S. persons who purchased on HBTC without KYC enforcement.</li>
+        <li><strong>Commonality:</strong> All class members were subject to the same misrepresentations (vesting schedules, investor identity, platform delivery, AitherCO2 financial health).</li>
+        <li><strong>Typicality:</strong> Named plaintiffs&rsquo; claims arise from the same course of conduct as all class members.</li>
+        <li><strong>Adequacy:</strong> Coordination via investigatingefforce.com; California lawsuit already filed (25CV459519).</li>
+      </ul>
+      <p><strong>Estimated recovery: $350M+</strong> &mdash; representing MPI profits ($283M), ETW unaccounted transfers ($68.1M), and additional claims against Efforce, its directors, and related entities.</p>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>The U.S. nexus for Efforce/WOZX enforcement is not speculative &mdash; it is <strong>structural and confirmed</strong>. Two U.S. citizens held 15% of the company as shareholders and served as directors. One of them selected and sourced the private investor and held wallet keys to the treasury. The private investor itself has been confirmed as U.S.-based by a senior Efforce executive in a recorded private communication. WOZX was marketed in Times Square. The primary exchange did not enforce the whitepaper&rsquo;s U.S. ban. A California lawsuit is active. And the token almost certainly qualifies as a security under the Howey Test, bringing the full weight of <strong>SEC enforcement authority, FINRA oversight, California DFPI jurisdiction, and DOJ wire fraud statutes</strong> to bear. The whitepaper&rsquo;s U.S. prohibition was not a genuine compliance measure &mdash; it was a legal fig leaf contradicted by every substantive action taken by the project&rsquo;s founders, investors, and promoters. All allegations remain <strong>entirely unrebutted</strong>.</p>
+    </div>
+
+    <!-- CROSS-REFERENCES -->
+    <div class="section-block" id="crossref">
+      <h3>Cross-References</h3>
+      <ul>
+        <li><a href="private-investors.html"><strong>450M Private Investor Wallets</strong></a> &mdash; MPI $283M, HTX Ventures, Oct 2021 dump</li>
+        <li><a href="treasury-wallet.html"><strong>Efforce Treasury Wallet</strong></a> &mdash; $68.1M unaccounted</li>
+        <li><a href="vesting.html"><strong>Vesting Breaches</strong></a> &mdash; 610M WOZX schedule violations</li>
+        <li><a href="individuals/steve-wozniak.html"><strong>Steve Wozniak</strong></a> &mdash; 11% shareholder, &ldquo;shares of stock&rdquo;</li>
+        <li><a href="individuals/ken-hardesty.html"><strong>Ken Hardesty</strong></a> &mdash; 4% shareholder, MPI selector, wallet key holder</li>
+        <li><a href="individuals/jacopo-visetti.html"><strong>Jacopo Visetti</strong></a> &mdash; U.S. PI confirmation, extradition threat</li>
+        <li><a href="visetti-call.html"><strong>Visetti Call (Nov 18, 2023)</strong></a> &mdash; full investor identity disclosure</li>
+        <li><a href="entities/htx.html"><strong>HTX (HBTC)</strong></a> &mdash; listing exchange, no KYC enforcement</li>
+        <li><a href="class-action.html"><strong>Class Action</strong></a> &mdash; submit your claim</li>
+        <li><a href="legal-threats.html"><strong>Legal Threats</strong></a> &mdash; 34 letters, extradition threat</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#75161a07071016011c1a1b06351c1b031006011c1214011c1b121013131a0716105b161a18">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash;

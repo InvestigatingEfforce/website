@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sergio Carloni — Dual CEO of Efforce &amp; AitherCO2 — Investigating Efforce</title>
+  <meta name="description" content="Sergio Carloni: alleged CEO of both Efforce Ltd (Malta) and AitherCO2 S.p.A. (Italy). Dual role enabled €510 nominal transfer. Alleged U.S. private investor. Wallet key holder. €319.9M tax liability undisclosed.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .person-hero{display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);flex-wrap:wrap}
+    .person-hero__photo{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-red);flex-shrink:0}
+    .person-hero__info{flex:1;min-width:280px}
+    .person-hero__name{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-xs)}
+    .person-hero__role{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .person-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .person-meta__item{text-align:center}
+    .person-meta__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .person-meta__num--red{color:var(--accent-red)}
+    .person-meta__num--gold{color:var(--accent-gold)}
+    .person-meta__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul,.section-block ol{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .criminal-box{background:#fff5f5;border:1px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .criminal-box h3,.criminal-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .criminal-box p,.criminal-box li{font-size:var(--text-sm);line-height:1.7}
+    .civil-box{background:#fffdf0;border:1px solid var(--accent-gold);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .civil-box h3,.civil-box h4{color:#b8860b;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .civil-box p,.civil-box li{font-size:var(--text-sm);line-height:1.7}
+    .sec-box{background:#f0f4ff;border:1px solid #3b82f6;padding:var(--space-lg);margin:var(--space-lg) 0}
+    .sec-box h3,.sec-box h4{color:#1d4ed8;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .sec-box p,.sec-box li{font-size:var(--text-sm);line-height:1.7}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+    .evidence-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-sm)}
+    .evidence-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em}
+    .evidence-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top}
+    .evidence-table tr:hover{background:var(--grey-50)}
+    .dual-role-diagram{display:grid;grid-template-columns:1fr auto 1fr;gap:var(--space-md);align-items:center;padding:var(--space-xl);background:var(--grey-50);border:1px solid var(--grey-200);margin:var(--space-xl) 0;text-align:center}
+    .dual-role-diagram__entity{padding:var(--space-lg);border:2px solid var(--grey-300);background:var(--white)}
+    .dual-role-diagram__entity h4{font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-xs);color:var(--black)}
+    .dual-role-diagram__entity p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin:2px 0}
+    .dual-role-diagram__link{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--accent-red)}
+    .key-evidence{background:#fff5f5;border:2px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .key-evidence h4{color:var(--accent-red);font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .key-evidence p{font-size:var(--text-sm);line-height:1.7}
+    .key-evidence .quote{font-style:italic;font-size:var(--text-base);color:var(--black);margin:var(--space-sm) 0;padding:var(--space-sm) var(--space-md);border-left:3px solid var(--accent-red);background:rgba(255,255,255,.7)}
+    .key-evidence .attr{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .authority-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .authority-card{padding:var(--space-md);border:1px solid var(--grey-200);background:var(--white)}
+    .authority-card h5{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-xs);font-size:var(--text-sm)}
+    .authority-card p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin:2px 0}
+    .authority-card a{color:var(--accent-red);font-size:var(--text-xs)}
+    .evidence-figure{margin:var(--space-lg) 0;text-align:center}
+    .evidence-img{max-width:100%;border:2px solid var(--grey-200);cursor:zoom-in;transition:all var(--transition-fast)}
+    .evidence-img:hover{border-color:var(--accent-red)}
+    .evidence-figure figcaption{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);padding:var(--space-xs) 0}
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:95vw;max-height:95vh;object-fit:contain}
+    @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__photo{width:100px;height:100px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.dual-role-diagram{grid-template-columns:1fr;gap:var(--space-sm)}.authority-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#bcdfd3ceced9dfc8d5d3d2cffcd5d2cad9cfc8d5dbddc8d5d2dbd9dadad3cedfd992dfd3d1"><span class="__cf_email__" data-cfemail="a4c7cbd6d6c1c7d0cdcbcad7e4cdcad2c1d7d0cdc3c5d0cdcac3c1c2c2cbd6c7c18ac7cbc9">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav"><a href="steve-wozniak.html">Steve Wozniak</a><a href="jacopo-visetti.html">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html">Andrea Castiglione</a><a href="sergio-carloni.html" class="current">Sergio Carloni</a><a href="ken-hardesty.html">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html">Efforce Team</a></nav></div></section>
+
+  <section class="page-hero"><div class="container">
+    <div class="person-hero">
+      <img src="https://i.gyazo.com/de18c8b7abcd9627d24455d143376bd6.png" alt="Sergio Carloni" class="person-hero__photo">
+      <div class="person-hero__info">
+        <span class="overline">Individual Profile</span>
+        <h1 class="person-hero__name">Sergio Carloni</h1>
+        <div class="person-hero__role">Alleged Dual CEO &mdash; Efforce Ltd (Malta) &amp; AitherCO2 S.p.A. (Italy) / Board Member / Wallet Key Holder</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: public filings, Telegram, Etherscan, Nov 18, 2023 call, Jul 15, 2024 disclosure. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#3f5c504d4d5a5c4b5650514c7f5651495a4c4b56585e4b5651585a5959504d5c5a115c5052"><span class="__cf_email__" data-cfemail="c2a1adb0b0a7a1b6abadacb182abacb4a7b1b6aba5a3b6abaca5a7a4a4adb0a1a7eca1adaf">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="person-meta">
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">2</div><div class="person-meta__label">CEO Roles Simultaneously</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">&euro;319.9M</div><div class="person-meta__label">Undisclosed Tax Liability</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">&euro;510</div><div class="person-meta__label">Nominal Transfer Price</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">U.S. PI</div><div class="person-meta__label">Alleged Private Investor</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">3</div><div class="person-meta__label">Wallet Key Holders</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Rebuttals Received</div></div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="section-block" style="border-top:none;">
+      <p>Sergio Carloni was the alleged CEO of <strong>both Efforce Ltd (Malta) and AitherCO2 S.p.A. (Italy)</strong> simultaneously &mdash; the token-issuing company and its purported &ldquo;mother company.&rdquo; This dual role placed Carloni at the nexus of every major alleged failure: the concealment of AitherCO2&rsquo;s &euro;319.9M tax liability from token holders, the nominal &euro;510 transfer of a 42.5% stake (potentially worth &euro;600M+) to MBM Holdings AG, and direct control over the Efforce crypto wallet keys alongside Ken Hardesty and Jacopo Vanetti.</p>
+      <p>On the Nov 18, 2023 private call, Jacopo Visetti identified U.S.-based private investors as including <strong>&ldquo;One from NYC&hellip; Western US&rdquo;</strong> &mdash; a description that allegedly includes Carloni. If confirmed, this makes Carloni both the <strong>CEO who approved</strong> the private placement and one of the <strong>private investors who benefited</strong> from it &mdash; an extraordinary, undisclosed conflict of interest.</p>
+    </div>
+
+    <!-- DUAL ROLE DIAGRAM -->
+    <div class="dual-role-diagram">
+      <div class="dual-role-diagram__entity">
+        <h4>Efforce Ltd</h4>
+        <p>Malta &middot; C 95348</p>
+        <p>Token-issuing company</p>
+        <p>WOZX &middot; 1B tokens</p>
+        <p style="color:var(--accent-red);font-weight:700;">CEO: Sergio Carloni</p>
+      </div>
+      <div class="dual-role-diagram__link">&harr;</div>
+      <div class="dual-role-diagram__entity">
+        <h4>AitherCO2 S.p.A.</h4>
+        <p>Italy &middot; Padova</p>
+        <p>&ldquo;Mother company&rdquo;</p>
+        <p>&euro;319.9M tax liability</p>
+        <p style="color:var(--accent-red);font-weight:700;">CEO: Sergio Carloni</p>
+      </div>
+    </div>
+    <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);text-align:center;margin-top:calc(var(--space-sm)*-1);">No legal parent-subsidiary relationship existed between these entities despite public claims. Both allegedly led by Carloni.</p>
+
+    <!-- CRIMINAL CHARGES -->
+    <div class="criminal-box">
+      <h3>Alleged Criminal Charges</h3>
+
+      <h4>1. Fraud by False Representation</h4>
+      <p>Carloni allegedly made or oversaw false statements about AitherCO2&rsquo;s financial position while serving as CEO of both entities:</p>
+      <ul>
+        <li><strong>&ldquo;AitherCO2 turnover north of &euro;450M&rdquo;</strong> (Dec 15, 2021) &mdash; actual 2020 revenue was &euro;27.6M per Italian filings.</li>
+        <li><strong>&euro;319.9M tax liability undisclosed</strong> &mdash; notified to AitherCO2 in 2018, provisioned minimally, not disclosed to token holders until years later.</li>
+        <li><strong>Alleged U.S. private investor</strong> &mdash; Visetti (Nov 18, 2023): &ldquo;One from NYC&hellip; Western US.&rdquo;</li>
+        <li><strong>&euro;510 MBM transfer</strong> (Dec 15, 2020) &mdash; as dual CEO, Carloni would have had oversight of the transfer of a 42.5% stake worth potentially &euro;600M+ for a nominal sum.</li>
+      </ul>
+      <p><strong>Applicable laws:</strong> Italian Penal Code Art. 640 (up to 7 years), EU MAR Art. 12 (criminal in member states), U.S. 18 U.S.C. &sect; 1343 (wire fraud, up to 20 years).</p>
+
+      <h4>2. Breach of Fiduciary Duty</h4>
+      <p>As dual CEO, Carloni owed fiduciary duties to both entities and, by extension, to token holders who invested based on representations about AitherCO2&rsquo;s backing:</p>
+      <ul>
+        <li><strong>No segregation of roles</strong> &mdash; simultaneous CEO of the entity selling tokens and the entity whose financials were used to justify the sale.</li>
+        <li><strong>Wallet key control</strong> &mdash; Visetti (Jul 15, 2024): &ldquo;Wallet keys: Carloni, Hardesty, Vanetti.&rdquo; Direct control over treasury containing hundreds of millions in token value.</li>
+        <li><strong>&euro;510 MBM transfer</strong> &mdash; oversaw or permitted a stake transfer that potentially stripped &euro;600M+ in value with no disclosure.</li>
+      </ul>
+      <p><strong>Applicable laws:</strong> Italian Civil Code Art. 2391 (director conflicts of interest), Malta Companies Act.</p>
+
+      <h4>3. Alleged Aiding Non-Compliance with Financial Reporting</h4>
+      <p>As CEO of AitherCO2, Carloni bore direct responsibility for the company&rsquo;s financial disclosures. As CEO of Efforce, he bore responsibility for ensuring representations about AitherCO2 were accurate. The &euro;319.9M tax liability was not disclosed in any Efforce communication, whitepaper, or community statement.</p>
+      <p><strong>Applicable laws:</strong> Malta Companies Act Art. 182, EU Transparency Directive, Italian financial reporting requirements.</p>
+    </div>
+
+    <!-- SEC LIABILITY -->
+    <div class="sec-box">
+      <h3>Alleged SEC Liability (U.S.)</h3>
+      <p>If Carloni is confirmed as a U.S.-based private investor (as alleged by Visetti&rsquo;s &ldquo;One from NYC&hellip; Western US&rdquo; description), U.S. securities jurisdiction is directly engaged:</p>
+      <ul>
+        <li><strong>Howey Test</strong> &mdash; WOZX was marketed as an investment in Efforce&rsquo;s energy efficiency platform with expected returns, satisfying the SEC&rsquo;s security definition.</li>
+        <li><strong>Rule 10b-5</strong> &mdash; alleged material omissions (AitherCO2 insolvency, true PI identity, vesting breaches) in connection with the purchase/sale of securities.</li>
+        <li><strong>Section 5 (Securities Act 1933)</strong> &mdash; unregistered offering of securities to U.S. investors, despite the whitepaper explicitly prohibiting U.S. participation.</li>
+        <li><strong>Insider trading</strong> &mdash; if Carloni traded WOZX while in possession of material non-public information about AitherCO2&rsquo;s financial distress.</li>
+      </ul>
+      <p><strong>Relevance:</strong> A dual CEO who is also an undisclosed private investor represents one of the most fundamental conflicts of interest in securities law. The SEC has historically pursued such cases aggressively &mdash; see <em>SEC v. Cuban</em> (2013), <em>SEC v. Ripple Labs</em> (2023).</p>
+    </div>
+
+    <!-- KEY EVIDENCE -->
+    <div class="section-block" id="evidence">
+      <h3>Key Evidence</h3>
+
+      <div class="key-evidence">
+        <h4>Nov 18, 2023 &mdash; U.S. Private Investor Identification</h4>
+        <div class="quote">&ldquo;One from NYC&hellip; Western US.&rdquo;</div>
+        <p class="attr">&mdash; Jacopo Visetti, private call with Michael Copley, Nov 18, 2023</p>
+        <p>Visetti identified U.S.-based individuals among the private investors during the recorded call. This description is alleged to include Carloni, who held a U.S. base. If confirmed, Carloni was simultaneously the CEO approving the private placement and an investor purchasing tokens at the discounted private sale price of $0.06&ndash;$0.08, while the public launch price reached $2.00+.</p>
+        <p><a href="../visetti-call.html">Full Visetti Call Analysis &rarr;</a></p>
+      </div>
+
+      <div class="key-evidence">
+        <h4>Jul 15, 2024 &mdash; Wallet Key Disclosure</h4>
+        <div class="quote">&ldquo;Wallet keys: Carloni, Hardesty, Vanetti.&rdquo;</div>
+        <p class="attr">&mdash; Jacopo Visetti, Jul 15, 2024</p>
+        <p>Visetti confirmed that the Efforce crypto wallet &mdash; controlling the 550M WOZX treasury (valued at tens of millions at peak prices) &mdash; required keys held by three individuals: Sergio Carloni, Ken Hardesty, and Jacopo Vanetti. This places Carloni in direct control of the treasury from which $68M+ in unexplained transfers allegedly occurred.</p>
+      </div>
+
+      <div class="key-evidence">
+        <h4>Dec 15, 2021 &mdash; AitherCO2 Revenue Misrepresentation</h4>
+        <div class="quote">&ldquo;AitherCO2 turnover north of &euro;450M.&rdquo;</div>
+        <p class="attr">&mdash; Attributed to Efforce leadership, Dec 15, 2021</p>
+        <p>Italian chamber of commerce filings show AitherCO2&rsquo;s actual 2020 revenue was <strong>&euro;27.6M</strong> &mdash; a factor of 16x below the claimed figure. As CEO of both entities, Carloni would have had direct knowledge of the true financial position.</p>
+        <p><a href="../entities/aitherco2.html">Full AitherCO2 Entity Profile &rarr;</a></p>
+      </div>
+
+      <div class="key-evidence">
+        <h4>Dec 15, 2020 &mdash; &euro;510 Nominal Transfer</h4>
+        <div class="quote">AitherCO2&rsquo;s 42.5% stake in Efforce Ltd transferred to MBM Holdings AG for &euro;510.</div>
+        <p class="attr">&mdash; Malta Business Registry / SHAB filings</p>
+        <p>The 42.5% stake &mdash; potentially worth &euro;600M+ based on the Dec 2020 WOZX treasury valuation &mdash; was transferred to a Swiss shell company for a nominal sum. As CEO of both the transferor (AitherCO2) and the entity whose stake was transferred (Efforce), Carloni was uniquely positioned to approve or prevent this transaction. Token holders were not informed.</p>
+        <p><a href="../entities/mbm-holding.html">Full MBM Holding Profile &rarr;</a></p>
+      </div>
+
+      <figure class="evidence-figure">
+        <img src="https://i.gyazo.com/de18c8b7abcd9627d24455d143376bd6.png" loading="lazy" alt="Sergio Carloni" class="evidence-img">
+        <figcaption>Sergio Carloni &mdash; alleged dual CEO of Efforce Ltd (Malta) and AitherCO2 S.p.A. (Italy)</figcaption>
+      </figure>
+    </div>
+
+    <!-- KEY QUOTES TABLE -->
+    <div class="section-block" id="quotes">
+      <h3>Key Quotes &amp; Statements</h3>
+      <div style="overflow-x:auto;">
+        <table class="evidence-table">
+          <thead>
+            <tr><th>Date</th><th>Source</th><th>Quote / Event</th><th>Alleged Legal Exposure</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 15, 2021</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Public</td>
+              <td>&ldquo;AitherCO2 turnover north of &euro;450M.&rdquo;</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Fraud by False Representation</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Nov 18, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private call</td>
+              <td>&ldquo;One from NYC&hellip; Western US.&rdquo; &mdash; Visetti identifying alleged U.S. PIs including Carloni</td>
+              <td><span style="background:#f0f4ff;color:#1d4ed8;padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid #3b82f6;">SEC Jurisdiction</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Jul 15, 2024</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Visetti</td>
+              <td>&ldquo;Wallet keys: Carloni, Hardesty, Vanetti.&rdquo;</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Treasury Control</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 15, 2020</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Malta Registry</td>
+              <td>&euro;510 MBM transfer &mdash; 42.5% stake (worth &euro;600M+) for nominal sum</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Asset Stripping / Fraud</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">2018&ndash;2024</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Italian filings</td>
+              <td>&euro;319.9M AitherCO2 tax liability never disclosed to Efforce token holders</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Non-Disclosure / Tax Fraud</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CONFLICT OF INTEREST ANALYSIS -->
+    <div class="section-block">
+      <h3>The Conflict of Interest</h3>
+      <p>Carloni&rsquo;s alleged dual role creates a web of conflicts that, if proven, would represent one of the most egregious governance failures in the crypto space:</p>
+      <ul>
+        <li><strong>As CEO of Efforce:</strong> responsible for ensuring token holders received accurate information about the company&rsquo;s backing, including AitherCO2&rsquo;s financial health.</li>
+        <li><strong>As CEO of AitherCO2:</strong> had direct knowledge of the &euro;319.9M tax liability that undermined every claim of &ldquo;&euro;250&ndash;450M revenue&rdquo; made to token holders.</li>
+        <li><strong>As alleged private investor:</strong> purchased tokens at $0.06&ndash;$0.08 while the public paid $0.50&ndash;$3.00+, with full knowledge of the undisclosed risks.</li>
+        <li><strong>As wallet key holder:</strong> had direct ability to approve or block treasury transfers, including the $68M+ in unexplained movements.</li>
+        <li><strong>As entity setup advisor:</strong> likely involved in the structuring of both Malta and Bahamas entities, as well as the MBM Holdings shell arrangement.</li>
+      </ul>
+      <p>No disclosure of any of these overlapping roles was ever made to token holders.</p>
+    </div>
+
+    <!-- REPORT TO AUTHORITIES -->
+    <div class="section-block" id="report">
+      <h3>Report to Authorities</h3>
+      <div class="authority-grid">
+        <div class="authority-card">
+          <h5>SEC (United States)</h5>
+          <p>Securities fraud, unregistered offering</p>
+          <a href="https://www.sec.gov/tcr" target="_blank" rel="noopener">sec.gov/tcr &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>FINMA (Switzerland)</h5>
+          <p>MBM Holdings AG shell company</p>
+          <a href="https://www.finma.ch/en/contact/" target="_blank" rel="noopener">finma.ch &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>MFSA (Malta)</h5>
+          <p>VFA Act violations, Efforce Ltd</p>
+          <a href="https://www.mfsa.mt/contact-us/" target="_blank" rel="noopener">mfsa.mt &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>CONSOB (Italy)</h5>
+          <p>Market abuse, AitherCO2</p>
+          <a href="https://www.consob.it/web/area-pubblica/segnalazioni" target="_blank" rel="noopener">consob.it &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>Agenzia delle Entrate</h5>
+          <p>Tax evasion &mdash; &euro;319.9M</p>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Italian revenue agency</p>
+        </div>
+        <div class="authority-card">
+          <h5>Guardia di Finanza</h5>
+          <p>&euro;319.9M tax fraud investigation</p>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);">Italian financial police</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>Sergio Carloni&rsquo;s alleged simultaneous role as CEO of both entities &mdash; the token issuer and the financially distressed &ldquo;mother company&rdquo; &mdash; placed him at the centre of every major allegation: the <strong>&euro;319.9M tax concealment</strong>, the <strong>&euro;510 nominal stake transfer</strong>, the <strong>misrepresentation of AitherCO2 as a &euro;450M+ revenue company</strong>, and <strong>direct control of the crypto wallet</strong> from which $68M+ vanished. If his role as a U.S.-based private investor is confirmed, it would add undisclosed self-dealing to the list &mdash; a CEO purchasing his own company&rsquo;s tokens at insider prices while the public paid 30&ndash;50x more based on his company&rsquo;s false representations. All allegations remain <strong>entirely unrebutted</strong>.</p>
+    </div>
+
+    <!-- CROSS-REFERENCES -->
+    <div class="section-block">
+      <h3>Related Profiles &amp; Evidence</h3>
+      <ul>
+        <li><a href="../entities/aitherco2.html"><strong>AitherCO2 S.p.A.</strong></a> &mdash; &euro;319.9M tax liability, Carloni as CEO</li>
+        <li><a href="../entities/efforce-malta.html"><strong>Efforce Ltd (Malta)</strong></a> &mdash; token-issuing entity, Carloni as CEO</li>
+        <li><a href="../entities/mbm-holding.html"><strong>MBM Holdings AG</strong></a> &mdash; Swiss shell, &euro;510 transfer recipient</li>
+        <li><a href="ken-hardesty.html"><strong>Ken Hardesty</strong></a> &mdash; co-wallet key holder</li>
+        <li><a href="jacopo-vanetti.html"><strong>Jacopo Vanetti</strong></a> &mdash; co-wallet key holder, 40% shareholder</li>
+        <li><a href="../visetti-call.html"><strong>Visetti Call (Nov 18, 2023)</strong></a> &mdash; U.S. PI identification, wallet key disclosure</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="../individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  
+    <!-- Evidence Screenshot Gallery -->
+    <section class="section" style="padding: 3rem 0;">
+      <div class="container">
+        <h2 style="color: var(--red); margin-bottom: 0.5rem;">Key Evidence Screenshots</h2>
+        <p style="color: var(--grey); margin-bottom: 2rem; font-size: 0.95rem;">
+          Sourced from public records, company communications, and blockchain data. Click any image to enlarge.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/de18c8b7abcd9627d24455d143376bd6.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/de18c8b7abcd9627d24455d143376bd6.png" loading="lazy" alt="Carloni — Dual CEO Role: Efforce & AitherCO2" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Carloni — Dual CEO Role: Efforce & AitherCO2</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/9959d26fec4528042241993b97e5074c.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/9959d26fec4528042241993b97e5074c.png" loading="lazy" alt="Carloni Discord @Sergio64" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Carloni Discord @Sergio64</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/315b9191475d5241b0fa195842549bcc.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/315b9191475d5241b0fa195842549bcc.png" loading="lazy" alt="Carloni Present at GDAC 2020 — SEELE ties" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Carloni Present at GDAC 2020 — SEELE ties</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/e5cd8d667a6fcc7f1543e5f09a566f2a.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/e5cd8d667a6fcc7f1543e5f09a566f2a.png" loading="lazy" alt="Carloni oversaw €510 MBM Transfer" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Carloni oversaw €510 MBM Transfer</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/922c15a4487a3812ea681b62892ca32d.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/922c15a4487a3812ea681b62892ca32d.png" loading="lazy" alt="No Disclosure of €319.9M Tax Bomb during his tenure" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">No Disclosure of €319.9M Tax Bomb during his tenure</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#72111d00001711061b1d1c01321b1c041701061b1513061b1c151714141d0011175c111d1f">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#a4c7cbd6d6c1c7d0cdcbcad7e4cdcad2c1d7d0cdc3c5d0cdcac3c1c2c2cbd6c7c18ac7cbc9"><span class="__cf_email__" data-cfemail="43202c31312620372a2c2d30032a2d352630372a2422372a2d242625252c3120266d202c2e">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></fo

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ken Hardesty — MPI Selection &amp; U.S. Private Investor — Investigating Efforce</title>
+  <meta name="description" content="Ken Hardesty: 4% shareholder, Efforce board member, CEO in Residence at Gerbsman Partners. Allegedly selected the Main Private Investor who dumped $283M. Wallet key holder. Alleged U.S. PI. Extradition threat (Dec 2024).">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .person-hero{display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);flex-wrap:wrap}
+    .person-hero__photo{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-red);flex-shrink:0}
+    .person-hero__info{flex:1;min-width:280px}
+    .person-hero__name{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-xs)}
+    .person-hero__role{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .person-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .person-meta__item{text-align:center}
+    .person-meta__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .person-meta__num--red{color:var(--accent-red)}
+    .person-meta__num--gold{color:var(--accent-gold)}
+    .person-meta__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .criminal-box{background:#fff5f5;border:1px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .criminal-box h3,.criminal-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .criminal-box p,.criminal-box li{font-size:var(--text-sm);line-height:1.7}
+    .sec-box{background:#f0f4ff;border:1px solid #3b82f6;padding:var(--space-lg);margin:var(--space-lg) 0}
+    .sec-box h3{color:#1d4ed8;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .sec-box p,.sec-box li{font-size:var(--text-sm);line-height:1.7}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+    .evidence-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-sm)}
+    .evidence-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em}
+    .evidence-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top}
+    .evidence-table tr:hover{background:var(--grey-50)}
+    .bombshell{background:#fff5f5;border:2px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .bombshell h4{color:var(--accent-red);font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-sm);font-size:var(--text-lg)}
+    .bombshell .quote{font-style:italic;font-size:var(--text-base);color:var(--black);margin:var(--space-sm) 0;padding:var(--space-sm) var(--space-md);border-left:3px solid var(--accent-red);background:rgba(255,255,255,.7)}
+    .bombshell .attr{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .bombshell p{font-size:var(--text-sm);line-height:1.7;margin:var(--space-sm) 0}
+    .speculative-box{background:#fff8e1;border:1px solid #ffc107;padding:var(--space-lg);margin:var(--space-lg) 0}
+    .speculative-box h4{color:#856404;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .speculative-box p,.speculative-box li{font-size:var(--text-sm);line-height:1.7}
+    .threat-box{background:#fdf2f2;border:2px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0;position:relative}
+    .threat-box::before{content:'⚠';position:absolute;top:-14px;left:16px;background:var(--white);padding:0 8px;font-size:var(--text-xl)}
+    .threat-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-sm)}
+    .threat-box .quote{font-style:italic;font-size:var(--text-base);color:var(--black);margin:var(--space-sm) 0;padding:var(--space-sm) var(--space-md);border-left:3px solid var(--accent-red);background:rgba(255,255,255,.7)}
+    .threat-box p{font-size:var(--text-sm);line-height:1.7;margin:var(--space-sm) 0}
+    .role-chain{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-md);margin:var(--space-xl) 0}
+    .role-chain__card{padding:var(--space-lg);border:1px solid var(--grey-200);text-align:center}
+    .role-chain__card h5{font-family:var(--font-display);font-weight:900;font-size:var(--text-sm);margin-bottom:var(--space-xs)}
+    .role-chain__card p{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin:2px 0}
+    .role-chain__card--highlight{border-color:var(--accent-red);background:#fff5f5}
+    .role-chain__card--highlight h5{color:var(--accent-red)}
+    .evidence-figure{margin:var(--space-lg) 0;text-align:center}
+    .evidence-img{max-width:100%;border:2px solid var(--grey-200);cursor:zoom-in;transition:all var(--transition-fast)}
+    .evidence-img:hover{border-color:var(--accent-red)}
+    .evidence-figure figcaption{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);padding:var(--space-xs) 0}
+    .authority-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .authority-card{padding:var(--space-md);border:1px solid var(--grey-200);background:var(--white)}
+    .authority-card h5{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-xs);font-size:var(--text-sm)}
+    .authority-card p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin:2px 0}
+    .authority-card a{color:var(--accent-red);font-size:var(--text-xs)}
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:95vw;max-height:95vh;object-fit:contain}
+    @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__photo{width:100px;height:100px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.role-chain{grid-template-columns:1fr 1fr}.authority-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#ccafa3bebea9afb8a5a3a2bf8ca5a2baa9bfb8a5abadb8a5a2aba9aaaaa3beafa9e2afa3a1"><span class="__cf_email__" data-cfemail="d2b1bda0a0b7b1a6bbbdbca192bbbca4b7a1a6bbb5b3a6bbbcb5b7b4b4bda0b1b7fcb1bdbf">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav"><a href="steve-wozniak.html">Steve Wozniak</a><a href="jacopo-visetti.html">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html">Andrea Castiglione</a><a href="sergio-carloni.html">Sergio Carloni</a><a href="ken-hardesty.html" class="current">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html">Efforce Team</a></nav></div></section>
+
+  <section class="page-hero"><div class="container">
+    <div class="person-hero">
+      <img src="https://i.gyazo.com/1ab7105c624473d75dcb9964a9d99243.png" alt="Ken Hardesty" class="person-hero__photo">
+      <div class="person-hero__info">
+        <span class="overline">Individual Profile</span>
+        <h1 class="person-hero__name">Ken Hardesty</h1>
+        <div class="person-hero__role">4% Shareholder / Board Member / CEO in Residence at Gerbsman Partners / Alleged MPI Selector / Wallet Key Holder</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: public Gerbsman blog, Telegram, Etherscan, Nov 18, 2023 call, Dec 2024 text. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#b2d1ddc0c0d7d1c6dbdddcc1f2dbdcc4d7c1c6dbd5d3c6dbdcd5d7d4d4ddc0d1d79cd1dddf"><span class="__cf_email__" data-cfemail="43202c31312620372a2c2d30032a2d352630372a2422372a2d242625252c3120266d202c2e">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="person-meta">
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">4%</div><div class="person-meta__label">Ownership Stake</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">$283M</div><div class="person-meta__label">MPI Dump He Allegedly Sourced</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">U.S.</div><div class="person-meta__label">Alleged Private Investor</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">3</div><div class="person-meta__label">Wallet Key Holders</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">CA</div><div class="person-meta__label">California, U.S.</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Rebuttals Received</div></div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="section-block" style="border-top:none;">
+      <p>Ken Hardesty is a <strong>California-based U.S. citizen</strong>, 4% shareholder and board member of Efforce, and CEO in Residence at <strong>Gerbsman Partners</strong>. According to Jacopo Visetti on the Nov 18, 2023 call, Hardesty was the person who <strong>&ldquo;found the private investor&rdquo;</strong> &mdash; the Main Private Investor (MPI) who received 450M WOZX and subsequently dumped 186.6M tokens for approximately <strong>$283M in profit</strong>, while retail investors lost everything.</p>
+      <p>Hardesty is also one of three individuals who held the <strong>Efforce crypto wallet keys</strong> (alongside Sergio Carloni and Jacopo Vanetti), giving him direct control over the 550M WOZX treasury. He is alleged to be one of the U.S.-based private investors referenced by Visetti as &ldquo;One from NYC&hellip; Western US.&rdquo;</p>
+      <p>His California residency and U.S. citizenship place him directly within <strong>SEC and DOJ jurisdiction</strong> &mdash; the most aggressive enforcement regime for securities fraud globally.</p>
+    </div>
+
+    <!-- ROLE CHAIN -->
+    <div class="section-block">
+      <h3>The Chain of Responsibility</h3>
+      <p>Hardesty&rsquo;s multiple overlapping roles create a direct chain from MPI selection to the $283M dump:</p>
+      <div class="role-chain">
+        <div class="role-chain__card role-chain__card--highlight">
+          <h5>MPI Selector</h5>
+          <p>&ldquo;Ken Hardesty&hellip; found the private investor&rdquo;</p>
+          <p>Visetti, Nov 18, 2023</p>
+        </div>
+        <div class="role-chain__card">
+          <h5>Board Member</h5>
+          <p>Oversight of private placement terms, vesting, disclosure</p>
+        </div>
+        <div class="role-chain__card">
+          <h5>4% Shareholder</h5>
+          <p>Direct financial interest in token price and operations</p>
+        </div>
+        <div class="role-chain__card role-chain__card--highlight">
+          <h5>Wallet Key Holder</h5>
+          <p>&ldquo;Carloni, Hardesty, Vanetti&rdquo;</p>
+          <p>Visetti, Jul 15, 2024</p>
+        </div>
+        <div class="role-chain__card">
+          <h5>Alleged U.S. PI</h5>
+          <p>&ldquo;One from NYC&hellip; Western US&rdquo;</p>
+          <p>California-based</p>
+        </div>
+        <div class="role-chain__card">
+          <h5>Gerbsman Partners</h5>
+          <p>CEO in Residence</p>
+          <p>Dubai event promotion (Dec 2021)</p>
+        </div>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);text-align:center;">The person who sourced the MPI also sat on the board that oversaw the placement, held the wallet keys that controlled the treasury, and may have been a private investor himself.</p>
+    </div>
+
+    <!-- KEY EVIDENCE -->
+    <div class="section-block" id="evidence">
+      <h3>Key Evidence</h3>
+
+      <div class="bombshell">
+        <h4>&ldquo;Ken Hardesty&hellip; Found the Private Investor&rdquo;</h4>
+        <div class="quote">&ldquo;Ken Hardesty&hellip; found the private investor.&rdquo;</div>
+        <p class="attr">&mdash; Jacopo Visetti, private call with Michael Copley, Nov 18, 2023</p>
+        <p><strong>Why this matters:</strong> The Main Private Investor (MPI) received the entire 450M WOZX private sale allocation &mdash; not the &ldquo;Asia-based cornerstone institutional investors&rdquo; described to the public. The MPI was a single U.S.-based entity that sold 186.6M WOZX for approximately $283M in profit. Hardesty allegedly sourced this investor. If the MPI was selected without proper due diligence, or if Hardesty had a financial relationship with the MPI, this constitutes a fundamental breach of fiduciary duty.</p>
+        <p><a href="../visetti-call.html">Full Visetti Call Analysis &rarr;</a></p>
+      </div>
+
+      <div class="bombshell">
+        <h4>Wallet Key Control</h4>
+        <div class="quote">&ldquo;Wallet keys: Carloni, Hardesty, Vanetti.&rdquo;</div>
+        <p class="attr">&mdash; Jacopo Visetti, Jul 15, 2024</p>
+        <p>Hardesty was one of three individuals controlling the Efforce 550M WOZX treasury wallet. This wallet is the source of $68M+ in unexplained transfers (173.3M WOZX moved without disclosure). As a wallet key holder, Hardesty had direct ability to approve or block every treasury transaction.</p>
+      </div>
+
+      <div class="bombshell">
+        <h4>U.S. Private Investor Identification</h4>
+        <div class="quote">&ldquo;One from NYC&hellip; Western US.&rdquo;</div>
+        <p class="attr">&mdash; Jacopo Visetti, Nov 18, 2023 (identifying U.S.-based private investors)</p>
+        <p>Hardesty&rsquo;s California base matches the &ldquo;Western US&rdquo; description. If confirmed as a private investor, Hardesty was simultaneously the person who sourced the MPI, a board member overseeing the placement, a wallet key holder controlling the treasury, and a private investor purchasing tokens at insider prices of $0.06&ndash;$0.08 &mdash; while the public paid $0.50&ndash;$3.00+.</p>
+      </div>
+
+      <figure class="evidence-figure">
+        <img src="https://i.gyazo.com/1ab7105c624473d75dcb9964a9d99243.png" loading="lazy" alt="Ken Hardesty" class="evidence-img">
+        <figcaption>Ken Hardesty &mdash; CEO in Residence at Gerbsman Partners, Efforce board member, alleged MPI selector</figcaption>
+      </figure>
+    </div>
+
+    <!-- CRIMINAL CHARGES -->
+    <div class="criminal-box">
+      <h3>Alleged Criminal Charges</h3>
+
+      <h4>1. Alleged Securities Fraud (SEC Rule 10b-5)</h4>
+      <p>Hardesty allegedly selected the MPI without adequate due diligence, failed to disclose material facts about the private placement, and benefited from insider knowledge:</p>
+      <ul>
+        <li><strong>MPI $283M dump</strong> &mdash; 186.6M WOZX sold by the investor Hardesty allegedly sourced (completed Oct 29, 2021).</li>
+        <li><strong>Non-disclosure of vesting breaches</strong> &mdash; 55.3M WOZX released ahead of published schedule while Hardesty served on the board.</li>
+        <li><strong>Alleged U.S. private investor</strong> &mdash; &ldquo;One from NYC&hellip; Western US&rdquo; (Visetti, Nov 18, 2023).</li>
+        <li><strong>MPI selection</strong> &mdash; &ldquo;Ken Hardesty&hellip; found the private investor&rdquo; (Visetti, Nov 18, 2023).</li>
+      </ul>
+      <p><strong>Applicable laws:</strong> U.S. 18 U.S.C. &sect; 1343 (wire fraud, up to 20 years), SEC Rule 10b-5 (fraud in connection with securities), Section 20(a) (control person liability).</p>
+
+      <h4>2. Alleged Breach of Fiduciary Duty</h4>
+      <p>As a 4% shareholder and board member, Hardesty owed fiduciary duties to token holders:</p>
+      <ul>
+        <li><strong>Wallet key control</strong> &mdash; direct ability to approve/block treasury transfers including the $68M+ unaccounted movements.</li>
+        <li><strong>Board oversight failure</strong> &mdash; served on the Efforce board during the entire period of private investor misconduct and failed to intervene.</li>
+        <li><strong>Gerbsman Dubai promotion</strong> (Dec 6, 2021) &mdash; Gerbsman Partners blog showcased an Efforce/Wozniak event as a firm initiative, potentially using the Gerbsman brand to legitimise the project.</li>
+      </ul>
+      <p><strong>Applicable laws:</strong> Delaware &sect; 144 (if applicable), California Corporations Code &sect; 25402 (insider trading / material non-public information), Malta Companies Act.</p>
+    </div>
+
+    <!-- SEC LIABILITY -->
+    <div class="sec-box">
+      <h3>Alleged SEC Liability (U.S.)</h3>
+      <p>Hardesty is the most directly exposed individual to U.S. securities enforcement due to his <strong>California residency and U.S. citizenship</strong>:</p>
+      <ul>
+        <li><strong>Howey Test</strong> &mdash; WOZX marketed as investment in Efforce&rsquo;s energy efficiency platform with expected returns.</li>
+        <li><strong>Rule 10b-5</strong> &mdash; material omissions (true MPI identity, vesting breaches, treasury movements) in connection with securities.</li>
+        <li><strong>Section 5 (Securities Act 1933)</strong> &mdash; involvement in unregistered offering of securities to U.S. investors, despite whitepaper prohibition.</li>
+        <li><strong>Section 20(a) (Exchange Act)</strong> &mdash; control person liability as board member and wallet key holder.</li>
+      </ul>
+      <p><strong>Key factor:</strong> Unlike other Efforce principals based in Italy, Malta, or Switzerland, Hardesty is a <strong>U.S. citizen on U.S. soil</strong>. The SEC, DOJ, FINRA, and California DFPI all have direct, unambiguous jurisdiction. No extradition or international cooperation is required.</p>
+    </div>
+
+    <!-- EXTRADITION THREAT -->
+    <div class="threat-box">
+      <h4>Alleged Extradition Threat (December 2024)</h4>
+      <div class="quote">&ldquo;One of the US shareholders is seeking your extradition to NY for defamation and conspiracy to defamation.&rdquo;</div>
+      <p class="attr">&mdash; Jacopo Visetti, text message, December 2024</p>
+      <p>This threat, relayed by Visetti, is notable for several reasons:</p>
+      <ul>
+        <li>It references a <strong>&ldquo;US shareholder&rdquo;</strong> seeking legal action &mdash; further confirming U.S.-based individuals among the Efforce shareholders.</li>
+        <li><strong>Extradition for civil defamation is not a legal remedy</strong> available in any jurisdiction &mdash; suggesting the threat was designed to intimidate rather than pursue legitimate legal recourse.</li>
+        <li>The threat was directed at a person investigating alleged fraud &mdash; a pattern consistent with the <a href="../legal-threats.html">34 legal threat letters</a> documented elsewhere on this site.</li>
+        <li>If the &ldquo;US shareholder&rdquo; referenced is Hardesty, it demonstrates active engagement in suppressing the investigation rather than addressing the allegations.</li>
+      </ul>
+      <p><a href="../legal-threats.html">Full Legal Threats Analysis &rarr;</a></p>
+    </div>
+
+    <!-- SPECULATIVE GERBSMAN LINKS -->
+    <div class="speculative-box">
+      <h4>Speculative Gerbsman Partners Links &mdash; To Be Explored via Legal Discovery</h4>
+      <p><strong>Important:</strong> The following connections are <strong>speculative</strong> and are noted for the purpose of future legal discovery. No direct evidence currently confirms Gerbsman Partners as the MPI or as a formal Efforce advisor.</p>
+      <ul>
+        <li><strong>MPI Selection:</strong> Hardesty, as CEO in Residence at Gerbsman Partners, allegedly sourced the U.S.-based MPI (Visetti, Nov 18, 2023). Whether the MPI was sourced through Gerbsman&rsquo;s network is unknown.</li>
+        <li><strong>Dubai Promotion:</strong> Gerbsman Partners&rsquo; blog promoted an Efforce/Wozniak event in Dubai (Dec 6, 2021), presenting Hardesty alongside the &ldquo;CEO of Dubai Stock Exchange and Steve Wozniak&rdquo; as a firm initiative.</li>
+        <li><strong>MPI Identity:</strong> Whether Gerbsman Partners or an affiliate entity is the MPI remains speculative. Legal discovery could clarify this through subpoena of Gerbsman&rsquo;s financial records and Efforce&rsquo;s private placement documentation.</li>
+      </ul>
+      <p>These questions are appropriate subjects for SEC investigation, DOJ inquiry, or civil discovery in the pending California lawsuit (25CV459519).</p>
+    </div>
+
+    <!-- KEY QUOTES TABLE -->
+    <div class="section-block" id="quotes">
+      <h3>All Key Quotes &amp; Statements</h3>
+      <div style="overflow-x:auto;">
+        <table class="evidence-table">
+          <thead>
+            <tr><th>Date</th><th>Source</th><th>Quote</th><th>Legal Tag</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 6, 2021</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Gerbsman blog</td>
+              <td>&ldquo;Ken Hardesty&hellip; with CEO of Dubai Stock Exchange and Steve Wozniak.&rdquo;</td>
+              <td><span style="background:#fffdf0;color:#b8860b;padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-gold);">Promotion</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Nov 15, 2022</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Pastore</td>
+              <td>&ldquo;Pumped and dumped by private investors.&rdquo;</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Securities Fraud</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Nov 18, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Visetti call</td>
+              <td><strong>&ldquo;Ken Hardesty&hellip; found the private investor.&rdquo;</strong></td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">MPI Selection</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Nov 18, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Visetti call</td>
+              <td>&ldquo;One from NYC&hellip; Western US.&rdquo;</td>
+              <td><span style="background:#f0f4ff;color:#1d4ed8;padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid #3b82f6;">SEC Jurisdiction</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Jul 15, 2024</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Visetti</td>
+              <td>&ldquo;Wallet keys: Carloni, Hardesty, Vanetti.&rdquo;</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Treasury Control</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 2024</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Visetti text</td>
+              <td>&ldquo;One of the US shareholders is seeking your extradition to NY for defamation.&rdquo;</td>
+              <td><span style="background:#fdf2f2;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Intimidation</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- REPORT TO AUTHORITIES -->
+    <div class="section-block" id="report">
+      <h3>Report to Authorities</h3>
+      <div class="authority-grid">
+        <div class="authority-card">
+          <h5>SEC (United States)</h5>
+          <p>Securities fraud, material omissions, control person liability</p>
+          <a href="https://www.sec.gov/tcr" target="_blank" rel="noopener">sec.gov/tcr &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>FINRA (United States)</h5>
+          <p>Broker/dealer misconduct</p>
+          <a href="https://www.finra.org/investors/need-help/file-a-complaint" target="_blank" rel="noopener">finra.org &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>California DFPI</h5>
+          <p>State securities violations</p>
+          <a href="https://dfpi.ca.gov/file-a-complaint/" target="_blank" rel="noopener">dfpi.ca.gov &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>DOJ (United States)</h5>
+          <p>Wire fraud, pump &amp; dump</p>
+          <a href="https://www.justice.gov/criminal-fraud/report-fraud" target="_blank" rel="noopener">justice.gov &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>Ken Hardesty occupies a unique position in the Efforce case: the <strong>California-based U.S. citizen</strong> who allegedly sourced the very investor that dumped $283M on retail token holders. As MPI selector, board member, wallet key holder, and alleged private investor, his overlapping roles created conflicts of interest that were never disclosed. His U.S. residency means <strong>no extradition is required</strong> for SEC, DOJ, FINRA, or California DFPI enforcement &mdash; the most aggressive securities regulators in the world have direct, unambiguous jurisdiction. The December 2024 extradition threat &mdash; a legally impossible remedy for civil defamation &mdash; suggests a preference for intimidation over addressing the substance of these allegations. All claims remain <strong>entirely unrebutted</strong>.</p>
+    </div>
+
+    <!-- CROSS-REFERENCES -->
+    <div class="section-block">
+      <h3>Related Profiles &amp; Evidence</h3>
+      <ul>
+        <li><a href="sergio-carloni.html"><strong>Sergio Carloni</strong></a> &mdash; co-wallet key holder, dual CEO</li>
+        <li><a href="jacopo-vanetti.html"><strong>Jacopo Vanetti</strong></a> &mdash; co-wallet key holder, 40% shareholder</li>
+        <li><a href="paolo-pastore.html"><strong>Paolo Pastore</strong></a> &mdash; &ldquo;Pumped and dumped by private investors&rdquo;</li>
+        <li><a href="../visetti-call.html"><strong>Visetti Call (Nov 18, 2023)</strong></a> &mdash; MPI identification, U.S. PI, key disclosure</li>
+        <li><a href="../legal-threats.html"><strong>Legal Threats</strong></a> &mdash; 34 letters including extradition threat</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="../individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  
+    <!-- Evidence Screenshot Gallery -->
+    <section class="section" style="padding: 3rem 0;">
+      <div class="container">
+        <h2 style="color: var(--red); margin-bottom: 0.5rem;">Key Evidence Screenshots</h2>
+        <p style="color: var(--grey); margin-bottom: 2rem; font-size: 0.95rem;">
+          Sourced from public records, company communications, and blockchain data. Click any image to enlarge.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/1ab7105c624473d75dcb9964a9d99243.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/1ab7105c624473d75dcb9964a9d99243.png" loading="lazy" alt="Hardesty — Role at Gerbsman Partners" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Hardesty — Role at Gerbsman Partners</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/f1bdc40f799679575375574310f72784.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/f1bdc40f799679575375574310f72784.png" loading="lazy" alt="Hardesty Deleted Discord — evidence destruction" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Hardesty Deleted Discord — evidence destruction</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/459146df349305bc6a41420b9a390901.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/459146df349305bc6a41420b9a390901.png" loading="lazy" alt="Gerbsman Partners — Crisis Turnaround specialists" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Gerbsman Partners — Crisis Turnaround specialists</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#dbb8b4a9a9beb8afb2b4b5a89bb2b5adbea8afb2bcbaafb2b5bcbebdbdb4a9b8bef5b8b4b6">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#0a696578786f697e636564794a63647c6f797e636d6b7e63646d6f6c6c6578696f24696567"><span class="__cf_email__" data-cfemail="82e1edf0f0e7e1f6ebedecf1c2ebecf4e7f1f6ebe5e3f6ebece5e7e4e4edf0e1e7ace1edef">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></fo

@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paolo Pastore — Managing Director &amp; Insider Whistleblower — Investigating Efforce</title>
+  <meta name="description" content="Paolo Pastore: Efforce Managing Director from Jan 2022. Admitted 'pumped and dumped by private investors'. Confirmed Wallet 3 sold to U.S. VC. Exposed SEELE ties, Vanetti control, Castiglione lies. Then turned hostile.">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .person-hero{display:flex;align-items:center;gap:var(--space-xl);margin-bottom:var(--space-xl);flex-wrap:wrap}
+    .person-hero__photo{width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--accent-red);flex-shrink:0;background:var(--grey-100)}
+    .person-hero__info{flex:1;min-width:280px}
+    .person-hero__name{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-xs)}
+    .person-hero__role{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .person-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin-bottom:var(--space-xl)}
+    .person-meta__item{text-align:center}
+    .person-meta__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;line-height:1}
+    .person-meta__num--red{color:var(--accent-red)}
+    .person-meta__num--gold{color:var(--accent-gold)}
+    .person-meta__label{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.08em;margin-top:var(--space-xs)}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .criminal-box{background:#fff5f5;border:1px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .criminal-box h3,.criminal-box h4{color:var(--accent-red);font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .criminal-box p,.criminal-box li{font-size:var(--text-sm);line-height:1.7}
+    .sec-box{background:#f0f4ff;border:1px solid #3b82f6;padding:var(--space-lg);margin:var(--space-lg) 0}
+    .sec-box h3{color:#1d4ed8;font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm)}
+    .sec-box p,.sec-box li{font-size:var(--text-sm);line-height:1.7}
+    .conclusion-box{padding:var(--space-xl);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .conclusion-box p{font-size:var(--text-base);line-height:1.8}
+    .conclusion-box strong{color:var(--white)}
+    .evidence-table{width:100%;border-collapse:collapse;margin:var(--space-lg) 0;font-size:var(--text-sm)}
+    .evidence-table th{background:var(--black-soft);color:var(--white);padding:var(--space-sm) var(--space-md);text-align:left;font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em}
+    .evidence-table td{padding:var(--space-sm) var(--space-md);border-bottom:1px solid var(--grey-200);vertical-align:top}
+    .evidence-table tr:hover{background:var(--grey-50)}
+    .bombshell{background:#fff5f5;border:2px solid var(--accent-red);padding:var(--space-lg);margin:var(--space-lg) 0}
+    .bombshell h4{color:var(--accent-red);font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-sm);font-size:var(--text-lg)}
+    .bombshell .quote{font-style:italic;font-size:var(--text-base);color:var(--black);margin:var(--space-sm) 0;padding:var(--space-sm) var(--space-md);border-left:3px solid var(--accent-red);background:rgba(255,255,255,.7)}
+    .bombshell .attr{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .bombshell p{font-size:var(--text-sm);line-height:1.7;margin:var(--space-sm) 0}
+    .duality-box{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg);margin:var(--space-xl) 0}
+    .duality-panel{padding:var(--space-lg);border:1px solid var(--grey-200)}
+    .duality-panel h4{font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-md);font-size:var(--text-lg)}
+    .duality-panel--reveal{border-color:var(--accent-red);background:#fff5f5}
+    .duality-panel--reveal h4{color:var(--accent-red)}
+    .duality-panel--complicit{border-color:var(--accent-gold);background:#fffdf0}
+    .duality-panel--complicit h4{color:#b8860b}
+    .duality-panel li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700);margin:var(--space-xs) 0}
+    .timeline-compact{margin:var(--space-lg) 0}
+    .timeline-compact__item{display:flex;gap:var(--space-md);padding:var(--space-md) 0;border-bottom:1px solid var(--grey-100)}
+    .timeline-compact__date{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent-red);font-weight:700;min-width:100px;flex-shrink:0}
+    .timeline-compact__content{font-size:var(--text-sm);line-height:1.6}
+    .timeline-compact__content em{color:var(--black);font-weight:600}
+    .authority-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .authority-card{padding:var(--space-md);border:1px solid var(--grey-200);background:var(--white)}
+    .authority-card h5{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-xs);font-size:var(--text-sm)}
+    .authority-card p{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin:2px 0}
+    .authority-card a{color:var(--accent-red);font-size:var(--text-xs)}
+    .related-nav{display:flex;flex-wrap:wrap;gap:var(--space-xs);margin:var(--space-lg) 0}
+    .related-nav a{font-family:var(--font-mono);font-size:var(--text-xs);padding:4px 10px;border:1px solid var(--grey-200);text-decoration:none;color:var(--grey-600);transition:all var(--transition-fast)}
+    .related-nav a:hover{border-color:var(--black);color:var(--black);text-decoration:none}
+    .related-nav a.current{background:var(--black);color:var(--white);border-color:var(--black)}
+    @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__photo{width:100px;height:100px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}.duality-box{grid-template-columns:1fr}.authority-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#b2d1ddc0c0d7d1c6dbdddcc1f2dbdcc4d7c1c6dbd5d3c6dbdcd5d7d4d4ddc0d1d79cd1dddf"><span class="__cf_email__" data-cfemail="5e3d312c2c3b3d2a3731302d1e3730283b2d2a37393f2a3730393b3838312c3d3b703d3133">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav"><a href="steve-wozniak.html">Steve Wozniak</a><a href="jacopo-visetti.html">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html">Andrea Castiglione</a><a href="sergio-carloni.html">Sergio Carloni</a><a href="ken-hardesty.html">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html" class="current">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html">Efforce Team</a></nav></div></section>
+
+  <section class="page-hero"><div class="container">
+    <div class="person-hero">
+      <div class="person-hero__photo" style="display:flex;align-items:center;justify-content:center;background:var(--grey-200);font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;color:var(--grey-400);">PP</div>
+      <div class="person-hero__info">
+        <span class="overline">Individual Profile</span>
+        <h1 class="person-hero__name">Paolo Pastore</h1>
+        <div class="person-hero__role">Managing Director (Jan 2022&ndash;) / The Insider Who Revealed Everything &mdash; Then Turned</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: public Telegram, Etherscan, private communications (Nov 15, 2022 &ndash; Dec 11, 2023). <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#81e2eef3f3e4e2f5e8eeeff2c1e8eff7e4f2f5e8e6e0f5e8efe6e4e7e7eef3e2e4afe2eeec"><span class="__cf_email__" data-cfemail="e5868a97978086918c8a8b96a58c8b938096918c8284918c8b828083838a978680cb868a88">[email&#160;protected]</span></a></div></div></div></section>
+
+  <section class="section"><div class="container">
+
+    <div class="person-meta">
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">MD</div><div class="person-meta__label">Managing Director</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">$283M</div><div class="person-meta__label">MPI Profits Undisclosed</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">$49M</div><div class="person-meta__label">Alt-Coin Holdings Confirmed</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">$68M+</div><div class="person-meta__label">ETW Unaccounted</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">12+</div><div class="person-meta__label">Private Revelations</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Rebuttals Received</div></div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="section-block" style="border-top:none;">
+      <p>Paolo Pastore became Managing Director of Efforce in January 2022. Over the following two years, he became the single most revealing insider source in the entire Efforce investigation &mdash; privately admitting that WOZX had been <strong>&ldquo;pumped and dumped by private investors,&rdquo;</strong> confirming wallet sales to a <strong>U.S. venture capital firm</strong>, exposing the <strong>SEELE/Ponzi connection</strong>, describing Castiglione as having <strong>&ldquo;told a lot of lies,&rdquo;</strong> and confirming Vanetti&rsquo;s total control over the crypto keys.</p>
+      <p>Then, allegedly under internal pressure, Pastore turned hostile &mdash; ceasing cooperation and aligning with the same entities whose misconduct he had documented.</p>
+      <p>Pastore&rsquo;s private statements are devastating because they come from <strong>inside</strong> the operation. He is not an outside observer guessing at wrongdoing &mdash; he is the Managing Director confirming it.</p>
+    </div>
+
+    <!-- THE DUALITY -->
+    <div class="section-block" id="duality">
+      <h3>The Duality: What Pastore Revealed vs. What He Enabled</h3>
+      <div class="duality-box">
+        <div class="duality-panel duality-panel--reveal">
+          <h4>What He Revealed Privately</h4>
+          <ul style="padding-left:var(--space-md);">
+            <li>&ldquo;Pumped and dumped by private investors&rdquo;</li>
+            <li>Wallet 3 sold to U.S. VC &mdash; $49M in alt-coins</li>
+            <li>&ldquo;Andrea told a lot of lies to the community&rdquo;</li>
+            <li>&ldquo;Andrea was pushing the SEELE relationship while denying it publicly&rdquo;</li>
+            <li>&ldquo;Vanetti&rsquo;s tech promises are empty&rdquo;</li>
+            <li>&ldquo;Jusp was a mess&rdquo; &mdash; alleged mafia theft</li>
+            <li>Vanetti controls the crypto keys</li>
+            <li>&ldquo;Woz&hellip; abandoned ship&rdquo;</li>
+            <li>NFT refund delays caused by Vanetti&rsquo;s key control</li>
+          </ul>
+        </div>
+        <div class="duality-panel duality-panel--complicit">
+          <h4>What He Enabled as MD</h4>
+          <ul style="padding-left:var(--space-md);">
+            <li>None of these revelations were made public</li>
+            <li>No corrections issued to token holders</li>
+            <li>No regulatory disclosures filed</li>
+            <li>No whistleblower complaints submitted</li>
+            <li>Continued to serve as MD throughout</li>
+            <li>Did not disclose MPI&rsquo;s $283M profits</li>
+            <li>Did not disclose ETW&rsquo;s $68.1M unaccounted funds</li>
+            <li>Eventually turned hostile toward the investigation</li>
+            <li>Aligned with entities he privately condemned</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);text-align:center;margin-top:var(--space-sm);">Every revelation on the left was made privately. None were communicated to the investors who lost $300M+.</p>
+    </div>
+
+    <!-- CRIMINAL CHARGES -->
+    <div class="criminal-box">
+      <h3>Alleged Criminal Charges</h3>
+
+      <h4>1. Alleged Securities Fraud (SEC Rule 10b-5)</h4>
+      <p>As Managing Director with knowledge of the pump-and-dump scheme, Pastore allegedly failed to disclose material information to token holders:</p>
+      <ul>
+        <li><strong>&ldquo;Pumped and dumped by private investors&rdquo;</strong> (Nov 15, 2022) &mdash; an admission that the core investment narrative was fraudulent, made privately while investors continued to hold.</li>
+        <li><strong>Wallet 3 (0x697D456D&hellip;)</strong> &mdash; confirmed sold to a U.S. venture capital firm, containing 75M WOZX converted to $49M in alternative cryptocurrencies (confirmed Feb 18, 2025).</li>
+        <li><strong>Non-disclosure of MPI&rsquo;s $283M profits</strong> &mdash; as MD, Pastore knew the &ldquo;long-term institutional investors&rdquo; had dumped 186.6M WOZX for massive profits while retail lost everything.</li>
+      </ul>
+      <p><strong>Applicable laws:</strong> U.S. 18 U.S.C. &sect; 1343 (wire fraud, up to 20 years), SEC Rule 10b-5 (material omissions in connection with securities).</p>
+
+      <h4>2. Alleged Market Manipulation</h4>
+      <p>Pastore possessed insider knowledge of the dump mechanism and failed to act:</p>
+      <ul>
+        <li><strong>Wallet 3 sold to U.S. VC</strong> (Nov 15, 2022) &mdash; confirmed awareness that treasury tokens were being sold to external parties without disclosure.</li>
+        <li><strong>160M WOZX unaccounted from ETW</strong> &mdash; as MD, bore responsibility for explaining where treasury funds went. No explanation was ever provided.</li>
+      </ul>
+      <p><strong>Applicable laws:</strong> SEC Rule 10b-5, EU MAR Art. 12.</p>
+
+      <h4>3. Alleged Aiding and Abetting</h4>
+      <p>By privately acknowledging fraud while publicly maintaining his role as Managing Director, Pastore allegedly provided ongoing legitimacy to the operation. His continued presence signalled to investors that Efforce was a functioning, professionally managed company &mdash; contradicting what he privately admitted.</p>
+    </div>
+
+    <!-- SEC LIABILITY -->
+    <div class="sec-box">
+      <h3>Alleged SEC Liability (U.S.)</h3>
+      <p>Pastore&rsquo;s private confirmations of U.S. connections create direct SEC jurisdiction:</p>
+      <ul>
+        <li><strong>Wallet 3 sold to U.S. VC</strong> &mdash; direct U.S. involvement in token treasury distribution.</li>
+        <li><strong>WOZX = security under Howey Test</strong> &mdash; marketed as investment with expected returns from Efforce platform.</li>
+        <li><strong>Rule 10b-5</strong> &mdash; material omissions (pump-and-dump knowledge, wallet sales, MPI profits) in connection with the purchase/sale of securities.</li>
+        <li><strong>Section 5 (Securities Act 1933)</strong> &mdash; involvement in unregistered offering reaching U.S. investors.</li>
+      </ul>
+      <p><strong>Relevance:</strong> A Managing Director who privately admits &ldquo;pumped and dumped by private investors&rdquo; while remaining in post and not disclosing this to the market represents a textbook failure of fiduciary duty and potential accessory liability.</p>
+    </div>
+
+    <!-- COMPLETE PRIVATE REVELATIONS -->
+    <div class="section-block" id="revelations">
+      <h3>Complete Private Revelations &mdash; Chronological</h3>
+      <p>Every significant private statement made by Paolo Pastore, compiled from private communications with Michael Copley between November 2022 and December 2023:</p>
+
+      <div class="timeline-compact">
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Nov 15, 2022</div>
+          <div class="timeline-compact__content"><em>&ldquo;Pumped and dumped by private investors.&rdquo;</em><br>The single most significant insider admission in the entire Efforce case. Pastore, as serving Managing Director, confirmed privately that the WOZX token was the subject of a pump-and-dump scheme by the very &ldquo;long-term institutional investors&rdquo; that were marketed to the public.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Nov 15, 2022</div>
+          <div class="timeline-compact__content"><em>&ldquo;Wallet 3 sold to U.S. VC.&rdquo;</em><br>Confirmed that Wallet 3 (0x697D456D&hellip;), containing 75M WOZX, had been sold to a U.S.-based venture capital firm. This wallet was later found to hold $49M in alternative cryptocurrencies (Feb 2025 analysis). No disclosure was ever made to token holders.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Aug 2, 2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;The delay on NFT refunds is because of urgency issues and because Jacopo Vanetti has control over the crypto keys.&rdquo;</em><br>Confirmed that Vanetti, the 40% shareholder who had been silent since May 2021, maintained sole effective control over the Efforce crypto treasury &mdash; blocking even the Managing Director from executing refunds.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Aug 24, 2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;Woz&hellip; abandoned ship.&rdquo;</em><br>Confirmed that Steve Wozniak &mdash; whose name, image, and endorsement remained the primary reason investors held WOZX &mdash; had effectively disengaged from the project. This was never publicly disclosed while Wozniak&rsquo;s name continued to be used in marketing.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Aug 24, 2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;It won&rsquo;t change till Vanetti is involved [&hellip;] You should ask for him more, the whole community should ask for him, ask questions on his role, his competence and question every answer he gives if he&rsquo;s able to answer in the first place.&rdquo;</em><br>The Managing Director effectively told an investor to publicly pressure the 40% shareholder &mdash; because even Pastore could not get Vanetti to act. This is an extraordinary admission of corporate governance failure.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;Andrea told a lot of lies to the community.&rdquo;</em><br>Pastore directly confirmed that Andrea Castiglione &mdash; the primary public spokesperson who made 78+ documented misrepresentations &mdash; had lied to the community. No correction or retraction was ever issued.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Dec 11, 2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;Andrea was the one pushing the SEELE relationship while denying it publicly.&rdquo;</em><br>Confirmed that Castiglione drove the relationship with SEELE/YuanYi &mdash; a Chinese Ponzi organisation that used WOZX as its flagship investment product &mdash; while simultaneously denying any connection in public channels. This is potentially the most legally significant revelation, as it demonstrates <strong>knowing deception about ties to a criminal enterprise</strong>.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Dec 11, 2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;Jusp was a mess&rdquo;</em> and involved <em>&ldquo;some sort of mafia gang to steal money&rdquo;</em> from investors.<br>Described Jacopo Vanetti&rsquo;s previous venture (Jusp S.p.A., raised $6M+) as having been infiltrated by organised crime. This is relevant to establishing Vanetti&rsquo;s pattern of conduct and whether due diligence was performed before appointing him as CTO and 40% shareholder.</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Dec 11, 2023</div>
+          <div class="timeline-compact__content"><em>&ldquo;Vanetti&rsquo;s tech promises are empty.&rdquo;</em><br>The Managing Director confirmed that the CTO&rsquo;s repeated promises of revolutionary blockchain technology, a &ldquo;killer app,&rdquo; and a platform that would &ldquo;change blockchain&rdquo; were all unfounded. Visetti later confirmed the same: &ldquo;No blockchain was needed.&rdquo;</div>
+        </div>
+
+        <div class="timeline-compact__item">
+          <div class="timeline-compact__date">Late 2023</div>
+          <div class="timeline-compact__content"><strong>Pastore ceases cooperation.</strong> After months of private revelations, Pastore reportedly turned hostile toward the investigation &mdash; allegedly under internal pressure from the same leadership he had been privately condemning. No explanation was provided for the reversal.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BOMBSHELL QUOTES -->
+    <div class="section-block" id="bombshells">
+      <h3>Key Evidence &mdash; The Three Bombshells</h3>
+
+      <div class="bombshell">
+        <h4>Bombshell #1: The Pump-and-Dump Admission</h4>
+        <div class="quote">&ldquo;Pumped and dumped by private investors.&rdquo;</div>
+        <p class="attr">&mdash; Paolo Pastore, private communication, Nov 15, 2022</p>
+        <p><strong>Why this matters:</strong> This is a serving Managing Director confirming, in his own words, that WOZX was the subject of a pump-and-dump scheme. This single statement potentially transforms the entire case from one of &ldquo;failed promises&rdquo; to one of <strong>deliberate, known fraud</strong>. At the time of this admission, retail investors were still holding WOZX based on the promise that private investors were &ldquo;long-term institutional supporters.&rdquo;</p>
+        <p><strong>Legal significance:</strong> Under SEC Rule 10b-5, a corporate officer who knows a security has been manipulated and fails to disclose this to the market commits a material omission. Under U.S. wire fraud statute (18 U.S.C. &sect; 1343), knowledge of a scheme to defraud through electronic communications carries up to 20 years imprisonment.</p>
+      </div>
+
+      <div class="bombshell">
+        <h4>Bombshell #2: The SEELE Connection Exposed</h4>
+        <div class="quote">&ldquo;Andrea was the one pushing the SEELE relationship while denying it publicly.&rdquo;</div>
+        <p class="attr">&mdash; Paolo Pastore, private communication, Dec 11, 2023</p>
+        <p><strong>Why this matters:</strong> SEELE/YuanYi is a Chinese Ponzi organisation (&ldquo;传销&rdquo; pyramid scheme) currently under active police investigation in Dongguan, China. It used WOZX as its flagship investment product, with victims losing approximately $200K+. Pastore confirmed that this relationship was <strong>actively driven</strong> by a co-founder &mdash; not a coincidental association but a deliberate business strategy.</p>
+        <p><strong>Legal significance:</strong> Knowingly facilitating a Ponzi scheme&rsquo;s access to a token is potentially criminal under multiple jurisdictions. Pastore&rsquo;s revelation, combined with GDAC 2020 attendance records and video call evidence, creates a chain of evidence linking Efforce leadership directly to SEELE&rsquo;s operations.</p>
+        <p><a href="../entities/seele.html">Full SEELE/YuanYi Entity Profile &rarr;</a></p>
+      </div>
+
+      <div class="bombshell">
+        <h4>Bombshell #3: The $49M Alt-Coin Wallet</h4>
+        <div class="quote">&ldquo;Wallet 3 sold to U.S. VC.&rdquo;</div>
+        <p class="attr">&mdash; Paolo Pastore, private communication, Nov 15, 2022</p>
+        <p><strong>Why this matters:</strong> Wallet 3 (0x697D456D&hellip;) contained 75M WOZX from the Efforce treasury. Pastore confirmed it was sold to a U.S.-based venture capital firm. Blockchain analysis (Feb 18, 2025) revealed this wallet held <strong>$49M in alternative cryptocurrencies</strong> &mdash; meaning treasury tokens were not just dumped but converted into a diversified crypto portfolio, all without disclosure.</p>
+        <p><strong>Legal significance:</strong> Sale of treasury tokens to a U.S. entity constitutes a securities transaction under Howey, engaging full SEC jurisdiction. The undisclosed $49M in alt-coin holdings suggests sophisticated financial management of allegedly misappropriated funds.</p>
+      </div>
+    </div>
+
+    <!-- KEY QUOTES TABLE -->
+    <div class="section-block" id="quotes">
+      <h3>All Key Quotes &amp; Statements</h3>
+      <div style="overflow-x:auto;">
+        <table class="evidence-table">
+          <thead>
+            <tr><th>Date</th><th>Source</th><th>Quote</th><th>About</th><th>Legal Tag</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Nov 15, 2022</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td><strong>&ldquo;Pumped and dumped by private investors.&rdquo;</strong></td>
+              <td style="font-size:var(--text-xs);">MPI scheme</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Securities Fraud</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Nov 15, 2022</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td>&ldquo;Wallet 3 sold to U.S. VC.&rdquo;</td>
+              <td style="font-size:var(--text-xs);">Treasury</td>
+              <td><span style="background:#f0f4ff;color:#1d4ed8;padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid #3b82f6;">SEC Jurisdiction</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Aug 2, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td>&ldquo;NFT refund delays because Vanetti has control over the crypto keys.&rdquo;</td>
+              <td style="font-size:var(--text-xs);">Vanetti</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Governance Failure</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Aug 24, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td><strong>&ldquo;Woz&hellip; abandoned ship.&rdquo;</strong></td>
+              <td style="font-size:var(--text-xs);">Wozniak</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Non-Disclosure</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Aug 24, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td>&ldquo;It won&rsquo;t change till Vanetti is involved [&hellip;] the whole community should ask for him.&rdquo;</td>
+              <td style="font-size:var(--text-xs);">Vanetti</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Governance Failure</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td><strong>&ldquo;Andrea told a lot of lies to the community.&rdquo;</strong></td>
+              <td style="font-size:var(--text-xs);">Castiglione</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Fraud Confirmation</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 11, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td><strong>&ldquo;Andrea was the one pushing the SEELE relationship while denying it publicly.&rdquo;</strong></td>
+              <td style="font-size:var(--text-xs);">SEELE Ponzi</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Aiding Criminal Enterprise</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 11, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td>&ldquo;Jusp was a mess&rdquo; &mdash; alleged mafia involvement</td>
+              <td style="font-size:var(--text-xs);">Vanetti</td>
+              <td><span style="background:#fffdf0;color:#b8860b;padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-gold);">Pattern of Conduct</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+            <tr>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);white-space:nowrap;">Dec 11, 2023</td>
+              <td style="font-family:var(--font-mono);font-size:var(--text-xs);">Private</td>
+              <td>&ldquo;Vanetti&rsquo;s tech promises are empty.&rdquo;</td>
+              <td style="font-size:var(--text-xs);">Vanetti</td>
+              <td><span style="background:#fff5f5;color:var(--accent-red);padding:2px 6px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--accent-red);">Fraud Confirmation</span></td>
+              <td><span style="background:var(--accent-red);color:var(--white);padding:2px 6px;font-family:var(--font-mono);font-size:10px;">Unrebutted</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- REPORT TO AUTHORITIES -->
+    <div class="section-block" id="report">
+      <h3>Report to Authorities</h3>
+      <div class="authority-grid">
+        <div class="authority-card">
+          <h5>SEC (United States)</h5>
+          <p>Securities fraud, material omissions</p>
+          <a href="https://www.sec.gov/tcr" target="_blank" rel="noopener">sec.gov/tcr &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>DOJ (United States)</h5>
+          <p>Wire fraud, pump &amp; dump</p>
+          <a href="https://www.justice.gov/criminal-fraud/report-fraud" target="_blank" rel="noopener">justice.gov &rarr;</a>
+        </div>
+        <div class="authority-card">
+          <h5>MFSA (Malta)</h5>
+          <p>VFA Act violations, MD conduct</p>
+          <a href="https://www.mfsa.mt/contact-us/" target="_blank" rel="noopener">mfsa.mt &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="conclusion-box">
+      <h3 style="color:var(--white);font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);">Conclusion</h3>
+      <p>Paolo Pastore is the most revealing insider source in the Efforce investigation. His private admissions &mdash; from the <strong>&ldquo;pumped and dumped&rdquo;</strong> confirmation to the <strong>SEELE connection</strong> to the <strong>$49M alt-coin wallet</strong> &mdash; collectively establish that senior Efforce leadership <strong>knew</strong> the core investor narrative was false. Yet as Managing Director, Pastore never disclosed any of this to the market. He privately condemned his colleagues while publicly maintaining the legitimacy of the operation. When he eventually turned hostile, he aligned with the very entities whose misconduct he had documented. All statements remain <strong>entirely unrebutted</strong>.</p>
+    </div>
+
+    <!-- CROSS-REFERENCES -->
+    <div class="section-block">
+      <h3>Related Profiles &amp; Evidence</h3>
+      <ul>
+        <li><a href="andrea-castiglione.html"><strong>Andrea Castiglione</strong></a> &mdash; &ldquo;told a lot of lies&rdquo; (Pastore, 2023)</li>
+        <li><a href="jacopo-vanetti.html"><strong>Jacopo Vanetti</strong></a> &mdash; &ldquo;tech promises are empty,&rdquo; key control, Jusp</li>
+        <li><a href="steve-wozniak.html"><strong>Steve Wozniak</strong></a> &mdash; &ldquo;abandoned ship&rdquo; (Pastore, Aug 2023)</li>
+        <li><a href="../entities/seele.html"><strong>SEELE/YuanYi</strong></a> &mdash; Ponzi connection confirmed by Pastore</li>
+        <li><a href="../visetti-call.html"><strong>Visetti Call (Nov 18, 2023)</strong></a> &mdash; Wallet key disclosure, PI identity</li>
+      </ul>
+    </div>
+
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="../class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+      <a href="../individuals.html" class="btn btn--outline">All Individuals</a>
+    </div>
+
+  </div></section>
+
+  
+    <!-- Evidence Screenshot Gallery -->
+    <section class="section" style="padding: 3rem 0;">
+      <div class="container">
+        <h2 style="color: var(--red); margin-bottom: 0.5rem;">Key Evidence Screenshots</h2>
+        <p style="color: var(--grey); margin-bottom: 2rem; font-size: 0.95rem;">
+          Sourced from public records, company communications, and blockchain data. Click any image to enlarge.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/d0e175af2a4608825e0f56a04e89f99d.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/d0e175af2a4608825e0f56a04e89f99d.png" loading="lazy" alt="Pastore: &quot;Pumped and dumped by private investors&quot; — Nov 15, 2022" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Pastore: &quot;Pumped and dumped by private investors&quot; — Nov 15, 2022</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/e855526c938344a1539cdd494ded2176.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/e855526c938344a1539cdd494ded2176.png" loading="lazy" alt="&quot;It has mostly been a Ponzi scheme till now&quot; — private admission" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;It has mostly been a Ponzi scheme till now&quot; — private admission</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/caac03d9432c95e31b37342608a195f7.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/caac03d9432c95e31b37342608a195f7.png" loading="lazy" alt="Retail was exit liquidity — never disclosed to investors" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Retail was exit liquidity — never disclosed to investors</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/e7e1df913292a62570a81c76121a3982.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/e7e1df913292a62570a81c76121a3982.png" loading="lazy" alt="VC sale claims — no VC sale ever announced publicly" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">VC sale claims — no VC sale ever announced publicly</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/998d9744e5096bff3a03d807fad0faf5.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/998d9744e5096bff3a03d807fad0faf5.png" loading="lazy" alt="&quot;If I was a holder I would try to publicly expose Vanetti&quot;" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;If I was a holder I would try to publicly expose Vanetti&quot;</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/7ac71c1b13edfed98d5287eb50e07362.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/7ac71c1b13edfed98d5287eb50e07362.png" loading="lazy" alt="&quot;Owners are to blame 100%, Woz as well since he abandoned ship&quot;" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;Owners are to blame 100%, Woz as well since he abandoned ship&quot;</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/c714faf46a819955db0594064431f783.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/c714faf46a819955db0594064431f783.png" loading="lazy" alt="&quot;He just thinks he runs the world&quot; — about Vanetti" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;He just thinks he runs the world&quot; — about Vanetti</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/9717e89dea9bd83ef2dfb71085e3c19f.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/9717e89dea9bd83ef2dfb71085e3c19f.png" loading="lazy" alt="&quot;The 40% owner is preparing to leave&quot; — Vanetti exit warning" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;The 40% owner is preparing to leave&quot; — Vanetti exit warning</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/b017d6fc5e1e2a62a772b9826f4e1b43.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/b017d6fc5e1e2a62a772b9826f4e1b43.png" loading="lazy" alt="Plan to &quot;strip the 40% owner of all power&quot;" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Plan to &quot;strip the 40% owner of all power&quot;</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/27357256665b2779d9fa52f6d82fe771.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/27357256665b2779d9fa52f6d82fe771.png" loading="lazy" alt="&quot;The entire whitepaper business model is dead&quot; — private admission" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;The entire whitepaper business model is dead&quot; — private admission</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/d199742e9f8b42c8d4a2a3c9aee01f82.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/d199742e9f8b42c8d4a2a3c9aee01f82.png" loading="lazy" alt="Blaming Visetti personally for blocking refunds" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Blaming Visetti personally for blocking refunds</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/6170519f346aff04c80ad815f995a4c1.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/6170519f346aff04c80ad815f995a4c1.png" loading="lazy" alt="Visetti as sole driving force — no real team" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Visetti as sole driving force — no real team</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/697cc70d84c366065157de46af9200c9.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/697cc70d84c366065157de46af9200c9.png" loading="lazy" alt="&quot;Survives only on Visetti's personal funding&quot;" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;Survives only on Visetti's personal funding&quot;</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/b20e176634bb719cdc7648e75641f782.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/b20e176634bb719cdc7648e75641f782.png" loading="lazy" alt="&quot;Joshua&quot; Disclosure Dec 12, 2023 — insider delisting warning" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;Joshua&quot; Disclosure Dec 12, 2023 — insider delisting warning</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/f7ca065e1f9f7bd9878a2ccc8abab908.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/f7ca065e1f9f7bd9878a2ccc8abab908.png" loading="lazy" alt="Delisting notice to unknown contacts — 24h advance warning" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Delisting notice to unknown contacts — 24h advance warning</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/eb97c4238f6c692fda88e71c483654da.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/eb97c4238f6c692fda88e71c483654da.png" loading="lazy" alt="Passport request for fake meeting — later misused" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Passport request for fake meeting — later misused</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/5963db0162e5e7e5154815ef1ddf5060.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/5963db0162e5e7e5154815ef1ddf5060.png" loading="lazy" alt="&quot;No I didn't forward your passport&quot; — proven false by SAR" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">&quot;No I didn't forward your passport&quot; — proven false by SAR</figcaption>
+          </figure>
+          <figure style="margin: 0; background: var(--card-bg, #1a1a2e); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08);">
+            <a href="https://i.gyazo.com/c08d9744bcd88f91e297a8641dfefbd3.png" target="_blank" rel="noopener">
+              <img src="https://i.gyazo.com/c08d9744bcd88f91e297a8641dfefbd3.png" loading="lazy" alt="Unexplained $68M+ outflows and hidden cash" style="width: 100%; display: block; cursor: zoom-in;">
+            </a>
+            <figcaption style="padding: 0.75rem 1rem; font-size: 0.85rem; color: var(--grey, #999); line-height: 1.4;">Unexplained $68M+ outflows and hidden cash</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#c5a6aab7b7a0a6b1acaaabb685acabb3a0b6b1aca2a4b1acaba2a0a3a3aab7a6a0eba6aaa8">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PU

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regulatory Complaints Filed — Investigating Efforce</title>
+  <meta name="description" content="Formal regulatory complaints filed in the Efforce/WOZX investigation. Transparency report covering SEC, FINRA, SCB, CONSOB, FINMA, and Malta. Regulatory landscape and jurisdictional overview.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+
+    /* FILED COMPLAINTS TIMELINE */
+    .filed-list{list-style:none;padding:0;margin:var(--space-lg) 0}
+    .filed-item{display:grid;grid-template-columns:140px 1fr;gap:var(--space-md);padding:var(--space-md) 0;border-bottom:1px solid var(--grey-200)}
+    .filed-item:last-child{border-bottom:none}
+    .filed-date{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);padding-top:2px}
+    .filed-body h4{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--black);margin-bottom:4px}
+    .filed-body p{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600);margin:0}
+    .filed-status{display:inline-block;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;margin-top:var(--space-xs)}
+    .filed-status--filed{background:#fee2e2;color:var(--accent-red)}
+    .filed-status--pending{background:#fff8e1;color:#92400e}
+    .filed-status--acknowledged{background:#f0fdf4;color:#16a34a}
+    .filed-target{font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:4px}
+
+    /* REGULATOR CARDS */
+    .reg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .reg-card{border:1px solid var(--grey-200);padding:var(--space-lg);transition:border-color .15s;display:flex;flex-direction:column}
+    .reg-card:hover{border-color:var(--accent-red)}
+    .reg-card__flag{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-bottom:var(--space-xs)}
+    .reg-card__name{font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin-bottom:var(--space-xs)}
+    .reg-card__full{font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-bottom:var(--space-sm)}
+    .reg-card__desc{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600);flex:1}
+    .reg-card__jurisdiction{margin:var(--space-sm) 0;padding:var(--space-sm);background:var(--grey-50);font-size:var(--text-xs);line-height:1.6;color:var(--grey-700)}
+    .reg-card__jurisdiction strong{color:var(--black)}
+    .reg-card__relevance{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600);margin:var(--space-sm) 0;padding-top:var(--space-sm);border-top:1px solid var(--grey-200)}
+    .reg-card__relevance strong{color:var(--accent-red)}
+    .reg-card__contact{margin-top:var(--space-sm);padding-top:var(--space-sm);border-top:1px solid var(--grey-200)}
+    .reg-card__contact a{font-family:var(--font-mono);font-size:10px;color:var(--accent-red);text-decoration:underline;display:block;line-height:1.8}
+
+    .framing-box{background:var(--grey-50);border-left:3px solid var(--grey-300);padding:var(--space-md) var(--space-lg);margin:var(--space-lg) 0;font-size:var(--text-xs);line-height:1.7;color:var(--grey-600)}
+    .framing-box strong{color:var(--black)}
+    .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .stat-box{text-align:center;padding:var(--space-md);border:1px solid var(--grey-200)}
+    .stat-box__num{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red)}
+    .stat-box__label{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-top:4px}
+    @media(max-width:768px){.reg-grid{grid-template-columns:1fr}.filed-item{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#87e4e8f5f5e2e4f3eee8e9f4c7eee9f1e2f4f3eee0e6f3eee9e0e2e1e1e8f5e4e2a9e4e8ea"><span class="__cf_email__" data-cfemail="b9dad6cbcbdcdacdd0d6d7caf9d0d7cfdccacdd0ded8cdd0d7dedcdfdfd6cbdadc97dad6d4">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Transparency</span>
+    <h1 class="page-hero__title">Regulatory Complaints Filed</h1>
+    <p class="page-hero__sub">Formal Complaints &middot; Regulatory Landscape &middot; Jurisdictional Overview</p>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Transparency report</div><div class="defamation-banner__text">This page documents complaints already filed by the investigation. It provides factual information about regulatory authorities and their jurisdictions. All regulator contact details are publicly available on their official websites. <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#05666a77776066716c6a6b76456c6b736076716c6264716c6b626063636a7766602b666a68"><span class="__cf_email__" data-cfemail="ccafa3bebea9afb8a5a3a2bf8ca5a2baa9bfb8a5abadb8a5a2aba9aaaaa3beafa9e2afa3a1">[email&#160;protected]</span></a></div></div></div></section>
+
+  <!-- SECTION 1: COMPLAINTS FILED -->
+  <section class="section"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-sm);">Complaints Filed</h3>
+    <p style="font-size:var(--text-sm);color:var(--grey-600);line-height:1.7;margin-bottom:var(--space-md);">The following formal complaints were filed in the public interest between 2024 and 2025. All relate to alleged misconduct in connection with Efforce Ltd, the WOZX token, and associated entities. This section exists for transparency &mdash; to document what has been reported, to whom, and when.</p>
+
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-box__num">7</div><div class="stat-box__label">Regulators</div></div>
+      <div class="stat-box"><div class="stat-box__num">5</div><div class="stat-box__label">Jurisdictions</div></div>
+      <div class="stat-box"><div class="stat-box__num">$400M+</div><div class="stat-box__label">Alleged Losses</div></div>
+      <div class="stat-box"><div class="stat-box__num">0</div><div class="stat-box__label">Rebuttals Received</div></div>
+    </div>
+
+    <ul class="filed-list">
+
+      <li class="filed-item">
+        <div class="filed-date">Earlier 2025</div>
+        <div class="filed-body">
+          <h4>SEC &mdash; U.S. Securities and Exchange Commission</h4>
+          <p>Complaint regarding unregistered securities offering, fraud, and market manipulation in connection with the WOZX token. Filed under the SEC&rsquo;s Tips, Complaints, and Referrals (TCR) system.</p>
+          <div class="filed-target">Subjects: Efforce Ltd, WOZX token, associated individuals</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+        </div>
+      </li>
+
+      <li class="filed-item">
+        <div class="filed-date">Nov 16, 2025</div>
+        <div class="filed-body">
+          <h4>SCB &mdash; Securities Commission of The Bahamas</h4>
+          <p>Complaint regarding Efforce Ltd (Bahamas): alleged fraud, non-filing of accounts since 2022, opaque ownership structure, and failure to disclose $12.5M&ndash;$36M token sale proceeds.</p>
+          <div class="filed-target">Subject: Efforce Ltd (Bahamas)</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+        </div>
+      </li>
+
+      <li class="filed-item">
+        <div class="filed-date">Nov 16, 2025</div>
+        <div class="filed-body">
+          <h4>FINRA &mdash; Financial Industry Regulatory Authority</h4>
+          <p>Complaint regarding Kenneth Hardesty and Efforce Ltd: alleged securities fraud, pump-and-dump scheme, MPI wallet selection, and wallet key custodianship. Hardesty is a U.S.-based individual (California) and former registered broker.</p>
+          <div class="filed-target">Subjects: Kenneth Hardesty, Efforce Ltd</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+        </div>
+      </li>
+
+      <li class="filed-item">
+        <div class="filed-date">Nov 16, 2025</div>
+        <div class="filed-body">
+          <h4>CONSOB &mdash; Commissione Nazionale per le Societ&agrave; e la Borsa</h4>
+          <p>Complaint regarding AitherCO2 S.p.A. and Efforce: alleged market manipulation, misleading disclosures, concealment of &euro;319.9M tax liability, and promotion of WOZX as backed by a financially distressed entity.</p>
+          <div class="filed-target">Subjects: AitherCO2 S.p.A., Efforce Ltd, associated directors</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+        </div>
+      </li>
+
+      <li class="filed-item">
+        <div class="filed-date">Nov 16, 2025</div>
+        <div class="filed-body">
+          <h4>FINMA &mdash; Swiss Financial Market Supervisory Authority</h4>
+          <p>Complaint regarding MBM Holdings AG: opaque corporate structure, suspected tax evasion, acquisition of 42.5% Efforce for &euro;510 twelve days after $1B+ market cap listing, no filings since May 2021.</p>
+          <div class="filed-target">Subject: MBM Holdings AG (Switzerland)</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+        </div>
+      </li>
+
+      <li class="filed-item">
+        <div class="filed-date">Nov 17, 2025</div>
+        <div class="filed-body">
+          <h4>Malta Judicial Letter &mdash; Efforce Ltd (C 94737)</h4>
+          <p>Formal judicial letter served on Efforce Ltd and five named directors under Maltese law. Addresses 0 employees, &euro;0 staff costs, &euro;342,780 cumulative losses, and absence of token sale proceeds in company accounts.</p>
+          <div class="filed-target">Subjects: Efforce Ltd (Malta C 94737) + 5 directors</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+        </div>
+      </li>
+
+      <li class="filed-item">
+        <div class="filed-date">Nov 17, 2025</div>
+        <div class="filed-body">
+          <h4>California Class Action Joinder &mdash; Case 25CV459519</h4>
+          <p>Joinder filing in Benner &amp; Copley v. Wozniak et al., Superior Court of California, Santa Clara County. Additional plaintiffs and evidence submitted.</p>
+          <div class="filed-target">Case: 25CV459519 &middot; Santa Clara County Superior Court</div>
+          <span class="filed-status filed-status--filed">Filed</span>
+          <a href="https://portal.scscourt.org/case/NTc0NzYzOA==" target="_blank" rel="noopener" style="font-family:var(--font-mono);font-size:10px;color:var(--accent-red);text-decoration:underline;display:inline-block;margin-top:4px;margin-left:8px;">Public docket &rarr;</a>
+        </div>
+      </li>
+
+    </ul>
+
+  </div></section>
+
+  <!-- SECTION 2: REGULATORY LANDSCAPE -->
+  <section class="section" style="background:var(--grey-50);"><div class="container">
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-sm);">Regulatory Landscape</h3>
+    <p style="font-size:var(--text-sm);color:var(--grey-600);line-height:1.7;margin-bottom:var(--space-md);">Efforce&rsquo;s corporate structure spans five jurisdictions. The following regulators have potential jurisdiction over the alleged conduct. All contact details are publicly available on each regulator&rsquo;s official website.</p>
+
+    <div class="framing-box">
+      <strong>Note on framing:</strong> This section provides factual information about regulatory authorities and their areas of jurisdiction as they relate to the Efforce investigation. Contact details are published by these regulators for the purpose of receiving public reports. Any individual who believes they have been affected by the conduct described on this site may wish to consider whether reporting to the relevant authority is appropriate for their circumstances. This is not legal advice.
+    </div>
+
+    <div class="reg-grid">
+
+      <!-- SEC -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127482;&#127480; United States</div>
+        <div class="reg-card__name">SEC</div>
+        <div class="reg-card__full">Securities and Exchange Commission</div>
+        <div class="reg-card__desc">The SEC regulates securities markets, enforces federal securities laws, and investigates fraud. The SEC&rsquo;s Office of the Whistleblower offers financial awards of 10&ndash;30% of sanctions over $1M.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> Unregistered securities offerings involving U.S. persons, securities fraud, market manipulation. The Howey Test determines whether WOZX qualifies as a security. U.S. nexus established via Wozniak (CA), Hardesty (CA), U.S.-based private investors, and Times Square promotion.
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> Unregistered offering (Section 5), securities fraud (Section 10(b) / Rule 10b-5), Wozniak&rsquo;s &ldquo;shares of stock&rdquo; statement, 99.2% supply control at listing, $283M PI profits
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.sec.gov/whistleblower" target="_blank" rel="noopener">SEC Whistleblower Program &rarr;</a>
+          <a href="https://www.sec.gov/tcr" target="_blank" rel="noopener">Tips, Complaints &amp; Referrals (TCR) &rarr;</a>
+        </div>
+      </div>
+
+      <!-- FINRA -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127482;&#127480; United States</div>
+        <div class="reg-card__name">FINRA</div>
+        <div class="reg-card__full">Financial Industry Regulatory Authority</div>
+        <div class="reg-card__desc">FINRA oversees broker-dealers and registered securities professionals in the United States. It investigates misconduct by individuals with securities industry registrations or associations.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> Kenneth Hardesty &mdash; California-based, associated with Gerbsman Partners (CEO in Residence), alleged role as MPI wallet selector and treasury wallet key holder. FINRA has jurisdiction over former and current registered persons.
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> Hardesty&rsquo;s role in MPI selection, wallet key custodianship (Visetti Jul 2024), 4% WOZX allocation, Gerbsman Partners Dubai event promotion
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.finra.org/investors/have-problem/file-complaint" target="_blank" rel="noopener">FINRA Complaint Center &rarr;</a>
+        </div>
+      </div>
+
+      <!-- SCB -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127463;&#127480; Bahamas</div>
+        <div class="reg-card__name">SCB</div>
+        <div class="reg-card__full">Securities Commission of The Bahamas</div>
+        <div class="reg-card__desc">The SCB regulates the securities industry in The Bahamas, including digital asset businesses. Efforce Ltd (Bahamas) is the token issuer per the whitepaper.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> Efforce Ltd (Bahamas) is the legal entity that issued the WOZX token according to the whitepaper. No filings since 2022, nominal capital &lt;$50K, no registered digital asset business licence identified.
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> Non-filing since 2022, opaque ownership, $12.5M&ndash;$36M token sale proceeds not reflected in any filing, potential unregistered digital asset business
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.scb.gov.bs" target="_blank" rel="noopener">SCB Official Website &rarr;</a>
+          <a href="https://www.scb.gov.bs/registry-search" target="_blank" rel="noopener">Registry Search &rarr;</a>
+        </div>
+      </div>
+
+      <!-- CONSOB -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127470;&#127481; Italy</div>
+        <div class="reg-card__name">CONSOB</div>
+        <div class="reg-card__full">Commissione Nazionale per le Societ&agrave; e la Borsa</div>
+        <div class="reg-card__desc">CONSOB is Italy&rsquo;s securities market regulator. It supervises companies, intermediaries, and market conduct. It has authority over Italian-registered entities and individuals operating in Italian markets.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> AitherCO2 S.p.A. (Italian registered) &mdash; &ldquo;mother company&rdquo; of Efforce per Castiglione. &euro;319.9M tax liability notified Oct 2018, &euro;408M cumulative losses. Promoted as &ldquo;$250M revenue&rdquo; to WOZX investors.
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> Misleading disclosures about AitherCO2 financial strength, concealment of &euro;319.9M tax liability from token purchasers, market manipulation via false financial claims
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.consob.it/web/consob-and-its-activities/complaints" target="_blank" rel="noopener">CONSOB Complaints &rarr;</a>
+        </div>
+      </div>
+
+      <!-- FINMA -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127464;&#127469; Switzerland</div>
+        <div class="reg-card__name">FINMA</div>
+        <div class="reg-card__full">Swiss Financial Market Supervisory Authority</div>
+        <div class="reg-card__desc">FINMA supervises financial institutions in Switzerland, including banks, insurance companies, and intermediaries. It investigates potential violations of Swiss financial market law.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> MBM Holdings AG (Swiss registered) acquired 42.5% of Efforce for &euro;510 on Dec 15, 2020 &mdash; twelve days after WOZX listing at $1B+ market cap. No filings since May 2021. Beneficial ownership undisclosed.
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> Opaque corporate structure, no filings since 2021, &euro;510 acquisition vs implied billion-dollar valuation, suspected layering vehicle
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.finma.ch/en/finma/reporting-irregularities/" target="_blank" rel="noopener">FINMA Reporting Irregularities &rarr;</a>
+        </div>
+      </div>
+
+      <!-- MFSA -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127474;&#127481; Malta</div>
+        <div class="reg-card__name">MFSA</div>
+        <div class="reg-card__full">Malta Financial Services Authority</div>
+        <div class="reg-card__desc">The MFSA regulates financial services in Malta, including virtual financial assets (VFA) under the Virtual Financial Assets Act (2018). Malta is the primary operating jurisdiction per Efforce&rsquo;s registered address.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> Efforce Ltd (Malta C 94737) &mdash; registered office. &euro;25K total revenue, 0 employees, &euro;0 staff costs across all filed years (2019&ndash;2022). No VFA licence identified despite operating a token-based platform.
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> 0 employees operating a claimed technology platform, no token sale proceeds in filings, potential unregistered VFA service provider, &euro;342,780 cumulative losses with no apparent business activity
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.mfsa.mt/report-a-concern/" target="_blank" rel="noopener">MFSA Report a Concern &rarr;</a>
+          <a href="https://www.mfsa.mt/virtual-financial-assets/" target="_blank" rel="noopener">VFA Framework &rarr;</a>
+        </div>
+      </div>
+
+      <!-- FCA -->
+      <div class="reg-card">
+        <div class="reg-card__flag">&#127468;&#127463; United Kingdom</div>
+        <div class="reg-card__name">FCA</div>
+        <div class="reg-card__full">Financial Conduct Authority</div>
+        <div class="reg-card__desc">The FCA regulates financial markets and firms in the UK. It oversees crypto-asset promotions under the Financial Promotions regime (Oct 2023) and maintains the UK Warning List for unauthorised firms.</div>
+        <div class="reg-card__jurisdiction">
+          <strong>Jurisdiction relevant to Efforce:</strong> UK-based investors affected by WOZX. The FCA has jurisdiction over crypto-asset promotions targeting UK consumers. The investigation is UK-based and published under UK law (Defamation Act 2013 s.4).
+        </div>
+        <div class="reg-card__relevance">
+          <strong>Key issues:</strong> Potential unauthorised financial promotion to UK consumers, absence from FCA register, UK investor losses
+        </div>
+        <div class="reg-card__contact">
+          <a href="https://www.fca.org.uk/consumers/report-scam-us" target="_blank" rel="noopener">FCA Report a Scam &rarr;</a>
+          <a href="https://www.fca.org.uk/scamsmart/warning-list" target="_blank" rel="noopener">FCA Warning List &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div></section>
+
+  <!-- SECTION 3: NOTE -->
+  <section class="section"><div class="container">
+
+    <div class="framing-box" style="border-left-color:var(--accent-red);">
+      <strong>Important:</strong> This page is a transparency report. It documents complaints already filed by this investigation and provides factual information about regulatory authorities. All contact details are published by the regulators themselves for the purpose of receiving reports from the public. Nothing on this page constitutes legal advice. Individuals who believe they have been affected should consider seeking independent legal counsel appropriate to their jurisdiction and circumstances.
+    </div>
+
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-bottom:var(--space-md);">Response to Date</h3>
+    <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-600);margin-bottom:var(--space-md);">Since the investigation began, the following responses have been received from Efforce, its directors, and its legal representatives:</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-md);margin:var(--space-lg) 0;">
+      <div style="padding:var(--space-md);border:1px solid var(--grey-200);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">34</div>
+        <div style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-top:4px;">Legal communications received</div>
+      </div>
+      <div style="padding:var(--space-md);border:1px solid var(--grey-200);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">0</div>
+        <div style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-top:4px;">Substantive evidence-based rebuttals</div>
+      </div>
+      <div style="padding:var(--space-md);border:1px solid var(--grey-200);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">3</div>
+        <div style="font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--grey-400);margin-top:4px;">Law firms engaged (Hogan Lovells, Bird &amp; Bird, Giambrone)</div>
+      </div>
+    </div>
+
+    <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-600);">34 legal communications have been received from Hogan Lovells, Bird &amp; Bird, and Giambrone &amp; Partners. None has contained a substantive, evidence-based rebuttal of the allegations. All named individuals and entities retain a standing <a href="public-interest.html#right-of-reply" style="color:var(--accent-red);">right of reply</a>.</p>
+    <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-600);margin-top:var(--space-sm);">For the complete log of legal correspondence, see the <a href="legal-threats.html" style="color:var(--accent-red);">Legal Threats</a> page.</p>
+
+    <!-- CTA -->
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Join the Class Action &rarr;</a>
+      <a href="evidence.html" class="btn btn--outline">Evidence Repository</a>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#04676b76766167706d6b6a77446d6a726177706d6365706d6a636162626b7667612a676b69">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash;

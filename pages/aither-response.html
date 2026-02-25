@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aither.com Response — Published in Full — Investigating Efforce</title>
+  <meta name="description" content="Aither.com claims no corporate continuity with AitherCO2 S.p.A. Public evidence contradicts this claim. Both letters published in full under UK Defamation Act 2013 s.4.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+
+    /* RESPONSE BOX */
+    .response-box{border:2px solid var(--grey-200);margin:var(--space-xl) 0;overflow:hidden}
+    .response-box__header{background:var(--grey-50);padding:var(--space-md) var(--space-lg);border-bottom:1px solid var(--grey-200);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:var(--space-sm)}
+    .response-box__from{font-family:var(--font-display);font-weight:700;font-size:var(--text-base);color:var(--black)}
+    .response-box__date{font-family:var(--font-mono);font-size:10px;color:var(--grey-400)}
+    .response-box__status{font-family:var(--font-mono);font-size:9px;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;font-weight:700}
+    .response-box__status--received{background:#f0fdf4;color:#16a34a}
+    .response-box__status--noreply{background:#fee2e2;color:var(--accent-red)}
+    .response-box__body{padding:var(--space-lg);font-size:var(--text-sm);line-height:1.8;color:var(--grey-700)}
+    .response-box__body p{margin-bottom:var(--space-md)}
+    .response-box__sig{font-style:italic;color:var(--grey-500);border-top:1px solid var(--grey-200);padding-top:var(--space-md);margin-top:var(--space-md)}
+    .response-box__note{background:var(--grey-50);padding:var(--space-md) var(--space-lg);border-top:1px solid var(--grey-200);font-family:var(--font-mono);font-size:10px;color:var(--grey-500)}
+
+    /* CONTRADICTION GRID */
+    .contra-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:2px solid var(--accent-red);margin:var(--space-xl) 0}
+    .contra-col{padding:var(--space-lg)}
+    .contra-col--claim{background:var(--white);border-right:2px solid var(--accent-red)}
+    .contra-col--evidence{background:#fef2f2}
+    .contra-head{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:var(--space-lg);padding-bottom:var(--space-sm);border-bottom:1px solid var(--grey-200)}
+    .contra-col--claim .contra-head{color:var(--grey-500)}
+    .contra-col--evidence .contra-head{color:var(--accent-red)}
+    .contra-item{padding:var(--space-md) 0;border-bottom:1px solid var(--grey-200)}
+    .contra-item:last-child{border-bottom:none}
+    .contra-item__title{font-family:var(--font-display);font-weight:700;font-size:var(--text-sm);color:var(--black);margin-bottom:4px}
+    .contra-item__text{font-size:var(--text-xs);line-height:1.6;color:var(--grey-600)}
+    .contra-item__source{font-family:var(--font-mono);font-size:9px;color:var(--grey-400);margin-top:4px}
+
+    /* SCREENSHOT EVIDENCE */
+    .screenshot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .screenshot{border:1px solid var(--grey-200);overflow:hidden;transition:border-color .15s}
+    .screenshot:hover{border-color:var(--accent-red)}
+    .screenshot__img{width:100%;height:200px;object-fit:cover;display:block;cursor:pointer;background:var(--grey-100)}
+    .screenshot__caption{padding:var(--space-sm) var(--space-md);font-size:var(--text-xs);color:var(--grey-600);line-height:1.5}
+    .screenshot__date{font-family:var(--font-mono);font-size:9px;color:var(--grey-400)}
+
+    .verdict-box{background:var(--black);color:var(--white);padding:var(--space-xl);margin:var(--space-xl) 0}
+    .verdict-box h3{font-family:var(--font-display);font-weight:900;font-size:var(--text-xl);margin-bottom:var(--space-md)}
+    .verdict-box p{font-size:var(--text-sm);line-height:1.7;color:rgba(255,255,255,.7)}
+    .verdict-box strong{color:var(--white)}
+    .verdict-list{list-style:none;padding:0;margin:var(--space-md) 0}
+    .verdict-list li{padding:var(--space-sm) 0;font-size:var(--text-xs);color:rgba(255,255,255,.6);padding-left:20px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)}
+    .verdict-list li::before{content:'✗';position:absolute;left:0;color:var(--accent-red);font-weight:700}
+
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;padding:var(--space-lg);cursor:pointer}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:95%;max-height:90vh;object-fit:contain}
+    .lightbox__close{position:absolute;top:20px;right:20px;color:var(--white);font-size:32px;cursor:pointer;font-family:var(--font-mono);z-index:10000}
+
+    @media(max-width:768px){.contra-grid{grid-template-columns:1fr}.contra-col--claim{border-right:none;border-bottom:2px solid var(--accent-red)}}
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#086b677a7a6d6b7c6167667b4861667e6d7b7c616f697c61666f6d6e6e677a6b6d266b6765"><span class="__cf_email__" data-cfemail="4b282439392e283f222425380b22253d2e383f222c2a3f22252c2e2d2d2439282e65282426">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 25 February 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav></div></header>
+
+  <section class="page-hero"><div class="container">
+    <span class="overline">Right of Reply &mdash; Response Received</span>
+    <h1 class="page-hero__title">Aither.com Response</h1>
+    <p class="page-hero__sub">Published in Full &middot; Unedited &middot; 13 February 2026</p>
+  </div></section>
+
+  <section class="section" style="padding-bottom:0;"><div class="container">
+    <div class="defamation-banner defamation-banner--compact" style="border-left-color:#16a34a;">
+      <div class="defamation-banner__title" style="color:#16a34a;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Response received and published in full</div>
+      <div class="defamation-banner__text">On 13 February 2026, Aither.com&rsquo;s Legal Department contacted <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cfaca0bdbdaaacbba6a0a1bc8fa6a1b9aabcbba6a8aebba6a1a8aaa9a9a0bdacaae1aca0a2">[email&#160;protected]</a>. Their email is published below in full and unedited, consistent with this investigation&rsquo;s <a href="public-interest.html#right-of-reply">right of reply policy</a>. Our response is also published in full. <strong>No reply to our response has been received.</strong></div>
+    </div>
+  </div></section>
+
+  <section class="section"><div class="container">
+
+    <!-- AITHER LETTER -->
+    <div class="response-box">
+      <div class="response-box__header">
+        <div>
+          <div class="response-box__from">From: Legal Department &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="deb2bbb9bfb29ebfb7aab6bbacf0bdb1b3">[email&#160;protected]</a>&gt;</div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:2px;">To: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d7e726f6f787e697472736e5d74736b786e69747a7c6974737a787b7b726f7e78337e7270">[email&#160;protected]</a></div>
+        </div>
+        <div style="display:flex;gap:var(--space-sm);align-items:center;">
+          <span class="response-box__status response-box__status--received">Response Received</span>
+          <span class="response-box__date">13 February 2026, 10:00 AM</span>
+        </div>
+      </div>
+      <div class="response-box__body">
+        <p>Dear Sirs,</p>
+        <p>We have become aware of your statements referring to <strong>AitherCO2 S.p.A.</strong> and linking those allegations to <strong>Aither.com</strong>.</p>
+        <p>For the avoidance of doubt, Aither.com is not the same company, not a legal successor, and not a continuation of AitherCO2 S.p.A. Aither.com is an entity with different shareholders, management, corporate governance, and legal structure.</p>
+        <p>While Aither.com acquired certain business units from AitherCO2 S.p.A. in the past, this does not imply any assumption of liabilities, representation, or corporate continuity.</p>
+        <p>We understand that your assumption may be based on the fact that certain former AitherCO2 personnel, including one of its founders, later joined Aither.com. However, the movement of individuals between companies does not create corporate continuity or transfer liabilities, ownership, or legal identity.</p>
+        <p>Your public statements suggesting otherwise are factually incorrect and may mislead the public. We respectfully request that you correct or clarify this point in your publications.</p>
+        <p>Furthermore, the use of a confusingly similar logo and branding may constitute trademark infringement and passing off, as it may mislead the public into believing there is an affiliation with Aither.com.</p>
+        <p>For clarity, Aither.com is not affiliated with your website and does not endorse or support its content.</p>
+        <p>We therefore request that you cease using such branding elements immediately and confirm in writing that they have been removed.</p>
+        <p>Additionally, any suggestion that Hogan Lovells represents Aither.com is incorrect.</p>
+        <div class="response-box__sig">Kind regards,<br>Legal &amp; Compliance<br>Aither.com</div>
+      </div>
+      <div class="response-box__note">Published in full and unedited under UK Defamation Act 2013 s.4 (public interest) &middot; Right of reply policy: all responses published unedited</div>
+    </div>
+
+    <!-- SCREENSHOT OF EMAIL -->
+    <div style="text-align:center;margin:var(--space-lg) 0;">
+      <img src="https://i.gyazo.com/a3e1e483e1d4e355659de7b8ddb26901.png" alt="Screenshot of Aither.com email dated 13 February 2026" style="max-width:100%;border:1px solid var(--grey-200);cursor:pointer;" onclick="openLightbox(this.src)">
+      <p style="font-family:var(--font-mono);font-size:10px;color:var(--grey-400);margin-top:var(--space-sm);">Original email screenshot &middot; Click to enlarge</p>
+    </div>
+
+    <!-- OUR RESPONSE -->
+    <div class="response-box" style="border-color:var(--accent-red);">
+      <div class="response-box__header" style="background:#fef2f2;">
+        <div>
+          <div class="response-box__from">From: Michael Copley &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f69b9f9d93b69f98809385829f9197829f989193909099849593d895999b">[email&#160;protected]</a>&gt;</div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--grey-500);margin-top:2px;">To: Legal Department &lt;<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aac6cfcdcbc6eacbc3dec2cfd884c9c5c7">[email&#160;protected]</a>&gt;</div>
+        </div>
+        <div style="display:flex;gap:var(--space-sm);align-items:center;">
+          <span class="response-box__status response-box__status--noreply">No Reply Received</span>
+          <span class="response-box__date">13 February 2026, 10:36 AM</span>
+        </div>
+      </div>
+      <div class="response-box__body">
+        <p>Dear Legal &amp; Compliance (Aither.com),</p>
+        <p>Thank you for your email and for clarifying Aither.com&rsquo;s position regarding AitherCO2 S.p.A.</p>
+        <p>For accuracy in public interest reporting on historical Efforce/AitherCO2 matters (under UK Defamation Act 2013 s.4), I would appreciate the following details:</p>
+        <p>1. The official registered name, company number, and jurisdiction of Aither.com.<br>
+        2. Details of the business unit acquisition from AitherCO2 S.p.A. (e.g., date, assets transferred, terms).<br>
+        3. Confirmation of personnel overlap (e.g., names of former AitherCO2 staff/founders now at Aither.com).<br>
+        4. The name and role of the individual signing this notice on behalf of Legal &amp; Compliance.</p>
+        <p>Any evidence-based response will be published unedited on investigatingefforce.com and other related websites and social media, consistent with my right-of-reply policy.</p>
+        <p>I confirm no intention to imply current affiliation &mdash; references are historical and based on public filings/Medium articles (e.g., 2021 Efforce post: &ldquo;AitherCO2, the company behind EFFORCE&rdquo;).</p>
+        <p>Corrections are welcome.</p>
+        <div class="response-box__sig">Best regards,<br>Michael Copley</div>
+      </div>
+      <div class="response-box__note" style="background:#fef2f2;">No reply received to date &middot; Four questions remain unanswered &middot; No registered entity name, company number, or acquisition details provided</div>
+    </div>
+
+    <!-- ============================================================
+         THE CONTRADICTIONS
+         ============================================================ -->
+    <h3 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--black);margin-top:var(--space-3xl);margin-bottom:var(--space-sm);">The Contradicting Evidence</h3>
+    <p style="font-size:var(--text-sm);line-height:1.7;color:var(--grey-600);margin-bottom:var(--space-md);">Aither.com claims it is &ldquo;not the same company, not a legal successor, and not a continuation of AitherCO2 S.p.A.&rdquo; The following public evidence raises questions about this claim.</p>
+
+    <div class="contra-grid">
+      <div class="contra-col contra-col--claim">
+        <div class="contra-head">Aither.com Claims (Feb 13, 2026)</div>
+
+        <div class="contra-item">
+          <div class="contra-item__title">&ldquo;Not the same company&rdquo;</div>
+          <div class="contra-item__text">Claims Aither.com is a separate entity with different shareholders, management, and structure.</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">&ldquo;Not a legal successor&rdquo;</div>
+          <div class="contra-item__text">Claims no assumption of liabilities, representation, or corporate continuity.</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">&ldquo;Not a continuation&rdquo;</div>
+          <div class="contra-item__text">Claims the movement of individuals does not create corporate continuity.</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">&ldquo;Different shareholders, management&rdquo;</div>
+          <div class="contra-item__text">Claims different corporate governance and leadership.</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">&ldquo;Acquired certain business units&rdquo;</div>
+          <div class="contra-item__text">Admits acquisition but claims no corporate continuity follows from it.</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">Declined to provide company details</div>
+          <div class="contra-item__text">Did not respond to request for registered name, company number, jurisdiction, or acquisition details.</div>
+        </div>
+      </div>
+
+      <div class="contra-col contra-col--evidence">
+        <div class="contra-head">Public Evidence</div>
+
+        <div class="contra-item">
+          <div class="contra-item__title">Castiglione: &ldquo;AitherCO2 is now Aither Group&rdquo;</div>
+          <div class="contra-item__text">Efforce CEO announced AitherCO2&rsquo;s rebrand to Aither Group and linked to aither.com as the new website. Official Efforce tweet echoed the same announcement.</div>
+          <div class="contra-item__source">Andrea Castiglione, Jun 25, 2021 &mdash; Telegram + Twitter</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">Aither.com: &ldquo;More than a decade of dedication&rdquo;</div>
+          <div class="contra-item__text">Aither.com&rsquo;s own website claims over a decade of history &mdash; which necessarily predates Aither.com and encompasses the AitherCO2 era.</div>
+          <div class="contra-item__source">aither.com homepage &mdash; Current branding (Feb 2026)</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">Aither LinkedIn: &ldquo;15 years&rdquo; &amp; &ldquo;Founded 2010&rdquo;</div>
+          <div class="contra-item__text">Aither Global&rsquo;s LinkedIn profile claims 15 years of experience and a 2010 founding date &mdash; the founding date of AitherCO2, not a separate company.</div>
+          <div class="contra-item__source">LinkedIn &mdash; Aither Global, retrieved Feb 23, 2026</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">Visetti: &ldquo;Co-founder &mdash; 15 years&rdquo;</div>
+          <div class="contra-item__text">Jacopo Visetti&rsquo;s LinkedIn lists him as Aither co-founder with 15 years at the company &mdash; continuous from AitherCO2 founding.</div>
+          <div class="contra-item__source">LinkedIn &mdash; Jacopo Visetti, retrieved Feb 23, 2026</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">LinkedIn: &ldquo;51&ndash;200 employees, Carloni CEO&rdquo;</div>
+          <div class="contra-item__text">Sergio Carloni (AitherCO2 founder) listed as CEO. 51&ndash;200 employees claimed &mdash; compared to 0 at Efforce Malta.</div>
+          <div class="contra-item__source">LinkedIn &mdash; Aither Global, retrieved Feb 23, 2026</div>
+        </div>
+        <div class="contra-item">
+          <div class="contra-item__title">No registered entity disclosed</div>
+          <div class="contra-item__text">Aither.com does not display any company registration, number, or jurisdiction on its website. Declined to provide this when asked. Why?</div>
+          <div class="contra-item__source">aither.com &mdash; No corporate information displayed (Feb 2026)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCREENSHOTS -->
+    <h4 style="font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);margin-top:var(--space-2xl);margin-bottom:var(--space-md);">Screenshot Evidence</h4>
+    <div class="screenshot-grid">
+      <div class="screenshot">
+        <img class="screenshot__img" src="https://i.gyazo.com/1f3794a1d8cbc2d4281d2244a5703779.png" alt="Castiglione: AitherCO2 is now Aither Group" onclick="openLightbox(this.src)" loading="lazy">
+        <div class="screenshot__caption">Castiglione announces AitherCO2 rebrand to Aither Group, links to aither.com</div>
+        <div class="screenshot__date" style="padding:0 var(--space-md) var(--space-sm);">Jun 25, 2021 &middot; Telegram</div>
+      </div>
+      <div class="screenshot">
+        <img class="screenshot__img" src="https://i.gyazo.com/af594a2e1bb4ff38263258cebc711141.png" alt="Official Efforce tweet: AitherCO2 rebrand" onclick="openLightbox(this.src)" loading="lazy">
+        <div class="screenshot__caption">Official Efforce tweet confirming same rebrand announcement</div>
+        <div class="screenshot__date" style="padding:0 var(--space-md) var(--space-sm);">Jun 25, 2021 &middot; Twitter</div>
+      </div>
+      <div class="screenshot">
+        <img class="screenshot__img" src="https://i.gyazo.com/db04ffbe8ba0cc5b1c5ac6dc78790db2.png" alt="Aither.com: More than a decade" onclick="openLightbox(this.src)" loading="lazy">
+        <div class="screenshot__caption">Aither.com branding: &ldquo;More than a decade of dedication, Ambition and Success&rdquo;</div>
+        <div class="screenshot__date" style="padding:0 var(--space-md) var(--space-sm);">aither.com &middot; Feb 2026</div>
+      </div>
+      <div class="screenshot">
+        <img class="screenshot__img" src="https://i.gyazo.com/ba11e59da2383af0c46a35daa2178702.png" alt="Aither Global LinkedIn: 15 years" onclick="openLightbox(this.src)" loading="lazy">
+        <div class="screenshot__caption">Aither Global LinkedIn: &ldquo;15 years of Pioneering Growth&rdquo;</div>
+        <div class="screenshot__date" style="padding:0 var(--space-md) var(--space-sm);">LinkedIn &middot; Retrieved Feb 23, 2026</div>
+      </div>
+      <div class="screenshot">
+        <img class="screenshot__img" src="https://i.gyazo.com/fd886133db9144b1ad15a91f3596f64e.png" alt="Aither LinkedIn: Founded 2010, Carloni CEO" onclick="openLightbox(this.src)" loading="lazy">
+        <div class="screenshot__caption">LinkedIn: Founded 2010, 51&ndash;200 employees, Carloni CEO</div>
+        <div class="screenshot__date" style="padding:0 var(--space-md) var(--space-sm);">LinkedIn &middot; Retrieved Feb 23, 2026</div>
+      </div>
+      <div class="screenshot">
+        <img class="screenshot__img" src="https://i.gyazo.com/cf3392a1a9d9b5a70f4b3b882e85a3ee.png" alt="Visetti LinkedIn: Aither Co-founder 15 years" onclick="openLightbox(this.src)" loading="lazy">
+        <div class="screenshot__caption">Jacopo Visetti LinkedIn: &ldquo;Aither Co-founder &mdash; 15 years&rdquo;</div>
+        <div class="screenshot__date" style="padding:0 var(--space-md) var(--space-sm);">LinkedIn &middot; Retrieved Feb 23, 2026</div>
+      </div>
+    </div>
+
+    <!-- VERDICT -->
+    <div class="verdict-box">
+      <h3>Unanswered Questions</h3>
+      <p>Aither.com contacted this investigation to deny corporate continuity with AitherCO2 S.p.A. When asked four straightforward questions to clarify their position, <strong>no reply was received</strong>. The following questions remain open:</p>
+      <ul class="verdict-list">
+        <li>What is Aither.com&rsquo;s official registered name, company number, and jurisdiction?</li>
+        <li>When were AitherCO2 S.p.A.&rsquo;s business units acquired, and what were the terms?</li>
+        <li>Why does Aither&rsquo;s LinkedIn claim a 2010 founding date &mdash; the year AitherCO2 was founded?</li>
+        <li>Why does Visetti list himself as &ldquo;Co-founder &mdash; 15 years&rdquo; if no continuity exists?</li>
+        <li>Why does Carloni (AitherCO2 founder) serve as CEO if no continuity exists?</li>
+        <li>Why does Aither.com&rsquo;s website claim &ldquo;more than a decade&rdquo; of history?</li>
+        <li>Why does Aither.com not display any registered entity information on its website?</li>
+        <li>Why did Castiglione announce &ldquo;AitherCO2 is now Aither Group&rdquo; and link to aither.com?</li>
+      </ul>
+      <p style="margin-top:var(--space-lg);">Aither.com&rsquo;s right of reply remains open. Any response will be published in full and unedited. Contact: <a href="/cdn-cgi/l/email-protection#beddd1ccccdbddcad7d1d0cdfed7d0c8dbcdcad7d9dfcad7d0d9dbd8d8d1ccdddb90ddd1d3" style="color:var(--white);text-decoration:underline;"><span class="__cf_email__" data-cfemail="cba8a4b9b9aea8bfa2a4a5b88ba2a5bdaeb8bfa2acaabfa2a5acaeadada4b9a8aee5a8a4a6">[email&#160;protected]</span></a></p>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+      <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">Were you affected by Efforce or WOZX?</p>
+      <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Join the Class Action &rarr;</a>
+      <a href="entities/aitherco2.html" class="btn btn--outline">AitherCO2 Profile</a>
+    </div>
+
+  </div></section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox__close">&times;</span>
+    <img id="lightbox-img" src="" alt="Evidence screenshot">
+  </div>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-prot

@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Threats — Complete History (2023–2026) — Investigating Efforce</title>
+  <meta name="description" content="Complete documented history of legal threats from Efforce Ltd, DLA Piper, and Hogan Lovells against investigator Michael Copley. 34 letters, zero proof.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="apple-touch-icon" href="../images/icon-black.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Page-specific styles ─────────────────────────── */
+
+    /* Section navigation cards */
+    .threat-nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-xl) 0}
+    .threat-nav__card{display:block;padding:var(--space-lg);background:var(--white);border:1px solid var(--grey-200);text-decoration:none;color:inherit;transition:all var(--transition-fast)}
+    .threat-nav__card:hover{border-color:var(--black);box-shadow:0 4px 12px rgba(0,0,0,.1);transform:translateY(-2px);text-decoration:none;color:inherit}
+    .threat-nav__num{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);text-transform:uppercase;letter-spacing:.1em}
+    .threat-nav__title{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--black);margin:var(--space-xs) 0}
+    .threat-nav__meta{font-size:var(--text-xs);color:var(--grey-500)}
+    .threat-nav__status{display:inline-block;padding:2px 8px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:var(--space-sm)}
+    .threat-nav__status--zero{background:#fde8e8;color:var(--accent-red)}
+    .threat-nav__status--empty{background:#fff3cd;color:#856404}
+    .threat-nav__status--false{background:#fde8e8;color:var(--accent-red)}
+
+    /* Scorecard */
+    .scorecard{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:var(--space-md);margin:var(--space-xl) 0;padding:var(--space-xl);background:var(--black-soft);color:var(--white)}
+    .scorecard__item{text-align:center}
+    .scorecard__num{font-family:var(--font-display);font-size:var(--text-5xl);font-weight:900;line-height:1}
+    .scorecard__num--red{color:var(--accent-red)}
+    .scorecard__num--gold{color:var(--accent-gold)}
+    .scorecard__num--green{color:#4caf50}
+    .scorecard__label{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);text-transform:uppercase;letter-spacing:.1em;margin-top:var(--space-xs)}
+
+    /* Threat sections */
+    .threat-section{padding:var(--space-2xl) 0;border-top:var(--border-heavy)}
+    .threat-section__header{margin-bottom:var(--space-xl)}
+    .threat-section__num{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);text-transform:uppercase;letter-spacing:.12em;display:block;margin-bottom:var(--space-xs)}
+    .threat-section__title{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--black);margin-bottom:var(--space-sm)}
+    .threat-section__subtitle{font-size:var(--text-lg);color:var(--grey-600);font-style:italic}
+
+    /* Correspondence blocks */
+    .correspondence{margin:var(--space-xl) 0}
+    .letter-block{margin-bottom:var(--space-lg);padding:var(--space-lg);border-left:4px solid var(--grey-200);background:var(--grey-50)}
+    .letter-block--copley{border-left-color:var(--accent-blue);background:#f0f7ff}
+    .letter-block--efforce{border-left-color:var(--accent-red);background:#fff5f5}
+    .letter-block--threat{border-left-color:var(--accent-red);background:#fff5f5}
+    .letter-block__sender{font-family:var(--font-mono);font-size:var(--text-xs);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-sm);display:flex;align-items:center;gap:var(--space-sm)}
+    .letter-block__sender--copley{color:var(--accent-blue)}
+    .letter-block__sender--efforce{color:var(--accent-red)}
+    .letter-block__date{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500)}
+    .letter-block__body{font-size:var(--text-sm);line-height:1.8;color:var(--grey-700)}
+    .letter-block__body strong{color:var(--black)}
+
+    /* Expandable letter sections */
+    .legal-expandable{margin:var(--space-lg) 0;border:1px solid var(--grey-200);background:var(--grey-50)}
+    .legal-expandable__trigger{cursor:pointer;padding:var(--space-md) var(--space-lg);font-weight:700;font-size:var(--text-sm);color:var(--accent-red);list-style:none;display:flex;align-items:center;gap:var(--space-sm);user-select:none}
+    .legal-expandable__trigger::-webkit-details-marker{display:none}
+    .legal-expandable__trigger::before{content:'▸';font-size:var(--text-lg);transition:transform .2s}
+    .legal-expandable[open] .legal-expandable__trigger::before{transform:rotate(90deg)}
+    .legal-expandable[open] .legal-expandable__trigger{border-bottom:1px solid var(--grey-200)}
+
+    /* Letter verbatim text */
+    .letter-text{white-space:pre-wrap;background:var(--white);padding:var(--space-xl);border:none;font-family:var(--font-body);font-size:var(--text-sm);line-height:1.8;color:var(--grey-700);max-height:600px;overflow-y:auto}
+    .letter-text::-webkit-scrollbar{width:6px}
+    .letter-text::-webkit-scrollbar-thumb{background:var(--grey-300);border-radius:3px}
+
+    /* Evidence images */
+    .evidence-figure{margin:var(--space-lg) 0;text-align:center}
+    .evidence-img{max-width:100%;border:2px solid var(--grey-200);cursor:pointer;transition:all var(--transition-fast)}
+    .evidence-img:hover{border-color:var(--accent-red);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+    .evidence-figure figcaption{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);padding:var(--space-xs) 0}
+
+    /* Evidence gallery grid */
+    .evidence-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--space-md);margin:var(--space-lg) 0}
+    .evidence-gallery .evidence-figure{margin:0}
+
+    /* Key takeaway boxes */
+    .takeaway{padding:var(--space-lg);background:var(--black-soft);color:var(--white);margin:var(--space-xl) 0;border-left:4px solid var(--accent-red)}
+    .takeaway__label{font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.1em;color:var(--accent-red);margin-bottom:var(--space-sm);font-weight:700}
+    .takeaway__text{font-size:var(--text-base);line-height:1.7}
+    .takeaway__text strong{color:var(--white)}
+
+    /* Response comment blocks */
+    .comment-block{margin:var(--space-lg) 0;padding:var(--space-lg);border:1px solid var(--grey-200);background:var(--white)}
+    .comment-block__num{font-family:var(--font-mono);font-size:var(--text-xs);font-weight:700;color:var(--accent-red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--space-sm)}
+    .comment-block__body{font-size:var(--text-sm);line-height:1.8;color:var(--grey-700)}
+
+    /* Score summary boxes */
+    .score-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin:var(--space-xl) 0;text-align:center}
+    .score-summary__item{padding:var(--space-lg);border:1px solid var(--grey-200)}
+    .score-summary__item--bad{border-color:var(--accent-red);background:#fff5f5}
+    .score-summary__item--warn{border-color:var(--accent-gold);background:#fffdf0}
+    .score-summary__item--good{border-color:#4caf50;background:#f0fff0}
+    .score-summary__num{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1}
+    .score-summary__label{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);margin-top:var(--space-xs)}
+
+    /* Pattern callout */
+    .pattern-box{padding:var(--space-xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-xl) 0}
+    .pattern-box__title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;margin-bottom:var(--space-md)}
+    .pattern-box ol{padding-left:var(--space-lg);counter-reset:pattern}
+    .pattern-box li{margin-bottom:var(--space-sm);font-size:var(--text-sm);line-height:1.6;counter-increment:pattern;list-style:none;padding-left:var(--space-lg);position:relative}
+    .pattern-box li::before{content:counter(pattern);position:absolute;left:0;font-family:var(--font-mono);font-weight:700;color:var(--accent-red);font-size:var(--text-sm)}
+
+    /* Verdict bar */
+    .verdict-bar{display:flex;height:8px;margin:var(--space-md) 0;overflow:hidden;border-radius:4px}
+    .verdict-bar__seg{height:100%}
+    .verdict-bar__seg--ignored{background:var(--accent-red)}
+    .verdict-bar__seg--unsubstantiated{background:var(--accent-gold)}
+    .verdict-bar__seg--answered{background:#4caf50}
+
+    /* Lightbox for images */
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;cursor:zoom-out;align-items:center;justify-content:center}
+    .lightbox.active{display:flex}
+    .lightbox img{max-width:95vw;max-height:95vh;object-fit:contain}
+
+    @media(max-width:768px){
+      .scorecard{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}
+      .scorecard__num{font-size:var(--text-3xl)}
+      .score-summary{grid-template-columns:1fr}
+      .threat-section__title{font-size:var(--text-2xl)}
+      .evidence-gallery{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="notice-bar" role="banner">
+    <div class="notice-bar__inner">
+      <span class="notice-bar__item">
+        <span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span>
+        <strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp;
+        This site discusses matters of public interest re: Efforce Ltd, WOZX token, and related parties &mdash; subjects of ongoing U.S. litigation
+        (<em>Case No. 25CV459519: Benner &amp; Copley v. Wozniak, Efforce Ltd et al.</em>).
+        All statements are alleged and based on verifiable evidence. No substantive rebuttal received to date.
+        <a href="/cdn-cgi/l/email-protection#caa9a5b8b8afa9bea3a5a4b98aa3a4bcafb9bea3adabbea3a4adafacaca5b8a9afe4a9a5a7"><span class="__cf_email__" data-cfemail="b3d0dcc1c1d6d0c7dadcddc0f3daddc5d6c0c7dad4d2c7daddd4d6d5d5dcc1d0d69dd0dcde">[email&#160;protected]</span></a>
+        &nbsp;&middot;&nbsp; <a href="public-interest.html#defamation">Full Notice</a>
+        &nbsp;&middot;&nbsp; <a href="public-interest.html#right-of-reply">Right of Reply</a>
+        <span class="notice-bar__updated">Updated 8 January 2026</span>
+      </span>
+    </div>
+  </div>
+<header class="site-header">
+    <div class="masthead">
+      <div class="masthead__brand">
+        <a href="../index.html" class="masthead__logo-link">
+          <img src="../images/logo-black.png" alt="Investigating Efforce" class="masthead__logo" height="40">
+        </a>
+        <span class="masthead__subtitle">A Public Interest Investigation</span>
+      </div>
+      <div class="masthead__actions">
+        <div class="masthead__search">
+          <input type="search" placeholder="Search claims, entities, evidence…" aria-label="Search site">
+          <button type="button" aria-label="Search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MEGA MENU NAVIGATION -->
+  <nav class="main-nav" aria-label="Main navigation">
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <div class="main-nav__inner">
+      <div class="nav-item" data-mega>
+        <a href="key-claims.html" class="nav-item__trigger">Key Claims <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Overview</h6><a href="key-claims.html" class="mega-menu__link">All Key Claims</a></div>
+          <div class="mega-menu__section"><h6>By Status</h6><a href="key-claims.html#unrebutted" class="mega-menu__link">Unrebutted</a><a href="key-claims.html#partial" class="mega-menu__link">Partially Rebutted</a><a href="key-claims.html#pending" class="mega-menu__link">Pending Response</a></div>
+          <div class="mega-menu__section"><h6>By Topic</h6><a href="key-claims.html?topic=missing-funds" class="mega-menu__link">Missing Funds</a><a href="key-claims.html?topic=misrepresentation" class="mega-menu__link">Misrepresentation</a><a href="key-claims.html?topic=corporate-governance" class="mega-menu__link">Corporate Governance</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="timeline.html" class="nav-item__trigger">Timeline <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Views</h6><a href="timeline.html" class="mega-menu__link">Full Timeline</a><a href="timeline-summary.html" class="mega-menu__link">Summary</a></div>
+          <div class="mega-menu__section"><h6>Filter By</h6><a href="timeline.html?filter=legal" class="mega-menu__link">Legal Events</a><a href="timeline.html?filter=blockchain" class="mega-menu__link">Blockchain Events</a><a href="timeline.html?filter=corporate" class="mega-menu__link">Corporate Actions</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="entities.html" class="nav-item__trigger">Entities <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Companies</h6><a href="entities/efforce-malta.html" class="mega-menu__link">Efforce Malta</a><a href="entities/efforce-bahamas.html" class="mega-menu__link">Efforce Bahamas</a><a href="entities/aitherco2.html" class="mega-menu__link">AitherCO2</a><a href="entities/aither-group-ag.html" class="mega-menu__link">Aither Group AG</a><a href="entities/mbm-holding-ag.html" class="mega-menu__link">MBM Holding AG</a></div>
+          <div class="mega-menu__section"><h6>Overview</h6><a href="entities.html" class="mega-menu__link">All Entities</a><a href="entities.html#structure" class="mega-menu__link">Corporate Structure Map</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="individuals.html" class="nav-item__trigger">Individuals <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Key Individuals</h6><a href="individuals/steve-wozniak.html" class="mega-menu__link">Steve Wozniak</a><a href="individuals/jacopo-visetti.html" class="mega-menu__link">Jacopo Visetti</a><a href="individuals/jacopo-vanetti.html" class="mega-menu__link">Jacopo Vanetti</a></div>
+          <div class="mega-menu__section"><h6>Overview</h6><a href="individuals.html" class="mega-menu__link">All Individuals</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="blockchain.html" class="nav-item__trigger">Blockchain <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Analysis</h6><a href="blockchain/missing-68m.html" class="mega-menu__link">Efforce Missing $68M</a><a href="blockchain/private-investor.html" class="mega-menu__link">Private Investor Analysis</a></div>
+          <div class="mega-menu__section"><h6>Data</h6><a href="blockchain.html" class="mega-menu__link">All Blockchain Data</a><a href="blockchain.html#wallets" class="mega-menu__link">Wallet Addresses</a><a href="blockchain.html#transactions" class="mega-menu__link">Key Transactions</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="evidence.html" class="nav-item__trigger">Evidence <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>By Type</h6><a href="evidence.html?type=document" class="mega-menu__link">Documents</a><a href="evidence.html?type=screenshot" class="mega-menu__link">Screenshots</a><a href="evidence.html?type=video" class="mega-menu__link">Videos</a><a href="evidence.html?type=chat" class="mega-menu__link">Chat Logs</a><a href="evidence.html?type=accounts" class="mega-menu__link">Company Accounts</a></div>
+          <div class="mega-menu__section"><h6>Overview</h6><a href="evidence.html" class="mega-menu__link">Full Evidence Index</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="legal.html" class="nav-item__trigger">Legal <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Legal</h6><a href="legal.html" class="mega-menu__link">Current Legal Situation</a><a href="legal.html#threats" class="mega-menu__link">Legal Threats</a><a href="legal.html#filings" class="mega-menu__link">Court Filings</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item" data-mega>
+        <a href="public-interest.html" class="nav-item__trigger">Public Interest <svg viewBox="0 0 10 6" fill="currentColor"><path d="M0 0l5 6 5-6z"/></svg></a>
+        <div class="mega-menu"><div class="mega-menu__inner">
+          <div class="mega-menu__section"><h6>Legal Framework</h6><a href="public-interest.html#defamation" class="mega-menu__link">Defamation Act Defence</a><a href="public-interest.html#right-of-reply" class="mega-menu__link">Right of Response</a></div>
+        </div></div>
+      </div>
+      <div class="nav-item">
+        <a href="class-action.html" class="nav-item__trigger nav-item__trigger--no-dropdown">Class Action</a>
+      </div>
+    </div>
+  </nav>
+  <section class="page-hero">
+    <div class="container">
+      <span class="overline">Legal Threats</span>
+      <h1>34 Letters. Zero Proof.</h1>
+      <p class="lead">A complete documented history of legal threats, intimidation, and obstruction directed at Michael Copley by Efforce Ltd and their legal representatives &mdash; DLA Piper (2024) and Hogan Lovells (2025&ndash;2026).</p>
+      <p class="lead" style="margin-top:var(--space-sm);font-size:var(--text-sm);color:var(--grey-400);">
+        Every letter received. Every response sent. Every question ignored. Exposed in full for the public record.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="defamation-banner defamation-banner--compact">
+        <div class="defamation-banner__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          UK Defamation Act 2013 s.4 &ndash; Public Interest Publication
+        </div>
+        <div class="defamation-banner__text">
+          All claims alleged, in good faith, supported by evidence, published in the public interest. Michael Copley is now a named Plaintiff in US Case 25CV459519.
+          <a href="public-interest.html#defamation">Full notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#33505c41415650475a5c5d40735a5d455640475a5452475a5d545655555c4150561d505c5e"><span class="__cf_email__" data-cfemail="b8dbd7cacadddbccd1d7d6cbf8d1d6ceddcbccd1dfd9ccd1d6dfdddeded7cadbdd96dbd7d5">[email&#160;protected]</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="scorecard">
+        <div class="scorecard__item">
+          <div class="scorecard__num scorecard__num--red">34</div>
+          <div class="scorecard__label">Letters Exchanged</div>
+        </div>
+        <div class="scorecard__item">
+          <div class="scorecard__num scorecard__num--red">0</div>
+          <div class="scorecard__label">Questions Answered with Evidence</div>
+        </div>
+        <div class="scorecard__item">
+          <div class="scorecard__num scorecard__num--red">76%</div>
+          <div class="scorecard__label">Points Completely Ignored</div>
+        </div>
+        <div class="scorecard__item">
+          <div class="scorecard__num scorecard__num--gold">3</div>
+          <div class="scorecard__label">Law Firms Engaged</div>
+        </div>
+        <div class="scorecard__item">
+          <div class="scorecard__num scorecard__num--red">0</div>
+          <div class="scorecard__label">Criminal Cases Found (Milan Certificate)</div>
+        </div>
+        <div class="scorecard__item">
+          <div class="scorecard__num scorecard__num--red">2+</div>
+          <div class="scorecard__label">Years Without Substantive Rebuttal</div>
+        </div>
+      </div>
+
+      <div class="pattern-box">
+        <div class="pattern-box__title">The Pattern</div>
+        <ol>
+          <li><strong>Threaten</strong> &mdash; Send cease &amp; desist demanding removal of all content</li>
+          <li><strong>Refuse</strong> &mdash; When challenged with evidence, refuse to engage on substance</li>
+          <li><strong>Escalate</strong> &mdash; Claim criminal complaints exist but refuse to provide case numbers</li>
+          <li><strong>Intimidate</strong> &mdash; Threaten extradition, UK police action, Italian prosecution</li>
+          <li><strong>Silence</strong> &mdash; When deadlines pass, go silent. No lawsuits materialise. Milan confirms zero cases.</li>
+        </ol>
+      </div>
+
+      <nav class="threat-nav" aria-label="Jump to section">
+        <a href="#section-1" class="threat-nav__card">
+          <span class="threat-nav__num">Section 1</span>
+          <span class="threat-nav__title">DLA Piper (2024)</span>
+          <span class="threat-nav__meta">Cease &amp; Desist &rarr; &ldquo;FINAL&rdquo; Response &rarr; 34 point-by-point rebuttals</span>
+          <span class="threat-nav__status threat-nav__status--zero">Zero evidence provided</span>
+        </a>
+        <a href="#section-2" class="threat-nav__card">
+          <span class="threat-nav__num">Section 2</span>
+          <span class="threat-nav__title">Hogan Lovells (2025)</span>
+          <span class="threat-nav__meta">Extortion threats &bull; Criminal complaint claims &bull; UK police threats</span>
+          <span class="threat-nav__status threat-nav__status--zero">76% of points ignored</span>
+        </a>
+        <a href="#section-3" class="threat-nav__card">
+          <span class="threat-nav__num">Section 3</span>
+          <span class="threat-nav__title">Hogan Lovells (2026)</span>
+          <span class="threat-nav__meta">Procedural refusal &bull; Continued silence on all merits</span>
+          <span class="threat-nav__status threat-nav__status--empty">Deadline ignored</span>
+        </a>
+        <a href="#section-4" class="threat-nav__card">
+          <span class="threat-nav__num">Section 4</span>
+          <span class="threat-nav__title">Visetti &mdash; Extradition Threat</span>
+          <span class="threat-nav__meta">16 Dec 2023 &bull; Claimed &ldquo;extradition to NYC&rdquo; &mdash; legally impossible</span>
+          <span class="threat-nav__status threat-nav__status--false">Empty threat &mdash; no action taken</span>
+        </a>
+        <a href="#section-5" class="threat-nav__card">
+          <span class="threat-nav__num">Section 5</span>
+          <span class="threat-nav__title">Pastore &mdash; Italian Lawyer</span>
+          <span class="threat-nav__meta">3 letters &bull; Fake Milan case number &bull; Milan certificate = ZERO cases</span>
+          <span class="threat-nav__status threat-nav__status--false">All proven false</span>
+        </a>
+      </nav>
+
+      <div class="threat-section" id="section-1">
+        <div class="threat-section__header">
+          <span class="threat-section__num">Section 1</span>
+          <h2 class="threat-section__title">DLA Piper&rsquo;s Cease &amp; Desist &amp; &ldquo;FINAL&rdquo; Response (2024)</h2>
+          <p class="threat-section__subtitle">The most important legal letter ever sent in defence of Efforce. It was meant to be their knockout blow. Instead, it became the single most damaging document they ever produced.</p>
+        </div>
+        <div class="letter-block letter-block--efforce">
+          <div class="letter-block__body">
+            <h3>1. 2024 Communication – DLA Piper's Cease &amp; Desist "FINAL" Response – 17 March 2024</h3>
+<p><em>The most important legal letter ever sent in defence of Efforce. It was meant to be their knockout blow. Instead, it became the single most damaging document they ever produced.</em></p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/feb85bd56ea5da0c15b92b5797958bb1.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/ac6075c916d863d752216318fb249d45.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/9e3efc4a9c5a0e6479cebfcbebc54443.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure></div>
+<!-- FULL VERBATIM LETTER IN EXPANDABLE (for those who want the raw text) -->
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger"> Click to read full verbatim text of DLA Piper's 3-page letter (30 Jan 2024) </summary>
+<pre class="letter-text">30 January 2024
+By email
+[Redacted]
+Dear Sir,
+RE: cease and desist letter
+We write to you on behalf of our client Efforce Limited (“Efforce”), to formally request that you immediately cease and desist from any declarations and/or actions to the detriment of our client's reputation.
+On the basis of the information we have received, you have:
+(i) created a platform called “Efforce Action Group” (the “EAG Platform”) aimed at collecting WOZX token owners’ stories on how the alleged failures in the development of Efforce’s projects have impacted their lives;
+(ii) written texts and uploaded (or authorized the upload on) videos on the EAG Platform containing serious ungrounded allegations against Efforce, its management and/or its shareholders;
+(iii) taken control of, and subsequently managed, a Telegram group, using it to spread disinformation by changing its original purpose;
+(iv) created and managed a X (formerly Twitter) account/group, having the same aim[](https://twitter.com/efforceaction);
+(v) maintained a negative and defamatory attitude which could have influenced the declining price of WOZX token and could have led some exchanges to delist the token and/or investors to withdraw their financial support;
+(vi) encouraged other token holders to write insulting or defamatory posts.
+The accusations that you have been bringing and/or spreading against Efforce, its management and/or its shareholders are groundless. While Efforce’s strategies, actions and projects cannot be described within this letter, please note that:
+- Efforce has never sold tokens to private individuals or through exchanges, but only to investment funds;
+- Efforce has never had a direct or indirect role in the price fluctuations of WOZX token and cannot nor intends to do so in the future;
+- WOZX token was listed at 0.08 USD on 3 December 2020 and was above the listing price until November 2022;
+- the founding team, to date, has never profited in any way from the project and none of the founders receive a salary;
+- to date, the founding team has invested more than 1,000,000 EUR of their personal funds into the project;
+- the Efforce project is still ongoing and the team intends to continue releasing new versions of the platform and continue to find the right way to involve companies in using it;
+- Efforce has not done anything illegal or illicit and there is no conspiracy going on;
+- Efforce is a private company; therefore, an external person cannot claim to decide the future of the company and what it should or should not do;
+- Efforce has never marketed its tokens to the public in the USA and all of the exchanges where WOZX token was listed barred US citizens from registering;
+- a number of specialized lawyers, from different jurisdictions, have analyzed WOZX token and found it not to be a security, even releasing legal opinions confirming this;
+- Efforce has carried out many activities since its launch and here we mention some of the most notable ones:
+ • Efforce released 4 different websites over time and all smart contracts are completely released on GitHub in open source;
+ • Efforce released a WOZX staking program in January 2022;
+ • the first listing of the WOZX token was carried out at a price of 0.08 USD, on 3 December 2020. As mentioned above, the token price remained above the listing price until 3 December 2023;
+ • Efforce released the first version of its platform, in which it was possible to contribute to energy efficiency projects (GENESIS POOL) on 30 March 2021;
+ • Efforce released the second version of the platform in September 2022;
+ • Efforce has rewarded those who contributed to the GENESIS POOL in line with what was promised;
+ • Efforce is working on a fifth version of the website and on a new version of the platform (version 3), which will be released soon and is currently completed and under evaluation from a legal point of view;
+- concerning the circumstance that WOZX token was listed on a few exchanges several months after the expected date communicated to the community (and never confirmed), please note that exchanges list at their discretion and this was outside of Efforce control. Your public statement hinting/assuming the fraudulency or unsafety of HUOBI, where WOZX token is listed, is causing severe damage to Efforce and its investors and token holders.
+Please note that the above are only some examples, which, however, are enough to demonstrate that your statements, on various platforms, regarding the inaction of Efforce and its management are false and defamatory. Your behavior is even more unacceptable, considering that, as per the information we have received, you have participated in the GENESIS POOL and received rewards accordingly, and started hostile behavior right after collecting such rewards.
+In any case, it is worth recalling that the fluctuations of the market value of the WOZX token cannot be controlled by Efforce.
+While Efforce, its managers and its shareholders reserve the right to start proceedings against whoever damages their reputation, we hereby formally request you to immediately:
+(i) remove all the defamatory contents (videos included) concerning Efforce, its management and/or its shareholders, from the EAG Platform and/or any other platforms or groups, including but not limited to X and LinkedIn;
+(ii) cease and desist from further divulging any kind of accusation that could damage the reputation of Efforce, its management and/or its shareholders.
+Efforce cannot tolerate any kind of defamation, but remains open and willing to engage actively with anyone interested in making the project advancing in a constructive and positive way.
+Kind regards,
+Alessandro Lanzi
+Alfredo Saracino]]
+</pre>
+</details></p>
+
+
+
+
+
+
+<!-- DROPDOWN 2 – COPLEY'S FULL RESPONSES (34 COMMENTS) -->
+
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger"> Click to read Copley's full point-by-point responses (34 comments) – every question DLA Piper ignored or failed to rebut </summary>
+<pre class="letter-text">Comment 1:
+ 
+Please confirm where you collected my middle name information. This is information that is only on Governmental ID that I never use for any other purpose so is not in the public domain.
+My suspicion is that Efforce lured me into providing governmental ID on October 18th 2023 under the false impression this would be used to book flights which were never booked, for a meeting which was cancelled prior to taking place after all requests for updates were stonewalled.
+You can see screenshots here.
+https://gyazo.com/b31adc44dcc5617d2256fb562a3620ca
+Obtaining passport information via false pretenses would be highly illegal as far as I am aware.
+ 
+ 
+Comment 2:
+ 
+I confirm I created EfforceActionGroup.com for the reasons stated in the following screenshot, not 'aimed at collecting WOZX token owners stories on the alleged failures in development have impacted their lives'.
+I did post two videos on the website showcasing my history and also one other persons example, both which contain true information and no allegations which I cannot prove,
+however I refrained from posting more as a sign of goodwill once Efforce offered a meeting to collaborate - however this meeting never went ahead despite stopping all activity for 6 weeks prior to the scheduled meeting date.
+Major shareholder Jacopo Visetti of MBM Holdings Ltd confirmed to me he thought the meeting was going ahead the weekend prior to it being cancelled, and also informed he is unsure why the other representatives are unwilling to meet.
+ 
+ 
+Comment 3:
+I am willing to stand by every aspect that was voiced and provide evidence to back up reasons why my personal beliefs or theories should hold significant weight.
+Expressing personal beliefs and theories rather than making specific factual claims are protected by free speech. If I made any statement of fact please be assured I will be able to back this up with significant evidence, though I didn't put this forward as my goal has always been to add pressure to Efforce internally, rather than to create external damage to the reputation.
+ 
+Comment 4:
+This comment is disingenuous and false as it suggests I took over the group with the purpose of spreading disinformation.
+I took control of the group in Dec 2021 and as per the screenshots of private message with Andrea Castiglione I even offered to transfer it to Efforce - so my purpose was to support Efforce and protect the group from falling into the hands of someone that may shill other tokens or not care about the project
+https://gyazo.com/73606d8494ada125f3ba4c70b67c27d0
+It was not until August 26th 2023 that I changed the name to EfforceActionGroup after near 2 years. There has never been any disinformation (Disinformation is false information deliberately spread to deceive people.) spread in this group as Efforce representatives are fully aware - there are deep concerns over the state of the project and the dire circumstances that token holders find themselves in, but there is not any disinformation and I can assure you that if pushed to publish all of the information that I have that I can back up every statement of fact with evidence to fight against these false allegations.
+https://gyazo.com/970417e9ace04e1982cc370c33bfb7e5
+ 
+Comment 5:
+ 
+This is also completely false. The group was created for the following purpose
+Aug 26th 2023
+"The Efforce Action Group (EAG) is a collective of WOZX token holders that seeks to promote resolutions with Efforce Ltd to ensure the interests of WOZX token holders are best represented within the company and that the huge token holder losses incurred to date can be recovered."
+https://gyazo.com/c416c1da3709f1efb8f9c62eea21d8e2
+There has not been any disinformation posted on the platform, and AI confirms no posts which could be considered defamatory. I have no motive to harm Efforce as a token holder in the WOZX token and I am not actively trading tokens so no benefit to be derived from disinformation.
+ 
+Comment 6:
+This is plainly false. If this is the legal opinion you have arrived and wish to present then I am fully prepared to defend against these allegations as they are completely baseless.
+As I mentioned previously, I have evidence to back up every claim that I have made which would add serious weight to my arguments should I post these publicly, but my intention has never been to damage Efforce, it has always been to get to a position of truth.
+I can also provide full chat logs with key Efforce representatives (subject to client attorney privileges) that confirm this position if pushed to by any further legal notice against me.
+ 
+Comment 7:
+This too is disingenuous.
+You can see EAG Rules posted September 12th which confirm the manner I expect from anyone interacting in the channels
+https://gyazo.com/4b7a54a3545c31adf1cb2bb3f2b07ad5
+Insulting comments were challenged and moderated consistently.
+The purpose of the group was to never to insult or post defamatory information, it was always to provide a platform to discuss between token holders the events that happened previously to try raise the profile of our concerns with Efforce and thus make positive progress with the project having been unable to do this in the official channels due to users being banned due to Efforces moderation when raising concerns.
+ 
+ 
+Comment 8:
+You state as fact that the allegations I am bringing against Efforce are groundless. Please confirm if you know this for a fact, or whether you are stating this as fact despite not having a full picture of what has happened historically nor the chance to gather evidence in this direction.
+I am very surprised that DLA Piper, a highly prestigious and I know very competent law firm, are willing to state as a fact based solely on your client stating this to be the case rather than on any investigation into the case itself.
+ 
+Comment 9:
+ 
+I have never stated that Efforce sold tokens to individuals through exchanges. I have always stated that Efforce sold tokens to 3 private institutions.
+I have stated facts that the average price of the private token sale quoted by Efforce in early PR as being $0.08 was actually false, with the average price being confirmed as closer to $0.04. This gave early investors a false opinion on valuation.
+I have stated facts about the vesting schedule being made in a way so that at the time that the first listings happened the supply was so short that the first holders (private institutions) would likely benefit hugely, while the secondary investors would struggle due to the supply increasing at such a rapid pace.
+I have also expressed that the vesting schedule was not adhered to by private institutions and that one of the private institutions GDAC is currently being sought by Chinese authorities for their role in scamming tens of thousands of investors through their manipulations involving the WOZX token - and provided evidence that as recently as March 2022 Andrea was providing private talks to these investors despite the fact he had by this point stopped speaking as a representative to Efforce token holders and that we were never informed there were multi-levels of information being provided to WOZX token holders
+https://gyazo.com/6832ad072868199f81ab97b12c3ce763
+https://gyazo.com/f45dbcaf64a3feabc014e78687e4171f
+ 
+Comment 10:
+Efforce have had an indirect role in the price fluctuations through their communications and their lack of activity to progress the project, market the project, or communicate updates transparently with WOZX token holders.
+This is why their tweets hyping exchange listings in the coming days, or major shareholders creating FOMO through suggesting that key things were set to happen which did not come to fruition in the timeframes suggested leading to pumps and dumps in demand - is so worthy of investigation
+They informed OGs for example via a shared communication that they had a 7 figure marketing budget for the remainder of the year when Bithumb initially threatened to delist the token in mid-late 2022, information which reassured OGs so we could reassure the community, then once being relisted they pulled the budget and failed to follow through with this pledge. These aspects indirectly made a huge impact on the price, as did their decision to pull their NFT sale, their strategy with onboarding exchanges, only having one employee despite the illusion there was a fully committed team working constantly on the project, only make 2 tweets in the entirety of 2023, and stonewall customers by not providing any information on dates of specifics for the new roadmap etc, so this statement too is false.
+In terms of direct influence, there was certainly a huge direct influence on price through their tokenomic design which meant that from a 1 billion supply of WOZX that on the first day of listing there would only be a couple of million tokens in circulation (at a time when their PR machine was in overdrive) and that because each day thereafter the supply increased by a roughly equal amount this meant that the token was incredibly deflationary for retail customers and the price could only fall dramatically from this point - especially with the lack of consistent action from Efforce. Thus it's not true that Efforce did not directly influence the price - though I do agree they have not been consciously trying to move prices.
+This will change however if they roll out their proposed plan to use 40% of their profits from the new platform to buy back tokens - especially given the statement that they will buy at times of their choosing rather than ever explaining time frames for buy back (WIZX - in discord).
+ 
+Comment 11:
+I am aware of the fact the price listed at $0.08 and was above this level, however this is irrelevant given it quickly raised to an all time high of $3.61 level which is closer to the level many retail customers bought into WOZX on the back of the vesting schedule and also no doubt aided by the fact Efforce representative Andrea Castiglione informed token investors that the average price of the token with private institutions amounted to $0.08, therefore suggesting the project had raised $36m to fund the project (450m tokens x $0.08).
+https://gyazo.com/53b3c9b8e75942dc948b299670c7480e
+Jacopo Visetti however informed me that the total raised however was far lower (circa $12.5m) so there are major questions abut why token holders were informed an amount which was far above the amount that private institutions actually purchased for. This was highly misleading and has never been addressed yet despite me raising this with the team in December 2022.
+As mentioned previously, the fact that the tokenomics were designed so that from a 1 BN supply of tokens, there would only be a few million in circulation on the day of listing (3rd Dec 2020) - at the time when PR and hype around the token would be at it's highest - meant that private institutions were able to maximise the
+ 
+Comment 12:
+ 
+This is false also, Jacopo Visetti confirmed multiple times in the Discord and to me privately that the company is in a healthy position, making strong profits, and was set for a 7 figure profit in 2023 through having invested the funds raised via the token sale into energy efficiency projects that provides a strong annual return. The issue with this is that they have no intention to share these profits with token holders - despite the fact that all WOZX token holders would reasonably assume that funds raised via the private sale should be used to build the project for the benefit of the token holders that took ownership of these.
+Andrea Castiglione and Paolo Pastore also confirmed to me privately that shareholders such as Steve Wozniak are currently happy because the business is profitable. So once again, your statement is miss-informed.
+Jacopo Vanetti, Jacopo Visetti, and Andrea Castiglione all also mentioned multiple times that they owned their own WOZX tokens outside of Efforces share of tokens. Given they have full knowledge of internal aspects and timeframes which other token holders do not have visibility for, and they are also the converyors of information (such as Andrea's talk to GDAC investors in China which was never announced) there's a high chance that they would be able to time their buy and sell trades perfectly - and thus this is something that requires further investigation as their own personal trades could have directly influenced the price of the token or have lead to your statement to be false that they have never profited.
+ 
+Comment 13:
+My understanding is that MBN Holdings (Aither) have committed €1m+ to the project due to a lack of resources within Efforce. The lack of resources within Efforce exist solely because they choose to invest the bankroll of the business in projects which generate a long-term ROI for themselves without deriving any benefit for token holders, which then also locked up the finances of the business leaving no budgets to be spent delivering the project that token holders were invested into.
+This is not normal activity for a company and thus the €1m that the founding team has delivered into the project is a result of negligence in the strategic planning of the project rather than something to be admired.
+I imagine also that this €1m is a loan rather than a gift, and given the company is forcast for strong profits on the back of this investment, the loan from Aither to Efforce is one that has benefited shareholders of Efforce, enabling them to profit from having invested the Efforce bankroll into energy efficiency projects, while still having an option for some activity to take place progressing the token (via their 1 employee!) rather than the funds raised through the token sale being used to build the project initially and then additional funds for the build being generated by selling the vast allocations of tokens set out in the whitepaper (350m tokens combined) for Consultancy and mining purposes.
+ 
+Comment 14:
+The project is still ongoing however token members have been forwarned in the discord that should the next iteration not be successful the project will close due to lack of demand and tokens will be worthless.
+Thus it is essential that the correct steps are taken now, which is a process I have been fully engaged in supporting Paolo Pastore and Jacopo Visetti with privately to try determine how the company can overcome some of the past failings and relaunch a highly successful project without fear of past failings coming to the surface and harming the reputation of the project at this point when it will be far more detrimental to Efforce and the ability for tokens holders such as myself to recover our vast losses.
+ 
+Comment 15:
+I believe that the Efforce project have tried to be complaint with the law so your statement is true, despite some serious moral failings towards loyal token holders such as intentionally not taking any actions to support the price for those already invested, given it would bring more people into a very risky situation
+https://gyazo.com/3ead0b24e8f56f52a69f9d4b0c613b4a
+If this were a genuine concern, then this would suggest the project itself is not secure for the long-term and that my fears and reasons for creating the action group are well founded and genuine - as they are.
+ 
+ 
+Comment 16:
+Efforce are however absolutely aware internally of wrongdoing by third parties as per this screenshot and this has then impacted the desire to progress the project. They have never informed token holders of these aspects, thus leaving them to suffer immensely thereafter as the price has fallen
+ "No one made money on Efforce except the Chinese investor. They emptied their bags on retail customers after pumping the price" however they have never notified retail token holders of this and this also then influenced their decision to not progress the project while they tried to determine what to do - which has had a major negative impact on token holders and I believe likely falls outside of their duties to be transparent to token holders.
+https://gyazo.com/1159ff2025fd505e4f5422426091e7db
+ 
+Comment 17:
+Efforce are a private company that launched a public token, and thus they have a fiduciary duty to act in the best interest of token holders and thus prioritise transparency, accountability and protecting the integrity of their token ecosystem.
+I have tried for the past 3 years to support the project and the management/ownership to the detriment of $300k+ in losses because despite my close relationship we were never informed about the true state of the project and thus we were not granted the ability to make informed decisions.
+Everyone of my interactions and posts has been intended to benefit the long-term future of the project as it's my firm believe (and one I have communicated with management and owners multiple times) that without addressing past issues, the future platform will not be a success - and thus token holders who I care deeply - about will not have a road-map to recover their losses.
+ 
+Comment 18:
+I assume you are referring to this tweet
+https://gyazo.com/2209be3c0dc9844d2b38d315282d2e2c
+Efforce marketed on their facebook group and in the discords (potentially also on Twitter) the following post which proves beyond any doubt that the WOZX token was marketed to the public in the US - unless the post itself was photoshopped aimed at deceiving people into believing that the token was being marketed.
+https://gyazo.com/d7632141e5719c46f4043e28568f9e9a
+I presume Efforce signed off on this being posted given the professionalism of the team and the fact they subsequently shared the posts on their facebook.
+I am told by holders from the US that I am in contact with that WOZX tokens were available to US customers. On Uniswap and Indodax this remains the case today as far as I am aware, on HBTC they had a system whereby users did not need to submit KYC if they were trading out less than 1 BTC per day, and I am informed they did not require KYC to purchase WOZX tokens and thus US customers would have been able to obtain these.
+Having researched I can see that Huobi did take adequate precautions in this respect.
+IMPORTANT
+I have sought a number of opinions on this post and they confirm this post not to be defamatory.
+https://gyazo.com/2209be3c0dc9844d2b38d315282d2e2c
+As an act of goodwill I have deleted this point give I do not wish to create issues for Efforce with Huobi as my intention is always to find solutions that benefit Efforce in it's ability to deliver token value for token holders. My decision to delete this tweet should not be interpreted as acknowledgement of any defamatory behaviour however.
+I have saved the tweet in case you wish to refer to it later for my defence.
+ 
+Comment 19:
+I presume this comment relates to the following post:
+https://gyazo.com/18e3934e2c0579fe04ac7816c98405c5
+Firstly, both AI and the legal opinion I have sought confirm that there is no defamatory behavior here, but rather a legitimate question based on the tweet by Tatiana Koffman.
+Secondly, I have never seen any public legal opinion stating WOZX token is not a security, so while the team/shareholders may have confidence here having seen the opinions, these have not been made available to token holders as far as I am aware.
+Thirdly, Efforce should surely have no concern with people asking questions about whether the token is a security given they have legal rulings confirming it is not. They could just reply with the ruling to allay token holder concerns, so why would they take issue with a legitimate non-defamatory question.
+Fourth, the climate is changing day by day surrounding SEC judgements around whether tokens are securities or not, and as this changes, previous legal judgements could potentially need to be updated - thus it is possible that given updated legal precedents the rulings may be different now than they were previous - so questions would still be legitimate.
+Fifth, the initial token rulings were no doubt made prior to the token being created and thus would not have taken into account such statements from Steve Wozniak that "I think of our tokens as shares of stock" which by definition would make the WOZX token a security as far as I am aware.
+https://gyazo.com/d4f081f4cc92c187bf3637db05da345a
+The questions were and still remain legitimate questions rather an intent to defame the project.
+ 
+Comment 20:
+The last version of which was created with I am told zero investment as Paolo Pastore (the Managing Director) learned to code himself in order as there were no budgets available to him as these were not released by the shareholders
+ 
+Comment 21:
+ 
+This is true. They did however cut short the 12 month staking programme they set out forcing the closure of the staking pools far earlier than scheduled because they decided it wasn't in the business interest to continue to offer rewards when there was no business benefit.
+This therefore means that those (myself included) that bought vast sums of WOZX to be able to maximise the staking opportunity could not obtain close to the returns that were initially set out.
+The staking pools were also set up in a way that did not provide close to the returns set out when joining the pools.
+ 
+Comment 22:
+This point has little relevance.
+The tokenomics created by Efforce and abused by at least one private institution (though evidence suggests two) meant that the price rose extremely quickly initially - possibly aided by collaboration between investors in the unofficial price group that Andrea Castiglione approved and Jacopo Vanetti joined outside of the knowledge of the other shareholders, which strategised ways to break through sell walls to maximise the price, or by providing updates / priority information to groups of token holders outside of the official channels.
+I believe if a crypto token company becomes aware of manipulations by institutional investors they selected, their obligation would include:
+Transparency - promptly disclosing any known manipulations to their token holders, providing clear and accurate information about the situation
+Accountability - Taking responsibility for addressing manipulations and taking appropriate actions to mitigate the negative impact to token holders
+Compliance - Ensuring that actions taken comply with relevant regulations and industry best practices
+Safeguards - Implementing measures to prevent future manipulations and protect the interests of token holders.
+Communication - Maintaining open communication channels with token holders to address concerns, answer questions, and provide updates on the situation and actions taken.
+Efforce has never publicly addressed any concerns with the institutional investors, seemingly failing their fiduciary duty to token holders
+https://gyazo.com/1159ff2025fd505e4f5422426091e7dbhttps://gyazo.com/39acbb1d06ad89bc69e68ed962ef6b5f
+ 
+Comment 23:
+This platform was launched, though it was outlined to be a version which would be updated with the full working platform which never materialised.
+Furthermore, the roadmap released on Jan 10th 2021 failed was not adhered to with the 10/12 outlined aspects never coming to fruition, so to claim that your statement showcases company progression is not true, given the progression was far slower than Efforce themselves outlined.
+TItems not completed by timeframe outlined:
+WOZX metrics
+Public events
+Public beta testing
+Staking programme
+Tier 1 exchange listing
+Launch of Efforce Academy
+Public beta testing for 150 community members
+Presentation of first ESCO partners
+Public launch of marketplace
+Partnership with global utilities in recognition of Megawatts to offset energy bills
+Worldwide media coverage
+Launch of WOZX governance tokens
+Beta launch of Efforce DEC
+Integration with Fiat gateways to increase global accessibility
+https://gyazo.com/d5b35892f2c2b282bd17d2fe0cfa20df
+https://gyazo.com/30e250a350f4e8765a835c9725d19d41
+https://gyazo.com/0e70ead5c477b5ba065eecc04eddc259
+https://gyazo.com/32b25911c4388b66a67c084a42678543
+ 
+Comment 24:
+The second version of the platform was a different vision and whitepaper to the one outlined in the initial roadmap. It was launched without any major build up, no explainer videos, no academy, or technical videos and while there was a marketing budget which was meant to run to 7 figures over a 5-6 month period, this was cancelled after 7-10 days of publications and the new platform was quickly abandoned due to lack of interest in the NFTs.
+I myself bought over 70% of the NFTs sold as I was excited by project and the hype suggested the NFTs would sell out quickly and have a high value in the future.
+Value was meant to be added because:
+1/ The NFT would hold value in itself, given it was Steve Wozniak
+2/ The NFTs had a lottery aspect which meant during the NFT reveal some users would unveil highly unique NFTs which would have higher value than the other less unique NFTs
+3/ We were informed the 10% minimum return above the purchase price, generated by staking the NFT, would likely be far higher because the return was based on every NFT being staked 100% of the time, but instead people may not stake (buying the NFT for the NFFT value) &amp; they would need to unstake to trade and transfer their NFTs etc - so in actual fact 10% was a minimum and in reality returns would be far higher.
+4/ We were informed that early NFTs came attached with priority access rights to future protects which could hold large value in the future, increasing the value of holding these NFTs
+5/ We were informed that there may be governance rights attached to those holding the NFTs
+6/ We were informed that the NFT model allowed for holders to trade out of their positions at a time of their chosing rather than needing to remain invested for the full 5 year duration.
+Initially we were informed Efforce were pulling the budget for marketing but would leave the pools open to fund the projects as they were in no rush. Then we were informed that Efforce were not going to do an NFT reveal to Steve Wozniak NFTs and would instead offer a 10% premium to cash in the NFTs early to get our money back as there was not sufficient demand and some regulatory issues.
+Then about 6 months later after the idea was initially outlined in February/March, Efforce finally provided the opportunity to cash in NFTs having been pushed by myself and the community for their lack of willingness to release these earlier or provide timelines for when they would be released.
+The 10% premium on price was appreciated, but unfortunately was offset by losses in excess of 10% from the WOZX tokens which were required to secure out NFTs - so the second version of the platform was an unmitigated disaster for all concerned.
+ 
+Comment 25:
+This is not actually true. Efforce promised returns based on the performance of the Genesis projects, not a set 10% APR which you decided on thereafter. The expected returns via MWoz were set out to be in line with the 18-20% that Aither and all other ESCOs were averaging
+https://gyazo.com/be7d496b9644a4474f8c0ba273fad93e
+It was confirmed in the same post that "Our first EFFORCE test project started May 2020 is confirming the trend so far and it will last about 6 years"
+ 
+Comment 26:
+I look forward to seeing this. Efforce would have benefited by reassuring me and the EAG members by providing access to this platform as they did to OGs so we could provide constructive feedback, but instead they have kept us in the dark thus far, so we have no information to decipher whether the new platform will be a positive for the project or not at this time.
+I was told however that the major shareholders are very tired of the situation and there's a possibility this may not go ahead - so time will tell whether this is actually released.
+ 
+Comment 27:
+Jacopo Vanetti posted hype around the T1 listing on 21st March claiming that 'Exchange Listing the news will come out in the next days, we already sign'
+https://gyazo.com/5ca9f9c3480f40c8221363b11be53a26
+As you can see the platforms 3 phases was alluded to and never delivered. The secret part that Woz fell in love with also was never revealed.
+There was also financial advice that it's very stupid to sell because "we will open a T1 exchange in the next days"
+As you can see this information was delivered to be absolutely factually correct to token holders, as was the tweet about the upcoming new exchange listings. The price pumped, the listings were not delivered, the price dumped, then silence.
+https://gyazo.com/2d572e6d965c90b20cfcbee2eeb5294e
+ 
+Comment 28:
+I presume you refer to the following posts
+https://gyazo.com/218ddd600a957820e524daac3a13fe0a
+https://gyazo.com/f0f76bd8ca63dca2b3daf73d73b457a6
+Please can you confirm that you are not suggesting that these posts are defamatory as legal interpretation the opinions I have sought suggest these are absolutely legitimate questions to be asked on the back of the information displayed in the tweets that were replied to, and could not be considered to be defamation legally.
+I asked a genuine question based on serious allegations by others, which they would need to defend against TWP Finance and Rho Rider if they believe these initial posts to be defamatory.
+ 
+Comment 29:
+My legal interpretations are different and if combined with the vast amount of evidence which I have purposefully not posted publicly as I do not wish to harm Efforce or it's representatives, I am absolutely comfortable with the position I have taken from a legal perspective - and consider the action from Efforce not to agree to meet (as was initially indicated) as a way to address these concerns privately, but then to take action against me when I address some of the concerns publicly, to be extremely surprising and miss-guided.
+The claims are not False and they are not defamatory as Jacopo Visetti and Paolo Pastore must be aware of from my interactions with them that my intentions are to help the project succeed rather than to cause harm to it.
+The lack of progress hasbeen frustrating, and the fact they have supported this action despite knowing it to be based on a false premis is disappointing and leaves me in a very difficult position as the reason I didn't take legal action / consider class action previously against Efforce was because of their willingness to work towards solutions and my desire to help make the project a success - but now these solutions now appear closed and goodwill has very much evaporated on the back of this notice and my desire to refute the false allegations made against me.
+ 
+Comment 30:
+I did not participate in the Genesis pool, I participated in the NFT purchase and was the biggest buyer owning over 70% of the total NFTs minted. The NFTs promised a MINIMUM 10% return per annum over 5 years (via staking), plus additional value through limited edition Steve Wozniak NFT, plus additional value through a NFT lottery for rare NFTs, plus additional governance rights and access to future projects which were only open to NFT owners. The NFTs were also meant to be tradeable as a way that positions would be flexible to trade in or out as we wish.
+The fact that Efforce abandoned the projects and sought to refund the NFTs rather than go through with the NFT reveal, staking pool that would be guaranteed to provide greater than 10%, and the other benefits was a great disappointment to me - though I was told that it was a miss-step for the company to go the NFT route and that if NFT token holders agree to support the decision to roll back for 10% extra, then it would be of overall benefit to Efforce as it hadn't proved a popular route - so I supported WIZX and the team in this on the provision that refunds would be made quickly so that I could reinvest elsewhere.
+This was in March 2023, and it wasn't until August 2023 that the returns were finally made after had to apply a lot of pressure.
+During this time also I was informed that Efforce plan to completely change the business model, burn all of the teams tokens / ecosystem tokens / consultancy tokens etc all without any consultation with token holders. It's true that until I received back the funds I had put into the NFTs I was reluctant to be more vocal, but it's not true that I benefited in any way from the positive returns from the NFTs because the token value fell by more than the 10% APR gained, thus I am unsure why I should be appreciative for having to fight for 6 months to understand when the NFTs would be refunded when already let down by multiple failings with the project and the NFT reveal plans not coming to fruition.
+ 
+Comment 31:
+Discussed previously, but I disagree as Efforce are the driving force that determines the strategy, direction, updates token holders with progress reports, and ultimately determines the level of competence in the token.
+The fact they for example posted two tweets in the entirety of 2023, have only had one employee on the payroll for the duration of the their existence, utilised the budgets raised via private sale for energy investments for their own personal benefit rather than token holders - at the opportunity cost of how it could have been invested, and intentionally did not promote the token to avoid in their own words "bringing others into a risky situation" showcases that they have influenced the fate of token holders like myself hugely and not in a positive way over the last 3 years.
+ 
+Comment 32:
+I have fully reviewed all of my actions and I am extremely confident that the actions against me are unfounded.
+I have however taken some steps to ensure that my actions cannot be miss-construed, such as:
+1/ Unpublishing the IMPACT videos from the EfforceActionGroup.com website.
+2/ I have closed both the EAG Discord and the EAG Telegram group as I want to ensure that I have no moderation duties for other peoples comments and comments of group members cannot be linked to EAG despite the fact they do not represent my views. I always wish to ensure I have more protection against claims that I have acted to defame Efforce and ensuring that all future actions and interactions are public and transparent on the X platform which has committed publicly to fully support those that are unfairly targeted on the platform.
+3/ I have removed the post mentioned previously about exchanges not offering protections against US customers - despite the fact that Uniswap, Indodax and HBTC to my knowledge did offer no protection.
+https://gyazo.com/2209be3c0dc9844d2b38d315282d2e2c
+4/ If you provide me with direct links for any other message that you intend to pursue me for as being defamatory that I have not identified (or has been considered but legal opinion suggests not to be defamatory) then I will be willing to remove these posts. My position is I will comply with the law. I will not comply with claims which I believe seek to force compliance despite the fact that the statements were provably (with evidence I can provide if further action is taken) that would disprove these claims against me.
+ 
+Comment 33:
+I require a clarification here please DLAPIPER.
+Your statement suggests that you seek to stop me from not just making false or defamatory claims, but you also seek to stop me making any kind of accusation that could damage Efforce, it's management and/or it's shareholders - even if there are strong grounds for these questions being legitimately raised, or if I have evidence which would support the fact that these accusations are truthful.
+Please can you confirm whether you seek to stop me making ANY accusations against Efforce, or only ones which are defamatory, false, or can be backed by evidence.
+As mentioned previously, I have held back from posting evidence to support some of the leading questions due to the fact that I do not wish to unintentionally harm the reputation of Efforce, but instead have been working with Efforce's management and one of the shareholders in order to try forge a positive path for token holders thereafter.
+I will ensure that I do not post anything that can be legitimately construed as defamatory to Efforce, it's management, or it's shareholders going forward.
+ 
+Comment 33:
+With respect, I have been trying to engage with majority shareholders since December 2022 and thus far I have only managed to speak to Jacopo Visetti.
+I have provided a vast amount of information to Jacopo Visetti spending a huge amount of time compiling information and questions that I believe need to be answered.
+If I believed that the owners and management were genuine about allaying my fears and finding a roadmap for myself and other token holders to recover the vast life changing losses we have suffered then I wouldn't have felt the need to post publicly. but interactions have been limited and they have failed to allay fears or create any confidence in the future of the token for token holders.
+I sent 21 messages to Jacopo Visetti between 16th December 2023 (after he suggested one of the shareholders was seeking my extradition to the US for actions within the EAG Telegram group) and 12th Jan 2024, and received only one response in this time on Dec 20th stating that the team had been receiving threats - at which point I sent the full EAG chat history to showcase that these did not originate from this chat and some other supplementary information.
+https://gyazo.com/6d53b27339d3e62d842c8685483bd8f6
+I also stated my genuine fears about the consequences for me for investigating these things further given my belief that there is large scale organised criminality at play with the private institutions and how they came to be in a position to take advantage as they have.
+There were then no further responses to my further messages until Jan 21st when Jacopo informed me that he had been in ill for 3 weeks, and asking that I keep things confidential. This was after I started posting publicly given the lack of progress with internal enquiries.
+https://gyazo.com/3608f29c44ac16ceda6ec88687048de2
+I did not then get any further response from Jacopo Visetti about the questions I had about why Andrea was giving private talks to GDAC investors which were not revealed to other WOZX token holders and enquiring about why priority information was provided - so I assume my only option for remedy is now the legal route rather than continuing to put efforts into working with Efforce to promote solutions.
+ 
+Comment 34:
+I take note of the Cease &amp; Desist notice from DLA PIPER and will ensure that I do not engage in any defamatory behavior going forward - while maintaining that you would not have served this notice had you been provided with full and transparent background on the accurate circumstances.
+There is a big difference between protecting Efforce against legitimate questions which may lead to embarrasment, and protecting against defamation - and I maintain I am not guilty of the latter.
+You asked for my postal address in a subsequent email. I am reluctant to provide this currently due to legitimate fears that extra-legal actions may be taken against me as a way to silence my concerns. I do not believe that I need to provide this information unless ordered to by a court, but please inform me if this is not the case as I will be happy to connect you with my legal representatives in this instance as my only objection is fears of extra-legal means rather than any fear of legal action being served.
+</pre>
+<!-- ALL REFERENCED GYAZO SCREENSHOTS – FULL WIDTH & CRISP -->
+<div>
+<h4>Supporting screenshots referenced in the responses (full size)</h4>
+<figure class="evidence-figure"><img src="https://i.gyazo.com/b31adc44dcc5617d2256fb562a3620ca.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/73606d8494ada125f3ba4c70b67c27d0.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/970417e9ace04e1982cc370c33bfb7e5.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/c416c1da3709f1efb8f9c62eea21d8e2.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/4b7a54a3545c31adf1cb2bb3f2b07ad5.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/6832ad072868199f81ab97b12c3ce763.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/f45dbcaf64a3feabc014e78687e4171f.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/53b3c9b8e75942dc948b299670c7480e.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/3ead0b24e8f56f52a69f9d4b0c613b4a.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/1159ff2025fd505e4f5422426091e7db.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/2209be3c0dc9844d2b38d315282d2e2c.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/d7632141e5719c46f4043e28568f9e9a.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/18e3934e2c0579fe04ac7816c98405c5.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/5ca9f9c3480f40c8221363b11be53a26.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/2d572e6d965c90b20cfcbee2eeb5294e.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/218ddd600a957820e524daac3a13fe0a.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/f0f76bd8ca63dca2b3daf73d73b457a6.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/6d53b27339d3e62d842c8685483bd8f6.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/3608f29c44ac16ceda6ec88687048de2.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <!-- Add any other Gyazo links from the comments here the same way --></div>
+</details></p>
+
+
+
+
+
+
+<!-- DROPDOWN 3 – DLA PIPER'S "FINAL" RESPONSE – ELEVEN OWN-GOALS -->
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger"> Click to read DLA Piper's "FINAL" response (17 March 2024) – the letter where they shot themselves in the foot <strong>eleven different ways</strong> </summary><!-- FULL VERBATIM LETTER TEXT FIRST -->
+<pre class="letter-text">Dear Mr. Copley,
+We hereby provide the main answers to your several comments and requests. The order is the same of the comments and requests you made in the PDF of our cease and desist letter.
+Please note that:
+- this letter, containing confidential information, is intended for your eyes only. You are not allowed to divulgate it or its content in any manner whatsoever;
+- this is the last time we – as lawyers – reply to your comments and requests. We are replying to you in order to clarify – once again – the several errors in your comments, but this is not intended as a dialogue between you and us. Efforce has other channels for stakeholders to communicate; please use those channels;
+- we kindly request you again to provide your address for service purposes. We understand you are confident not to have done any false statement and not to have committed any unlawful conduct; therefore, we do not understand the reason why you do not want to disclose your address;
+- the cease and desist letter is confirmed in full.
+Please find the main answers below:
+- your name has been given to us – as lawyers – by Efforce. It was by mistake that Mr. Pastore believed that we had made researches on you; we did not.
+- Concerning your ID:
+ - having discussed this several times with our client, we – as lawyers – know for sure that Efforce genuinely wished to invite you to their offices;
+ - you provided your ID voluntarily;
+ - Efforce then canceled the invitation, due to you keeping on posting false information about them and thus making useless the meeting sought.
+- More in general, the fact that you wish to keep your full name and address secret shows that you are trying to escape from the judicial actions Efforce is considering to start against you.
+- Your subject access requests look ungrounded. We will reply within 30 days. We have no idea at all about your statement according to which “DLA PIPER are tasked with investigating known failings within the company.”
+- The terms and conditions of buying and selling tokens are very clear on Efforce’s website and in its white paper. For your reference, from page 3:
+ [long quote from whitepaper about purchaser sophistication and risk]
+- It is not Efforce’s responsibility if a person bought at 0.08 Dollars and sold at 3.70 Euros, thus making a profit; or, vice versa, if such person lost.
+- Relating to your statement that the videos posted on the website contained true information, we would like to have confirmation, in particular, that you have actual evidence of:
+ - suicides deriving from losses incurred by holding $WOZX tokens, as stated in one of your videos;
+ - loss of property;
+ - loss of mental health.
+- Efforce is aware that some information, after being spread in your videos, has then been redacted. However, Efforce and its management have since then been targeted by numerous individuals claiming that, as stated in your videos, Efforce has been the cause of the above-mentioned issues. This is to underline the fact that information you spread have caused serious damages to the company and put its management at personal risk. Please also see the screenshots under point (4) below.
+- Your insinuations are false, supported by no real evidence and based on wrong assumptions and bizarre theories.
+- Associating, inside the Efforce Action Group, Efforce’s name with any post about fraud by other entities, or any other wrong and baseless idea, could damage Efforce’s image and reputation, and result in losses for all the token holders.
+- Your discussions with a member of Efforce do not allow you to spread highly defamatory contents, also in the context of the discussions made within the group.
+- Please note that a member of the group sent death threats privately and publicly to some members of the chat. This would be enough to close the group according to Telegram’s terms of conduct. Furthermore, as already mentioned before, ungrounded associations – such as the one between Efforce and people making death threats – could damage Efforce’s image and reputation.
+- To provide some clear examples: before your posts, members of Efforce never got any threat; after your defamatory campaign, threatening messages came from anonymous people active on Efforce Action Group.
+- Although you cannot be held directly responsible for all these people’s violent behavior, you are responsible for spreading false information and/or insinuating incorrect information regarding wrongdoing by Efforce and its management, leading to members of the group growing hate feelings towards the company and its management.
+- The claim does not reflect the conversations and posts made, which contained defamatory content and tarnished the company’s image by associating it with false facts, other scams, death threats.
+- Furthermore, please note that determining whether content is defamatory or not doesn’t fall under the responsibility of a technological tool. Therefore, we strongly advise you not to rely on the outcome of third-party software that is unable to analyze the entire context. If we correctly understand your messages, you are now assisted by legal counsels; we appreciate that, since your legal counsels could provide you with important recommendations and avoid that you base your actions on AI.
+- Speaking negatively or insinuating conspiracies undoubtedly has a negative impact on other people involved in the project, thus affecting public opinion negatively. This can only lead to harming the project and the token; it cannot serve any other purpose.
+- Please check our previous answers about this.
+- We, as lawyers, represent Efforce; your question looks extremely strange. In any case, anything concerning our relationship with our client is strictly confidential. Not only you do not have any right to know anything in this regard, but we are forbidden to provide you with any information.
+- Efforce, as mentioned earlier, has decided not to sell to the public and has chosen to sell only to qualified professional buyers. The price of private sales is a private information; in some cases, the price may have been below $0.08. This is mainly because tokens were sold before any listing, and the listing price is determined by the exchange, not by Efforce.
+- Regarding GDAC, we thank you for bringing the issue to Efforce’s attention. Efforce has no information about these individuals and will investigate who they are and what they do. The company can only state that, as Efforce, it has spoken at many events since 2018, in numerous countries. Efforce cannot verify whether event organizers will then become scammers in the future; in some cases, Efforce didn’t even know all the organizers of the events. Therefore, Efforce confirms that the company has nothing to do with the people from GDAC, except being invited to speak at an event where Nobel laureates, ambassadors, or famous people in the crypto world spoke as well.
+- Efforce rarely publishes news because it shares only true and verified information. Unlike most crypto projects, many of which are fake, Efforce chooses not to keep publishing news to influence the community’s perception of the project. Instead, it prefers to release few but accurate updates about the project.
+- Efforce has consistently delivered on promised listings, so this point does not involve any “FOMO” tactics. As stated in the standard policy for reliable exchanges, they are not obliged to provide the exact listing date, to prevent leaks; and Efforce follows this practice. While Efforce knew it would be listed soon, the exact timing was not disclosed. Moreover, exchanges can, at their discretion, change their decision or the listing period.
+- If these updates indirectly affected the token price, positively or negatively, Efforce cannot be held responsible, as it was not Efforce’s intention and Efforce had no power on it.
+- As for marketing expenses, although these are private business details, which we do not intend to disclose in a private letter, Efforce has spent a significant amount on marketing. Efforce has changed marketing agencies (supported by invoices and contracts) and temporarily halted spending for two reasons: 1) they haven’t found a satisfactory marketing partner in terms of performance, and 2) they’ve monitored interactions with the two previous platform versions and understood how to modify it for the upcoming third version, as the NFTs were not well-received by the audience.
+- We refute the claim that Efforce has only one employee. As you may know, given your references to multiple people, Efforce has a team comprising various individuals working on the project. We are unsure how you arrived at this deduction.
+- These are also private pieces of information. Nonetheless, we hereby clarify the following.
+- Some buyers bought one year before the first listing, taking on the biggest risk in the project. It would therefore be normal that they have made a good profit. Efforce does not know how much they have gained or will gain on the project, because this information has not been provided to Efforce.
+- Regarding token economics, it was designed and outlined in 2018 to the best of Efforce’s knowledge and understanding at that time.
+- Like the previous responses, although this is a private information, Efforce nonetheless provides the following clarifications.
+- Efforce is generating profits, and thanks to these profits Efforce was able to reward all participants in the Genesis Pool. If Efforce was not making profits, like any company worldwide, it would have already failed, just like many crypto projects.
+- The circumstance that the company has been making profits does not necessarily imply that its shareholders are currently benefiting from them or will do so in the future. The company intends to reinvest the profits to build a new platform or technology model that resonates with the market.
+- We would like to add another very important point: although, in the white paper, a significant portion of the tokens was reserved to be distributed to the team, as you mentioned, the company decided – without any obligation in this respect – to avoid distributing them. Therefore, no team member has ever received the promised tokens to date.
+- So, as of now, the result is that several of the management members have invested money in the company, but never earned a dime. This further frustrates shareholders when they hear accusations of this nature.
+- Your deductions are incorrect, as usual, and are made without any evidence. The reason why some shareholders decided to invest in the project is that the project started long before making any kind of profit, and the company had various – real – costs to cover.
+- Efforce confirms that the project will not close and that there is no intention on the company’s part to stop trying, as long as the company has funds available. That’s the very reason why we consider profits to be important.
+- The best way for you to support the project is to stop defaming the company, together with closing the Telegram group and the page on X.com that bears Efforce name, where Efforce’s name is defamed.
+- The screenshot has been deleted, but the management was able to read it before its deletion.
+- Mr. Pastore is a team member and has made his own deduction in a private conversation between you two, unsupported by any evidence. What Efforce can say is that no one is aware of any wrongdoing by the Efforce team, as well as Efforce is unaware of any wrongdoing by third parties related to Efforce. If you know something different, we kindly ask you to inform us, but please provide factual evidence to support your claim.
+- As said before, Efforce team put, and keep on putting, the best intentions and a lot of work in trying to find a way to make the project resonate with the market. This, once the goal is achieved, is the best way to support the price of the token.
+- Efforce always kept the community updated about the state of the project through announcements on Telegram and Twitter and then on Discord, after the decision to migrate the community over there. The management always considered your advice and your concerns. Private conversations with you are the proof of this, as you are one of the few community members who had the chance to speak directly with Efforce representatives.
+Please note that Efforce does not have any obligation to speak with token holders. However, we assure you that Efforce’s shareholders keep doing their best to offer the best possible product to the market.
+- Concerning the post on Times Square:
+- that spot could be bought by anyone; what you saw was journalistic news, not pushing anyone to buy;
+- Efforce did not buy that spot and does not know who did it; it could be HBTC, but please note that Efforce does not have any confirmation in this respect. Efforce simply reposted the news on its channels;
+- Efforce never sold the token in the US, nor does the above demonstrate that anyone did it. In any case, Efforce cannot know whether any non-US token holder has sold or will sell to US persons through unofficial channels. Obviously, Efforce cannot be held responsible if anyone infringes local Laws and the white paper.
+- The tweet underlies/implies that WOZX token is a security, thus potentially damaging the company. Asking if a token is a security is well different than implying so, directly or indirectly, with a public post. Although Efforce does take SEC regulatory updates seriously, we would like to stress that Efforce is not a US company, does not conduct business in the US and will not do so in the future; WOZX token has never been made available by Efforce to US customers.
+- Statements by Steve Wozniak surrounding the sentence that he considers tokens as shares or stock has been refuted by Efforce management both on official channels and with Mr. Wozniak himself.
+- Mr. Wozniak’s personal opinions do not necessarily represent Efforce’s opinions and or statements.
+- Your allegation is false, as the code was written by individuals within the company and external firms. The relevant cost was in the hundreds of thousands of Euros.
+- We do not really understand your allegations. In any case, the staking program has never changed since its release: the 12-month plan was clear from the very first day. Whether one likes it or not, there is no right or wrong way to do it. The smart contract has never changed over time, as it is not updatable. The blockchain retains evidence of this.
+- Behind the token sale, there was no elaborate strategy or conspiracy, as you are insinuating. We have already addressed this in the points above: it is normal, for those who bought before listing, to have purchased at a good price; since they also took the biggest risk. Additionally, Efforce did not know the listing price one year in advance, and it couldn’t be decided by the company, but it was rather determined by the exchanges.
+- As of today, Efforce is not aware of any artificial manipulation of its token (WOZX). If you have factual evidence of this, please report it to Efforce, as it would be information that concerns Efforce. If, in the future, Efforce becomes aware of any third party intentionally manipulating the market, the company will communicate it to the community and the relevant authorities.
+- As mentioned, it is not Efforce’s responsibility if a person bought at 0.08 Dollars and sold at 3.70 Euros, thus making a profit; or, vice versa, if such person lost.
+- The platform has been released following the guidelines Efforce had initially conceived. Obviously, while building something, some details can change; however, the core of the platform has remained intact, according to what Efforce had envisioned from the beginning. Obviously, changes also impact the roadmap, which can evolve in the meantime.
+- Regarding the 2021 roadmap: many of the points that Efforce had planned to accomplish have been successfully completed. The ones that have not been made or released were considered either no longer interesting or wrong steps for the company while the company was progressing with the roadmap.
+- The decision to include NFTs within the platform was made in response to requests from project supporters. Having put NFTs up for sale and having received a low participation, despite a campaign lasting a considerable amount of time (which, incidentally, was constantly monitored by you), the company decided to start planning for a third version, which is the one Efforce has just released in Beta.
+- As mentioned earlier, decisions are not made to increase or decrease the token value, but rather to make the project successful and find the right fit for a platform/technology that users can appreciate and use.
+- It has always been indicated that the average market return could be around 18/20% per year, but Efforce never promised or guaranteed such return or specified it as a guaranteed fixed return.
+- Furthermore, in the first year of an energy efficiency project, the return can even be 0%, as the efficiency project needs to be implemented; this phase can last from 3 months to 1 year, depending on the scope and size of the project. This said, Efforce decided to reward anyone who contributed tokens to the Genesis Pool with a 10% annual return, putting anyone who participated in a profitable position. Efforce sees this as a very positive aspect and certainly not as a downside. This also demonstrates that part of the company’s profits has benefited token holders.
+- As you know, Efforce has released the new version in Beta, and Efforce is doing its best. The company hopes that it will be well-received by the public. Efforce has not granted access only to the “OGs”, but has selected a manageable number of community members from spontaneous applications. Being an “OG” was not a fundamental requirement.
+- Regarding the issue of the allegedly tired shareholders, Efforce officially confirms that this is absolutely not the case. Shareholders are fully committed to continuing with the project and to seeking the perfect technological fit to achieve the initially set goals.
+- Answering to your points:
+- in the post you mentioned, Mr. Vanetti was talking about bitcoin.com, which would be listed shortly and had already been signed;
+- in the line where Mr. Vanetti talked about T1, he mentioned that Efforce would open it but he never said that the company signed it, which is what Efforce did with Huobi. As mentioned earlier, Efforce never knows the exact listing date, as exchanges keep it confidential;
+- Mr. Vanetti did not provide any financial advice, as he did not say whether to sell or buy. He only stated what he personally would do and reiterated that “everyone is free to make his own strategy”;
+- the “secret” part of the platform has never been released, and Efforce is considering whether to release a part on an open efficiency protocol shortly, to allow any transaction on any chain to have a zero environmental impact. However, the company will decide whether to proceed based on its own idea or timeline;
+- regarding what is defamatory and what is not: associating Efforce’s name with a group discussing scams or fraud damages Efforce’s image and reputation. This is without even digging into the specifics of individual posts, where the company has found much more severe defamation against it.
+- As already mentioned, even the simple use of Efforce’s name can damage Efforce’s reputation.
+- Since we have read several times that you have alleged further evidence against Efforce, please note that, if such alleged evidence is false and/or not adequately supported, we will hold you liable for the consequences of spreading (also) it.
+- The NFT was supposed to generate rewards only after a sell-out, which did not happen; notwithstanding that, Efforce still distributed rewards.
+- As mentioned in the points above:
+- the money that Efforce has did not come from investors, but rather from the sale of tokens to the funds that bought the assets;
+- having said that, and as explained earlier, any money received by the company to date has been spent on the project, and no shareholder has derived any direct or indirect profit, not even taking a salary for the work performed;
+- the only money received from community members was the one coming from the Efforce Genesis Pool and the NFTs, which has been refunded and appropriately rewarded;
+- Efforce, as mentioned before, does not have only one person working on the project, but rather a team composed of both internal and external individuals.
+- Please see the answer under point 28 above.
+- Please see the answer under point 28 above.
+- While we appreciated your actions, we firmly believe they are not enough to remedy to the defamation brought against Efforce. At this stage, the only way to guarantee the protection of Efforce’s rights and its image and reputation seems to permanently close and delete all EAG group platforms (not to suspend them, as it has been done with the Telegram group).
+- We refer to all the following:
+- the Telegram group;
+- the X.com EAG profile;
+- the EAG Discord server;
+- the EAG website;
+- and any other EAG platform/media or communication network.
+- In case the defamation is not completely remedied, Efforce will start legal proceedings.
+- We hereby confirm that Efforce request you to stop any defaming activities.
+- Your feedback was received. As with other community members, Efforce’s team does its best to implement suggestions and ideas as long as they think they make sense.
+- If you believe that some of the information provided have not been carefully analyzed, Efforce confirms that this is not the case. In some instances, Efforce believed that there was no concrete evidence to support your hypotheses, as specified in the responses above; in other cases Efforce knows that the reality is different from what you claim and that the starting foundations of your analyses were incorrect.
+- Again, in this situation, we, as lawyers, represent Efforce.
+- See answer n. 33.
+- We reiterate that:
+- many of the pieces of information in this letter are confidential. However, as a courtesy, Efforce wanted to answer to your concerns;
+- we confirm our request that you cease and desist from any further defamation and remedy to the one available online; you can collaborate with the company (rather than harming it);
+- we, as lawyers, will not answer anymore to any further concern, insinuation or question you may have.
+- All Efforce’s rights are reserved.
+Best regards,
+Alessandro Lanzi Alfredo Saracino
+</pre>
+</details></p>
+
+
+
+
+
+
+<!-- THE ELEVEN OWN-GOALS – ALWAYS VISIBLE ON MAIN PAGE -->
+<div>
+<p>DLA Piper shot themselves in the foot <strong>eleven separate times</strong> in this single letter:</p>
+<ol>
+<li>“This is the last time we reply” → They sent <strong>29 more letters</strong>.</li>
+<li>“This letter is strictly confidential” → It wasn't. Published legally.</li>
+<li>Accused you of “serious violation” for publishing their previous letter → Pure intimidation.</li>
+<li>Demanded address under inapplicable UK CPR rules → Amateur error.</li>
+<li>“Efforce has a team comprising various individuals” → Maltese filings show <strong>zero employees</strong> 2021–2022.</li>
+<li><strong>Weaponised unrelated "death threats" to intimidate you</strong><br />→ Of the two screenshots they provided, <strong>one person was never in your Telegram channel</strong>, the other sent the message via <strong>private DM</strong>. When you contacted the sender, he confirmed he had <strong>never been approached by Efforce or police</strong>. They used someone else's private message as a weapon against you while ignoring the actual sender.</li>
+<li>“Efforce has spent a significant amount on marketing” → Paolo Pastore admitted budget was pulled after days. Efforce accounts show negligible spend</li>
+<li>“No team member has ever received the promised tokens” → Directly contradicted by $68m transactions from Efforce Treasury wallet, unexplained and unaccounted.</li>
+<li>“The money that Efforce has did not come from investors, but rather from the sale of tokens to the funds” → <strong>No private-sale revenues (PR suggested $36m, Visetti outlined Dec 2023 it was $12m) ever declared in official Maltese accounts</strong>.</li>
+<li>“Efforce rarely publishes news because it shares only true and verified information” → While sending a letter full of false statements.</li>
+<li>Complete refusal to answer any factual question despite being handed proof their client lied repeatedly.</li>
+</ol>
+<p>They called this letter their "final" reply.<br /> They then spent two years proving – 29 times – that they had <strong>nothing</strong>.<br /><br /> This letter didn't scare anyone.<br /> It became the cornerstone of the case against them.</p>
+</div>
+<!-- ================================================================== -->
+
+<!-- ============================ FACT-CHECK BLOCK – THE FINAL NAIL -->
+
+<!-- ================================================================== -->
+<div>
+<p>FACT CHECK:<br /> How many of Copley's 34 points did DLA Piper answer with evidence in their "final" reply?</p>
+<div>
+<p><strong>Completely ignored (no response at all):</strong> 21 / 34</p>
+<p><strong>Responded but unsubstantiated / later proven false:</strong> 13 / 34</p>
+<p><strong>Answered with actual evidence:</strong> 0 / 34</p>
+</div>
+<!-- LIST OF THE 21 IGNORED POINTS -->
+<div>
+<p>The 21 points they completely ignored:</p>
+<p>1. Source of middle name on governmental ID<br /> 2. EAG purpose and goodwill meeting cancellation<br /> 3. Personal beliefs protected by free speech<br /> 4. Telegram group takeover and offer to transfer control<br /> 5. EAG group purpose statement<br /> 6. Evidence backing every claim<br /> 7. EAG rules and moderation of insults<br /> 8. Whether DLA Piper knew allegations were groundless or just repeating client<br /> 9. Private sale average price lie ($0.08 vs ~$0.04)<br /> 10. Indirect price influence + marketing budget pulled after 7 days<br /> 11. $36m vs actual ~$12.5m raise discrepancy<br /> 12. Company profitable but shareholders not paid<br /> 13. €1m+ from Aither/MBM due to lack of resources<br /> 14. Project closure threat if next version fails<br /> 15. Moral failings toward loyal token holders<br /> 16. Pastore's "Chinese investor emptied bags" admission<br /> 17. Fiduciary duty to token holders<br /> 18. Times Square + US marketing proof of US marketing<br /> 19. No public legal opinion on security status<br /> 20. Platform built with zero budget (Pastore learned to code)<br /> 21. Clarification on what accusations they want stopped</p>
+</div>
+<!-- LIST OF THE 13 UNSUBSTANTIATED POINTS -->
+<div>
+<p>The 13 points responded but unsubstantiated / later proven false:</p>
+<p>1. Source of name (claimed from Efforce, unsubstantiated).<br /> 2. ID provision voluntary (ignored false pretense evidence).<br /> 3. Address secrecy as escape (unsubstantiated accusation).<br /> 4. SAR ungrounded (no evidence, delayed response).<br /> 5. T&amp;C quote (irrelevant to claims).<br /> 6. Not responsible for profits/losses (false per tokenomics).<br /> 7. Demand evidence of suicides etc. (shifted burden, no rebuttal).<br /> 8. Damage from spread information (unsubstantiated).<br /> 9. Insinuations false (no evidence provided).<br /> 10. Associating with fraud damages reputation (unsubstantiated).<br /> 11. Death threats linkage (weaponized unrelated DMs).<br /> 12. Responsible for hate feelings (false causation).<br /> 13. AI not for determining defamation (dismissive, unsubstantiated).</p>
+</div>
+<p>In their longest, most detailed letter ever written in defence of Efforce,<br /> DLA Piper answered <strong>zero</strong> questions with evidence.<br /><br /> They ignored <strong>62%</strong> of the points entirely.<br /> Every "answer" they gave has since been proven false.<br /><br /> That is not a defence.<br /> That is an admission.</p>
+</div>
+<!-- CTA -->
+<div><a href="https://eu.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=7f3f46b5-39cd-4b8e-b052-c97878fb17b7&amp;env=eu&amp;acct=fdda6bbe-e93b-49a7-914a-3dd79f50d549&amp;v=2" target="_blank" rel="noopener noreferrer"> SUBMIT YOUR CLAIM NOW (2 mins – No Cost) </a></div>
+<!-- SECTION 2 – 2025 COMMUNICATION -->
+          </div>
+        </div>
+
+        <div class="score-summary">
+          <div class="score-summary__item score-summary__item--bad">
+            <div class="score-summary__num" style="color:var(--accent-red)">22 / 29</div>
+            <div class="score-summary__label">Completely Ignored</div>
+          </div>
+          <div class="score-summary__item score-summary__item--warn">
+            <div class="score-summary__num" style="color:var(--accent-gold)">7 / 29</div>
+            <div class="score-summary__label">Responded but Unsubstantiated</div>
+          </div>
+          <div class="score-summary__item score-summary__item--good">
+            <div class="score-summary__num" style="color:#4caf50">0 / 29</div>
+            <div class="score-summary__label">Answered with Evidence</div>
+          </div>
+        </div>
+        <div class="verdict-bar" title="22 ignored, 7 unsubstantiated, 0 answered with evidence">
+          <div class="verdict-bar__seg verdict-bar__seg--ignored" style="width:75.9%"></div>
+          <div class="verdict-bar__seg verdict-bar__seg--unsubstantiated" style="width:24.1%"></div>
+          <div class="verdict-bar__seg verdict-bar__seg--answered" style="width:0%"></div>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);text-align:center;">
+          <span style="color:var(--accent-red);">■</span> Ignored &nbsp;
+          <span style="color:var(--accent-gold);">■</span> Unsubstantiated &nbsp;
+          <span style="color:#4caf50;">■</span> Answered with evidence
+        </p>
+
+        <div class="takeaway">
+          <div class="takeaway__label">Key Takeaway</div>
+          <div class="takeaway__text">
+            Across DLA Piper&rsquo;s initial C&amp;D and &ldquo;FINAL&rdquo; response, Copley raised 29 substantive points with supporting evidence.
+            <strong>22 were completely ignored. 7 received responses that were later proven false or unsubstantiated. Zero were answered with actual evidence.</strong>
+            DLA Piper then stated &ldquo;this is the last time we reply&rdquo; &mdash; effectively admitting they could not rebut the allegations.
+            Their own letter contained <strong>eleven new own-goals</strong> that further strengthened the case against Efforce.
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-section" id="section-2">
+        <div class="threat-section__header">
+          <span class="threat-section__num">Section 2</span>
+          <h2 class="threat-section__title">Hogan Lovells &mdash; Extortion Threats &amp; Persistent Refusals (2025)</h2>
+          <p class="threat-section__subtitle">Hogan Lovells escalated threats of criminal complaints for blackmail and harassment while consistently refusing to provide evidence of alleged cases or rebut substantive allegations. 9 months of correspondence. Zero questions answered with evidence.</p>
+        </div>
+        <div class="letter-block">
+          <div class="letter-block__body">
+            <h3>2. 2025 Communication – Hogan Lovells' Extortion Threats and Persistent Refusals</h3>
+<p><em>Hogan Lovells, representing Efforce and associated parties, escalated threats of criminal complaints for blackmail and harassment while consistently refusing to provide evidence of alleged cases or rebut substantive allegations. Their responses were marked by dismissals, confidentiality demands, and failure to engage with facts—culminating in a November 17 letter threatening UK police action.</em></p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/19d2ac7be6b0ef67dbce8741f1d265ed.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure><br /><br /> <!-- Add more imgs for demand letters as needed --></div>
+<!-- FULL VERBATIM CORRESPONDENCE IN EXPANDABLE -->
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger"> Click to read full verbatim text of key Hogan Lovells letters and demands </summary>
+<pre class="letter-text">April 10, 2025 (Copley's $860k Demand Letter):
+April 10, 2025
+Sergio Carloni, CEO
+Efforce Ltd (Malta)
+REDACTED
+Malta
+Attn: Jacopo Vanetti, Jacopo Visetti, Steve Wozniak, Kenneth Hardesty, Andrea Castiglione, Stefano Scozzese, Paolo Pastore, Huobi, Gerbsman Partners, the lead private investor, AitherCO2 Ltd (UK), AitherCO2 S.p.A (Italy), MBM Holdings AG (Switzerland), Efforce Ltd (Bahamas) and all associated entities and individuals.
+
+Re: Demand for Settlement to Resolve All Grievances and Avoid Civil and Criminal Action
+
+Dear Mr. Carloni and Efforce Ltd,
+I am a UK citizen, an investor in WOZX tokens, and the founder of the Efforce Action Group across X and Telegram (soon rebranding as InvestigatingEfforce.com) which has sought transparency from Efforce to amicably resolve token holder grievances, having suffered a $280,000 loss due to Efforce’s actions from 2018 to 2025. More than 1,000 hours of investigation have uncovered compelling evidence of misconduct by Efforce Ltd (Malta), Efforce Ltd (Bahamas), AitherCO2 S.p.A. (Italy), MBM Holding AG (Switzerland), and associated individuals and entities.
+This includes a fraudulent transfer of 510 shares to MBM Holding AG on December 15, 2020, to shield $1.623 billion in token assets from AitherCO2’s undisclosed €319.9M tax liability and fine from the Italian tax authorities, while intentionally misleading token holders as to the true state of the business, ultimately leading to vast losses suffered by retail token holders. Additionally, $19M–$70M of unexplained token sales from Efforce-held tokens outside the vesting schedule were falsely represented to token holders, with activity undeclared in official accounts.
+Further misconduct includes misrepresentation of the token by Steve Wozniak in PR as "I think of our tokens as shares of stock" being widely shared by Efforce and individuals within, providing a false understanding to token holders of what they were buying; false claims such as 1% of all energy savings for WOZX token holders, which had no technical or legal basis without the token being a security; and roadmap timelines presented—such as T1 launch, platform launch, and client listings—alluded to as being on track despite subsequent late-delivery or non-delivery.
+Moreover, Efforce misrepresented the private investor who bought 450M tokens as a group of institutional investors in it for the long term, providing a false perspective on their intentions to hold tokens, and failed to inform retail token holders of significant internal concerns surrounding the private investor’s “pumping and dumping” actions, instead allowing potential manipulation to persist over the long term to this day. Misrepresentation of AitherCO2’s revenue ($250M–$450M vs. €27.6M, 2021), in addition to Efforce’s revenues and profitability compared to subsequently published official numbers, further compounds the deceit.
+
+
+
+Additional evidence includes operational scale exaggerated (40–45 employees vs. zero); misleading representations of corporate structures and legal relationships—such as the creation of Efforce Ltd (Bahamas) for token issuance while assurances of regulatory oversight and asset protection were tied solely to Efforce Ltd (Malta), despite no reported connection or accountability between these global entities in Malta’s financial records—as well as untracked proceeds of $12.5M–$36M from WOZX private sales unreported in Malta financials and 176M unaccounted tokens.
+Emerging scrutiny of AitherCO2 affiliated operations in Senegal relating to plastic credits further suggests a pattern of exaggerated claims and potential misconduct by the entity Efforce outlined previously as their mother company. These acts, combined with personal threats (e.g., cease-and-desist letters, legal intimidation from Mr. Visetti regarding shareholders seeking my extradition to the US and regularly stating personal action was being taken against my person by other shareholders which subsequently failed to materialize, Mr. Pastore obtaining my passport via deception under the guise of booking flights to subsequently use to take legal action), have caused significant emotional distress and financial harm to me and others, including my $280,000 loss (a 99.98% decline), alongside aggregate token holder losses exceeding $300 million, stemming from pervasive misrepresentation and critical omissions—including AitherCO2 S.P.A.’s dire financial condition, the concealed €319.9M tax liability and fine, and other undisclosed liabilities—devastating retail investors. See the attached appendix for a detailed timeline and grounds for legal recourse substantiating these claims.
+This evidence supports civil and criminal claims across multiple jurisdictions, including U.S. securities law (Section 10(b), Rule 10b-5), Malta’s Market Abuse Regulation (Article 12), Italy’s Civil Code (Article 2901), and UK laws such as the Financial Services and Markets Act 2000, as well as criminal charges including wire fraud (U.S. 18 U.S.C. § 1343), fraudulent trading (Malta Criminal Code Article 308), and tax fraud (Italy Penal Code Article 316-ter).
+If this demand is unmet by April 26, 2025, I will take the following actions:
+
+(1) Report suspected tax evasion to authorities in Italy (Agenzia delle Entrate), Malta (Commissioner for Revenue), and the Bahamas (Ministry of Finance) based on AitherCO2’s €319.9M liability and fine and untracked proceeds;
+
+(2) Initiate a Proceeds of Crime Act 2002 investigation with the UK’s National Crime Agency or Action Fraud, targeting laundering of $12.5M–$36M and $300M+ private investor profits;
+
+(3) Pursue further regulatory complaints with the SEC (US), ESMA (EU), and other bodies, leveraging researched legal strategies to recover losses and expose misconduct;
+
+(4) Join Matthew Benner as a named plaintiff in the existing California legal action to leverage discovery to unmask anonymous relationships and offshore company structures and accounts while coordinating efforts to pursue all legal means against Efforce and related individuals and entities;
+
+(5) Publish a detailed exposé of all claims and evidence on InvestigatingEfforce.com, including blockchain logs and stakeholder admissions in addition to providing guidance for 
+
+the legal steps token holders can take t...(truncated 14128 characters)...K plus costs); report to FCA and Action Fraud for criminal investigation if settlement fails, seeking prosecution and asset forfeiture.
+· Evidence: Token purchase records, marketing materials targeting UK, financial harm documentation, communications (e.g., Telegram promises, threats).
+
+
+Potential Criminal and Civil Liabilities of Related Entities
+
+The following summarizes potential liabilities for related entities based on my investigation, focusing on tax evasion, financial misrepresentation, and undeclared relationships with Efforce:
+· AitherCO2 S.p.A. (Italy): Faces a €319.9M tax bill (2011–2014) and €6.2M (2014) from Italian authorities, with inadequate provisions until 2020 (€391.9M), leading to a €408M loss and negative equity (€-402M). Auditors issued disclaimers (2017–2019) and an adverse opinion (2020) due to unverified accounts, tax disputes, and going concern risks, exacerbated by unreported subsidiary ties to Efforce Ltd (Malta/Bahamas). Potential Italian tax fraud (Penal Code Art. 316-ter) and fraudulent conveyance (Civil Code Art. 2901) loom, alongside EU market abuse (MAR Art. 12).
+· AitherCO2 Ltd (UK): Held unverified receivables (€1.6M) from AitherCO2 S.p.A., with a €664K loss (2017) and no filings since 2023, suggesting dormancy or non-compliance. HSBC secured a £34K charge (2022), hinting at financial strain. Undeclared Efforce ties risk UK fraudulent trading (Companies Act 2006 S.993) and money laundering (POCA 2002).
+· MBM Holding AG (Switzerland): Acquired 510 Efforce Ltd (Bahamas) shares from AitherCO2 S.p.A. (Dec 15, 2020) amid WOZX launch for a nominal value unrelated to the $2.95 WOZX token price multiplied by 200 million team-held tokens and 350 million ecosystem and consultancy budgets within Efforce's control at the time of the share transfer, which would provisionally value Efforce Ltd (Malta) at $1bn+ on the date of transfer. With no filings since May 15, 2020, indicating potential non-compliance or asset shielding. Swiss money laundering (Art. 305-bis Penal Code) and fraudulent management (Art. 159) are risks if linked to Efforce’s $12.5M–$36M unreported proceeds.
+· Efforce Ltd (Malta): Failed to declare AitherCO2 S.p.A. as a parent or report MBM Holding AG’s shareholding, risking Maltese fraudulent trading (Companies Act Art. 315) and tax evasion (Income Tax Act). Failed to report Efforce Ltd (Bahamas), suggesting falsified claims that the Bahamas entity was "formed for the purpose of issuing EFFORCE tokens on behalf of its controlling entity EFFORCE Ltd, a Malta company."
+· Efforce Ltd (Bahamas): Unverified entity with 510 shares transferred to MBM Holding AG; potential Bahamian tax evasion (Business Licence Act) if tied to unreported WOZX proceeds.
+
+
+
+Potential Criminal and Civil Liabilities of Named Individuals
+The following summarizes potential liabilities for named individuals based on my investigation, focusing on their roles, statements, and actions:
+
+· Andrea Castiglione (Co-Founder): Made numerous misleading claims to token holders (2020–2022), e.g., no team sales despite 176M unaccounted tokens, $250M–$350M revenue vs. €25k actual, and unfulfilled platform/staking promises (e.g., Q1 2021 launch delayed to 2022). Privately admitted losses but deflected responsibility (May 17, 2022), risking U.S. securities fraud (15 U.S.C. § 78j(b), Rule 10b-5) for misrepresentation and wire fraud (18 U.S.C. § 1343) for deceptive communications.
+· Jacopo Vanetti (CTO): Hyped T1 listings (March–April 2021) and platform innovations (e.g., DeFi protocol, April 1, 2021) that never materialized, driving FOMO while 26M tokens dumped (Dec 2020). Pastore’s “mafia gang” accusation (Nov 18, 2023) suggests orchestration, risking U.S. securities fraud (Rule 10b-5), wire fraud (18 U.S.C. § 1343), and Maltese fraudulent trading (Companies Act Art. 315) for misleading token holders.
+· Jacopo Visetti (Co-Founder): Publicly claimed 450M Euro turnover (Dec 15, 2021) vs. €27.6M actual and 40–45 employees vs. zero (June 25, 2021), privately denied $36M raise (Dec 20, 2022) despite $12.5M untracked, and threatened extradition/legal action (Dec 16, 2023; Dec 7, 2024) to suppress scrutiny. Risks UK fraud (Fraud Act 2006 S.2), U.S. wire fraud (18 U.S.C. § 1343), and harassment (Protection from Harassment Act 1997) for intimidation.
+· Steve Wozniak (Co-Founder): Publicly positioned himself as a co-founder of Efforce despite not being involved in Efforce Ltd (Malta) since its formation in 2018 or during years of prior conceptual promotion by “Efforce” entities. His misrepresentation of WOZX as "shares of stock" (Dec 2020), widely disseminated, misled token holders about its legal and financial nature. If aware of potential criminality (e.g., €319.9M tax bill, token dumps) as a shareholder or co-founder, his failure to disclose risks U.S. securities fraud (15 U.S.C. § 78j(b), Rule 10b-5) for material misrepresentation and wire fraud (18 U.S.C. § 1343) for deceptive statements transmitted electronically, given his influential role amplified the impact on investors.
+· Kenneth Hardesty (Board Member): As a board member and CEO-in-Residence at Gerbsman Partners, his role in identifying private investors (speculative, pending discovery) and failure to disclose AitherCO2’s financial distress or Gerbsman’s involvement (if linked to 510-share transfer) suggest conflicts of interest. Risks U.S. securities fraud (Rule 10b-5), fiduciary duty breaches (California Corporations Code §309), and Maltese fraudulent trading (Companies Act Art. 315) if complicit.
+· Sergio Carloni (CEO, Head of Legal): Oversaw Efforce’s operations during undeclared €319.9M tax liability, $12.5M–$36M unreported proceeds, and falsified Bahamas entity claims. Allegedly sought legal protection (Dec 7, 2024) and misled Visetti on audits (Dec 9, 2025), risking Maltese fraudulent trading (Companies Act Art. 315), tax evasion (Income Tax Act), U.S. wire fraud (18 U.S.C. § 1343), and Italian tax fraud (Penal Code Art. 316-ter) as head of legal and CEO.
+
+This appendix underscores the depth of my case and readiness to escalate across the US, EU, and UK if my $860,000 demand for amicable resolution is unmet by April 26, 2025, and my commitment to pursue civil and criminal remedy. 
+
+April 25, 2025 (Hogan Lovells rejection of $860k demand):
+Dear Mr. Copley,
+we reply, in the name and on behalf of Efforce Ltd. (“Efforce”), to your email of 11 April 2025 (the “Email”).
+As general remarks, please note that:
+· Efforce is not bound by the deadlines you set;
+· the letter attached to your Email is formally addressed to the Maltese company Efforce Ltd., while your claims actually mainly refer to Efforce Ltd. established in the Bahamas;
+· your Email was sent to several people in Efforce, while the letter attached to such Email was addressed to the attention of several further entities. Certain of these further entities are linked to the people to which your Email was sent, while others have no connection with them.
+Your Email contains several serious allegations. While not all of them are intelligible to Efforce, our client rejects any and all of your accusations.
+Efforce does not intend to reply to them through this letter. Our client already provided you with detailed clarifications in the past, but this has not prevented you from formulating further ungrounded claims.
+It seems only worth remarking that Efforce has been regularly audited by the exchanges on which its token was and is listed and that none of Efforce shareholders has ever been paid for his work for Efforce; on the contrary, one of your investments was fully repaid to you, together with significant interest.
+Efforce has always considered your accusations to be based on manifestly wrong assumptions and to be totally ungrounded, and that there were the bases to start proceedings against you. Your Email represents a further serious step in your increasing aggressiveness.
+To provide an example, you expressly state that:
+· you suffered alleged damages for about USD 280,000;
+· however, you demand the payment of a much higher sum, amounting to USD 860,000;
+· in case your demand is not accepted within a few days, you will take several actions, among which reporting a tax fraud by Aither CO2 S.p.A.
+While your accusations about such fraud are totally and manifestly ungrounded, your attempt to obtain the payment of a huge amount (more than 3 times the loss you allegedly suffered) trying to force Efforce’s will by threatening to report an alleged tax fraud (which in any case would have nothing to do with your alleged loss), is something which cannot be tolerated.
+Please note that we have already been entrusted with the task to verify, together with lawyers across the different jurisdictions involved, whether your threats represent a crime which shall be prosecuted in any of those jurisdictions.
+We invite you to appoint a lawyer, who could inform you about the potential consequences of your declarations and threats.
+Your proposal to settle your claims through the payment of USD 860,000 is hereby rejected.
+All Efforce’s rights are reserved.
+Kind regards,
+Alessandro Lanzi / Alfredo Saracino
+
+April 25, 2025 (Copley's response to rejection):
+Dear Mr. Lanzi and Mr. Saracino,
+Thank you for your email of April 25, 2025, on behalf of Efforce Ltd (Malta). I am disappointed by your client’s rejection of my $860,000 settlement offer and their failure to substantively address the serious allegations outlined in my demand letter of April 10, 2025, attached again for your reference. 
+ 
+Your response dismisses my claims as “unintelligible” and “ungrounded” without engaging with the specific evidence provided, such as the €319.9 million fine and €400 million losses impacting AitherCO2 S.p.A., the $19–70 million in missing WOZX tokens, and the discrepancies in Efforce’s financial filings versus public claims of $250M–$450M in revenue.
+ 
+As requested in my previous email, I reiterate my demand for confirmation and details of the alleged legal actions against me, including:
+ 
+- case numbers
+- courts
+- filing dates
+- and specific allegations. 
+ 
+Your email vaguely references potential proceedings but fails to substantiate Mr. Jacopo Visetti’s claims of two Italian cases (one by Efforce Ltd, one by Mr. Paolo Pastore), a case by Mr. Sergio Carloni (December 8, 2024), and a shareholder’s extradition action in New York (December 16, 2023). 
+ 
+The absence of formal notification and your assertion that my “threats” are under review—contradicting Visetti’s claim of existing cases—suggests a pattern of intimidatory behavior aimed at silencing my legitimate inquiries. This has caused significant emotional and financial distress, exacerbating the harm from my $280,000 loss.
+Your response incorrectly asserts that my claims primarily target Efforce Ltd (Bahamas). The demand letter clearly establishes the interconnected roles of Efforce Ltd (Malta), Efforce Ltd (Bahamas), AitherCO2 S.p.A (Italy), and MBM Holding AG (Switzerland) in the alleged misconduct:
+• Efforce Ltd (Malta): Misrepresented WOZX token vesting schedules, failed to report $12–$36 million in token sale proceeds in official filings, and falsely claimed 40+ employees and 2000+ clients, despite zero employees in Malta filings, misleading token holders about operational capacity.
+• Efforce Ltd (Bahamas): Issued WOZX tokens without a documented legal relationship with Efforce Ltd (Malta), despite claims of Malta’s regulatory oversight, facilitating untracked token movements (e.g., 80–90 million WOZX through 8–9 wallets to a “Secondary Wallet” with $48.6 million in Nugget Trap tokens).
+• AitherCO2 S.p.A (Italy): Concealed a €319.9 million tax liability and €400 million losses while transferring 510 shares to MBM Holding AG at a nominal value, inconsistent with Efforce’s $1 billion+ valuation, potentially evading Italian tax obligations and misrepresenting financial health to token holders.
+• MBM Holding AG (Switzerland): Acquired the 510 shares amid WOZX’s launch, with no filings since May 15, 2020, suggesting asset shielding linked to $12–$36 million in unreported proceeds, undermining token holder trust.
+These entities’ actions—misrepresentation, concealment, and failure to disclose critical financial and operational details—directly contributed to aggregate token holder losses exceeding $300 million, including my own, through fraudulent inducement and market manipulation.
+Your client’s claim of having provided “detailed clarifications” is inaccurate. While you offered some responses, you failed to address my follow-up queries regarding anomalies and explicitly stated, “this is the last time we – as lawyers – reply to your comments and requests” and “we, as lawyers, will not answer anymore to any further concern, insinuation or question you may have.” 
+ 
+Efforce itself has maintained silence on critical issues, including the $19–70 million in missing WOZX tokens from team-held and ecosystem allocations, the 75 million WOZX tokens moved purportedly “for security reasons,” the absence of WOZX sale proceeds in Efforce Ltd (Malta)’s accounts, and the anonymous private investor’s identity and vesting schedule violations. 
+ 
+Your assertion of regular exchange audits is questionable, given documented discrepancies in financial filings and untracked token movements.
+Since 2021, I have sought amicable resolution, contacting Efforce Ltd and its representatives to address these concerns. Their persistent non-response to critical questions, coupled with your refusal to engage in dialogue, has left me no alternative but to pursue formal action. 
+ 
+The significant public interest in these matters, affecting thousands of token holders, underscores the urgency of a substantive response. 
+ 
+Given Efforce Ltd’s rejection of the $860,000 settlement, I urge your clients to participate in the transparency process outlined in my demand letter. Public disclosure of verified answers to these questions on InvestigatingEfforce.com could reassure token holders and avert further escalation. 
+ 
+Should Efforce Ltd, AitherCO2 S.p.A., and associated parties fail to provide a clear and prompt response by April 26, 2025, you should anticipate immediate public escalation and the commencement of legal filings against them and related individuals and entities, as detailed in my demand letter.
+ 
+I remain open to a mutually beneficial resolution and invite you to propose settlement terms by the deadline. Please provide the requested legal case details and confirm Efforce’s position to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="563b3f3d33163f38203325223f3137223f3831333030392435337835393b">[email&#160;protected]</a> or REDACTED by April 26, 2025.
+Sincerely,
+Michael Copley
+
+April 29, 2025 (Copley's follow-up):
+April 29, 2025
+Dear Mr. Lanzi and Mr. Saracino,
+I am writing to follow up on my emails of April 24 and April 25, 2025, to which I have received no response beyond your initial reply on April 25, 2025. As the April 26, 2025, deadline for my demand letter has passed without a substantive response, I seek clarification on several matters to resolve this dispute amicably and transparently for the benefit of WOZX token holders, who have collectively suffered losses exceeding $300 million, including my own $280,000 loss.
+Firstly, I reiterate my request for confirmation and details of the alleged legal actions against me, as referenced by Mr. Jacopo Visetti. These include two Italian cases (one by Efforce Ltd, one by Mr. Paolo Pastore), a case by Mr. Sergio Carloni (December 8, 2024), and a shareholder’s extradition action in New York (December 16, 2023). Please provide case numbers, courts, filing dates, and specific allegations by May 3, 2025, to verify their existence and status, as I have received no formal notification.
+Secondly, in the absence of a response addressing the serious allegations in my demand letter—such as the €319.9 million tax liability of AitherCO2 S.p.A., the $19–70 million in missing WOZX tokens, and the misrepresentation of Efforce Ltd’s operations—I intend to publish our correspondence on InvestigatingEfforce.com under a public interest defense. This includes communications from you, Mr. Lanzi and Mr. Saracino, both in your current roles at Hogan Lovells and previously at DLA Piper, as well as my responses. The correspondence highlights inaccuracies, such as your claim that “Efforce is generating profits, and thanks to these profits Efforce was able to reward all participants in the Genesis Pool,” which is contradicted by Efforce Ltd (Malta)’s filings showing negligible revenue (€25,000 in 2021) and no profits. Public disclosure aims to provide transparency to token holders and expose these anomalies, which have contributed to significant financial harm.
+Thirdly, I plan to share unredacted versions of our correspondence with verified media partners to facilitate investigative reporting on Efforce Ltd, AitherCO2 S.p.A., and associated entities. This includes evidence of:
+· The undisclosed €319.9 million tax liability and €400 million losses of AitherCO2 S.p.A.
+· The nominal purchase of 510 Efforce Ltd shares by MBM Holding AG, inconsistent with Efforce’s $1.2 billion valuation, potentially evading Italian tax obligations.
+· The false claim that Efforce Ltd (Bahamas) is a subsidiary of Efforce Ltd (Malta) under Malta’s regulatory oversight, with no documented relationship.
+· The conflation of AitherCO2 and Efforce operations, including claims of 50 employees when Efforce Ltd (Malta) reported zero, and shared leadership (e.g., same CEO).
+· The $19–70 million in missing WOZX tokens from Efforce-controlled wallets.
+· The misrepresentation of a single private investor as multiple institutional investors, enabling $300 million+ in profits through supply manipulation and misinformation.
+To act responsibly, I will redact personal information, such as email addresses and phone numbers, from public disclosures. Please advise by May 3, 2025, if there are additional details you believe should be redacted to protect legitimate privacy interests.
+Fourthly, if you believe there is a legal basis for maintaining confidentiality over our correspondence—despite the provably false statements and the significant public interest in the above allegations—please provide this basis by May 3, 2025. Additionally, if you maintain that publication is unwarranted, please submit an updated cease-and-desist letter detailing the legal grounds and intended actions to enforce confidentiality.
+I acknowledge that you act under your client’s instructions and are not personally responsible for the factual inaccuracies provided by Efforce Ltd. However, given the serious anomalies highlighted, including those contradicting your prior clarifications, I am surprised by your continued representation without addressing these issues. I firmly believe the public interest defense, as recognized under the UK Defamation Act 2013, supports my right to publish, given the unresolved nature of this dispute and the scale of token holder losses.
+I remain committed to resolving this matter amicably and invite you to propose settlement terms or engage in the transparency process outlined in my demand letter. Please respond with the requested details, suggested redactions, and any legal basis for confidentiality by Friday, May 3, 2025, to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="127f7b7977527b7c647761667b7573667b7c757774747d6071773c717d7f">[email&#160;protected]</a> or REDACTED.
+Sincerely,
+Michael Copley
+
+May 3, 2025 (Hogan's response):
+Dear Mr. Copley,
+concerning the information you seek:
+- you were already provided with several and detailed clarifications in the past; and/or, in any case,
+- Efforce is not obliged to provide such information to any tokenholders; and/or, in any case,
+- Efforce is not responsible for the conduct of single physical persons and/or shareholders, and is not even entitled to claim information in such regard; and/or
+- there is no connection between the information you retrieved (or believe to have retrieved) and your alleged loss.
+While we understand that you may have concerns about the loss of value of the token you bought, we have already underlined that Efforce cannot control the fluctuation of such value and cannot accept defamatory declarations and/or threats, above all considering that such threats:
+- are often completely unrelated with the decrease of the token value and your alleged loss;
+- are aimed at forcing Efforce’s will and thus obtaining more than 3 times the amount of your alleged loss.
+We can confirm that at least two criminal complaints have already been filed against you. Please put us in contact with your lawyers, to whom we could provide the information we have about such criminal complaints and with whom we could discuss the overall situation. A discussion between lawyers would certainly be more helpful for both parties.
+In the meantime, please note that all our communications to you were intended for your eyes only and their diffusion is not authorized. We invite you not to post or otherwise share our correspondence, since this would risk to make the discussions between lawyers more difficult.
+Best regards,
+Alessandro Lanzi / Alfredo Saracino
+
+May 4, 2025 (Copley's response):
+Dear Alfredo,
+Thank you for your email of May 3, 2025—I have only seen this now.
+I an willing to provide contact details for my UK-based lawyers should Efforce at any point wish to formalize a settlement to resolve the claims outlined in my demand letter of April 10, 2025. However, my understanding is that Efforce refutes all allegations and has no desire to discuss settlement at this stage. Providing you these details now would incur significant financial liability due to legal fees, which are considerable:
+• Directors, solicitors, and legal executives with over eight years’ post-qualification experience, or equivalent banking/crypto/IT postgraduate staff: £559.00 per hour + VAT 
+• Solicitors and legal executives with over four years’ post-qualification experience, or equivalent banking/crypto/IT staff: £390.00 per hour + VAT
+While I have secured a no-win, no-fee arrangement, should I sign as a client, these costs would ultimately be deducted from any settlement, reducing the recovery for token holders, including my own $280,000 loss. 
+ 
+Therefore, I intend to limit such expenses until necessary, confident that my actions are justified under a public interest defense (UK Defamation Act 2013, Section 4). I am fully prepared to defend myself against any legal cases brought against me, including the two criminal complaints you mentioned, though I still await the specific details (case numbers, courts, filing dates, allegations) requested in my previous emails then take legal action as required to formulate a robust defence. 
+Your suggestion that the issues I raise are unrelated to my investment is incorrect. Perhaps your client has not provided you with all relevant evidence, but Efforce and Efforce shareholders explicitly presented AitherCO2 S.p.A. as its mother company, citing AitherCO2’s strong financial performance and health as a reason to trust Efforce and thus the potential of WOZX. 
+ 
+Additionally, Efforce Ltd (Bahamas) was claimed to be a subsidiary of Efforce Ltd (Malta) under Maltese regulatory oversight. These representations—later proven false—directly influenced token holder investments. 
+ 
+All entities are implicated by my claims, and Efforce Ltd is responsible for the misleading information disseminated (once proven) through its own channels, which painted a false picture of the investment opportunity.
+To reiterate my position, if Efforce decides to settle all claims, I invite them to present an initial offer, which if acceptable I will refer to my lawyers to formalise. 
+ 
+Given that settlement does not appear to be on the agenda, I will continue to seek transparency through the mechanisms I have outlined, including public disclosure on InvestigatingEfforce.com, to protect current and past token holders and pursue justice through other avenues, as my internal attempts to resolve this were rejected.
+Thank you for confirming the existence of criminal complaints—I look forward to receiving the requested details via my lawyers if settlement discussions proceed or I will defend against them once they are made public to me.
+ 
+Regarding your correspondence, I note your request not to share it publicly. I will consider this alongside my legal rights and obligations under public interest principles, as previously outlined.
+I remain open to a constructive resolution and look forward to your response.
+Kind regards,
+Michael Copley
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="315c585a5471585f4754424558565045585f565457575e4352541f525e5c">[email&#160;protected]</a>
++REDACTED
+
+May 9, 2025 (Hogan's response):
+Dear Mr. Copley,
+ 
+thank you for your reply.
+Although we understand that you would incur costs, we believe that all and any discussions could take place only through lawyers, since this would ensure confidentiality. In case you are available to put us in contact with your lawyers, we will discuss with them.
+Best regards,
+Alessandro Lanzi / Alfredo Saracino
+
+May 14, 2025 (Copley's response):
+Dear Mr. Saracino and Mr. Lanzi,
+Thank you for your email of May 9, 2025. I am actively engaging with multiple law firms in the United States and have secured a firm offer of representation in the United Kingdom to represent my interests in this matter. My appointed counsel will contact you in due course, following a comprehensive assessment of the case, to present an updated demand letter and facilitate confidential discussions as you’ve requested.
+Given the complexity of this dispute, involving multiple entities (Efforce Ltd. (Malta), Efforce Ltd. (Bahamas), AitherCO2 S.p.A. (Italy), MBM Holding AG (Switzerland), and anonymous private investors, potentially including Gerbsman Partners) and individuals (Steve Wozniak, Jacopo Visetti, Jacopo Vanetti, Andrea Castiglione, Paolo Pastore, Sergio Carloni, Kenneth Hardesty), please clarify which entities and individuals you represent in these communications. Additionally, please confirm whether all named parties, particularly Mr. Wozniak, have been informed of my April 10, 2025, demand letter, given their involvement and the potential reputational impact should this matter escalate publicly.
+Furthermore, to foster goodwill and advance a constructive resolution, please provide details of the alleged legal cases filed against me, as previously referenced but not substantiated. This transparency would support our mutual interest in de-escalating the dispute amicably.
+I look forward to your prompt response and to continuing our dialogue through my legal representatives.
+Kind regards,
+Michael Copley
+
+June 13, 2025 (Hogan's response):
+Dear Mr. Copley,
+ 
+thank you for your reply.
+ 
+We confirm that, in this case, in addition to Efforce Ltd. we also represent AitherCO2 S.p.A., AitherCO2 Ltd., MBM Holding AG, Mr. Steve Wozniak, Mr. Jacopo Visetti, Mr. Jacopo Vanetti, Mr. Andrea Castiglione, Mr. Sergio Carloni, Mr. Kenneth Hardesty and Mr. Stefano Scozzese.
+ 
+We look forward to being contacted by your attorneys. We will discuss with them and provide the information we have about the criminal complaints.
+Best regards,
+Alessandro Lanzi / Alfredo Saracino
+
+July 14, 2025 (Copley's lawyer appointment):
+Hi Alfredo &amp; Alessandro,
+ 
+Please be informed I have now appointed representation so Robert McCaffrey at Industria Business Lawyers should be in contact with you imminently so you can inform him of the legal cases against me etc and discuss confidentially - as you previously proposed.
+ 
+Best Regards
+Michael 
+
+[Note: Without prejudice discussions between U.S. attorneys and Hogan Lovells took place; delays led to one meeting in early September with $50,000 nuisance offer, which would drop cases against Copley if accepted. Informed of two cases in Milan; Milan courts show no active cases.]
+
+November 1, 2025 (Copley's $2.1m demand after firing lawyers):
+Dear Mr. Saracino, Mr. Lanzi,
+Please find attached: 1. Final Settlement Demand (due 17:00 GMT, 8 November 2025) 2. Termination of Industria Business Lawyers LLP
+I act in propria persona.
+Michael Copley REDACTED
+
+[Full text of demand: FINAL DEMAND – $2.1M BY 17:00 GMT, 8 NOVEMBER 2025
+1. Counsel Terminated: Industria Business Lawyers LLP terminated effective today. I act in propria persona.
+2. Demand: USD $2,100,000 in full settlement by deadline (losses = -$607k BTC equivalent).
+3. Non-Acceptance (11 Nov):
+· Publish investigatingefforce.com (250+ pages, Defamation Act s.4)
+· File UK High Court
+· Malta judicial letter
+· US Benner intervention
+· Submit SEC TCR (whistleblower)
+4. False Claims: 
+· Milan certificate (below) proves no cases — your May 3 "two complaints" = Calunnia (Art. 368). Cease &amp; Desist history confirms intimidation.
+5. Payment: BTC to: 
+bc1pfxln96r3uv4gepc2ayr57uk0dfa4rkyscmh2qh67n8fqvdtmkgrsqqnym4
+
+
+Rate locked at Coinbase 1-hour average at transfer. Test transfer and email confirmation required.
+6. Global Release: 
+- Defendants pay USD $2,100,000 (or BTC equivalent). 
+- Claimant **removes investigatingefforce.com within 24 hrs of funds**. 
+- Full release of all claims worldwide. 
+- Defendants reimburse UK High Court filing fees (£10,000) if incurred. 
+
+
+Michael Copley
+]
+
+November 8, 2025 (Copley's $2.5m demand):
+Dear Alfredo, Alessandro, Luca,
+ 
+The $2.1M settlement offer expired at 5:00 PM GMT today without response.
+ 
+NEW FINAL DEMAND: $2.5M
+- Loss: ~$600k (BTC value of WOZX losses) 
+- Distress: Emotional harm from false criminal complaints in Italy (no case numbers provided), extradition threats, GDPR breach 
+- Whistleblower Value: Exclusive evidence (on-chain, private admissions, internal docs) 
+ 
+Deadline: 9:00 AM GMT Tuesday 11th November 2025
+ 
+Escalation:
+- Mon 10th Nov 11AM ET (5PM CET) Strategy / evidence sharing call with Benner scheduled (25CV459519) - UK High Court, SEC, Malta VFA, Benner filings in preparation. - Class expansion actively recruiting. 50+ token holders informed - Italian IPs blocked from viewing publication (Legal advice to mitigate defamation risk) 
+If no acceptance, publishing under UK Defamation Act 2013 s.4 at 9:00 AM Tuesday, with disclosures to token holder communities and media.
+ 
+Confirm receipt.
+ 
+Michael Copley
+
+November 9, 2025 (Hogan's rejection):
+Dear Mr. Copley,
+ 
+we acknowledge receipt of your emails of 1st and 8th November 2025.
+ 
+On behalf of our clients, we inform you that your counteroffers are firmly rejected.
+ 
+Your demand for USD 2,100,000 – an amount 7.5 times your alleged purchase price and damage (USD 280,000) – is exorbitant and lacks any objective basis or justification. The very last increase of further USD 400,000 – leading to a total 9 times your alleged purchase price and damage – represents another step of your unacceptable strategy to force our clients. Efforce considers these demands to be further evidence of your attempted extortion, and will inform the competent Authorities thereof.
+ 
+Furthermore, your accusation of an alleged calumny is totally groundless. Regardless the fact that Article 368 of the Italian Criminal Code has nothing to do with your claim, please note that the certificate you referenced in your email only shows the proceedings that have reached the indictment phase, omitting those which still are at the investigation phase. If you wish to obtain full disclosure of all pending proceedings, you should request a certificate pursuant to Article 335 of the Italian Code of Criminal Procedure. Please address an Italian counsel, who could confirm this to you.
+ 
+We hereby confirm that criminal complaints have been filed against you.
+ 
+Similarly, all the further accusations contained in your last emails have no basis at all.
+ 
+Efforce will start, in the immediate future, judicial proceedings against you, to seek compensation for your repeated attempts at extortion and the defamatory campaign you have carried out in the past and threatened to further pursue. In the meantime, we urge you to cease and desist from further intimidatory and defaming actions.
+ 
+Best regards,
+ 
+Alessandro Lanzi / Alfredo Saracino
+
+November 11, 2025 (Copley's $3m final demand):
+Dear Mr. Saracino and Mr. Lanzi,
+Attached: Final Settlement Demand 11th Nov 2025
+Site published at 9:00 AM GMT under UK Defamation Act 2013 s.4. Intentionally light evidence posted to allow mutually beneficial de-escalation.
+This is the final, one-time offer. Acceptance deadline: 5:00 PM CET, November 12, 2025
+BTC transfer = full execution — irrevocable.
+Reply via email only.
+Best regards, Michael Copley Lead Plaintiff (Intended) REDACTED <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e0307050b2e0700180b1d1a07090f1a0700090b0808011c0d0b400d0103">[email&#160;protected]</a> https://www.investigatingefforce.com
+
+[Full text of demand from provided pages:
+FINAL SETTLEMENT OFFER 
+Michael Copley v. Efforce &amp; Associated Parties 
+
+Date: November 11, 2025 
+
+Offer Expiry: 5:00 PM CET, November 12, 2025 
+ 
+
+SETTLEMENT AMOUNT 
+
+$3,000,000 in BTC 
+
+Payment: BTC to: 
+bc1pfxln96r3uv4gepc2ayr57uk0dfa4rkyscmh2qh67n8fqvdtmkgrsqqnym4 
+
+
+Payment Deadline: 48 hours from acceptance 
+ 
+Test transfer mandatory before final balance. 
+
+ 
+
+$500,000 INCREASE JUSTIFICATION 
+
+- 15% incentive fee on possible future $20M+ class exposure 
+
+- Forgone media deals for site amplification 
+
+- Saves Efforce $15M+ in litigation, plaintiff costs, and reputational damage (Efforce, 
+AitherCO2, Wozniak) 
+
+- No filings, no amplification, no future action 
+
+ 
+KEY TERMS 
+
+1. Site Stays Live 
+
+ - Investigatingefforce.com` remains published (UK Defamation Act 2013 s.4) 
+
+ - Allowed: Close class action registration, minor edits 
+
+ - Prohibited: New pages, evidence vaults, media outreach, X/Telegram/Google Ads 
+ 
+
+2. X &amp; Telegram Channels 
+
+ - Active only for internal community 
+
+ - No public boosting 
+
+
+3. Class Action 
+
+ - Continues recruiting with current 12+ claims (non-binding) 
+
+ - Recruitment ends Dec 31, 2025 
+
+ - If 40+, Copley represents to Efforce for 1x recovery (Copley’s representations) 
+
+ - If no agreement, contingency lawyer may seek larger recovery 
+
+ - Copley evidence shared with lawyers only 
+
+ - No joinder with Benner (25CV459519) 
+
+ - Right reserved to share evidence with Benner 
+
+ - If U.S. class action not accepted, UK or other jurisdiction solutions will be sought 
+
+
+4. Mediation with Benner 
+
+ - Willing to mediate joint resolution 
+
+ - No disclosure of Benner’s terms 
+ 
+
+5. No Future Actions: 
+
+ - No future criminal filings 
+
+ - No future regulatory filings 
+
+ - No UK High Court action 
+
+ - No U.S. class action filing 
+
+ - No Maltese Letter of Demand 
+
+
+6. Refute &amp; Remove 
+
+ - Efforce may submit evidence-based rebuttals 
+
+ - Only uncontradicted, verifiable evidence published 
+
+ - False claims will not be posted 
+
+ - Any proven false claim removed immediately 
+ 
+
+7. No Amplification of current release until Deadline 
+
+ - No new releases, media outreach, or promotion until 48 hours elapse 
+
+ - After 48h, future removal of existing and new content not possible due to public 
+interest 
+ 
+
+8. Mutual Non-Disparagement 
+
+ - Efforce/parties shall not defame, disparage, or sue Michael Copley 
+
+ - Breach voids agreement (payment non-refundable) 
+
+
+9. No NDA 
+
+ - No restriction on future speech. 
+
+ 
+IF REJECTED, PROCESS PLAYS OUT 
+ 
+- Fuller evidence released. 
+ 
+- Media amplification 
+ 
+- All legal avenues pursued (U.S., UK, Malta, regulatory) 
+ 
+- No future offers 
+ 
+- Right of response to allegations guaranteed 
+ 
+ACCEPTANCE DEADLINE 
+5:00PM CET, November 12, 2025 
+
+- Reply via email only 
+
+- BTC transfer = full execution 
+
+- Irrevocable (no recall) 
+
+- This is a one-time offer 
+
+Michael Copley 
+
+Lead Plaintiff (Intended) 
+
+REDACTED 
+
+<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1317151b3e1710081b0d0a17191f0a1710191b1818110c1d1b501d1113">[email&#160;protected]</a> 
+
+https://www.investigatingefforce.com 
+
+
+
+]
+
+November 17, 2025 (Hogan's UK police threat letter):
+Hogan Lovells International LLP
+
+REDCTED
+www.hoganlovells.com 
+17 November 2025 
+By email and post 
+Michael Copley 
+REDACTED 
+Our ref 
+D1/CL4126-6548-4386 
+Matter ref 
+REDACTED 
+Dear Mr Copley 
+OUR CLIENTS: EFFORCE LTD, JACOPO VISETTI, SERGIO CARLONI, JACOPO VANETTI
+We refer to the correspondence you have sent to Mr Visetti, Mr Vanetti, Mr Carloni, Efforce Ltd 
+(“Efforce”), and to our Italian office. 
+Over the past couple of years, and especially since April 2025, you have made a series of false 
+and unfounded allegations against Efforce, Mr Visetti, Mr. Carloni, Mr. Vanetti, and other entities 
+and individuals. These allegations have been accompanied by threats to publish information, 
+engage with the media and make certain “legal and regulatory filings” with authorities in Malta, Italy 
+and the United States as well as the High Court in London, unless your monetary (and other) 
+demands are met. 
+Your demands have escalated significantly, more than tripling in amount over a period of seven 
+months without any justification. Your most recent demand for US$3 million is over ten times the 
+value of the US$280,000 token purchase you claim to have made, although we note that you have 
+not provided any evidence thereof. 
+As our Italian colleagues have already indicated, your conduct constitutes blackmail and 
+harassment. This is evident from the considerable disparity between the sums you have demanded 
+and the value of your purported purchase, as well as your insistence on receiving a substantial 
+monetary payment to prevent you from taking further action. 
+We are writing to inform you that we have now been instructed by Efforce, Mr Visetti, Mr Vanetti 
+and Mr Carloni to raise a criminal complaint with the UK police in light of your increasingly 
+threatening and manifestly unwarranted demands. 
+In the meantime, we urge you to cease and desist from any unlawful conduct. Please be advised 
+that all of our clients’ rights are reserved without limitation. 
+Yours sincerely 
+
+November 17, 2025 (Copley's publication response):
+Subject: Your letter of 17 November 2025 – Ref D1/CL4126-6548-4386
+ 
+Dear Ms Lipworth,
+ 
+Thank you for your letter, which has been received.
+ 
+It has been published in full on https://www.investigatingefforce.com/#hogan-lovells-criminal-threat under the protection of the Defamation Act 2013 Section 4 (public interest).
+ 
+Your clients’ full right of reply remains open – any response will be published unedited and without comment.
+ 
+All of my rights are reserved.
+ 
+Yours sincerely, 
+Michael Copley
+
+November 17, 2025 (Copley's joinder notification):
+Dear Mr Saracino and Ms Lipworth,
+Please find attached the Motion for Joinder of Additional Plaintiff Michael Copley, filed today via Odyssey e-filing (Envelope #21632585, submitted 17 November 2025, 14:16 PST).
+Hearing is currently reserved for 17 June 2026, 9:00 a.m., Department 20 (request for shortened time to November/December 2025 included – see motion).
+This email constitutes service pursuant to California Rules of Court, rule 2.251 (electronic service on counsel of record).
+Please advise if you no longer accept service on behalf of any previously represented parties (including Mr Wozniak and Mr Hardesty).
+Yours sincerely, Michael Copley In Pro Per REDACTED <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a2cfcbc9c7e2cbccd4c7d1d6cbc5c3d6cbccc5c7c4c4cdd0c1c78cc1cdcf">[email&#160;protected]</a>
+
+November 20, 2025 (Hogan's service rejection):
+Dear Mr Copley,
+We are not authorised to accept service on behalf of our clients and note, in any event, that these are US proceedings.
+Yours sincerely,
+Claire Lipworth
+
+[Note: Throughout this correspondence, Hogan Lovells provided no rebuttals to the key claims outlined in the demand letters, such as the €319.9M tax liability, missing tokens, misrepresented revenues, corporate structure deceptions, and other misconduct detailed in the April 10 demand and subsequent escalations.]
+</pre>
+</details></p>
+
+
+
+
+
+
+
+<!-- THE OWN-GOALS – ALWAYS VISIBLE -->
+<div>
+<p>Hogan Lovells shot themselves in the foot <strong>ten separate times</strong> across their 2025 communications:</p>
+<ol>
+<li>Rejected $860k demand as "extortion" without rebutting any allegations → Pure deflection.</li>
+<li>Claimed "detailed clarifications" provided in past → Contradicted by their own refusal to answer follow-ups.</li>
+<li>Insisted on lawyer-only discussions for confidentiality → While ignoring requests for case details.</li>
+<li>Confirmed representing 11 parties including Wozniak → But failed to confirm if all informed of demands.</li>
+<li>Rejected $2.5m as "further extortion" → Escalated threats without evidence, dismissed Milan certificate as incomplete.</li>
+<li>Threatened "immediate" judicial proceedings → No action taken as of November 28, 2025.</li>
+<li>November 17 letter accused "blackmail and harassment" → Based on demand escalation, ignored public interest defense.</li>
+<li>Refused service on joinder motion → Despite prior representation claims.</li>
+<li>Repeatedly confirmed "criminal complaints filed" → But never provided details; Milan certificate shows zero.</li>
+<li>Overall refusal to engage with 29 specific points → Zero evidence provided across all responses.</li>
+</ol>
+<p>They threatened extortion charges three times.<br /> They provided zero rebuttals.<br /><br /> This wasn't a defense.<br /> It was an escalation that backfired.</p>
+</div>
+<!-- ================================================================== -->
+
+<!-- ============================ FACT-CHECK BLOCK – THE FINAL NAIL -->
+
+<!-- ================================================================== -->
+<div>
+<p>FACT CHECK:<br /> How many of Copley's 29 points did Hogan Lovells answer with evidence?</p>
+<div>
+<p><strong>Completely ignored (no response at all):</strong> 22 / 29</p>
+<p><strong>Responded but unsubstantiated / later proven false:</strong> 7 / 29</p>
+<p><strong>Answered with actual evidence:</strong> 0 / 29</p>
+</div>
+<!-- LIST OF THE 22 IGNORED POINTS -->
+<div>
+<p>The 22 points they completely ignored:</p>
+<p>1. Extension of representation to specific entities.<br /> 2. Details of Italian cases.<br /> 3. Details of Carloni action.<br /> 4. Details of NYC extradition.<br /> 5. €319.9M AitherCO2 tax liability.<br /> 6. 510-share transfer terms.<br /> 7. Malta-Bahamas relationship.<br /> 8. Private investor identity.<br /> 9. Missing $19–70M tokens.<br /> 10. Token sale discrepancy.<br /> 11. Financial statements transparency.<br /> 12. Huobi partnership terms.<br /> 13. AitherCO2-Efforce conflation.<br /> 14. Wozniak misrepresentation.<br /> 15. 80–90M token movement discrepancy.<br /> 16. Roadmap failures.<br /> 17. Suggested redactions for disclosure.<br /> 18. Legal basis for confidentiality.<br /> 19. Settlement interest confirmation.<br /> 20. Confirmation parties informed of demand.<br /> 21. $2.1M demand terms.<br /> 22. $2.5M demand terms.</p>
+</div>
+<!-- LIST OF THE 7 UNSUBSTANTIATED POINTS -->
+<div>
+<p>The 7 points responded but unsubstantiated / later proven false:</p>
+<p>1. Claim of past detailed clarifications (contradicted by refusals to answer).<br /> 2. Not obliged to provide information to tokenholders.<br /> 3. Not responsible for individual conduct.<br /> 4. No connection to alleged loss.<br /> 5. Threats unrelated to loss.<br /> 6. Confirmation of complaints without details (Milan certificate shows zero).<br /> 7. Confidentiality demand on correspondence (published legally under public interest).</p>
+</div>
+<p>Across 9 months of correspondence,<br /> Hogan Lovells answered <strong>zero</strong> questions with evidence.<br /><br /> They ignored <strong>76%</strong> of the points entirely.<br /> Every "response" was deflection or threat.<br /><br /> That is not lawyering.<br /> That is obstruction.</p>
+</div>
+<!-- CTA -->
+<div><a href="https://eu.docusign.net/Member/PowerFormSigning.aspx?PowerFormId=7f3f46b5-39cd-4b8e-b052-c97878fb17b7&amp;env=eu&amp;acct=fdda6bbe-e93b-49a7-914a-3dd79f50d549&amp;v=2" target="_blank" rel="noopener noreferrer"> SUBMIT YOUR CLAIM NOW (2 mins – No Cost) </a></div>
+<!-- NEW SECTION 3 – 2026 COMMUNICATION -->
+          </div>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway__label">Key Takeaway</div>
+          <div class="takeaway__text">
+            Across 9 months of correspondence, Hogan Lovells answered <strong>zero</strong> questions with evidence.
+            They ignored <strong>76%</strong> of points entirely. Every &ldquo;response&rdquo; was deflection or threat.
+            They claimed &ldquo;at least two criminal complaints&rdquo; but <strong>refused to provide case numbers</strong> despite being asked eleven separate times.
+            They threatened to report Copley to UK police for extortion &mdash; <strong>no report was ever made.</strong>
+            A Milan Public Prosecutor&rsquo;s certificate (September 2025) confirmed <strong>zero pending charges</strong> against Michael Copley.
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-section" id="section-3">
+        <div class="threat-section__header">
+          <span class="threat-section__num">Section 3</span>
+          <h2 class="threat-section__title">Hogan Lovells &mdash; Procedural Refusal &amp; Continued Silence (2026)</h2>
+          <p class="threat-section__subtitle">One reply. Procedural only. Silence on every substantive allegation. Deadline ignored.</p>
+        </div>
+        <div class="letter-block">
+          <div class="letter-block__body">
+            <h3 id="2026-communication">3. 2026 Communication – Hogan Lovells' Procedural Refusal and Continued Silence on Merits</h3>
+<p><em>On 23 January 2026, I sent a detailed update on the US litigation, recapped key allegations, and invited rebuttals by 2 February 2026 – specifically on HTX Ventures as the private placement investor.</em></p>
+<p><em>Multiple read receipts were received, but no substantive response arrived by the deadline.</em></p>
+<p><em>On 3 February 2026, Hogan Lovells replied solely on service of process – refusing to accept it on behalf of their clients. No comment on any allegation.</em></p>
+<div><img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161060854/settings_images/8ed7d5a-eff1-e386-c262-f8878dc5428f_Copley_to_HL_Jan_2026_A.jpg" alt="Email screenshot 1" /> <img src="https://kajabi-storefronts-production.kajabi-cdn.com/kajabi-storefronts-production/file-uploads/themes/2161060854/settings_images/c0fef3c-ec4d-7ca-43cf-221143c5b51a_Copley_to_HL_Jan_2026_B.jpg" alt="Email screenshot 2" /> <figure class="evidence-figure"><img src="https://i.gyazo.com/12a61758dc15ea7803785fc51a268caa.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/c3ab93e352dbdbeef0f84eb1d9daa183.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/9ec1a830a79fc55f4e06e91b0da2a8e3.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure></div>
+<p>One reply.<br />Procedural only.<br />Silence on every substantive allegation.<br />Deadline ignored.</p>
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger"> Click to read full verbatim exchange (23 Jan – 3 Feb 2026) </summary>
+<pre class="letter-text">**Michael Copley to Hogan Lovells – 23 January 2026**
+
+Dear Ms. Lipworth, Mr. Saracino, Mr. Lanzi, and Mr. Russo,
+
+I am writing as a pro se litigant and founder of InvestigatingEfforce to provide an update on ongoing proceedings, reiterate invitations for rebuttal, and notify you of my intent to escalate public disclosures in light of your clients' continued silence. As confirmed in your prior correspondence, you represent Efforce Ltd. (Malta), Efforce Ltd. (Bahamas), AitherCO2 S.p.A., MBM Holding AG, Steve Wozniak, Jacopo Visetti, Jacopo Vanetti, Andrea Castiglione, Sergio Carloni, Kenneth Hardesty, and Stefano Scozzese in relation to these matters.
+
+Per legal advice, I have maintained relative silence since November 2025 to afford your clients ample opportunity to provide substantive rebuttals to my allegations and to verify the status of your threatened actions (e.g., extortion reports to UK authorities and alleged criminal complaints in Italy). This period—now exceeding two months—has allowed sufficient time for any genuine proceedings to be notified or evidenced. In the absence of such notifications or evidence, I am now satisfied that these threats constitute strategic lawsuits against public participation (SLAPP) tactics intended to intimidate and silence legitimate inquiry. This pattern is consistent with unfulfilled threats from 2024 by Efforce representatives (including from your current team while at DLA Piper), as documented at https://www.investigatingefforce.com/legalthreats, including claims of impending defamation suits, extradition, and criminal actions in Italy and New York.
+
+To recap key unresolved issues:
+
+No substantive rebuttal has been provided to the claims in my April 10, 2025, demand letter (approximately 288 days ago), despite repeated invitations to clarify matters such as undisclosed tax liabilities (€319.9M for AitherCO2), missing WOZX tokens ($19–70M), vesting violations, and unreported token sale proceeds ($12–45M).
+No rebuttal has been offered to the publications on www.investigatingefforce.com since its launch on November 11, 2025 (approximately 73 days ago), including blockchain evidence of potential pump-and-dump schemes, insider admissions, and corporate discrepancies.
+No notification or evidence of extortion charges has been received since your letter of November 17, 2025 (approximately 67 days ago).
+No details (e.g., case numbers, courts, filing dates, or specific allegations) have been provided regarding the alleged legal actions against me, despite multiple requests.
+No follow-through or notification of proceedings has been received since the January 30, 2024, cease-and-desist letter from DLA Piper (approximately 724 days ago), which demanded cessation of my activities and reserved rights to proceedings but provided no substantive rebuttals.
+No evidence-based rebuttals have been received since my detailed queries in response to the January 30, 2024, DLA Piper letter (approximately 724 days ago), or since the March 17, 2024, "FINAL" response from DLA Piper (approximately 677 days ago), which ignored 21 of my 34 point-by-point queries, responded to 13 without evidence or substantiation, and threatened judicial actions while demanding closure of my platforms.
+These failures to engage over an extended period—particularly on allegations involving potential serious crimes such as anti-money laundering violations (e.g., laundering of unreported proceeds through affiliated entities), tax evasion, and securities fraud—suggest an inability or unwillingness to refute them. I note that such allegations, if substantiated, may trigger mandatory reporting obligations for legal professionals under the UK Proceeds of Crime Act 2002 and Money Laundering Regulations 2017. As your clients' representatives, you may wish to assess whether these matters warrant internal review or external reporting to relevant authorities.
+
+In parallel, please find attached the First Amended Complaint filed on December 19, 2025, in the Superior Court of California, County of Santa Clara (Case No. 25CV459519: Benner et al. v. Efforce Ltd. et al.). This amendment formally adds me as a named plaintiff alongside Matthew Benner. The complaint alleges fraud, intentional misrepresentation, and concealment under California law, detailing misrepresentations about platform development, partnerships (e.g., with AitherCO2), financial health, Steve Wozniak's role, and token dumping. It also identifies "John Doe 1" as the controller of Ethereum wallet 0x078f4ffC522949afDc3C9ccDf794BdAc159CbeFb, believed—based on blockchain tracing and investor disclosures—to be affiliated with HTX Ventures (involved in the 45% private placement of WOZX tokens, potentially facilitating undisclosed vesting breaches and market manipulation). Blockchain tracing has uncovered aspects such as centralized control over wallets, inter-related transaction flows and patterns between Efforce's main wallets and those of the private investors (including coordinated transfers and shared liquidity events), and broad breaches in vesting schedules, which will inform future reporting and regulatory submissions.
+
+This serves as further notice of the litigation. The case has been referenced multiple times in prior correspondence, including in my April 10, 2025, demand letter and throughout 2025 communications with your firm. Despite prior service attempts (e.g., my November 17, 2025, email with the joinder motion) and additional indications of awareness—such as Kenneth Hardesty leaving an answerphone message for co-plaintiff Matthew Benner relating to the case—your clients have not appeared or responded in the proceedings. I request confirmation of receipt of the attached First Amended Complaint and whether you are authorized to accept service on their behalf. Additionally, please confirm whether your clients have been aware of this ongoing litigation and the related correspondence exchanged with your firm.
+
+Given the absence of rebuttals or verified actions over this multi-year period, I am now fully protected under Section 4 of the UK Defamation Act 2013 to amplify these publications in the public interest, including wider media outreach, regulatory submissions (e.g., to SEC, ESMA, and Italian Agenzia delle Entrate), and the launch of dedicated sites such as www.investigatingaither.com and www.investigatinghtxventures.com to scrutinize related entities. To afford one final opportunity for fairness, I invite your clients to provide any rebuttals or corrections by February 2, 2026 - specifically about HTX Ventures being the previously undisclosed private placement investor.
+
+Responses will be published unedited on my site, consistent with my right-of-reply policy. Absent engagement, I will proceed with escalation to protect token holders and expose the alleged misconduct.
+
+Sincerely, Michael Copley]
+
+**Claire Lipworth (Hogan Lovells) – 3 February 2026**
+
+Dear Mr Copley,
+
+We are not authorised to accept service on behalf of our clients.
+
+Yours sincerely,
+
+Claire Lipworth
+Partner
+Hogan Lovells International LLP
+
+ </pre>
+</details></p>
+
+
+
+
+
+
+<p><strong>Key take-away:</strong> A clear deadline for rebuttal (including specific request on HTX Ventures as private investor). Multiple read receipts. No substantive reply. Only procedural refusal on service.<br /><br />Silence on merits after explicit invitation = strongest possible non-denial.</p>
+<!-- NEW OWN-GOALS FOR 2026 -->
+<div>
+<p>Hogan Lovells' 2026 response adds <strong>new own-goals</strong>:</p>
+<ol>
+<li>Confirmed receipt and awareness of the First Amended Complaint – strengthening notice arguments in the US case.</li>
+<li>Refused service – consistent with evasion pattern, but no appearance means risk of default.</li>
+<li>Zero comment on any allegation – despite explicit invitation and deadline.</li>
+<li>No rebuttal to HTX Ventures as private investor – despite specific request.</li>
+<li>No clarification on unreported proceeds, vesting breaches, or Aither ties.</li>
+<li>Continued the multi-year pattern of threats without action and silence on substance.</li>
+</ol>
+<p>They had every opportunity to correct the record.<br /> They chose silence on the merits.<br /><br /> That is not a defence.<br /> That is confirmation.</p>
+</div>
+<h3>SECTION 4. Visetti – Extradition Threat (16 Dec 2023)</h3>
+          </div>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway__label">Key Takeaway</div>
+          <div class="takeaway__text">
+            Copley sent a detailed update recapping key allegations and specifically naming HTX Ventures as the private placement investor.
+            Multiple read receipts confirmed. <strong>No substantive response by deadline.</strong>
+            Hogan Lovells&rsquo; only reply addressed service of process &mdash; refusing to accept it on behalf of their clients.
+            <strong>Not a single allegation was addressed, denied, or rebutted.</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-section" id="section-4">
+        <div class="threat-section__header">
+          <span class="threat-section__num">Section 4</span>
+          <h2 class="threat-section__title">Visetti &mdash; Extradition Threat (16 December 2023)</h2>
+          <p class="threat-section__subtitle">Jacopo Visetti (95% owner of AitherCO2, which held 42.5% of Efforce Malta) privately messaged Copley claiming a shareholder was &ldquo;seeking extradition to NYC&rdquo; for defamation &mdash; legally impossible for civil defamation claims.</p>
+        </div>
+        <div class="letter-block letter-block--threat">
+          <div class="letter-block__body">
+            <p><em>Jacopo Visetti (95 % owner of AitherCO2 at the time, which owned 42.5 % of Efforce Malta) privately messaged Copley on 16 December 2023 after Copley began adding Efforce-related contacts to a Telegram group.</em></p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/45f4557ffd469ebbf1842f96ab59fbad.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure></div>
+<p><strong>Lie / Threat</strong>: Claimed a shareholder was “seeking extradition to NYC” for defamation and conspiracy to commit defamation — <strong>legally impossible</strong> for civil defamation claims and for a UK citizen making truthful statements. Pure intimidation.</p>
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger">Click to read full verbatim text of the exchange</summary></details></p>
+
+
+
+
+
+
+<p><strong>Key take-away:</strong> An empty threat designed to intimidate. No extradition request or U.S. lawsuit was ever filed. Although Paolo Pastore’s lawyer once claimed a criminal complaint had been lodged in Milan and provided a supposed case number, Copley was never notified or summoned (standard procedure if a case actually progresses). Hogan Lovells later stated they were aware of “at least two” criminal complaints in Italy but repeatedly refused to supply any case numbers or evidence. An official certificate from the Milan Public Prosecutor’s Office (September 2025) confirmed <strong>zero pending charges</strong> against Michael Copley.</p>
+<!-- ================================================================== -->
+
+<!-- ============================ SECTION 5 – PAOLO PASTORE (ALL 3 LETTERS) ====== -->
+          </div>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway__label">Key Takeaway</div>
+          <div class="takeaway__text">
+            An empty threat designed to intimidate. <strong>No extradition request or U.S. lawsuit was ever filed.</strong>
+            Although Paolo Pastore&rsquo;s lawyer later claimed a criminal complaint had been lodged in Milan with a supposed case number,
+            Copley was never notified or summoned. An official certificate from the Milan Public Prosecutor&rsquo;s Office (September 2025)
+            confirmed <strong>zero pending charges</strong> against Michael Copley.
+          </div>
+        </div>
+      </div>
+
+      <div class="threat-section" id="section-5">
+        <div class="threat-section__header">
+          <span class="threat-section__num">Section 5</span>
+          <h2 class="threat-section__title">Paolo Pastore &mdash; Three Empty Threats (March&ndash;August 2024)</h2>
+          <p class="threat-section__subtitle">Pastore privately admitted the pump-and-dump, missing treasury funds, and lack of budgets. When those messages were published, his Italian lawyer sent three increasingly desperate letters &mdash; culminating in a false claim of an active Milan criminal case.</p>
+        </div>
+        <div class="letter-block letter-block--threat">
+          <div class="letter-block__body">
+            <!-- ================================================================== -->
+<h3>5. Paolo Pastore – Three Empty Threats from His Italian Lawyer (March – August 2024)</h3>
+<p><em>Paolo Pastore (Efforce Managing Director) privately admitted the pump-and-dump, missing treasury funds, lack of budgets, and other critical issues. When those messages were published, his lawyer sent three increasingly desperate letters – culminating in a false claim of an active Milan criminal case (with fake case number).</em></p>
+<div><figure class="evidence-figure"><img src="https://i.gyazo.com/c386dc98add75ba2e4cbba1f7c696a48.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/729f26562c83f2004c65d4478f43ec16.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure> <figure class="evidence-figure"><img src="https://i.gyazo.com/28eb15bc331eb7ed977e267561d3d299.png" loading="lazy" alt="Evidence screenshot" class="evidence-img"><figcaption>Evidence screenshot — click to enlarge</figcaption></figure></div>
+<p>Three letters.<br />All empty.<br />All proven false.<br />Milan court certificate = <strong>ZERO cases</strong>.</p>
+
+
+
+
+
+
+<p><details class="legal-expandable"> <summary class="legal-expandable__trigger"> Click to read all three Pastore lawyer letters in full </summary>
+<pre class="letter-text">**1. 8 March 2024**
+Avv. Nicolò Laitempergher
+via mail to: [redacted]
+SUBJECT: MR. PASTORE/MR. COPLEY – DIFFUSION OF PRIVATE COMMUNICATIONS - CEASE AND DESIST LETTER
+Dear Mr. Copley,
+I write You on behalf of Mr. Paolo Pastore which has represented me what follows.
+In the past weeks, my client has noted – and has been alerted of – the diffusion of several screenshots regarding private conversations between You and Mr. Pastore, concerning, in general, his collaboration with Efforce.
+Those conversations concern personal considerations which were confidential and, most of all, regard topics that are not directly related to Your alleged claims forwarded to the company.
+Their illicit diffusion is causing harm to the professional and personal reputation of Mr. Pastore with a potential significant economic loss, since they have been shared directly with the board members of Efforce, company with which my client still collaborates.
+Therefore, I warn You to immediately cease and desist to spread, publicly or privately, any kind of information/conversation regarding or involving, directly or indirectly, my client and/or his relationship with Efforce.
+Moreover, any information/conversation regarding or involving, directly or indirectly, Mr. Pastore's relationship with Efforce has to be promptly removed from internet.
+Otherwise, I reserve the right to take the most appropriate legal action before the competent Authorities to safeguard my client's credit and honor.
+Furthermore, please refrain to contact directly (and by any mean) Mr. Pastore from now on; any communication should be sent only to my undersigned mail address and through an appointed lawyer.
+Please be aware that also the content of this communication is strictly confidential and must not be shared.
+Best Regards.
+Milan, 8th March 2024
+Avv. Nicolò Laitempergher
+ **2. 4 June 2024** Avv. Nicolò Laitempergher via mail to: [redacted] SUBJECT: MR. PASTORE/MR. COPLEY – DIFFUSION OF PRIVATE COMMUNICATIONS - CEASE AND DESIST LETTER Dear Mr. Copley, I write You again on behalf of Mr. Paolo Pastore which has represented me what follows. Notwithstanding what was represented in my communication which has been sent on the 8th March 2024, my client has been warned again about the diffusion of several screenshots regarding private conversations between You and Mr. Pastore, concerning, in general, his collaboration with Efforce. As already stated, those conversations concern personal considerations which were confidential and, most of all, regard topics that are not directly related to Your alleged claims forwarded to the company. Their illicit diffusion is causing harm to the professional and personal reputation of Mr. Pastore with a potential significant economic loss, since they have been shared directly with the board members of Efforce, company with which my client still collaborates. In addition, despite the confidentiality notice, my previous cease and desist letter has been publicly shared, therefore committing a serious violation. Hence, I warn You again to immediately cease and desist to spread, publicly or privately, any kind of information/conversation regarding or involving, directly or indirectly, my client and/or his relationship with the company. Moreover, any information/conversation regarding or involving, directly or indirectly, Mr. Pastore's relationship with Efforce has to be promptly removed from internet. Otherwise, to safeguard my client's credit and honor I reserve the right to file a criminal complaint before the competent Public Prosecutor's office. Please be aware that also the content of this communication is strictly confidential and must not be shared. Best Regards. Milan, 4th June 2024 Avv. Nicolò Laitempergher **3. 8 August 2024** Avv. Nicolò Laitempergher Mr. Michael Copley via mail to: [redacted] SUBJECT: MR. PASTORE/MR. COPLEY – DIFFUSION OF PRIVATE COMMUNICATIONS - CEASE AND DESIST LETTER Dear Mr. Copley, I write You again on behalf of Mr. Paolo Pastore. Notwithstanding what was represented in my communications which has been sent on the 8th March 2024 and on the 4th June 2024, my client has been warned again about the ongoing diffusion of several screenshots regarding private conversations between You and Mr. Pastore, concerning, in general, his collaboration with Efforce. Therefore, I inform You that on the 25th July a criminal complaint has been filed with the Public Prosecutor's office in Milan (Criminal Proceeding pending with No. 26981/2024 R.G. n.r.). In any case, I warn You again to immediately cease and desist to spread, publicly or privately, any kind of information/conversation regarding or involving, directly or indirectly, my client and/or his relationship with the company. Best Regards. Milan, 8th August Avv. Nicolò Laitempergher</pre>
+</details></p>
+
+
+
+
+
+
+<!-- SUBMIT BUTTON -->
+<div><a href="https://www.investigatingefforce.com/classaction" target="_blank" rel="noopener noreferrer"> SUBMIT YOUR CLAIM (2 mins – No Cost) </a></div>
+          </div>
+        </div>
+
+        <div class="score-summary">
+          <div class="score-summary__item score-summary__item--bad">
+            <div class="score-summary__num" style="color:var(--accent-red)">3</div>
+            <div class="score-summary__label">Threat Letters Sent</div>
+          </div>
+          <div class="score-summary__item score-summary__item--bad">
+            <div class="score-summary__num" style="color:var(--accent-red)">0</div>
+            <div class="score-summary__label">Proven True</div>
+          </div>
+          <div class="score-summary__item score-summary__item--good">
+            <div class="score-summary__num" style="color:#4caf50">ZERO</div>
+            <div class="score-summary__label">Cases Found (Milan Certificate)</div>
+          </div>
+        </div>
+
+        <div class="takeaway">
+          <div class="takeaway__label">Key Takeaway</div>
+          <div class="takeaway__text">
+            Three letters. All empty. All proven false. The final letter cited an active Milan criminal case number.
+            <strong>An official certificate from the Milan Public Prosecutor&rsquo;s Office confirmed ZERO pending cases against Michael Copley.</strong>
+            The case number was either fabricated or related to a complaint that was never progressed &mdash;
+            yet was weaponised to intimidate a whistleblower into silence.
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:var(--space-2xl);background:var(--grey-50);border:2px solid var(--grey-200);margin:var(--space-2xl) 0;">
+        <p style="font-size:var(--text-lg);font-weight:700;color:var(--grey-800);margin-bottom:var(--space-sm);">34 letters. Zero proof. Zero rebuttals. Zero cases.</p>
+        <p style="font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-lg);">If you were affected by Efforce or WOZX, your voice matters.</p>
+        <a href="class-action.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);margin-right:var(--space-sm);">Submit Your Claim &rarr;</a>
+        <a href="key-claims.html" class="btn btn--outline">Read Key Claims</a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a>
+        <p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p>
+      </div>
+      <div class="site-footer__col">
+        <h6>Investigation</h6>
+        <a href="key-claims.html">Key Claims</a>
+        <a href="timeline.html">Timeline</a>
+        <a href="blockchain.html">Blockchain</a>
+        <a href="evidence.html">Evidence</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Subjects</h6>
+        <a href="entities.html">Entities</a>
+        <a href="individuals.html">Individuals</a>
+      </div>
+      <div class="site-footer__col">
+        <h6>Legal</h6>
+        <a href="legal.html">Legal Overview</a>
+        <a href="legal-threats.html">Legal Threats</a>
+        <a href="public-interest.html">Public Interest</a>
+        <a href="class-action.html">Class Action</a>
+      </div>
+    </div>
+    <div class="site-footer__defamation">
+      <div class="site-footer__defamation-inner">
+        <strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong>
+        <span>Notice served 3 May 2025 to Hogan Lovells. No rebuttal.</span>
+        <span><strong>Access blocked in high-risk defamation jurisdictions (IT, AE, HK, SC, SG) on legal advice.</strong></span>
+        <span>All claims alleged. Case: 25CV459519 (Benner v. Efforce et al.).</span>
+        <span>Corrections: <a href="/cdn-cgi/l/email-protection#13707c61617670677a7c7d60537a7d657660677a7472677a7d747675757c6170763d707c7e"><span class="__cf_email__
