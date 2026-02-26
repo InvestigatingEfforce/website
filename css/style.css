@@ -1840,7 +1840,7 @@ footer img[src*="logo"] {
 
 /* Search Bar — standalone row between header and nav */
 .search-bar{background:var(--black);border-bottom:1px solid var(--grey-800);padding:0}
-.search-bar__inner{max-width:var(--max-width-wide);margin:0 auto;padding:8px var(--space-xl);display:flex;justify-content:flex-end}
+.search-bar__inner{max-width:var(--max-width-wide);margin:0 auto;padding:8px var(--space-xl);display:flex;justify-content:space-between;align-items:center}
 .search-bar .site-search{position:relative;width:320px}
 .search-bar .ss-input{width:100%;padding:8px 14px 8px 34px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:var(--white);font-family:var(--font-mono);font-size:12px;transition:all .2s;border-radius:0}
 .search-bar .ss-input::placeholder{color:rgba(255,255,255,.45);font-size:11px}
@@ -1848,6 +1848,19 @@ footer img[src*="logo"] {
 .search-bar .ss-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.5;color:var(--white)}
 .search-bar .ss-shortcut{position:absolute;right:8px;top:50%;transform:translateY(-50%);font-family:var(--font-mono);font-size:9px;opacity:.35;pointer-events:none;border:1px solid rgba(255,255,255,.25);color:var(--white);padding:0 4px;line-height:16px}
 .search-bar .ss-dropdown{top:100%;left:0;right:auto;margin-top:4px}
+
+/* Language Selector */
+.lang-sel{position:relative}
+.lang-sel__btn{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:var(--white);padding:6px 10px;cursor:pointer;font-family:var(--font-mono);font-size:11px;transition:border-color .2s,background .2s}
+.lang-sel__btn:hover{border-color:var(--accent-red);background:rgba(255,255,255,.12)}
+.lang-sel__globe{opacity:.6}
+.lang-sel__caret{opacity:.4;transition:transform .2s}
+.lang-sel__btn[aria-expanded="true"] .lang-sel__caret{transform:rotate(180deg)}
+.lang-sel__menu{position:absolute;top:calc(100% + 6px);left:0;background:var(--black-soft);border:1px solid var(--grey-800);box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:600;min-width:170px;padding:4px 0;max-height:320px;overflow-y:auto}
+.lang-sel__item{display:flex;align-items:center;gap:8px;width:100%;padding:8px 14px;background:none;border:none;color:var(--grey-300);font-family:var(--font-body);font-size:12px;cursor:pointer;text-align:left;transition:background .15s,color .15s}
+.lang-sel__item:hover{background:rgba(255,255,255,.08);color:var(--white)}
+.lang-sel__item--active{color:var(--accent-red);font-weight:700}
+.lang-sel__flag{font-size:16px;line-height:1}
 
 /* Uniform mega menu height — all dropdowns match the tallest */
 .mega-menu{height:350px}
