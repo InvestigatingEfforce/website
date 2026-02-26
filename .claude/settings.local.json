@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find pages:*)",
+      "Bash(awk NR==8508:*)",
+      "Bash(awk NR>=8508 && NR<=8512:*)",
+      "Bash(awk NR>=8462 && NR<=8470:*)",
+      "Bash(git:*)"
+    ]
+  }
+}

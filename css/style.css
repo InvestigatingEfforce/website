@@ -577,7 +577,8 @@ header img[src*="logo"] {
   z-index: var(--z-mega);
 }
 
-.nav-item--open .mega-menu {
+.nav-item--open .mega-menu,
+.nav-item[data-mega]:hover > .mega-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
