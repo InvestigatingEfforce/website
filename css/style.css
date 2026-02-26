@@ -45,17 +45,17 @@
   --font-body:     'Source Sans 3', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-mono:     'IBM Plex Mono', 'Courier New', monospace;
 
-  /* Type Scale */
-  --text-xs:    0.75rem;    /* 12px */
-  --text-sm:    0.875rem;   /* 14px */
-  --text-base:  1rem;       /* 16px */
-  --text-lg:    1.125rem;   /* 18px */
-  --text-xl:    1.25rem;    /* 20px */
-  --text-2xl:   1.5rem;     /* 24px */
-  --text-3xl:   1.875rem;   /* 30px */
-  --text-4xl:   2.25rem;    /* 36px */
-  --text-5xl:   3rem;       /* 48px */
-  --text-6xl:   3.75rem;    /* 60px */
+  /* Type Scale — bumped up for readability */
+  --text-xs:    0.8125rem;  /* 13px (was 12px) */
+  --text-sm:    0.9375rem;  /* 15px (was 14px) */
+  --text-base:  1.0625rem;  /* 17px (was 16px) */
+  --text-lg:    1.1875rem;  /* 19px (was 18px) */
+  --text-xl:    1.3125rem;  /* 21px (was 20px) */
+  --text-2xl:   1.5625rem;  /* 25px (was 24px) */
+  --text-3xl:   1.9375rem;  /* 31px (was 30px) */
+  --text-4xl:   2.375rem;   /* 38px (was 36px) */
+  --text-5xl:   3.125rem;   /* 50px (was 48px) */
+  --text-6xl:   3.875rem;   /* 62px (was 60px) */
 
   /* Spacing */
   --space-xs:   0.25rem;
@@ -352,7 +352,7 @@ code, .mono {
 .notice-bar__updated {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 11px;
   color: var(--grey-600);
   margin-left: var(--space-sm);
 }
@@ -398,6 +398,18 @@ code, .mono {
   height: 40px;
   width: auto;
   display: block;
+}
+
+/* Catch-all: constrain ANY logo image in the nav/header area,
+   even if the HTML doesn't use .masthead__logo class */
+.site-header img,
+.main-nav img,
+nav img[src*="logo"],
+header img[src*="logo"] {
+  max-height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .masthead__brand {
@@ -1501,6 +1513,15 @@ code, .mono {
   width: auto;
 }
 
+/* Catch-all: constrain footer logo even without .footer__logo class */
+.site-footer img[src*="logo"],
+footer img[src*="logo"] {
+  max-height: 36px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .site-footer__brand p {
   font-size: var(--text-sm);
   color: var(--grey-500);
@@ -1647,9 +1668,9 @@ code, .mono {
 
 @media (max-width: 768px) {
   :root {
-    --text-5xl: 2.25rem;
-    --text-6xl: 2.75rem;
-    --text-4xl: 1.875rem;
+    --text-5xl: 2.375rem;
+    --text-6xl: 2.875rem;
+    --text-4xl: 1.9375rem;
   }
 
   .container { padding: 0 var(--space-md); }
@@ -1737,8 +1758,8 @@ code, .mono {
 
 @media (max-width: 480px) {
   :root {
-    --text-5xl: 1.875rem;
-    --text-6xl: 2.25rem;
+    --text-5xl: 1.9375rem;
+    --text-6xl: 2.375rem;
   }
 
   .page-hero {
