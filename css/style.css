@@ -379,8 +379,7 @@ code, .mono {
 }
 
 .masthead__logo {
-  width: 100%;
-  max-width: 350px;
+  width: 280px;
   height: auto;
   display: block;
 }
@@ -392,7 +391,7 @@ code, .mono {
 .main-nav img,
 nav img[src*="logo"],
 header img[src*="logo"] {
-  max-width: 350px;
+  max-width: 280px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -436,6 +435,7 @@ header img[src*="logo"] {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-left: -15px;
 }
 
 /* masthead__title styles are defined with logo sizing section */
