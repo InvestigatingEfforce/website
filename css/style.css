@@ -435,7 +435,7 @@ header img[src*="logo"] {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-left: -15px;
+  margin-left: -25px;
 }
 
 /* masthead__title styles are defined with logo sizing section */
