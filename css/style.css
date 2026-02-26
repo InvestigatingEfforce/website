@@ -379,7 +379,7 @@ code, .mono {
 }
 
 .masthead__logo {
-  height: 120px;
+  height: 40px;
   width: auto;
   display: block;
 }
@@ -391,7 +391,7 @@ code, .mono {
 .main-nav img,
 nav img[src*="logo"],
 header img[src*="logo"] {
-  max-height: 120px;
+  max-height: 40px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -504,6 +504,7 @@ header img[src*="logo"] {
   border-bottom: 1px solid var(--grey-800);
   position: relative;
   z-index: var(--z-mega);
+  overflow: visible;
 }
 
 .main-nav__inner {
