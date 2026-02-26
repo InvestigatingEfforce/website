@@ -379,7 +379,7 @@ code, .mono {
 }
 
 .masthead__logo {
-  height: 40px;
+  height: 60px;
   width: auto;
   display: block;
 }
@@ -391,7 +391,7 @@ code, .mono {
 .main-nav img,
 nav img[src*="logo"],
 header img[src*="logo"] {
-  max-height: 40px;
+  max-height: 60px;
   width: auto;
   display: block;
   object-fit: contain;
@@ -505,6 +505,7 @@ header img[src*="logo"] {
   position: relative;
   z-index: var(--z-mega);
   overflow: visible;
+  transition: margin-bottom 0.2s ease;
 }
 
 .main-nav__inner {
@@ -560,8 +561,9 @@ header img[src*="logo"] {
   cursor: pointer;
 }
 
-/* Mega Menu Panel */
+/* Mega Menu Panel — pushes page content down when open */
 .mega-menu {
+  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -571,18 +573,12 @@ header img[src*="logo"] {
   border-bottom: var(--border-heavy);
   box-shadow: var(--shadow-mega);
   padding: var(--space-2xl) 0;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-4px);
-  transition: all var(--transition-base);
   z-index: var(--z-mega);
 }
 
-.nav-item--open .mega-menu,
+.nav-item--open > .mega-menu,
 .nav-item[data-mega]:hover > .mega-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  display: block;
 }
 
 .mega-menu__inner {
