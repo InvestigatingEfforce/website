@@ -371,8 +371,35 @@ code, .mono {
 /* ============================================================
    SITE HEADER & MASTHEAD
    ============================================================ */
+/* Site header and masthead styles are defined below with logo sizing */
+
+.masthead__logo-link {
+  display: block;
+  text-decoration: none;
+}
+
+.masthead__logo {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+/* Catch-all: constrain ANY logo image in the nav/header area,
+   even if the HTML doesn't use .masthead__logo class */
+.site-header img,
+.site-header img[src*="logo"],
+.main-nav img,
+nav img[src*="logo"],
+header img[src*="logo"] {
+  max-height: 120px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Ensure header/nav area has black background for white logo */
 .site-header {
-  background: var(--white);
+  background: var(--black);
   border-bottom: var(--border-heavy);
   position: sticky;
   top: 0;
@@ -389,27 +416,19 @@ code, .mono {
   margin: 0 auto;
 }
 
-.masthead__logo-link {
-  display: block;
+.masthead__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--white);
   text-decoration: none;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
-.masthead__logo {
-  height: 40px;
-  width: auto;
-  display: block;
-}
-
-/* Catch-all: constrain ANY logo image in the nav/header area,
-   even if the HTML doesn't use .masthead__logo class */
-.site-header img,
-.main-nav img,
-nav img[src*="logo"],
-header img[src*="logo"] {
-  max-height: 40px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+.masthead__title:hover {
+  color: var(--white);
+  text-decoration: none;
 }
 
 .masthead__brand {
@@ -418,20 +437,7 @@ header img[src*="logo"] {
   gap: 4px;
 }
 
-.masthead__title {
-  font-family: var(--font-display);
-  font-size: var(--text-2xl);
-  font-weight: 900;
-  color: var(--black);
-  text-decoration: none;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-
-.masthead__title:hover {
-  color: var(--black);
-  text-decoration: none;
-}
+/* masthead__title styles are defined with logo sizing section */
 
 .masthead__subtitle {
   font-family: var(--font-body);
@@ -458,18 +464,24 @@ header img[src*="logo"] {
   font-size: var(--text-sm);
   padding: var(--space-sm) var(--space-md);
   padding-right: 36px;
-  border: 1px solid var(--grey-200);
+  border: 1px solid var(--grey-700);
   border-radius: 0;
-  background: var(--grey-50);
+  background: var(--black-medium);
+  color: var(--white);
   width: 220px;
   transition: all var(--transition-fast);
 }
 
 .masthead__search input:focus {
   outline: none;
-  border-color: var(--black);
-  background: var(--white);
+  border-color: var(--white);
+  background: var(--black-medium);
+  color: var(--white);
   width: 300px;
+}
+
+.masthead__search input::placeholder {
+  color: var(--grey-500);
 }
 
 .masthead__search button {
@@ -480,7 +492,7 @@ header img[src*="logo"] {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--grey-500);
+  color: var(--grey-400);
 }
 
 
