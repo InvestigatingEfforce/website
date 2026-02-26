@@ -507,7 +507,6 @@ header img[src*="logo"] {
   position: relative;
   z-index: var(--z-mega);
   overflow: visible;
-  transition: margin-bottom 0.2s ease;
 }
 
 .main-nav__inner {
@@ -563,11 +562,11 @@ header img[src*="logo"] {
   cursor: pointer;
 }
 
-/* Mega Menu Panel — pushes page content down when open */
+/* Mega Menu Panel — overlays page content */
 .mega-menu {
   display: none;
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: auto;
   left: 0;
   width: 100vw;
   background: var(--white);

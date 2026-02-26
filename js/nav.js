@@ -20,21 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================================ */
 function initMegaMenu() {
   const navItems = document.querySelectorAll('.nav-item[data-mega]');
-  const mainNav = document.querySelector('.main-nav');
   let activeItem = null;
   let closeTimeout = null;
-
-  // Push page content down by setting margin-bottom on .main-nav
-  const updateNavSpacing = () => {
-    if (!mainNav) return;
-    const openMenu = mainNav.querySelector('.nav-item--open > .mega-menu') ||
-                     mainNav.querySelector('.nav-item[data-mega]:hover > .mega-menu');
-    if (openMenu && openMenu.offsetHeight) {
-      mainNav.style.marginBottom = openMenu.offsetHeight + 'px';
-    } else {
-      mainNav.style.marginBottom = '0';
-    }
-  };
 
   navItems.forEach(item => {
     const trigger = item.querySelector('.nav-item__trigger');
@@ -42,9 +29,10 @@ function initMegaMenu() {
 
     if (!megaMenu) return;
 
-    // Position mega menu relative to viewport edge
+    // Position mega menu below the nav bar
     const positionMega = () => {
-      megaMenu.style.left = `-${item.getBoundingClientRect().left}px`;
+      const navBottom = item.closest('.main-nav').getBoundingClientRect().bottom;
+      megaMenu.style.top = navBottom + 'px';
     };
 
     // Mouse enter
@@ -56,8 +44,6 @@ function initMegaMenu() {
       positionMega();
       item.classList.add('nav-item--open');
       activeItem = item;
-      // Wait one frame for display:block to take effect, then measure height
-      requestAnimationFrame(updateNavSpacing);
     });
 
     // Mouse leave with delay
@@ -65,7 +51,6 @@ function initMegaMenu() {
       closeTimeout = setTimeout(() => {
         item.classList.remove('nav-item--open');
         if (activeItem === item) activeItem = null;
-        updateNavSpacing();
       }, 200);
     });
 
@@ -81,12 +66,10 @@ function initMegaMenu() {
           const firstLink = megaMenu.querySelector('a');
           if (firstLink) firstLink.focus();
         }
-        requestAnimationFrame(updateNavSpacing);
       }
       if (e.key === 'Escape') {
         item.classList.remove('nav-item--open');
         trigger.focus();
-        updateNavSpacing();
       }
     });
   });
@@ -96,7 +79,6 @@ function initMegaMenu() {
     if (!e.target.closest('.nav-item')) {
       navItems.forEach(item => item.classList.remove('nav-item--open'));
       activeItem = null;
-      updateNavSpacing();
     }
   });
 
@@ -105,7 +87,6 @@ function initMegaMenu() {
     if (e.key === 'Escape') {
       navItems.forEach(item => item.classList.remove('nav-item--open'));
       activeItem = null;
-      updateNavSpacing();
     }
   });
 }
