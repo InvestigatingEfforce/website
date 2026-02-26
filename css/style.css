@@ -379,7 +379,7 @@ code, .mono {
 }
 
 .masthead__logo {
-  width: 280px;
+  width: 260px;
   height: auto;
   display: block;
 }
@@ -391,7 +391,7 @@ code, .mono {
 .main-nav img,
 nav img[src*="logo"],
 header img[src*="logo"] {
-  max-width: 280px;
+  max-width: 260px;
   height: auto;
   display: block;
   object-fit: contain;
