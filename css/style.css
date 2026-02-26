@@ -411,7 +411,7 @@ header img[src*="logo"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7px var(--space-xl);
+  padding: var(--space-md) var(--space-xl);
   max-width: var(--max-width-wide);
   margin: 0 auto;
 }
