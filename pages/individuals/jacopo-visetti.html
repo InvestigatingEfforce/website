@@ -53,13 +53,36 @@
     .lightbox.active{display:flex}
     .lightbox img{max-width:95vw;max-height:95vh;object-fit:contain}
     @media(max-width:768px){.person-hero{flex-direction:column;text-align:center}.person-hero__photo{width:100px;height:100px}.person-meta{grid-template-columns:repeat(2,1fr);padding:var(--space-lg)}}
+
+    /* DISCORD CHAT SECTION */
+    .discord-bombshell{border:1px solid var(--grey-200);margin:var(--space-xl) 0;overflow:hidden}
+    .discord-bombshell__header{display:flex;align-items:center;justify-content:space-between;padding:var(--space-md) var(--space-lg);background:var(--grey-50);border-bottom:1px solid var(--grey-200);flex-wrap:wrap;gap:var(--space-sm)}
+    .discord-bombshell__header h4{font-family:var(--font-display);font-weight:900;font-size:var(--text-lg);color:var(--black);margin:0}
+    .legal-tag{font-family:var(--font-mono);font-size:10px;padding:3px 10px;background:#fff5f5;color:var(--accent-red);border:1px solid var(--accent-red);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+    .discord-bombshell__quote{padding:var(--space-lg);border-left:4px solid var(--accent-red);margin:var(--space-md) var(--space-lg);background:#fef2f2}
+    .discord-bombshell__quote blockquote{font-size:var(--text-base);font-style:italic;font-weight:600;color:var(--black);margin:0 0 var(--space-sm)}
+    .discord-bombshell__quote cite{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-style:normal}
+    .discord-bombshell__context{padding:0 var(--space-lg)}
+    .discord-bombshell__context summary{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent-red);cursor:pointer;padding:var(--space-sm) 0;text-transform:uppercase;letter-spacing:.06em}
+    .discord-thread{background:#36393f;border-radius:6px;padding:var(--space-md);margin:var(--space-sm) 0;max-height:350px;overflow-y:auto}
+    .discord-msg{padding:var(--space-xs) var(--space-sm);margin:var(--space-xs) 0;border-radius:4px}
+    .discord-author{font-weight:700;font-size:var(--text-xs);margin-right:var(--space-xs)}
+    .quote-visetti .discord-author{color:#5865f2}
+    .quote-copley .discord-author{color:#57f287}
+    .discord-date{font-family:var(--font-mono);font-size:9px;color:#72767d}
+    .discord-text{font-size:var(--text-xs);color:#dcddde;margin:4px 0 0;line-height:1.5}
+    .discord-bombshell__analysis{padding:var(--space-md) var(--space-lg) var(--space-lg)}
+    .discord-bombshell__analysis p{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .contradiction{background:#fffdf0;border:1px solid var(--accent-gold);padding:var(--space-sm) var(--space-md);margin-top:var(--space-md);font-size:var(--text-xs);line-height:1.6;color:var(--grey-600)}
+    .contradiction strong{color:#b8860b}
+    @media(max-width:768px){.discord-bombshell__header{flex-direction:column;align-items:flex-start}}
   </style>
 </head>
 <body>
 
   <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#e7848895958284938e888994a78e89918294938e8086938e898082818188958482c984888a"><span class="__cf_email__" data-cfemail="02616d70706761766b6d6c71426b6c746771766b6563766b6c656764646d7061672c616d6f">[email&#160;protected]</span></a> &middot; <a href="../public-interest.html#defamation">Full Notice</a> &middot; <a href="../public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
 
-  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav></div></header>
+  <header class="site-header"><div class="site-header__inner"><a href="../../index.html" class="site-header__brand"><img src="../../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="../key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="../timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="../entities.html">Entities</a></li><li class="mega-menu__item"><a href="../individuals.html" class="mega-menu__link--active">Individuals</a></li><li class="mega-menu__item"><a href="../legal-threats.html"><li class="mega-menu__item"><a href="../chat-evidence.html">Chat Evidence</a></li><li class="mega-menu__item"><a href="../legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="../detective.html" style="color:#7c3aed;font-weight:600;">Ask Mike</a></li><li class="mega-menu__item"><a href="../class-action.html">Class Action</a></li></ul></nav><div class="site-search" id="site-search" data-depth="2"><svg class="ss-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" class="ss-input ss-input--light" placeholder="Search investigation…" autocomplete="off" spellcheck="false"><span class="ss-shortcut">/</span><div class="ss-dropdown" id="search-dropdown"></div></div></div></header>
 
   <section class="section" style="padding:var(--space-md) 0 0;"><div class="container"><nav class="related-nav"><a href="steve-wozniak.html">Steve Wozniak</a><a href="jacopo-visetti.html" class="current">Jacopo Visetti</a><a href="jacopo-vanetti.html">Jacopo Vanetti</a><a href="andrea-castiglione.html">Andrea Castiglione</a><a href="sergio-carloni.html">Sergio Carloni</a><a href="ken-hardesty.html">Ken Hardesty</a><a href="corrado-catania.html">Corrado Catania</a><a href="paolo-pastore.html">Paolo Pastore</a><a href="stefano-scozzese.html">Stefano Scozzese</a><a href="efforce-team.html">Efforce Team</a></nav></div></section>
 
@@ -74,7 +97,7 @@
     </div>
   </div></section>
 
-  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: public Telegram, Etherscan, filings, Nov 18 2023 call, private communications. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#07646875756264736e686974476e69716274736e6066736e6960626161687564622964686a"><span class="__cf_email__" data-cfemail="87e4e8f5f5e2e4f3eee8e9f4c7eee9f1e2f4f3eee0e6f3eee9e0e2e1e1e8f5e4e2a9e4e8ea">[email&#160;protected]</span></a></div></div></div></section>
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence: public Telegram, Etherscan, filings, Nov 18 2023 call, Discord private chat (Dec 2022&ndash;Sep 2024), private communications. <a href="../public-interest.html#right-of-reply">Right of reply</a> &middot; <a href="/cdn-cgi/l/email-protection#07646875756264736e686974476e69716274736e6066736e6960626161687564622964686a"><span class="__cf_email__" data-cfemail="87e4e8f5f5e2e4f3eee8e9f4c7eee9f1e2f4f3eee0e6f3eee9e0e2e1e1e8f5e4e2a9e4e8ea">[email&#160;protected]</span></a></div></div></div></section>
 
   <section class="section"><div class="container">
 
@@ -84,6 +107,7 @@
       <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">$12M</div><div class="person-meta__label">Admitted Raise (vs $80M Claimed)</div></div>
       <div class="person-meta__item"><div class="person-meta__num person-meta__num--gold">&euro;319.9M</div><div class="person-meta__label">Concealed Tax Liability</div></div>
       <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">&euro;510</div><div class="person-meta__label">MBM Transfer Price</div></div>
+      <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">1,609</div><div class="person-meta__label">Discord Messages</div></div>
       <div class="person-meta__item"><div class="person-meta__num person-meta__num--red">0</div><div class="person-meta__label">Rebuttals Received</div></div>
     </div>
     <!-- KEY EVIDENCE CALLOUT -->
@@ -91,6 +115,13 @@
       <p style="font-size:var(--text-lg);font-weight:900;color:var(--accent-red);margin-bottom:var(--space-xs);">&#128264; Key Evidence: Private Call Transcript</p>
       <p style="font-size:var(--text-sm);color:var(--grey-700);margin-bottom:var(--space-md);">On November 18, 2023, Visetti made critical admissions in a private call with whistleblower Michael Copley &mdash; covering U.S. PI identity, $12M vs $80M raise, exchange listings, wallet keys, and more.</p>
       <a href="../visetti-call.html" class="btn" style="background:var(--accent-red);border-color:var(--accent-red);color:var(--white);">Read Full Call Summary (15 Sections) &rarr;</a>
+    </div>
+
+    <!-- DISCORD EVIDENCE CALLOUT -->
+    <div style="background:#f0f4ff;border:2px solid #3b82f6;padding:var(--space-lg);margin-bottom:var(--space-xl);text-align:center;">
+      <p style="font-size:var(--text-lg);font-weight:900;color:#1d4ed8;margin-bottom:var(--space-xs);">&#128172; Key Evidence: 1,609 Private Discord Messages</p>
+      <p style="font-size:var(--text-sm);color:var(--grey-700);margin-bottom:var(--space-md);">From Dec 2022 to Sep 2024, Visetti exchanged 771 messages with Copley via Discord private chat &mdash; covering PI identity (&ldquo;US citizens&rdquo;), Woz-Huobi connection, no blockchain admission, wallet claims contradicted by on-chain data, and more.</p>
+      <a href="#discord-chat" class="btn" style="background:#1d4ed8;border-color:#1d4ed8;color:var(--white);">22 Key Revelations &darr;</a>
     </div>
 
     <div class="section-block" style="border-top:none;">
@@ -203,6 +234,1499 @@
 </table>
 <!-- FULL 245 VERBATIM ADMISSIONS TABLE – PART 1 (1–41) -->
       </div>
+    </div>
+
+
+    <!-- DISCORD PRIVATE CHAT REVELATIONS -->
+    <div class="section-block" id="discord-chat">
+      <h3 style="font-size:var(--text-3xl);">Discord Private Chat &mdash; 1,609 Messages (Dec 2022&ndash;Sep 2024)</h3>
+      <p style="font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-sm);">Complete private Discord conversation between Visetti (<code>jackaither</code>) and whistleblower Michael Copley (<code>mikecopley</code>). 771 messages from Visetti across nearly two years of exchanges. Key revelations below.</p>
+
+      <div style="background:var(--black-soft);color:var(--white);padding:var(--space-lg);margin:var(--space-lg) 0;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:var(--space-md);text-align:center;">
+          <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">1,609</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Total Messages</div></div>
+          <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">771</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Visetti Messages</div></div>
+          <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">22</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Key Revelations</div></div>
+          <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">697</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Messages on Jul 15 Alone</div></div>
+          <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">0</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Messages Deleted</div></div>
+        </div>
+      </div>
+
+      <div class="toc" style="background:var(--grey-50);padding:var(--space-lg);margin:var(--space-lg) 0;border:1px solid var(--grey-200);">
+        <h4 style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm);">Jump to Revelation</h4>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:var(--space-xs);">
+          <a href="#private-investors:-&ldquo;shareholders-a" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">1. Private Investors: &ldquo;Shareholders and Directors...</a>
+          <a href="#pi-identity:-&ldquo;one-of-the-partners-" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">2. PI Identity: &ldquo;One of the Partners is of Chines...</a>
+          <a href="#hbtc-listing:-&ldquo;between-woz-and-the" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">3. HBTC Listing: &ldquo;Between WOZ and the Owner of Hu...</a>
+          <a href="#malta-setup:-&ldquo;woz-and-ken-organize" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">4. Malta Setup: &ldquo;Woz and Ken Organized with the P...</a>
+          <a href="#core-product:-&ldquo;we-are-not-a-crypto" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">5. Core Product: &ldquo;We Are Not a Crypto &mdash; We ...</a>
+          <a href="#treasury:-&ldquo;75m-are-on-a-separate-w" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">6. Treasury: &ldquo;75M Are on a Separate Wallet &mdash...</a>
+          <a href="#off-take-agreement:-&ldquo;we-did-take-t" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">7. Off-Take Agreement: &ldquo;We Did Take the 50M but N...</a>
+          <a href="#market-manipulation:-&ldquo;they-didn&rs" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">8. Market Manipulation: &ldquo;They Didn&rsquo;t Pump a...</a>
+          <a href="#deflection:-&ldquo;is-there-irrefutable-" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">9. Deflection: &ldquo;Is There Irrefutable Proof of Man...</a>
+          <a href="#internal-audit:-&ldquo;auditor-sent-by-t" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">10. Internal Audit: &ldquo;Auditor Sent by Team Woz and ...</a>
+          <a href="#acknowledgment:-&ldquo;between-me-and-yo" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">11. Acknowledgment: &ldquo;Between Me and You &mdash; So...</a>
+          <a href="#seele-ponzi:-&ldquo;never-heard-of-yuany" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">12. SEELE/Ponzi: &ldquo;Never Heard of YuanYi&rdquo;</a>
+          <a href="#token-oversight:-&ldquo;i-have-never-fol" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">13. Token Oversight: &ldquo;I Have Never Followed the To...</a>
+          <a href="#product-failure:-&ldquo;clients-were-sca" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">14. Product Failure: &ldquo;Clients Were Scared of Every...</a>
+          <a href="#vanetti-defence:-&ldquo;in-the-case-of-j" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">15. Vanetti Defence: &ldquo;In the Case of Jusp, Vanetti...</a>
+          <a href="#lock-up-claims:-&ldquo;i-am-told-they-re" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">16. Lock-Up Claims: &ldquo;I Am Told They Respected the ...</a>
+          <a href="#threats-context:-&ldquo;andrea-got-aroun" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">17. Threats Context: &ldquo;Andrea Got Around 8 Death Me...</a>
+          <a href="#failure-admission:-&ldquo;the-business-d" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">18. Failure Admission: &ldquo;The Business Didn&rsquo;t ...</a>
+          <a href="#marketing-spend:-&ldquo;huobi-alone-aske" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">19. Marketing Spend: &ldquo;Huobi Alone Asked for a Lot ...</a>
+          <a href="#turning-hostile:-&ldquo;your-messages-ar" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--grey-200);display:block;line-height:1.4;">20. Turning Hostile: &ldquo;Your Messages Are Clearly Th...</a>
+          <a href="#accusing-is-criminal" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--accent-red);display:block;line-height:1.4;">21. Legal Intimidation: &ldquo;Accusing Is a Crime&rdquo;</a>
+          <a href="#many-completely-false" style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);text-decoration:none;padding:var(--space-xs);border-left:2px solid var(--accent-red);display:block;line-height:1.4;">22. Unspecified Denials: &ldquo;Completely False&rdquo;</a>
+
+        </div>
+      </div>
+
+      <div class="discord-bombshell" id="private-investors:-&ldquo;shareholders-a">
+        <div class="discord-bombshell__header">
+          <h4>Private Investors: &ldquo;Shareholders and Directors are US Citizens&rdquo;</h4>
+          <span class="legal-tag">SEC Jurisdiction</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;actually no, the company is pretty transparent and the shareholders and directors are US citizens&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:02:45</span>
+              <p class="discord-text">nor has he ever been involved with the bank accounts</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:03:04</span>
+              <p class="discord-text">so quite surprised by this statement tbh</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:03:18</span>
+              <p class="discord-text">Until the private institutions are revealed publicly, there will always be huge suspicion. Perhaps you sold to a company in Bahamas that didn't divulge shareholders/accounts etc</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:04:17</span>
+              <p class="discord-text">actually no, the company is pretty transparent and the shareholders and directors are US citizens</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:04:24</span>
+              <p class="discord-text">Perhaps you sold to an entity sourced by Andrea,  that Andrea controlled etc. Secrecy is the worst trait for any honest company and I am told it's almost unheard of that private investors stay anonymous</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:04:36</span>
+              <p class="discord-text">everytime i hear chinese i always get confused a bit</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:04:38</span>
+              <p class="discord-text">thought I can't corroborate that fact</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:05:02</span>
+              <p class="discord-text">Certainly not private investors that launch with 100% of the supply in their hands</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti confirms the private investor entity has U.S. citizen directors and shareholders. This directly establishes SEC jurisdiction over the private placement. Combined with his Nov 2023 call admission (&ldquo;one from NYC&hellip; Western US&rdquo;), this places the entire $45M private sale firmly within U.S. securities law.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Efforce&rsquo;s repeated claims that PI identity must remain confidential for regulatory reasons. If the entity is a transparent U.S. company with public directors, there is no legitimate basis for secrecy.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="pi-identity:-&ldquo;one-of-the-partners-">
+        <div class="discord-bombshell__header">
+          <h4>PI Identity: &ldquo;One of the Partners is of Chinese Descent&rdquo;</h4>
+          <span class="legal-tag">PI Identity</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;one of the partners of on of two investors is of chinese descent&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:10:58</span>
+              <p class="discord-text">Ok</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:10:59</span>
+              <p class="discord-text">and continuing to support that thesis based on i am unsure what info, is wrong</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:11:12</span>
+              <p class="discord-text">there is one point that is true</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:11:30</span>
+              <p class="discord-text">one of the partners of on of two investors is of chinese descent</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:11:38</span>
+              <p class="discord-text">You have to take responsibility, if there's questions which have not been answered, that's down to Efforce not the person asking questions but not getting responses</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:11:52</span>
+              <p class="discord-text">unclear why someone thinks he is automatically chinese</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:12:27</span>
+              <p class="discord-text">he is a US citizen</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:12:31</span>
+              <p class="discord-text">I am glad they are in the US as that means it will fall under Sec jurisdiction</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti reveals there were <strong>two</strong> private investors, and one has a partner &ldquo;of Chinese descent.&rdquo; He then confirms &ldquo;he is a US citizen.&rdquo; This narrows the PI identification significantly and connects to the SEELE/YuanYi/Chinese investor trail. The distinction between &ldquo;Chinese descent&rdquo; and &ldquo;Chinese national&rdquo; may be significant for the HBTC listing connection.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="hbtc-listing:-&ldquo;between-woz-and-the">
+        <div class="discord-bombshell__header">
+          <h4>HBTC Listing: &ldquo;Between WOZ and the Owner of Huobi&rdquo;</h4>
+          <span class="legal-tag">Wozniak Involvement</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;we only engaged in comunications with HUOBI&hellip; and that was between WOZ and the owner of Huobi. i wasn&rsquo;t even invited to the meeting&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:33:09</span>
+              <p class="discord-text">Well you had a relationship with HBTC no, or it was all handled entirely by the private investors</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:33:32</span>
+              <p class="discord-text">we did not have a relationship as far as i know</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:34:00</span>
+              <p class="discord-text">we only engaged in comunications with HUOBI</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:34:15</span>
+              <p class="discord-text">and that was between WOZ and the owner of Huobi</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:34:26</span>
+              <p class="discord-text">i wasn't even invited to the meeting</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:34:28</span>
+              <p class="discord-text">FYI</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:34:48</span>
+              <p class="discord-text">It's always seemed strange that Huobi didn't list WOZX at launch - especially after announcing the strategic partnership</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:35:22</span>
+              <p class="discord-text">Then only listing a year later after HBTC closed</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti reveals that <strong>Wozniak personally</strong> engaged with the owner of Huobi (Justin Sun) to arrange the listing &mdash; and that Visetti himself was excluded from this meeting. This contradicts the narrative that Wozniak was merely a passive figurehead and suggests direct involvement in the exchange strategy that led to WOZX launching exclusively on HBTC.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Wozniak&rsquo;s legal position that he had minimal operational involvement. If he personally negotiated the listing exchange, he had active knowledge of the distribution mechanism.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="malta-setup:-&ldquo;woz-and-ken-organize">
+        <div class="discord-bombshell__header">
+          <h4>Malta Setup: &ldquo;Woz and Ken Organized with the Prime Minister&rdquo;</h4>
+          <span class="legal-tag">Wozniak &amp; Hardesty Involvement</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;he and ken organized with the prime minister at the time for the joining&hellip; The prime minister and ministry of innovation were also there&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 23:07:16</span>
+              <p class="discord-text">He and ken took 14 months to come to Malta</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 23:08:04</span>
+              <p class="discord-text">So the company was setup in order to start ops</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 23:08:31</span>
+              <p class="discord-text">And then he and ken organized with the prime minister at the time for the joining</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 23:08:54</span>
+              <p class="discord-text">So we finalized the structure at that time</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 23:10:15</span>
+              <p class="discord-text">I think you can still find the video of the final structuring online</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 23:10:20</span>
+              <p class="discord-text">Back to staking, so they set up a contract to give away 13m WOZX over 1 year across 4 pools. Community just had to join each pool to then receive a share of tokens distributed every minute - and contract can't be changed.
+
+Was meant to run for 1 year but after 6 months they say we're cancelling the pools as we will set up new liquidity mining incentives soon (which never happened).
+
+Thus no one co&hellip;</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 23:10:29</span>
+              <p class="discord-text">The prime minister and ministry of innovation were also there</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 23:11:10</span>
+              <p class="discord-text">Yeah I read the articles about the prime minister jumping the queue for Efforce in a UK paper</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti reveals that <strong>Wozniak and Hardesty personally coordinated with Malta&rsquo;s Prime Minister</strong> to establish Efforce&rsquo;s corporate structure. This demonstrates deep, active involvement in the regulatory and jurisdictional choices &mdash; not passive board membership. The &ldquo;Ministry of Innovation&rdquo; presence suggests a coordinated PR/regulatory strategy.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="core-product:-&ldquo;we-are-not-a-crypto">
+        <div class="discord-bombshell__header">
+          <h4>Core Product: &ldquo;We Are Not a Crypto &mdash; We Do Not Have a Blockchain&rdquo;</h4>
+          <span class="legal-tag">Fundamental Misrepresentation</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;it is a token with a specific utility. we are not a crypto as we do not have a blockchain&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:00:53</span>
+              <p class="discord-text">It’s a loyalty scheme not a crypto project</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:00:58</span>
+              <p class="discord-text">Essentially</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:01:28</span>
+              <p class="discord-text">You don’t need to launch a crypto token to offer a discount to bulk buyers</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 14:01:30</span>
+              <p class="discord-text">it is a token with a specific utility. we are not a crypto as we do not have a blockchain</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 14:02:04</span>
+              <p class="discord-text">@mikecopley#0 again, this is your opinion</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:02:28</span>
+              <p class="discord-text">Correct</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 14:03:27</span>
+              <p class="discord-text">not thinking of it as usefull is a legitimate thought for you but not necessarly right for everyone. if the company designs a business model this way, people might or might not like it.</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:04:47</span>
+              <p class="discord-text">Which would be ok, if we all bought into the token with a white paper that said you can get a 2% discount on performance fees. But we didn’t we bought into a white paper which stated a very different model etc</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> The <strong>co-founder of a blockchain project</strong> admits they don&rsquo;t have a blockchain. Investors bought WOZX on the promise of a revolutionary blockchain-based energy efficiency marketplace. Visetti&rsquo;s admission reduces the entire project to a loyalty discount token &mdash; something that required neither a token launch, nor a $45M private placement, nor Steve Wozniak&rsquo;s endorsement.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Efforce Whitepaper (Dec 2020) which described a &ldquo;decentralized platform&rdquo; leveraging blockchain technology. Also contradicts the $80M valuation basis.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="treasury:-&ldquo;75m-are-on-a-separate-w">
+        <div class="discord-bombshell__header">
+          <h4>Treasury: &ldquo;75M Are on a Separate Wallet &mdash; Not Sold&rdquo;</h4>
+          <span class="legal-tag">Wallet Discrepancy</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;Yes so the 75m are on a separate wallet. So not sold or anything&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:38:54</span>
+              <p class="discord-text">Not answered
+https://gyazo.com/8af53d273a97f9797d92a2b10a78f975</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:39:03</span>
+              <p class="discord-text">Not replied to
+https://gyazo.com/aa8f49afe0efeb78c5394675756b6f97</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:39:10</span>
+              <p class="discord-text">Not answered
+https://gyazo.com/bbcb54ea84dcfa512c7a06251e30a4d3</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 02 2024, 10:39:33</span>
+              <p class="discord-text">Yes so the 75m are on a separate wallet</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 02 2024, 10:39:39</span>
+              <p class="discord-text">So not sold or anything</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:39:55</span>
+              <p class="discord-text">No I've not spoken to Sergio, he is not available to speak to. There was a time I was invited to Milan to meet you and the team but for some reason they preferred not to meet me!</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:40:10</span>
+              <p class="discord-text">@jackaither#0 Not the case</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:40:13</span>
+              <p class="discord-text">Still 80m tokens missing!</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti claims the 75M WOZX allocated to the second private investor are &ldquo;not sold.&rdquo; However, blockchain analysis shows significant transfers out of the associated wallet (0x697D456D). Pastore separately confirmed this wallet was &ldquo;sold to a U.S. VC&rdquo; containing $49M in alt-coins. Either Visetti is being misled by insiders or is knowingly misrepresenting wallet activity.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Pastore admission (Nov 15, 2022): &ldquo;Wallet 3 sold to U.S. VC.&rdquo; Also contradicted by on-chain transfer data from Etherscan.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="off-take-agreement:-&ldquo;we-did-take-t">
+        <div class="discord-bombshell__header">
+          <h4>Off-Take Agreement: &ldquo;We Did Take the 50M but Never Drew the Funds&rdquo;</h4>
+          <span class="legal-tag">Financial Discrepancy</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;We did take the 50M but never drew the funds, as not needed. We actually still have the contract standing for the 50M&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Apr 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:45:56</span>
+              <p class="discord-text">I can confirm that number</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:45:59</span>
+              <p class="discord-text"></p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:47:02</span>
+              <p class="discord-text">My take:
+&gt; Steve Wozniak didn't launch the new iteration
+&gt; 1.2m wasn't spent on marketing
+&gt; Leading crypto fund didn't take 50m USD over 2 years 
+&gt; Leading market maker wasn't organised? 
+&gt; Public roadmap was never released for new iteration AFAIK
+&gt; Roadmap was never released
+&gt; Fully decentralised contributions system never materialised - completely centralised no?
+&gt; Whitep&hellip;</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:47:32</span>
+              <p class="discord-text">We did take the 50M but never drew the funds, as not needed</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:48:12</span>
+              <p class="discord-text">We actually still have the contract standing for the 50M</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:48:38</span>
+              <p class="discord-text">Once again, I don't post these things publicly to cause harm or bigger questions, but ofc I am preparing for possible legal now so I have all documented</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:49:01</span>
+              <p class="discord-text">Yeah, but there isn’t anything illegal here mike</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:49:03</span>
+              <p class="discord-text">I'm not even sure what the $50m offstake is</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti claims a $50M off-take agreement exists but was never drawn. This contradicts Bithumb&rsquo;s delisting response which cited failed $50M off-take commitments. If the contract exists, it should be producible. If it was &ldquo;not needed,&rdquo; the question becomes: why would a company with &euro;342K losses and zero employees not need $50M?</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="market-manipulation:-&ldquo;they-didn&rs">
+        <div class="discord-bombshell__header">
+          <h4>Market Manipulation: &ldquo;They Didn&rsquo;t Pump and Dump&rdquo;</h4>
+          <span class="legal-tag">Contradicts Pastore</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;What turned out was they didn&rsquo;t pump and dump. So there was no breach of contract on that side and therefore no actions from our side&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 17, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti claims an internal review concluded the private investors did not pump and dump &mdash; directly contradicting Pastore&rsquo;s admission (&ldquo;pumped and dumped by private investors&rdquo;). This also reveals Efforce had <strong>contractual obligations</strong> with PIs that included anti-manipulation clauses, which they claim were not breached despite 186.6M WOZX being dumped in Oct 2021.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Pastore (Nov 15, 2022): &ldquo;Pumped and dumped by private investors.&rdquo; Also contradicted by MPI wallet analysis showing systematic dumps during price spikes.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="deflection:-&ldquo;is-there-irrefutable-">
+        <div class="discord-bombshell__header">
+          <h4>Deflection: &ldquo;Is There Irrefutable Proof of Manipulation?&rdquo;</h4>
+          <span class="legal-tag">Deflection Pattern</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;sorry, just to be extremely clear and transparent. is there irrefutable proof that there has been manipulation?&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:57:59</span>
+              <p class="discord-text">So there was no reason whatsoever to not sell to retail, all the money you sold would have gone into the company to then build token holder value, as long as you were genuinely intended</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:59:09</span>
+              <p class="discord-text">Instead you did the absolute worst thing, which was you allowed someone else to profit all the money you should have brought in because they sold to retail, plus you put all the supply in the hands of people that could manipulate retail over and over and over and over again</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:59:53</span>
+              <p class="discord-text">Then ultimately wrecked the potential of the project because when someone controls the entire supply, they obviously make profitable decisions and retail lose over and over and over</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:00:12</span>
+              <p class="discord-text">sorry, just to be extremely clear and transparent. is there irrefutable proof that there has been manipulation?</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:01:18</span>
+              <p class="discord-text">as no government not police agency has called us up on any of this. we have contacted maltese and chinese authorities</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:01:23</span>
+              <p class="discord-text">no feedback ever</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 12:01:24</span>
+              <p class="discord-text">I have had it being admitted by Paolo and token analysis should be able to prove proof of this, if only there was a serious independent investigation</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 12:01:53</span>
+              <p class="discord-text">not sure what Paolo can have admitted as he came on board 2 years later</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Rather than investigating the $68M discrepancy or the MPI&rsquo;s $283M profits, Visetti demands &ldquo;irrefutable proof&rdquo; from the whistleblower &mdash; reversing the burden of proof. As co-founder with access to all corporate records, Visetti is the person best positioned to answer this question, not ask it. His follow-up that &ldquo;no government or police agency has called us&rdquo; is a deflection: absence of prosecution is not evidence of innocence.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="internal-audit:-&ldquo;auditor-sent-by-t">
+        <div class="discord-bombshell__header">
+          <h4>Internal Audit: &ldquo;Auditor Sent by Team Woz and Ken &mdash; Nothing Out of Place&rdquo;</h4>
+          <span class="legal-tag">Wozniak &amp; Hardesty</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;after the legals wrote to you, there has been an internal audit of all the moeny spent and cashed in by an auditor sent by team Woz and Ken. ken was present during that time. after 40 days the conclusion has been that nothing was out of place&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:04:43</span>
+              <p class="discord-text">It's been nearly a year since EAG creation</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:05:00</span>
+              <p class="discord-text">There's a reason people internally are trying to draw this out imo</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:05:07</span>
+              <p class="discord-text">But enough is enough</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:06:11</span>
+              <p class="discord-text">The lack of definite answers is extremely convenient for those that are concerned about the actual truth being revealed as it doesn't pin them to a single story, they can change things at will</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 11:07:20</span>
+              <p class="discord-text">just so you are aware, after the legals wrote to you, there has been an internal audit of all the moeny spent and cashed in by an auditor sent by team Woz and Ken. ken was present during that time. after 40 days the conclusion has been that nothing was out of place</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:08:13</span>
+              <p class="discord-text">That's great, but I haven't seen anything with my own eyes, and the fact you're not aware of $68m of unexplained transactions out of the Efforce wallets suggests you are not being told the truth and are being misslead to a huge degree.</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 11:08:26</span>
+              <p class="discord-text">my request based on your file is also usefull for me and ken and woz</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:08:33</span>
+              <p class="discord-text">That's not a small discrepancy!</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 11:08:36</span>
+              <p class="discord-text">so we can see with full granularity</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 11:09:32</span>
+              <p class="discord-text">It's useful, but if you direct everything through Sergio - who via his actions has already shown he is very much trying to shut down questions being posed rather than answer them - then you will always get concealed answers rather than the actual answers</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti claims Wozniak and Hardesty&rsquo;s team sent an auditor who found &ldquo;nothing out of place&rdquo; after 40 days. This is an internal, non-independent audit conducted by parties with a direct interest in the outcome. Critically, this audit apparently did not flag the $68.1M in unaccounted ETW transfers, the $283M in MPI profits, or the &euro;0 revenue filings. Either the audit scope was deliberately narrow, or its conclusions are unreliable.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> On-chain evidence showing $68.1M unaccounted transfers from ETW. Also contradicts Malta filed accounts showing &euro;0 revenue.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="acknowledgment:-&ldquo;between-me-and-yo">
+        <div class="discord-bombshell__header">
+          <h4>Acknowledgment: &ldquo;Between Me and You &mdash; Some Were Actually Very Hinting at Fraud&rdquo;</h4>
+          <span class="legal-tag">Fraud Acknowledgment</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;Between me and you, some were actually very hinting at fraud&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Apr 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:22:44</span>
+              <p class="discord-text">and there wasn'y any intention to cause harm</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:22:53</span>
+              <p class="discord-text">I don't believe any of the posts were in any way defamatory</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:23:08</span>
+              <p class="discord-text">but had you said to me privately, I would have respected that</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:23:23</span>
+              <p class="discord-text">Between me and you, some were actually very hinting at fraud</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:24:13</span>
+              <p class="discord-text">Truth is there's a lot I could post. Like how many employees Efforce have etc
+
+This is what you said in community gathering on 25/6/21 to how big is the Efforce team
+"How many employees globally?: 45 employees. 18 in office, fair team europe remotely, number of engineers who work with us directly to implement. Roughly 40-45 players, growing team day by day with new hires "</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:24:35</span>
+              <p class="discord-text">What does the financial reports show? no expenses etc</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:24:54</span>
+              <p class="discord-text">This is indeed what i said since aither was supporting the whole operation back then</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:25:08</span>
+              <p class="discord-text">Litterally having all my people contributing</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti privately acknowledges that Copley&rsquo;s public posts about Efforce were &ldquo;hinting at fraud&rdquo; &mdash; effectively conceding the allegations had substance. The qualifier &ldquo;between me and you&rdquo; shows awareness that this admission would be damaging if public. Despite this, Efforce pursued legal threats against Copley rather than addressing the substance.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="seele-ponzi:-&ldquo;never-heard-of-yuany">
+        <div class="discord-bombshell__header">
+          <h4>SEELE/Ponzi: &ldquo;Never Heard of YuanYi&rdquo;</h4>
+          <span class="legal-tag">SEELE Connection</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;No, never heard of yuanyi&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 10, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 08 2024, 10:38:14</span>
+              <p class="discord-text">Have you received these yet?</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 09 2024, 20:53:17</span>
+              <p class="discord-text">@jackaither#0 Any update &lt;@959495189716697110&gt; 
+
+Does "Yuanyi" mean anything to you? I have been informed this is institution being investigated by Chinese police for their involvement with WOZX, Seele and a number of other tokens. There's a call taking place tomorrow between the police and a WOZX holder representing chinese token holders.</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 10 2024, 07:53:36</span>
+              <p class="discord-text">Not yet but i expect it this week</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 10 2024, 07:53:55</span>
+              <p class="discord-text">No, never heard of yuanyi</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 10 2024, 07:58:45</span>
+              <p class="discord-text">Interesting it takes them so long. You would think it would be an extremely quick and simple task given all of the transactions were done in good faith (unless they were having to go to great lengths to try think of the best cover up stories)</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 10 2024, 08:00:10</span>
+              <p class="discord-text">Let’s see</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 10 2024, 08:00:10</span>
+              <p class="discord-text">No, it’s 4 years of transactions and they are doing every single one, so it takes time and they asked the auditor to confirm</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 10 2024, 08:00:19</span>
+              <p class="discord-text">So it’s normal</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> YuanYi (&ldquo;Digital Cash&rdquo;/SEELE) is the Chinese Ponzi organisation that used WOZX as its flagship investment product, with victims losing $200K+. Visetti claims complete ignorance. However, Pastore confirmed that Castiglione was &ldquo;the one pushing the SEELE relationship while denying it publicly.&rdquo; If the co-founder is genuinely unaware, it suggests extraordinary governance failure. If he is aware, this is a lie to a whistleblower.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Pastore (Dec 11, 2023): &ldquo;Andrea was the one pushing the SEELE relationship while denying it publicly.&rdquo;</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="token-oversight:-&ldquo;i-have-never-fol">
+        <div class="discord-bombshell__header">
+          <h4>Token Oversight: &ldquo;I Have Never Followed the Tokens Movement&rdquo;</h4>
+          <span class="legal-tag">Governance Failure</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;On tokens i have no idea, i have never followed the tokens movement so best to ask paolo or vanetti&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Apr 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:59:54</span>
+              <p class="discord-text">And haven’t stopped since</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:01:04</span>
+              <p class="discord-text">It's getting late, I appreciate you responded anyway.
+
+Can I ask a few questions please, to get response on that will hopefully allay some of my bigger fears.
+
+1/ Please can you confirm the team wallet tokens so it can be confirmed that all 537m tokens are held by the team still, or if this is lower explain why. (I can only see 457m tokens across two wallets so circa 80m not accounted for)
+
+2/ Can&hellip;</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:02:00</span>
+              <p class="discord-text">I wish you good night. Hopefully chat later</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:02:25</span>
+              <p class="discord-text">On tokens i have no idea, i have never followed the tokens movement so best to ask paolo or vanetti</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:02:57</span>
+              <p class="discord-text">With respect, they don't exactly answer me (plus the cease and desist Paolo sent me suggested I must not contact him via any channel) - so please can you find this out.</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:03:41</span>
+              <p class="discord-text">I think eag created negativity, and this doesn’t help, especially now that i try to make the new iteration of the platform.</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:04:21</span>
+              <p class="discord-text">I think you were misslead about EAGs intentions then a story was created which detracted from allaying concerns to instead attacking EAG.</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:05:05</span>
+              <p class="discord-text">Which of course only then heightens concerns and emboldens the quest to get to the bottom of what's real and what's not - which has always been my intention. Not to harm anyone.</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> The co-founder and ~40% indirect owner of a token project claims he &ldquo;never followed&rdquo; what happened to the tokens. The WOZX token was the entire basis of the $45M private placement that funded the company. Investors lost $300M+ in value. Visetti&rsquo;s claimed ignorance &mdash; if genuine &mdash; represents a catastrophic failure of fiduciary duty. If feigned, it&rsquo;s a deliberate distancing strategy.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="product-failure:-&ldquo;clients-were-sca">
+        <div class="discord-bombshell__header">
+          <h4>Product Failure: &ldquo;Clients Were Scared of Everything Crypto or Blockchain&rdquo;</h4>
+          <span class="legal-tag">Business Model Failure</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;No, the product didn&rsquo;t get traction and clients were scared of everything crypto or blockchain&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Apr 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:41:00</span>
+              <p class="discord-text">I did a lot of calls to explain the project and energy efficiency models to funds and banks</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:44:18</span>
+              <p class="discord-text">The model you chose unfortunately in hindsight was not the correct model. It gave all the power to institutions who bought for barely anything compared to the almost guaranteed huge price spikes initially (given tokenomics, crypto at the time, woz) leveraged Aithers reputation, Woz reputation, Efforces marketing budget - and made vast profits while also then bringing in a lot of retail who mostly &hellip;</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:46:35</span>
+              <p class="discord-text">Then you failed to adhere to the roadmpa set out in the whitepaper to sell Efforce tokens / Consultancy tokens to then be able to fund the vision that had been set out, so weren't able to follow through with the grand plans which would bring the tokenomics back into a place whereby hundreds of millions of tokens were being locked up due to funded projects, thus making the tokenomics more sustainab&hellip;</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:47:48</span>
+              <p class="discord-text">No, the product didn’t get traction and clients were scared of everything crypto or blockchain</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 23:47:48</span>
+              <p class="discord-text">It's a real shame. I always believed and still believed that with the right push Efforce could be something v powerful</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:47:56</span>
+              <p class="discord-text">And the enthusiasm cooled</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:48:09</span>
+              <p class="discord-text">This can happen</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 23:48:25</span>
+              <p class="discord-text">I invested in a number of ultra promising companies</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> The co-founder admits the core product never gained traction because clients didn&rsquo;t want blockchain. Combined with his later admission that Efforce &ldquo;does not have a blockchain,&rdquo; this reveals the fundamental business model was flawed from inception. Yet the whitepaper, marketing, and $45M private sale were all predicated on blockchain utility. The token had no reason to exist.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="vanetti-defence:-&ldquo;in-the-case-of-j">
+        <div class="discord-bombshell__header">
+          <h4>Vanetti Defence: &ldquo;In the Case of Jusp, Vanetti Was the One Getting Fucked&rdquo;</h4>
+          <span class="legal-tag">Vanetti Pattern</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;In the case of Jusp and sweetguest vanetti was actually the one getting fucked&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Apr 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 21:53:58</span>
+              <p class="discord-text">I'll go to prison for the truth if that's the trap that's set for me</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 21:55:02</span>
+              <p class="discord-text">I said to you before the organisation is a mess unfortunately, and it's clear it has been. I really wanted to try find solutions, but what solutions are there?</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 21:55:05</span>
+              <p class="discord-text">There's none</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 21:55:38</span>
+              <p class="discord-text">In the case of Jusp and sweetguest vanetti was actually the one getting fucked</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 21:56:16</span>
+              <p class="discord-text">But i guess this is irrelevant to efforce and the work that needs to be put</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 21:56:56</span>
+              <p class="discord-text">@jackaither#0 Yeah I mean honestly whatever happened happened, i don't care about that, I care about who is involved with Efforce and whether their intentions are pure</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 21:57:01</span>
+              <p class="discord-text">I disagree, the past year has been dedicated to pivot with new platform and products being added</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 21:57:16</span>
+              <p class="discord-text">I am very confident</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti defends Vanetti on the Jusp/SweetGuest failures, claiming Vanetti was a victim rather than perpetrator. This contradicts Pastore&rsquo;s characterisation of Jusp as &ldquo;a mess&rdquo; involving &ldquo;some sort of mafia gang.&rdquo; Visetti&rsquo;s defence of Vanetti despite the pattern of failed ventures raises questions about whether due diligence was performed before giving Vanetti 40% ownership and CTO control of Efforce.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="lock-up-claims:-&ldquo;i-am-told-they-re">
+        <div class="discord-bombshell__header">
+          <h4>Lock-Up Claims: &ldquo;I Am Told They Respected the Lock-Up&rdquo;</h4>
+          <span class="legal-tag">Vesting Breach</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;They had a lock up period, and i have asked if that was respected, i am told they did from a wallet analisys&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:25:06</span>
+              <p class="discord-text">This wallet, contains all tokens transferred to private investors 
+https://gyazo.com/58bdd285bf9ba8b94985e49b5a227e3a</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:25:34</span>
+              <p class="discord-text">Simple calculation of transfers out x market value when token transferred out = their profit (well their profit less whatever they paid you)</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 02 2024, 10:25:35</span>
+              <p class="discord-text">Yes that number is right</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 02 2024, 10:26:32</span>
+              <p class="discord-text">They had a lock up period, and i have asked if that was respected, i am told they did from a wallet analisys.</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:26:38</span>
+              <p class="discord-text">The second investor had 100m right</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 02 2024, 10:26:43</span>
+              <p class="discord-text">Are you saying that is not the case?</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:26:47</span>
+              <p class="discord-text">https://gyazo.com/062a4f445bb6799e8f71428997b66fc8</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 02 2024, 10:26:56</span>
+              <p class="discord-text">So this is wallet of the second investor</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti says he was &ldquo;told&rdquo; the lock-up was respected &mdash; he hasn&rsquo;t verified this himself. On-chain analysis shows MPI began transferring tokens <strong>before</strong> the stated vesting schedule completion. The phrase &ldquo;I am told&rdquo; reveals Visetti is relying on others (likely Carloni or Vanetti) for information about his own company&rsquo;s core financial transactions.</p>
+          <div class="contradiction"><strong>Contradicted by:</strong> Blockchain data showing transfers from MPI wallet beginning before stated lock-up expiry. Vesting page analysis shows 55.3M WOZX in documented breaches.</div>
+        </div>
+      </div>
+      <div class="discord-bombshell" id="threats-context:-&ldquo;andrea-got-aroun">
+        <div class="discord-bombshell__header">
+          <h4>Threats Context: &ldquo;Andrea Got Around 8 Death Messages&rdquo;</h4>
+          <span class="legal-tag">Intimidation</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;The person who got most of these is Andrea. He got around 8 death messages&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:50:36</span>
+              <p class="discord-text">The eastern european who wrote to me was</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:51:01</span>
+              <p class="discord-text">But again, i think dangerous people are not writing these things</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:51:13</span>
+              <p class="discord-text">So i simply block them</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:51:44</span>
+              <p class="discord-text">The person who got most of these is Andrea</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:51:58</span>
+              <p class="discord-text">He got around 8 death messages</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:52:23</span>
+              <p class="discord-text">Another got less that that but went straight to the authorities</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 22:52:31</span>
+              <p class="discord-text">I dont doubt it, but linking those to me was ridiculous, especially when you talk about extraditing to the US</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 22:52:32</span>
+              <p class="discord-text">So everyone reacts differently</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti reveals Andrea Castiglione received the most death threats. While threats against anyone are reprehensible, Visetti previously used the existence of these threats to justify threatening Copley with extradition (Dec 2023). The person who sent the threat Copley was blamed for was never actually contacted about it &mdash; exposing the extradition threat as a fabricated intimidation tactic.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="failure-admission:-&ldquo;the-business-d">
+        <div class="discord-bombshell__header">
+          <h4>Failure Admission: &ldquo;The Business Didn&rsquo;t Work Out as Expected&rdquo;</h4>
+          <span class="legal-tag">Failure Admission</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;unfortunately the business didn&rsquo;t work out as expected although with very good potential&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 15, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:10:09</span>
+              <p class="discord-text">Paolo comes in</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:10:24</span>
+              <p class="discord-text">NFT’s next years never anything about v1.1 platform which never launched</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:11:11</span>
+              <p class="discord-text">You can argue it all you want, but all token holders will corroborate this</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 14:11:16</span>
+              <p class="discord-text">unfortunately the business didn't work out as expected although with very good potential</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:11:33</span>
+              <p class="discord-text">Because you didn’t bother trying?</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 14:11:43</span>
+              <p class="discord-text">so if clients back off i can do nothing but change and try to convince them again</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 15 2024, 14:12:00</span>
+              <p class="discord-text">@mikecopley#0 trying what exactly?</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 15 2024, 14:12:11</span>
+              <p class="discord-text">To launch the platform! L</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> The co-founder admits the business failed. Yet during the period of failure: no investor communications were issued, no refunds were offered, the token continued trading, private investors continued profiting, and legal threats were sent to anyone asking questions. A legitimate business that &ldquo;didn&rsquo;t work out&rdquo; issues disclosures; a fraudulent one silences critics.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="marketing-spend:-&ldquo;huobi-alone-aske">
+        <div class="discord-bombshell__header">
+          <h4>Marketing Spend: &ldquo;Huobi Alone Asked for a Lot of Tokens for Marketing&rdquo;</h4>
+          <span class="legal-tag">Token Distribution</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;1.2 was unfortunately spent. Actually Huobi alone asked for a lot of tokens for marketing&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Apr 2, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:49:21</span>
+              <p class="discord-text">It’s a draw facility</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:49:36</span>
+              <p class="discord-text">So you can draw up to 50M</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:50:21</span>
+              <p class="discord-text">Not sure what you mean by woz never launched the new it</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:51:02</span>
+              <p class="discord-text">1.2 was unfortunately spent. Actually Huobi alone asked for a lot of tokens for marketing</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:51:14</span>
+              <p class="discord-text">I disagree. I thought I was buying tokens for something very different to what actually materialised.</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:51:34</span>
+              <p class="discord-text">1.2m was spend during the NFT launch?</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Apr 02 2024, 22:51:48</span>
+              <p class="discord-text">I disagree, we released a product that worked technically and economically</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Apr 02 2024, 22:52:00</span>
+              <p class="discord-text">Or do you mean the initial launch?</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> Visetti reveals that Huobi demanded WOZX tokens for marketing the listing. This means team/treasury tokens were spent to pay for exchange access &mdash; diluting the supply that was supposed to be preserved for investors. The $1.2M marketing budget cited in the Bithumb delisting was apparently consumed largely by exchange listing costs, not actual marketing to drive adoption.</p>
+          
+        </div>
+      </div>
+      <div class="discord-bombshell" id="turning-hostile:-&ldquo;your-messages-ar">
+        <div class="discord-bombshell__header">
+          <h4>Turning Hostile: &ldquo;Your Messages Are Clearly Threatening&rdquo;</h4>
+          <span class="legal-tag">Pattern: Cooperate Then Silence</span>
+        </div>
+        <div class="discord-bombshell__quote">
+          <blockquote>&ldquo;Hi Mike, i am surprised at your messages as these are clearly threatening&rdquo;</blockquote>
+          <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 29, 2024</cite>
+        </div>
+        <div class="discord-bombshell__context">
+          <details>
+            <summary>View conversation context</summary>
+            <div class="discord-thread">
+              <div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 29 2024, 04:44:02</span>
+              <p class="discord-text">No new auditor appointed</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 29 2024, 04:46:40</span>
+              <p class="discord-text">All behaviour seems intended to minimise transparency, block progress, and hide behind accusations of incompetence. 
+
+You're now as complicit as even if you were innocent victim as I presumed, you had the opportunity to get to the bottom of this and resolve it but you have instead chosen instead to be complicit in helping those that created the system that destroyed many lives like my own and faci&hellip;</p>
+            </div>
+<div class="discord-msg quote-copley">
+              <span class="discord-author">Copley</span>
+              <span class="discord-date">Jul 29 2024, 04:53:57</span>
+              <p class="discord-text">Of course the ramp up in activity from my side a direct relationship to the lack of answers / cooperation from your side</p>
+            </div>
+<div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 29 2024, 09:53:03</span>
+              <p class="discord-text">Hi Mike, i am surprised at your messages as these are clearly threatening.</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 29 2024, 09:54:09</span>
+              <p class="discord-text">I just got back from my annual leave and will restart my work schedule now</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 29 2024, 09:56:02</span>
+              <p class="discord-text">Regarding your choices these are yours and yours alone, i am in no way the deciding factor of your activities on social media or elsewhere. You brought some issues to be clarified to my attention and i have requested clarifications.</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 29 2024, 09:57:21</span>
+              <p class="discord-text">When you refer to me or the company as complicit you assume criminal wrongdoing and this is a criminal act per se. No person nor company can be accused of criminal wrongdoing except in a court of law after a judge has issued a sentence</p>
+            </div>
+<div class="discord-msg quote-visetti">
+              <span class="discord-author">Visetti</span>
+              <span class="discord-date">Jul 29 2024, 09:58:07</span>
+              <p class="discord-text">By making these statements you are indeed committing a crime</p>
+            </div>
+            </div>
+          </details>
+        </div>
+        <div class="discord-bombshell__analysis">
+          <p><strong>Why this matters:</strong> After months of substantive discussion where Visetti made numerous admissions, he pivots to characterising Copley&rsquo;s messages as &ldquo;threatening&rdquo; &mdash; a familiar pattern seen with Pastore (who also cooperated extensively before turning hostile). This pivot typically coincides with the subject realising the extent of what they&rsquo;ve disclosed and seeking to discredit the recipient.</p>
+          
+        </div>
+      </div>
+
+
+      <!-- POST-CHAT-LOG MESSAGES -->
+      <div style="border-top:3px solid var(--accent-red);margin-top:var(--space-xl);padding-top:var(--space-xl);">
+        <h4 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:var(--black);margin-bottom:var(--space-xs);">Post-Chat-Log Messages (Jul 29, 2024 &ndash; Apr 2025)</h4>
+        <p style="font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-md);">Messages sent after the Discord export ends. Visetti&rsquo;s final substantive responses before complete silence. Copley&rsquo;s messages continue documenting the escalation through to legal filings in 2025.</p>
+
+        <div style="background:#fff5f5;border:1px solid var(--accent-red);padding:var(--space-md);margin-bottom:var(--space-lg);font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-600);">
+          <strong style="color:var(--accent-red);">Note:</strong> These messages were recorded separately. Deletion check pending &mdash; will be compared against future export to identify if any messages have been removed (as occurred with Pastore, who deleted 50 messages between exports).
+        </div>
+
+        <!-- BOMBSHELL: Criminal accusations claim -->
+        <div class="discord-bombshell" id="accusing-is-criminal">
+          <div class="discord-bombshell__header">
+            <h4>Legal Intimidation: &ldquo;Accusing Someone of Criminal Wrongdoing Is Itself a Crime&rdquo;</h4>
+            <span class="legal-tag">Intimidation</span>
+          </div>
+          <div class="discord-bombshell__quote">
+            <blockquote>&ldquo;No person nor company can be accused of criminal wrongdoing except in a court of law after a judge has issued a sentence. By making these statements you are indeed committing a crime.&rdquo;</blockquote>
+            <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 29, 2024</cite>
+          </div>
+          <div class="discord-bombshell__context">
+            <details>
+              <summary>View conversation context</summary>
+              <div class="discord-thread">
+                <div class="discord-msg quote-copley">
+                  <span class="discord-author">Copley</span>
+                  <span class="discord-date">Jul 29 2024, 04:46</span>
+                  <p class="discord-text">All behaviour seems intended to minimise transparency, block progress, and hide behind accusations of incompetence. You&rsquo;re now as complicit as even if you were innocent victim as I presumed, you had the opportunity to get to the bottom of this and resolve it but you have instead chosen instead to be complicit in helping those that created the system that destroyed many lives&hellip;</p>
+                </div>
+                <div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 09:53</span>
+                  <p class="discord-text">Hi Mike, i am surprised at your messages as these are clearly threatening.</p>
+                </div>
+                <div class="discord-msg quote-visetti">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 09:56</span>
+                  <p class="discord-text">Regarding your choices these are yours and yours alone, i am in no way the deciding factor of your activities on social media or elsewhere. You brought some issues to be clarified to my attention and i have requested clarifications.</p>
+                </div>
+                <div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 09:57</span>
+                  <p class="discord-text">When you refer to me or the company as complicit you assume criminal wrongdoing and this is a criminal act per se. No person nor company can be accused of criminal wrongdoing except in a court of law after a judge has issued a sentence</p>
+                </div>
+                <div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 09:58</span>
+                  <p class="discord-text">By making these statements you are indeed committing a crime</p>
+                </div>
+                <div class="discord-msg quote-visetti">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 09:59</span>
+                  <p class="discord-text">I personally couldn&rsquo;t care less but please don&rsquo;t act surprised if others have resorted to police reports regarding your statements</p>
+                </div>
+                <div class="discord-msg quote-copley">
+                  <span class="discord-author">Copley</span>
+                  <span class="discord-date">Jul 29 2024, 10:01</span>
+                  <p class="discord-text">I am sure they will go after me rather than actually answering the core questions because they haven&rsquo;t shown any willingness to answer these questions historically and that can only be for one reason</p>
+                </div>
+                <div class="discord-msg quote-visetti">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 10:01</span>
+                  <p class="discord-text">The law is the law. And it is valid for everyone</p>
+                </div>
+                <div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 10:01</span>
+                  <p class="discord-text">if you make false statements or accusations criminal charges are the consequence</p>
+                </div>
+                <div class="discord-msg quote-copley">
+                  <span class="discord-author">Copley</span>
+                  <span class="discord-date">Jul 29 2024, 10:02</span>
+                  <p class="discord-text">When you&rsquo;re in a situation you&rsquo;ve lost your business, your wife, your child, your home.. while people do not prioritise solutions you can understand why I am angry I am sure</p>
+                </div>
+                <div class="discord-msg quote-visetti">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 10:03</span>
+                  <p class="discord-text">Regarding myself i have no problem with your words on a private chat</p>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="discord-bombshell__analysis">
+            <p><strong>Why this matters:</strong> Visetti claims that <em>accusing</em> someone of a crime is itself criminal &mdash; a legally baseless assertion used as intimidation. In most common law and EU jurisdictions, making good-faith allegations to authorities or in public interest reporting is protected speech. Visetti simultaneously admits &ldquo;i have no problem with your words on a private chat&rdquo; but warns that &ldquo;others have resorted to police reports.&rdquo; This mirrors the Pastore pattern: cooperate extensively, then pivot to legal threats when the scope of admissions becomes apparent.</p>
+            <div class="contradiction"><strong>Pattern match:</strong> Pastore sent a C&amp;D letter (Dec 2023) after making extensive private admissions. Visetti follows an identical trajectory: months of substantive engagement &rarr; hostile pivot &rarr; legal threats &rarr; silence.</div>
+          </div>
+        </div>
+
+        <!-- BOMBSHELL: False statements claim -->
+        <div class="discord-bombshell" id="many-completely-false">
+          <div class="discord-bombshell__header">
+            <h4>Unspecified Denials: &ldquo;Many of Which Are Completely False&rdquo;</h4>
+            <span class="legal-tag">Deflection</span>
+          </div>
+          <div class="discord-bombshell__quote">
+            <blockquote>&ldquo;I will share publicly what the findings of the auditor will be in relation to the transactions and movements of tokens but i have at present no interest in continuing discussing with you give the statements you have made. Many of which are completely false.&rdquo;</blockquote>
+            <cite>&mdash; Jacopo Visetti, Discord private chat, Jul 29, 2024</cite>
+          </div>
+          <div class="discord-bombshell__context">
+            <details>
+              <summary>View conversation context</summary>
+              <div class="discord-thread">
+                <div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 10:00</span>
+                  <p class="discord-text">I will share publicly what the findings of the auditor will be in relation to the transactions and movements of tokens but i have at present no interest in continuing discussing with you give the statements you have made</p>
+                </div>
+                <div class="discord-msg quote-visetti" style="background:#fff5f5;border-left:3px solid var(--accent-red);padding-left:var(--space-sm);">
+                  <span class="discord-author">Visetti</span>
+                  <span class="discord-date">Jul 29 2024, 10:00</span>
+                  <p class="discord-text">Many of which are completely false</p>
+                </div>
+                <div class="discord-msg quote-copley">
+                  <span class="discord-author">Copley</span>
+                  <span class="discord-date">Jul 29 2024, 10:04</span>
+                  <p class="discord-text">They like to change the subject to attacking me, rather than the focus being on defending themselves and their actions - that should tell you a lot</p>
+                </div>
+                <div class="discord-msg quote-copley">
+                  <span class="discord-author">Copley</span>
+                  <span class="discord-date">Jul 29 2024, 10:13</span>
+                  <p class="discord-text">Would love to have an example of a false statement as I don&rsquo;t see any</p>
+                </div>
+              </div>
+            </details>
+          </div>
+          <div class="discord-bombshell__analysis">
+            <p><strong>Why this matters:</strong> Visetti claims &ldquo;many&rdquo; statements are &ldquo;completely false&rdquo; but <strong>does not identify a single one</strong>. Copley immediately requests an example &mdash; none is ever provided. This is Visetti&rsquo;s <strong>last substantive message</strong> in the conversation. He promises to &ldquo;share publicly what the findings of the auditor will be&rdquo; &mdash; as of the date of this publication, <strong>no audit findings have ever been published</strong>. No new auditor was appointed. No accounts were filed.</p>
+            <div class="contradiction"><strong>Unfulfilled promise:</strong> Visetti promised public audit findings. As of 2025: no audit published, no new auditor appointed, no 2022+ accounts filed, and Visetti ceased all communication.</div>
+          </div>
+        </div>
+
+        <!-- TIMELINE: Post-Silence Escalation -->
+        <div style="background:var(--grey-50);border:1px solid var(--grey-200);padding:var(--space-lg);margin:var(--space-xl) 0;">
+          <h4 style="font-family:var(--font-display);font-weight:900;margin-bottom:var(--space-md);color:var(--black);">Timeline: From Silence to Legal Action</h4>
+          <p style="font-size:var(--text-sm);color:var(--grey-600);margin-bottom:var(--space-md);">After Visetti&rsquo;s final responses on Jul 29, 2024, all subsequent messages are from Copley &mdash; met with complete silence. The timeline below documents the escalation.</p>
+
+          <div style="border-left:3px solid var(--accent-red);padding-left:var(--space-lg);margin-left:var(--space-sm);">
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--accent-red);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent-red);font-weight:700;">Jul 29, 2024 &mdash; VISETTI&rsquo;S LAST RESPONSE</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">&ldquo;Many of which are completely false&rdquo; &mdash; promises audit findings, then silence.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--grey-400);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-weight:700;">Sep 11, 2024</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">Copley confronts: Sergio Carloni still at Aither, Paolo still in role. &ldquo;You didn&rsquo;t remove Paolo despite him telling me all these things.&rdquo; No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--grey-400);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-weight:700;">Sep 16, 2024</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">Bitcomet Sagl investigation &mdash; company named after existing well-known product, confirms NO RELATIONSHIP exists. No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--grey-400);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-weight:700;">Late 2024 (Undated)</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">Still no auditor appointed. Still no 2022 accounts published. 50% token loss in 24h. Copley: &ldquo;When are you going to do the right thing?&rdquo; No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--grey-400);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-weight:700;">Late 2024 (Undated)</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">Information sent to <em>il Fatto Quotidiano</em>, <em>Corriere della Sera</em>, and <em>La Repubblica</em>. Copley: &ldquo;Enough is enough.&rdquo; No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--grey-400);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-weight:700;">Late 2024 (Undated)</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">Secondary wallet containing <strong>$50M+ of alt-coins</strong> discovered. Copley: &ldquo;Nugget Trap tokens looks like the place Efforce should invest their $50m holdings said no one ever.&rdquo; Gyazo: <a href="https://gyazo.com/b65495bb8fef5b29904e4f376b3d46cf" target="_blank">b65495bb</a>. No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--grey-400);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);font-weight:700;">Late 2024 (Undated)</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">50 pages / 21,947 words of evidence compiled. Gyazo: <a href="https://gyazo.com/79eaaa932f917284526441f0e941e8f9" target="_blank">79eaaa93</a>, <a href="https://gyazo.com/8c468eb7c12d9a42238c91c931e6d859" target="_blank">8c468eb7</a>. No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--accent-red);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent-red);font-weight:700;">2025 (Undated) &mdash; CASE FILED</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">California case filed. Malta/Bahamas reported to financial authorities. Copley: &ldquo;There&rsquo;s surely going to be long prison sentences once this finally gets in front of the right people.&rdquo; No response.</p>
+            </div>
+
+            <div style="margin-bottom:var(--space-lg);position:relative;">
+              <div style="position:absolute;left:calc(-1 * var(--space-lg) - 8px);top:4px;width:13px;height:13px;background:var(--accent-red);border-radius:50%;"></div>
+              <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--accent-red);font-weight:700;">Apr 10, 2025 &mdash; DEMAND LETTER</div>
+              <p style="font-size:var(--text-sm);color:var(--grey-700);margin-top:var(--space-xs);">Formal demand letter sent to Efforce Ltd: $860K by Apr 26, 2025 to avoid legal action. Sent to efforce@efforce.io, carloni@efforce.io, info@efforce.io. No response.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SILENCE STATS -->
+        <div style="background:var(--black-soft);color:var(--white);padding:var(--space-lg);margin:var(--space-lg) 0;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--space-md);text-align:center;">
+            <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">~9 months</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Total Silence (Jul 29 &rarr; Apr 2025)</div></div>
+            <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">0</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Audit Findings Published</div></div>
+            <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">0</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">False Statements Identified</div></div>
+            <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">0</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Rebuttals Received</div></div>
+          </div>
+        </div>
+
+        <!-- PATTERN ANALYSIS -->
+        <div class="criminal-box" style="border-color:#1d4ed8;background:#f0f4ff;">
+          <h4 style="color:#1d4ed8;">Pattern Analysis: Cooperate &rarr; Admit &rarr; Threaten &rarr; Silence</h4>
+          <p>Visetti&rsquo;s behaviour follows an identical pattern to Pastore:</p>
+          <table class="data-table" style="margin:var(--space-md) 0;">
+            <thead><tr><th>Phase</th><th>Pastore</th><th>Visetti</th></tr></thead>
+            <tbody>
+              <tr><td><strong>1. Engage</strong></td><td>May&ndash;Aug 2023</td><td>Dec 2022&ndash;Jul 2024</td></tr>
+              <tr><td><strong>2. Major Admissions</strong></td><td>May&ndash;Aug 2023 (50 key messages)</td><td>Apr&ndash;Jul 2024 (771 messages)</td></tr>
+              <tr><td><strong>3. Hostile Pivot</strong></td><td>Late 2023 (C&amp;D letter)</td><td>Jul 29, 2024 (&ldquo;clearly threatening&rdquo;)</td></tr>
+              <tr><td><strong>4. Legal Threats</strong></td><td>GDPR demand + C&amp;D</td><td>&ldquo;Criminal charges are the consequence&rdquo;</td></tr>
+              <tr><td><strong>5. Evidence Destruction</strong></td><td>50 messages deleted</td><td>Pending verification (TBC)</td></tr>
+              <tr><td><strong>6. Complete Silence</strong></td><td>Mar 2024 onwards</td><td>Jul 29, 2024 onwards</td></tr>
+              <tr><td><strong>7. Unfulfilled Promises</strong></td><td>None made</td><td>&ldquo;Will share audit findings publicly&rdquo; &mdash; never published</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
     </div>
 
     <div class="section-block" id="admissions">
@@ -1878,4 +3402,6 @@
       </div>
     </section>
 
-    <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#b7d4d8c5c5d2d4c3ded8d9c4f7ded9c1d2c4c3ded0d6c3ded9d0d2d1d1d8c5d4d299d4d8da">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#680b071a1a0d0b1c0107061b2801061e0d1b1c010f091c01060f0d0e0e071a0b0d460b0705"><span class="__cf_email__" data-cfemail="583b372a2a3d3b2c3137362b1831362e3d2b2c313f392c31363f3d3e3e372a3b3d763b3735">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></fo
+    
+<script src="../../js/search.js"></script>
+<footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../../index.html"><img src="../../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="../key-claims.html">Key Claims</a><a href="../timeline.html">Timeline</a><a href="../legal-threats.html">Legal Threats</a><a href="../class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="../entities.html">Entities</a><a href="../individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="../public-interest.html">Public Interest</a><a href="../public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#b7d4d8c5c5d2d4c3ded8d9c4f7ded9c1d2c4c3ded0d6c3ded9d0d2d1d1d8c5d4d299d4d8da">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#680b071a1a0d0b1c0107061b2801061e0d1b1c010f091c01060f0d0e0e071a0b0d460b0705"><span class="__cf_email__" data-cfemail="583b372a2a3d3b2c3137362b1831362e3d2b2c313f392c31363f3d3e3e372a3b3d763b3735">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></fo

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Evidence &mdash; Discord &amp; Telegram Analysis &mdash; Investigating Efforce</title>
+  <meta name="description" content="Analysis of 6,270+ chat messages across Discord and Telegram. Team false claims, unanswered questions, buyback promises never fulfilled, and channel death timeline.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-hero__title{font-family:var(--font-display);font-size:var(--text-4xl);font-weight:900;line-height:1.1;margin-bottom:var(--space-sm)}
+    .page-hero__sub{font-family:var(--font-mono);font-size:var(--text-sm);color:var(--grey-500);text-transform:uppercase;letter-spacing:.06em}
+    .section-block{padding:var(--space-xl) 0;border-top:1px solid var(--grey-200)}
+    .section-block h3{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-md);color:var(--black)}
+    .section-block h4{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-top:var(--space-lg);margin-bottom:var(--space-sm);color:var(--accent-red)}
+    .section-block p,.section-block li{font-size:var(--text-sm);line-height:1.7;color:var(--grey-700)}
+    .section-block ul{padding-left:var(--space-lg);margin:var(--space-sm) 0}
+    .section-block strong{color:var(--black)}
+    .tab-nav{display:flex;gap:0;border-bottom:2px solid var(--grey-200);margin-bottom:var(--space-xl);overflow-x:auto}
+    .tab-btn{padding:var(--space-sm) var(--space-lg);font-family:var(--font-mono);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--grey-500);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;margin-bottom:-2px;transition:all .15s}
+    .tab-btn:hover{color:var(--black)}
+    .tab-btn.active{color:var(--accent-red);border-bottom-color:var(--accent-red);font-weight:700}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    /* CLAIM CARDS */
+    .claim-card{border:1px solid var(--grey-200);padding:var(--space-lg);margin:var(--space-md) 0;position:relative}
+    .claim-card:hover{border-color:var(--accent-red)}
+    .claim-card__num{position:absolute;top:-1px;left:-1px;background:var(--accent-red);color:var(--white);font-family:var(--font-mono);font-size:10px;padding:3px 10px;font-weight:700}
+    .claim-card__quote{font-size:var(--text-base);font-style:italic;font-weight:600;color:var(--black);margin:var(--space-sm) 0;padding-left:var(--space-md);border-left:3px solid var(--accent-red)}
+    .claim-card__meta{font-family:var(--font-mono);font-size:9px;color:var(--grey-400);margin:var(--space-xs) 0}
+    .claim-card__reality{background:#fff5f5;border:1px solid #fecaca;padding:var(--space-sm) var(--space-md);margin-top:var(--space-sm);font-size:var(--text-xs);line-height:1.6}
+    .claim-card__reality strong{color:var(--accent-red)}
+    /* QUESTION TRACKER */
+    .q-row{display:grid;grid-template-columns:40px 1fr 120px;gap:var(--space-md);padding:var(--space-sm) 0;border-bottom:1px solid var(--grey-100);align-items:start}
+    .q-num{font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);font-weight:700}
+    .q-text{font-size:var(--text-xs);color:var(--grey-700);line-height:1.5}
+    .q-status{font-family:var(--font-mono);font-size:9px;padding:2px 8px;text-transform:uppercase;letter-spacing:.04em;text-align:center}
+    .q-status--red{background:#fee2e2;color:var(--accent-red)}
+    .q-status--amber{background:#fff8e1;color:#92400e}
+    /* TIMELINE BAR */
+    .bar-chart{display:flex;flex-direction:column;gap:4px;margin:var(--space-md) 0}
+    .bar-row{display:grid;grid-template-columns:60px 1fr 40px;gap:var(--space-sm);align-items:center}
+    .bar-label{font-family:var(--font-mono);font-size:9px;color:var(--grey-500);text-align:right}
+    .bar-track{height:20px;background:var(--grey-100);position:relative;overflow:hidden}
+    .bar-fill{height:100%;background:var(--accent-red);transition:width .3s}
+    .bar-fill--team{background:#3b82f6}
+    .bar-fill--dead{background:var(--grey-300)}
+    .bar-count{font-family:var(--font-mono);font-size:9px;color:var(--grey-500)}
+    /* PRIVATE CHAT LINKS */
+    .chat-link-card{border:1px solid var(--grey-200);padding:var(--space-lg);display:flex;gap:var(--space-lg);align-items:center;margin:var(--space-md) 0;text-decoration:none;color:inherit;transition:all .15s}
+    .chat-link-card:hover{border-color:var(--accent-red);background:var(--grey-50)}
+    .chat-link-card__stats{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--accent-red);line-height:1}
+    .chat-link-card__info h4{font-family:var(--font-display);font-weight:700;margin:0 0 var(--space-xs)}
+    .chat-link-card__info p{font-size:var(--text-xs);color:var(--grey-500);margin:0}
+    @media(max-width:768px){.q-row{grid-template-columns:30px 1fr 80px} .chat-link-card{flex-direction:column;text-align:center}}
+  </style>
+</head>
+<body>
+  <div class="notice-bar" role="banner"><div class="notice-bar__inner"><span class="notice-bar__item"><span class="notice-bar__icon"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 3a1 1 0 011 1v4a1 1 0 01-2 0V5a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z"/></svg></span><strong>UK Defamation Act 2013 s.4 &ndash; Public Interest Publication</strong>&nbsp; All statements alleged. No substantive rebuttal received. <a href="/cdn-cgi/l/email-protection#07646875756264736e686974476e69716274736e6066736e6960626161687564622964686a"><span class="__cf_email__" data-cfemail="24474b56564147504d4b4a57644d4a524157504d4345504d4a434142424b5647410a474b49">[email&#160;protected]</span></a> &middot; <a href="public-interest.html#defamation">Full Notice</a> &middot; <a href="public-interest.html#right-of-reply">Right of Reply</a><span class="notice-bar__updated">Updated 8 January 2026</span></span></div></div>
+
+  <header class="site-header"><div class="site-header__inner"><a href="../index.html" class="site-header__brand"><img src="../images/logo-black.png" alt="Investigating Efforce" class="site-header__logo" height="28"></a><nav class="mega-menu" role="navigation" aria-label="Main"><ul class="mega-menu__list"><li class="mega-menu__item"><a href="key-claims.html">Key Claims</a></li><li class="mega-menu__item"><a href="timeline.html">Timeline</a></li><li class="mega-menu__item"><a href="entities.html">Entities</a></li><li class="mega-menu__item"><a href="individuals.html">Individuals</a></li><li class="mega-menu__item"><a href="legal-threats.html">Legal Threats</a></li><li class="mega-menu__item"><a href="chat-evidence.html" class="mega-menu__item" style="color:var(--accent-red);font-weight:600;">Chat Evidence</a></li><li class="mega-menu__item"><a href="detective.html" style="color:#7c3aed;font-weight:600;">Ask Mike</a></li><li class="mega-menu__item"><a href="class-action.html">Class Action</a></li></ul></nav><div class="site-search" id="site-search" data-depth="1"><svg class="ss-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" class="ss-input ss-input--light" placeholder="Search investigation…" autocomplete="off" spellcheck="false"><span class="ss-shortcut">/</span><div class="ss-dropdown" id="search-dropdown"></div></div></div></header>
+
+  <section class="section" style="padding-bottom:0;"><div class="container"><div class="defamation-banner defamation-banner--compact"><div class="defamation-banner__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> All allegations unrebutted</div><div class="defamation-banner__text">Evidence from Discord server exports, private Discord chats, and Telegram channels. All messages verifiable against original exports. <a href="public-interest.html#right-of-reply">Right of reply</a></div></div></div></section>
+
+  <section class="section"><div class="container">
+    <p class="page-hero__sub">Chat Evidence</p>
+    <h1 class="page-hero__title">6,270+ Messages Analysed</h1>
+    <p style="font-size:var(--text-sm);color:var(--grey-600);max-width:720px;margin-bottom:var(--space-xl);">Comprehensive analysis of Efforce team communications across Discord public channels and private chats. Covers team false claims contradicted by official filings, unfulfilled buyback promises, systematically unanswered questions, and the progressive death of investor communication.</p>
+
+    <div style="background:var(--black-soft);color:var(--white);padding:var(--space-lg);margin-bottom:var(--space-xl);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:var(--space-md);text-align:center;">
+        <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">6,270+</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Total Messages</div></div>
+        <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">4,661</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Public Channel</div></div>
+        <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">1,609</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Private (Visetti)</div></div>
+        <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">9</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">False Claims Identified</div></div>
+        <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">8/9</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Questions Unanswered</div></div>
+        <div><div style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:900;color:var(--accent-red);">0</div><div style="font-family:var(--font-mono);font-size:9px;color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Buybacks Executed</div></div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="public" role="tab">General Holders (Public)</button>
+      <button class="tab-btn" data-tab="private" role="tab">Private Chats</button>
+      <button class="tab-btn" data-tab="questions" role="tab">Unanswered Questions</button>
+      <button class="tab-btn" data-tab="patterns" role="tab">Patterns &amp; Timeline</button>
+    </div>
+
+    <!-- TAB 1: PUBLIC CHANNEL -->
+    <div class="tab-panel active" id="tab-public">
+
+      <div class="section-block" style="border-top:none;">
+        <h3>General Holders &mdash; Team False Claims vs Official Records</h3>
+        <p>The Efforce Discord server&rsquo;s General Holders channel (Mar 2022 &ndash; Dec 2024) contained <strong>4,661 messages</strong> from 81 users. Two team accounts were active: <strong>staylamb</strong> (WizX / Efforce community manager, also used by Paolo Pastore) with 529 messages, and <strong>jackaither</strong> (Jacopo Visetti) with just 17 messages. Below are the most significant team claims that are <strong>directly contradicted</strong> by official company filings.</p>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#1</div>
+          <div class="claim-card__quote">&ldquo;We are probably among the few companies being profitable in this sector.&rdquo;</div>
+          <div class="claim-card__meta">Jacopo Visetti (jackaither) &mdash; General Holders &mdash; Aug 10, 2022</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> Malta filings: &euro;342K loss (2021), &euro;0 revenue (2023). No year on record shows profitability. This is a <strong>public false statement to token holders</strong> in a channel where trading decisions were being discussed.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#2</div>
+          <div class="claim-card__quote">&ldquo;We never had so many requests for project financing as now.&rdquo;</div>
+          <div class="claim-card__meta">Jacopo Visetti (jackaither) &mdash; General Holders &mdash; Aug 10, 2022</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> Zero projects were ever onboarded on the Efforce platform. Zero revenue from energy efficiency was recorded in any filing. Zero customers appear in any official accounts.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#3</div>
+          <div class="claim-card__quote">&ldquo;The company is sound and we should be able to communicate some good news regarding the energy efficiency projects developed so far.&rdquo;</div>
+          <div class="claim-card__meta">Jacopo Visetti (jackaither) &mdash; General Holders &mdash; Apr 22, 2023</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> Filed losses, zero employees, zero revenue. The &ldquo;good news&rdquo; was never communicated. No energy efficiency projects were ever disclosed to token holders.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#4</div>
+          <div class="claim-card__quote">&ldquo;We are in no way short on cash and are nowhere near the end of our cash runway.&rdquo;</div>
+          <div class="claim-card__meta">Jacopo Visetti (jackaither) &mdash; General Holders &mdash; Apr 22, 2023</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> Malta filings show minimal recorded activity. If the cash runway was long, the cash source is unexplained given &euro;0 platform revenue and no disclosed private investor funds in accounts.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#5</div>
+          <div class="claim-card__quote">&ldquo;EFFORCE actually underwent a global Due Diligence by Bithumb last year and the Token was reconfirmed by them.&rdquo;</div>
+          <div class="claim-card__meta">Jacopo Visetti (jackaither) &mdash; General Holders &mdash; Apr 22, 2023</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> Bithumb <strong>delisted WOZX in November 2023</strong> &mdash; just 7 months after Visetti claimed the token had been &ldquo;reconfirmed.&rdquo; The team repeatedly told holders &ldquo;don&rsquo;t be afraid&rdquo; and &ldquo;we see no reason to be delisted&rdquo; right up until the delisting occurred.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#6</div>
+          <div class="claim-card__quote">&ldquo;We have industrial customers we will disclose as soon as we release the platform.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; General Holders &mdash; Mar 21, 2022</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> No industrial customers were ever disclosed. Zero customers appear in any official filing. The platform launched in June 2024 with no customer announcements.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#7</div>
+          <div class="claim-card__quote">&ldquo;We have agreements and common strategies to make the business grow and to not hurt small investors.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; General Holders &mdash; Jun 13, 2022</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> The Major Private Investor (MPI) dumped tokens generating an estimated <strong>$283M in profit</strong>. Retail holders lost an estimated $300M+ collectively. The &ldquo;agreements to not hurt small investors&rdquo; either did not exist or were systematically ignored.</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#8</div>
+          <div class="claim-card__quote">&ldquo;It&rsquo;s not a problem since we just had a serious audit by them. Company is sound.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; General Holders &mdash; Apr 24, 2023</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> No audit was ever published. The auditing entity was never identified publicly. As of 2025, no 2022 or 2023 accounts have been filed for Efforce Ltd (Malta).</div>
+        </div>
+
+        <div class="claim-card">
+          <div class="claim-card__num">#9</div>
+          <div class="claim-card__quote">&ldquo;Token holders are not investors, are just token holders. Tokens are not stocks and don&rsquo;t represent stakes of the company.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; General Holders &mdash; Dec 21, 2022</div>
+          <div class="claim-card__reality"><strong>Reality:</strong> Token holders purchased WOZX after Steve Wozniak stated <em>&ldquo;I see owning WOZX like owning stock.&rdquo;</em> The whitepaper promised utility, governance, and a share of savings. The team&rsquo;s own buyback promises (2023) contradict the claim that holders have no stake. This statement was made while <strong>warning a community member</strong> for asking to hear from Visetti directly.</div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3>Buyback Promises &mdash; Never Fulfilled</h3>
+        <p>Between July and November 2023, the team made <strong>at least 6 separate promises</strong> to buy back WOZX tokens using platform profits. Zero buybacks were ever executed.</p>
+
+        <div class="claim-card">
+          <div class="claim-card__num">Jul 8, 2023</div>
+          <div class="claim-card__quote">&ldquo;We will constantly buy back the token from the market using part of our revenues.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce)</div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-card__num">Aug 2, 2023</div>
+          <div class="claim-card__quote">&ldquo;Buy back is legal. And will be done using profits made through our platform.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce)</div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-card__num">Aug 3, 2023</div>
+          <div class="claim-card__quote">&ldquo;The platform is not yet profitable&hellip; it is simple as that.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; Admits no profits while promising buyback FROM profits</div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-card__num">Sep 14, 2023</div>
+          <div class="claim-card__quote">&ldquo;Price goes up organically, more people getting to know the token, more buybacks, more projects funded. Very simple logic.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; Described a virtuous cycle that never began</div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-card__num">Sep 19, 2023</div>
+          <div class="claim-card__quote">&ldquo;We will start to buy back when we will have earnings from the platform.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; Platform launched mid-2024. Zero buybacks ever.</div>
+        </div>
+        <div class="claim-card">
+          <div class="claim-card__num">Nov 9, 2023</div>
+          <div class="claim-card__quote">&ldquo;Hopefully with the new platform and the buy back we will get a better trading volume.&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; Bithumb delisted WOZX days later</div>
+        </div>
+
+        <div style="background:var(--black-soft);color:var(--white);padding:var(--space-lg);margin-top:var(--space-lg);text-align:center;">
+          <div style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:900;color:var(--accent-red);">ZERO</div>
+          <div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-400);text-transform:uppercase;letter-spacing:.06em;">Buybacks Executed &mdash; Zero Revenue to Fund Them &mdash; Zero Accountability</div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3>Whitepaper Removal</h3>
+        <p>In May 2024, a community member reported the Efforce whitepaper returned a <strong>404 error</strong>. The team&rsquo;s response was revealing:</p>
+        <div class="claim-card">
+          <div class="claim-card__quote">&ldquo;Whitepaper was outdated. We will have a new website with documentation (but no whitepaper).&rdquo;</div>
+          <div class="claim-card__meta">staylamb (WizX/Efforce) &mdash; May 6, 2024</div>
+        </div>
+        <p>The team then asked: <em>&ldquo;Where did you find the whitepaper reference on the website? There should be none.&rdquo;</em> &mdash; suggesting intent to eliminate all traces of the founding document upon which all token purchases were based. No replacement whitepaper was ever published.</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Deletion Check &mdash; Two Exports Compared</h3>
+        <p>Unlike <a href="individuals/paolo-pastore.html#deleted-messages">Pastore&rsquo;s private chat</a> where 50 messages were deleted between exports, the General Holders channel shows <strong>no deletions</strong>:</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-md);text-align:center;margin:var(--space-md) 0;">
+          <div style="padding:var(--space-md);border:1px solid var(--grey-200);"><div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);">Export 1 (Nov 11, 2024)</div><div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;">4,661</div></div>
+          <div style="padding:var(--space-md);border:1px solid var(--grey-200);"><div style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);">Export 2 (Feb 23, 2025)</div><div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;">4,663</div></div>
+          <div style="padding:var(--space-md);border:1px solid #d1fae5;background:#f0fdf4;"><div style="font-family:var(--font-mono);font-size:var(--text-xs);color:#166534;">Deletions Detected</div><div style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:900;color:#166534;">0</div></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- TAB 2: PRIVATE CHATS -->
+    <div class="tab-panel" id="tab-private">
+      <div class="section-block" style="border-top:none;">
+        <h3>Private Chat Evidence</h3>
+        <p>Private Discord conversations between Efforce insiders and whistleblower Michael Copley. These private exchanges produced far more candid admissions than the carefully managed public channels.</p>
+
+        <a href="individuals/jacopo-visetti.html#discord-chat" class="chat-link-card">
+          <div class="chat-link-card__stats">1,609</div>
+          <div class="chat-link-card__info">
+            <h4>Jacopo Visetti (jackaither) &mdash; Private Chat</h4>
+            <p>Dec 2022 &ndash; Sep 2024 &bull; 771 Visetti messages &bull; 22 key revelations identified &bull; No deletions detected</p>
+            <p style="margin-top:var(--space-xs);color:var(--accent-red);">Key: &ldquo;US citizens&rdquo; PI identity, Woz-Huobi connection, &ldquo;no blockchain&rdquo; admission, pump &amp; dump denial contradicting Pastore, audit claims</p>
+          </div>
+        </a>
+
+        <a href="individuals/paolo-pastore.html#deleted-messages" class="chat-link-card">
+          <div class="chat-link-card__stats" style="color:#b8860b;">50</div>
+          <div class="chat-link-card__info">
+            <h4>Paolo Pastore (Mr_Server / staylamb) &mdash; Private Chat</h4>
+            <p>May &ndash; Aug 2023 (via Telegram) &bull; 50 messages deleted between exports &bull; 5 key admission categories</p>
+            <p style="margin-top:var(--space-xs);color:var(--accent-red);">Key: Wozniak abandoned, Vanetti control, $10M+ admission, &ldquo;want to move away,&rdquo; EAG coordination, evidence destruction</p>
+          </div>
+        </a>
+
+        <div style="background:var(--grey-50);border:1px solid var(--grey-200);padding:var(--space-lg);margin-top:var(--space-xl);">
+          <h4 style="font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-sm);color:var(--black);">Pattern: Cooperate &rarr; Admit &rarr; Threaten &rarr; Silence</h4>
+          <p>Both Visetti and Pastore followed an identical trajectory when privately engaging with the whistleblower:</p>
+          <table style="width:100%;border-collapse:collapse;font-size:var(--text-xs);margin:var(--space-md) 0;">
+            <thead><tr style="background:var(--black-soft);color:var(--white);"><th style="padding:var(--space-sm);text-align:left;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;">Phase</th><th style="padding:var(--space-sm);text-align:left;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;">Pastore</th><th style="padding:var(--space-sm);text-align:left;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;">Visetti</th></tr></thead>
+            <tbody>
+              <tr><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);font-weight:700;">1. Engage</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">May&ndash;Aug 2023</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">Dec 2022&ndash;Jul 2024</td></tr>
+              <tr><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);font-weight:700;">2. Admissions</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">50 key messages</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">771 messages</td></tr>
+              <tr><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);font-weight:700;">3. Hostile Pivot</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">C&amp;D letter</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">&ldquo;Clearly threatening&rdquo;</td></tr>
+              <tr><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);font-weight:700;">4. Legal Threats</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">GDPR demand + C&amp;D</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">&ldquo;Criminal charges are the consequence&rdquo;</td></tr>
+              <tr><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);font-weight:700;">5. Evidence</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">50 messages deleted</td><td style="padding:var(--space-xs) var(--space-sm);border-bottom:1px solid var(--grey-200);">No deletions (yet)</td></tr>
+              <tr><td style="padding:var(--space-xs) var(--space-sm);font-weight:700;">6. Silence</td><td style="padding:var(--space-xs) var(--space-sm);">Mar 2024 &rarr;</td><td style="padding:var(--space-xs) var(--space-sm);">Jul 2024 &rarr;</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: UNANSWERED QUESTIONS -->
+    <div class="tab-panel" id="tab-questions">
+      <div class="section-block" style="border-top:none;">
+        <h3>Copley&rsquo;s 9-Point Formal Questionnaire</h3>
+        <p>Submitted publicly in General Holders on <strong>May 31, 2024</strong>. Status tracked on Jun 15, 2024. As of early 2025, <strong>8 of 9 questions remain unanswered</strong>.</p>
+
+        <div style="margin:var(--space-lg) 0;">
+          <div class="q-row" style="border-bottom:2px solid var(--grey-200);"><div class="q-num" style="font-weight:900;">#</div><div class="q-text" style="font-weight:700;">Question</div><div class="q-status" style="font-weight:700;background:var(--grey-100);">Status</div></div>
+
+          <div class="q-row"><div class="q-num">Q1</div><div class="q-text">Outside of the designated team wallet (377m), which other wallets are controlled by the team?</div><div class="q-status q-status--amber">Partial</div></div>
+          <div class="q-row"><div class="q-num">Q2</div><div class="q-text">Current balance of team-held Efforce tokens (200m Efforce + 200m Mining + 150m Consulting)?</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q3</div><div class="q-text">How many employees did Efforce have on payroll each year since 2018?</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q4</div><div class="q-text">Total balance of funds raised from private investors in 2019? Was it the $36M claimed in PR?</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q5</div><div class="q-text">Where are these funds accounted for? Efforce Ltd (Bahamas) accounts not found.</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q6</div><div class="q-text">How many private investors were there and why are they shrouded in secrecy?</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q7</div><div class="q-text">How is it justified that Wozniak is stated as co-founder when shares transferred 14 months after formation?</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q8</div><div class="q-text">When will accounts be filed for 2022/2023? Why so delayed?</div><div class="q-status q-status--red">Unanswered</div></div>
+          <div class="q-row"><div class="q-num">Q9</div><div class="q-text">Confirm the function of WOZX token going forward (Utility / Governance / Buyback / Discounts)?</div><div class="q-status q-status--amber">Partial</div></div>
+        </div>
+
+        <p style="margin-top:var(--space-lg);"><strong>Team response pattern to these questions:</strong> Of 6 responses received to 35 Copley messages in 2024, <strong>zero</strong> addressed the core questions. Responses consisted of tone policing (<em>&ldquo;please don&rsquo;t tag the whole team&rdquo;</em>), gaslighting (<em>&ldquo;you keep thinking there is some strange conspiracy&rdquo;</em>), deflection (<em>&ldquo;the blockchain is transparent, you can check&rdquo;</em>), and a technicality about staking pools.</p>
+
+        <h4>Community Members Who Independently Supported These Questions</h4>
+        <p style="margin-bottom:var(--space-sm);">Copley was not alone in demanding answers:</p>
+        <div style="border-left:3px solid #3b82f6;padding-left:var(--space-md);margin:var(--space-md) 0;">
+          <p><strong>ish0333</strong> (Apr 13, 2024): <em>&ldquo;Do you want to perhaps answers and end the topic for good.&rdquo;</em></p>
+          <p><strong>.goldspire</strong> (Apr 21, 2024): <em>&ldquo;I wonder why the team not answered his questions.&rdquo;</em></p>
+          <p><strong>dt0935</strong> (Jun 1, 2024): Tagged entire team requesting answers to the questionnaire.</p>
+          <p><strong>floridaroamer</strong> (Jun 2, 2024): <em>&ldquo;You keep avoiding answering Mike&rsquo;s specific question.&rdquo;</em></p>
+          <p><strong>sacurse</strong> (Jun 26, 2024): <em>&ldquo;@mikecopley Any reply?&rdquo;</em></p>
+          <p><strong>lanjian.</strong> (Jun 28, 2024): <em>&ldquo;There is no doubt that this community is already dead.&rdquo;</em> &mdash; Team response: threatened a ban.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: PATTERNS & TIMELINE -->
+    <div class="tab-panel" id="tab-patterns">
+      <div class="section-block" style="border-top:none;">
+        <h3>Channel Death Timeline</h3>
+        <p>Messages per month in the General Holders channel (2024). The channel effectively <strong>died in August 2024</strong> after Copley&rsquo;s questions went unanswered.</p>
+
+        <div class="bar-chart">
+          <div class="bar-row"><div class="bar-label">Jan</div><div class="bar-track"><div class="bar-fill" style="width:93%"></div></div><div class="bar-count">50</div></div>
+          <div class="bar-row"><div class="bar-label">Feb</div><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><div class="bar-count">6</div></div>
+          <div class="bar-row"><div class="bar-label">Mar</div><div class="bar-track"><div class="bar-fill" style="width:7%"></div></div><div class="bar-count">4</div></div>
+          <div class="bar-row"><div class="bar-label">Apr</div><div class="bar-track"><div class="bar-fill" style="width:33%"></div></div><div class="bar-count">18</div></div>
+          <div class="bar-row"><div class="bar-label">May</div><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div><div class="bar-count">9</div></div>
+          <div class="bar-row"><div class="bar-label">Jun</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-count">54</div></div>
+          <div class="bar-row"><div class="bar-label">Jul</div><div class="bar-track"><div class="bar-fill bar-fill--dead" style="width:2%"></div></div><div class="bar-count">1</div></div>
+          <div class="bar-row"><div class="bar-label">Aug</div><div class="bar-track"><div class="bar-fill bar-fill--dead" style="width:0%"></div></div><div class="bar-count">0</div></div>
+          <div class="bar-row"><div class="bar-label">Sep</div><div class="bar-track"><div class="bar-fill bar-fill--dead" style="width:0%"></div></div><div class="bar-count">0</div></div>
+          <div class="bar-row"><div class="bar-label">Oct</div><div class="bar-track"><div class="bar-fill bar-fill--dead" style="width:4%"></div></div><div class="bar-count">2</div></div>
+          <div class="bar-row"><div class="bar-label">Nov</div><div class="bar-track"><div class="bar-fill bar-fill--dead" style="width:0%"></div></div><div class="bar-count">0</div></div>
+          <div class="bar-row"><div class="bar-label">Dec</div><div class="bar-track"><div class="bar-fill bar-fill--dead" style="width:4%"></div></div><div class="bar-count">2</div></div>
+        </div>
+        <p style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--grey-500);margin-top:var(--space-sm);">Last staylamb message of substance: Jun 28 (threatening to ban someone for calling the community dead). Last staylamb message ever: Oct 27 (acknowledging a typo fix).</p>
+      </div>
+
+      <div class="section-block">
+        <h3>Five Key Patterns</h3>
+
+        <h4>Pattern 1: Perpetual &ldquo;Soon&rdquo;</h4>
+        <p>The staylamb account used the word <strong>&ldquo;soon&rdquo; 40 times</strong> across the General Holders chat. Promises that never materialised: platform launch, marketing campaign, updated whitepaper, new exchange listings, governance features, buyback programme.</p>
+
+        <h4>Pattern 2: Shoot the Messenger</h4>
+        <p>Users were warned, banned, or had accounts restricted for asking hard questions. Examples: <em>&ldquo;This attitude is not welcome. You are now a warned member&rdquo;</em> (Dec 2022, to a user who simply asked to hear from Visetti). <em>&ldquo;Please mind your words. We will ban whoever doesn&rsquo;t follow community guidelines&rdquo;</em> (Jun 2024, to a user who said the community was dead). Copley&rsquo;s account was restricted after posting the 9-point questionnaire.</p>
+
+        <h4>Pattern 3: Deflection Over Substance</h4>
+        <p>When confronted with specific questions about wallets and tokens: <em>&ldquo;The blockchain is transparent, you can check.&rdquo;</em> When pressed on unanswered questions: <em>&ldquo;We keep answering the same questions.&rdquo;</em> When asked about revenue: <em>&ldquo;The platform is not yet profitable&hellip; it is simple as that.&rdquo;</em></p>
+
+        <h4>Pattern 4: Bithumb Cycle (3 Warnings)</h4>
+        <p><strong>Warning 1</strong> (Jun 2022): <em>&ldquo;We will resolve.&rdquo;</em> &rarr; Resolved. <strong>Warning 2</strong> (Apr 2023): <em>&ldquo;No petition to delist.&rdquo;</em> &rarr; Resolved. <strong>Warning 3</strong> (Nov 2023): <em>&ldquo;We see no reason to be delisted.&rdquo;</em> &rarr; <strong>DELISTED</strong>. Each cycle, community was told not to worry, then gaslit when the worst outcome occurred: <em>&ldquo;Bithumb unilaterally decided to delist, we had no say.&rdquo;</em></p>
+
+        <h4>Pattern 5: Progressive Stripping of Token Utility</h4>
+        <p><strong>2020 (Whitepaper):</strong> Governance, savings share, platform access, staking. <strong>2022:</strong> Governance &ldquo;coming soon,&rdquo; savings via NFTs, staking rewards. <strong>2023:</strong> NFTs cancelled/refunded, staking removed, governance shelved, buyback promised. <strong>2024:</strong> Buyback never executed, zero utility remaining, whitepaper removed (404). <strong>Result:</strong> Token went from multi-utility to <strong>zero utility</strong> while team retained 537M tokens.</p>
+      </div>
+    </div>
+
+  </div></section>
+
+  <footer class="site-footer"><div class="site-footer__grid"><div class="site-footer__brand"><a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a><p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p></div><div class="site-footer__col"><h6>Investigation</h6><a href="key-claims.html">Key Claims</a><a href="timeline.html">Timeline</a><a href="legal-threats.html">Legal Threats</a><a href="class-action.html">Class Action</a></div><div class="site-footer__col"><h6>Subjects</h6><a href="entities.html">Entities</a><a href="individuals.html">Individuals</a></div><div class="site-footer__col"><h6>Legal</h6><a href="public-interest.html">Public Interest</a><a href="public-interest.html#right-of-reply">Right of Reply</a><a href="/cdn-cgi/l/email-protection#85e6eaf7f7e0e6f1eceaebf6c5ecebf3e0f6f1ece2e4f1ecebe2e0e3e3eaf7e6e0abe6eae8">Corrections</a></div></div><div class="site-footer__defamation"><div class="site-footer__defamation-inner"><strong>UK DEFAMATION ACT 2013 s.4 &ndash; PUBLIC INTEREST PUBLICATION</strong><span>All claims alleged. Case: 25CV459519.</span><span>Corrections: <a href="/cdn-cgi/l/email-protection#93f0fce1e1f6f0e7fafcfde0d3fafde5f6e0e7faf4f2e7fafdf4f6f5f5fce1f0f6bdf0fcfe"><span class="__cf_email__" data-cfemail="c2a1adb0b0a7a1b6abadacb182abacb4a7b1b6aba5a3b6abaca5a7a4a4adb0a1a7eca1adaf">[email&#160;protected]</span></a></span></div></div><div class="site-footer__bottom"><span class="site-footer__legal">&copy; 2025 Investigating Efforce.</span></div></footer>
+
+  <script>
+  document.querySelectorAll('.tab-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active')});
+      document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+      btn.classList.add('active');
+      document.getElementById('tab-'+btn.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+  </script>
+<script src="../js/search.js"></script>
+</body>
+</html>
