@@ -380,7 +380,6 @@ code, .mono {
 
 .masthead__logo {
   width: 100%;
-  max-width: 360px;
   height: auto;
   display: block;
 }
@@ -392,7 +391,6 @@ code, .mono {
 .main-nav img,
 nav img[src*="logo"],
 header img[src*="logo"] {
-  max-width: 360px;
   height: auto;
   display: block;
   object-fit: contain;
@@ -433,7 +431,7 @@ header img[src*="logo"] {
 }
 
 .masthead__brand {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 4px;
 }
@@ -1850,7 +1848,7 @@ footer img[src*="logo"] {
 .search-bar .ss-dropdown{top:100%;left:0;right:auto;margin-top:4px}
 
 /* Uniform mega menu height — all dropdowns match the tallest */
-.mega-menu{min-height:220px}
+.mega-menu{height:280px;overflow-y:auto}
 
 @media(max-width:768px){
   .ss-input{width:140px;font-size:10px;padding:5px 10px 5px 26px}
@@ -1859,5 +1857,5 @@ footer img[src*="logo"] {
   .ss-dropdown{width:calc(100vw - 32px);right:-16px}
   .search-bar .site-search{width:100%}
   .search-bar__inner{justify-content:stretch}
-  .mega-menu{min-height:0}
+  .mega-menu{height:auto;overflow-y:visible}
 }
