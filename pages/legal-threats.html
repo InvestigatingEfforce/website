@@ -144,23 +144,27 @@
     <div class="masthead">
       <div class="masthead__brand">
         <a href="../index.html" class="masthead__logo-link">
-          <img src="../images/logo-white.png" alt="Investigating Efforce" class="masthead__logo" height="40">
+          <img src="../images/logo-white.png" alt="Investigating Efforce" class="masthead__logo">
         </a>
         <span class="masthead__subtitle">A Public Interest Investigation</span>
       </div>
-      <div class="masthead__actions">
-        <div class="masthead__search">
-          <input type="search" placeholder="Search claims, entities, evidence…" aria-label="Search site">
-          <button type="button" aria-label="Search">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </button>
-        </div>
+      
+    </div>
+    </header>
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <div class="search-bar__inner">
+      <div class="site-search" id="site-search" data-depth="1">
+        <svg class="ss-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" class="ss-input" placeholder="Search claims, entities, evidence&hellip;" autocomplete="off" spellcheck="false">
+        <span class="ss-shortcut">/</span>
+        <div class="ss-dropdown" id="search-dropdown"></div>
       </div>
     </div>
-    <div class="site-search" id="site-search" data-depth="1"><svg class="ss-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg><input type="text" class="ss-input ss-input--light" placeholder="Search investigation…" autocomplete="off" spellcheck="false"><span class="ss-shortcut">/</span><div class="ss-dropdown" id="search-dropdown"></div></div>
-  </header>
+  </div>
 
-  <!-- MEGA MENU NAVIGATION -->
+<!-- MEGA MENU NAVIGATION -->
   <nav class="main-nav" aria-label="Main navigation">
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <div class="main-nav__inner">
@@ -1731,7 +1735,7 @@ Avv. Nicolò Laitempergher
 <footer class="site-footer">
     <div class="site-footer__grid">
       <div class="site-footer__brand">
-        <a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo" height="36"></a>
+        <a href="../index.html"><img src="../images/logo-white.png" alt="Investigating Efforce" class="footer__logo"></a>
         <p>A public interest investigation into Efforce Ltd, the WOZX token, and associated entities.</p>
       </div>
       <div class="site-footer__col">
