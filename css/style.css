@@ -448,6 +448,7 @@ header img[src*="logo"] {
   letter-spacing: 0.15em;
   color: var(--accent-red);
   margin-top: 2px;
+  padding-left: 10px;
 }
 
 .masthead__actions {
