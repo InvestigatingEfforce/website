@@ -15,9 +15,17 @@
 
 export default {
   async fetch(request, env) {
+    // Allowed origins whitelist
+    const allowedOrigins = [
+      'https://investigatingefforce.com',
+      'https://www.investigatingefforce.com',
+    ];
+    const origin = request.headers.get('Origin') || '';
+    const corsOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0];
+
     // CORS headers
     const corsHeaders = {
-      'Access-Control-Allow-Origin': 'https://investigatingefforce.com',
+      'Access-Control-Allow-Origin': corsOrigin,
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     };
